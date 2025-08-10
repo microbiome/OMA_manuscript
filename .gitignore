@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+DAA_example
+manuscript_files
+misc
