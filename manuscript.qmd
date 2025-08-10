@@ -72,6 +72,9 @@ author:
         address: Address
         city: City
         postal-code: 0000000
+  - name: Mia Contributors
+    affiliations:
+      - id: 6
   - name: Katariina Pärnänen
     affiliations:
       - id: 1
@@ -387,11 +390,7 @@ which is another popular Bioconductor data container originally
 developed with a focus on 16S amplicon data analysis [@mcmurdie2012]. 
 TreeSE is a superset that can accommodate all elements of a phyloseq object, 
 while also offering improved support for multi-modal data and often substantial 
-gains in memory efficiency and computing speed 
-(https://github.com/microbiome/benchmarking and @fig-benchmarking).
-Conversion functions and detailed cheat sheets
-between the two formats are available to bridge the gap between the respective 
-user communities. 
+gains in memory efficiency and computing speed (@fig-benchmarking). Overall, the TreeSE approach outperforms phyloseq in these benchmarks. While speedyseq is faster in certain operations, TreeSE scales more efficiently in both execution time (t) and allocated memory (m) as sample size (n) increases.  Conversion functions and detailed cheat sheets between the two formats are available to bridge the gap between the respective user communities. 
 
 ::: {#fig-datacontainers layout-ncol=2 fig-cap="***Bioconductor data containers for microbiome data.*** **(a) TreeSummarizedExperiment (TreeSE).** TreeSE supports hierarchical and multi-table analysis in microbiome data science [@huang2021]. It links the numeric abundance matrix and potential alternative versions (statistical transformations, different taxonomic levels, dimensionality reduction) with tabular and hierarchical side information on the features (rows) and samples (columns). Additional slots for reference sequences and experiment metadata are available. **(b) MultiAssayExperiment (MAE).** MAE facilitates integration of data from multiple experiments [@ramos2017]."}
   
@@ -401,7 +400,7 @@ user communities.
 
 :::
 
-![**Benchmarking mia/TreeSE against phyloseq and speedyseq.** TreeSE, phyloseq and speedyseq were benchmarked for five common analytical operations applied to random subsets of samples from the GrieneisenTSData experiment [@Grieneisen2021]. Overall, the TreeSE approach outperforms phyloseq. While speedyseq is faster in certain operations, TreeSE scales more efficiently in both execution time (t) and allocated memory (m) as sample size (n) increases.](figures/benchmarking.png){#fig-benchmarking}
+![**Comparison of execution time and memory consumption between alternative methods in Bioconductor** TreeSE, phyloseq and speedyseq were benchmarked for five common analytical operations applied to random subsets of samples from a large study on wild baboons [@Grieneisen2021] (accessible through the microbiomeDataSets Bioconductor package). The source code for the benchmarking experiments can be accessed through the OMA online book.](figures/benchmarking.png){#fig-benchmarking}
 
 **Multi-assay data structures.** When integrating data across multiple 
 modalities, such as taxonomy, metabolomics, or host genomics, more flexible
@@ -1098,7 +1097,7 @@ microbiome data.
 
 ## Consortia {#sec-consortium}
 
-The mia contributors: **we will list here main and consortium authors who approved their inclusion** on [this sheet](https://docs.google.com/spreadsheets/d/1r6eiWS1yT2kDHvnez5uklcI5kDXrPGm-v252-eC1C_Y/edit?gid=1938866487#gid=1938866487). Sorted in alphabetical order by last name.
+Mia Contributors: **we will list here main and consortium authors who approved their inclusion** on [this sheet](https://docs.google.com/spreadsheets/d/1r6eiWS1yT2kDHvnez5uklcI5kDXrPGm-v252-eC1C_Y/edit?gid=1938866487#gid=1938866487). Sorted in alphabetical order by last name.
 
 ## Contributions {#sec-contributions}
 

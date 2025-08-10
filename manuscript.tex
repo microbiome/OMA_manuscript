@@ -1,4 +1,5 @@
 % Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
@@ -8,21 +9,22 @@
 ]{sn-jnl}
 
 
-
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage{lmodern}
-\ifPDFTeX\else  
-    % xetex/luatex font selection
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -40,9 +42,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -68,8 +67,7 @@
 \makeatother
 
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -81,17 +79,32 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+
 
 %%%% Standard Packages
 
@@ -154,17 +167,12 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage{bookmark}
-
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={Orchestrating Microbiome Analysis with Bioconductor},
-  pdfauthor={Tuomas Borman; Giulio Benedetti; Geraldson Muluh; Aura Raulo; Benjamin Valderamma; Artur Sannikov; Stefanie Peschel; Yihan Liu; Katariina Pärnänen; Christian L. Müller; Aki Havulinna; Sudarshan Shetty; Marcel Ramos; Domenick J. Braccia; Héctor Corrada Bravo; Felix M. Ernst; Levi Waldron; Thomaz Bastiaanssen; Himel Mallick; Leo Lahti},
+  pdfauthor={Tuomas Borman; Giulio Benedetti; Geraldson Muluh; Aura Raulo; Benjamin Valderamma; Artur Sannikov; Stefanie Peschel; Yihan Liu; Mia Contributors; Katariina Pärnänen; Christian L. Müller; Aki Havulinna; Sudarshan Shetty; Marcel Ramos; Domenick J. Braccia; Héctor Corrada Bravo; Felix M. Ernst; Levi Waldron; Thomaz Bastiaanssen; Himel Mallick; Leo Lahti},
   pdfkeywords={microbiome, Bioconductor, data science, data
 integration},
   colorlinks=true,
@@ -179,7 +187,7 @@ integration},
 Bioconductor]{Orchestrating Microbiome Analysis with Bioconductor}
 
 % author setup
-\author*[1]{\fnm{Tuomas} \sur{Borman}}\email{tvborm@utu.fi}\author[1]{\fnm{Giulio} \sur{Benedetti}}\equalcont{These authors contributed equally to this work.}\author[1]{\fnm{Geraldson} \sur{Muluh}}\equalcont{These authors contributed equally to this work.}\author[1]{\fnm{Aura} \sur{Raulo}}\author[2]{\fnm{Benjamin} \sur{Valderamma}}\author[1]{\fnm{Artur} \sur{Sannikov}}\author[4]{\fnm{Stefanie} \sur{Peschel}}\author[5]{\fnm{Yihan} \sur{Liu}}\author[1,6]{\fnm{Katariina} \sur{Pärnänen}}\author[1]{\fnm{Christian L.} \sur{Müller}}\author[1]{\fnm{Aki} \sur{Havulinna}}\author[]{\fnm{Sudarshan} \sur{Shetty}}\author[9]{\fnm{Marcel} \sur{Ramos}}\author[10]{\fnm{Domenick J.} \sur{Braccia}}\author[11]{\fnm{Héctor Corrada} \sur{Bravo}}\author[12]{\fnm{Felix M.} \sur{Ernst}}\author[13]{\fnm{Levi} \sur{Waldron}}\author[14]{\fnm{Thomaz} \sur{Bastiaanssen}}\equalcont{These authors contributed equally to this work.}\author[1]{\fnm{Himel} \sur{Mallick}}\equalcont{These authors contributed equally to this work.}\author*[1]{\fnm{Leo} \sur{Lahti}}\email{lemila@utu.fi}
+\author*[1]{\fnm{Tuomas} \sur{Borman}}\email{tvborm@utu.fi}\author[1]{\fnm{Giulio} \sur{Benedetti}}\equalcont{These authors contributed equally to this work.}\author[1]{\fnm{Geraldson} \sur{Muluh}}\equalcont{These authors contributed equally to this work.}\author[1]{\fnm{Aura} \sur{Raulo}}\author[2]{\fnm{Benjamin} \sur{Valderamma}}\author[1]{\fnm{Artur} \sur{Sannikov}}\author[4]{\fnm{Stefanie} \sur{Peschel}}\author[5]{\fnm{Yihan} \sur{Liu}}\author[1]{\fnm{Mia} \sur{Contributors}}\author[1,6]{\fnm{Katariina} \sur{Pärnänen}}\author[1]{\fnm{Christian L.} \sur{Müller}}\author[1]{\fnm{Aki} \sur{Havulinna}}\author[]{\fnm{Sudarshan} \sur{Shetty}}\author[9]{\fnm{Marcel} \sur{Ramos}}\author[10]{\fnm{Domenick J.} \sur{Braccia}}\author[11]{\fnm{Héctor Corrada} \sur{Bravo}}\author[12]{\fnm{Felix M.} \sur{Ernst}}\author[13]{\fnm{Levi} \sur{Waldron}}\author[14]{\fnm{Thomaz} \sur{Bastiaanssen}}\equalcont{These authors contributed equally to this work.}\author[1]{\fnm{Himel} \sur{Mallick}}\equalcont{These authors contributed equally to this work.}\author*[1]{\fnm{Leo} \sur{Lahti}}\email{lemila@utu.fi}
 % affil setup
 \affil[1]{\orgdiv{Department of Computing}, \orgname{University of
 Turku}}
@@ -327,7 +335,7 @@ classes, respectively.
 
 \centering{
 
-\includegraphics[width=0.7\textwidth,height=\textheight]{manuscript_files/figure-pdf/fig-bioc_packages-1.pdf}
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{manuscript_files/figure-pdf/fig-bioc_packages-1.pdf}
 
 }
 
@@ -360,23 +368,26 @@ container originally developed with a focus on 16S amplicon data
 analysis \citep{mcmurdie2012}. TreeSE is a superset that can accommodate
 all elements of a phyloseq object, while also offering improved support
 for multi-modal data and often substantial gains in memory efficiency
-and computing speed (https://github.com/microbiome/benchmarking and
-Figure~\ref{fig-benchmarking}). Conversion functions and detailed cheat
-sheets between the two formats are available to bridge the gap between
-the respective user communities.
+and computing speed (Figure~\ref{fig-benchmarking}). Overall, the TreeSE
+approach outperforms phyloseq in these benchmarks. While speedyseq is
+faster in certain operations, TreeSE scales more efficiently in both
+execution time (t) and allocated memory (m) as sample size (n)
+increases. Conversion functions and detailed cheat sheets between the
+two formats are available to bridge the gap between the respective user
+communities.
 
 \begin{figure}
 
 \begin{minipage}{0.50\linewidth}
 
-\includegraphics[width=1\textwidth,height=\textheight]{figures/TreeSE.png}
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{figures/TreeSE.png}
 
 \subcaption{\label{}TreeSummarizedExperiment}
 \end{minipage}%
 %
 \begin{minipage}{0.50\linewidth}
 
-\includegraphics[width=0.6\textwidth,height=\textheight]{figures/mae.png}
+\includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{figures/mae.png}
 
 \subcaption{\label{}MultiAssayExperiment}
 \end{minipage}%
@@ -399,18 +410,17 @@ experiment metadata are available. \textbf{(b) MultiAssayExperiment
 
 \centering{
 
-\includegraphics{figures/benchmarking.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figures/benchmarking.png}}
 
 }
 
-\caption{\label{fig-benchmarking}\textbf{Benchmarking mia/TreeSE against
-phyloseq and speedyseq.} TreeSE, phyloseq and speedyseq were benchmarked
-for five common analytical operations applied to random subsets of
-samples from the GrieneisenTSData experiment \citep{Grieneisen2021}.
-Overall, the TreeSE approach outperforms phyloseq. While speedyseq is
-faster in certain operations, TreeSE scales more efficiently in both
-execution time (t) and allocated memory (m) as sample size (n)
-increases.}
+\caption{\label{fig-benchmarking}\textbf{Comparison of execution time
+and memory consumption between alternative methods in Bioconductor}
+TreeSE, phyloseq and speedyseq were benchmarked for five common
+analytical operations applied to random subsets of samples from a large
+study on wild baboons \citep{Grieneisen2021} (accessible through the
+microbiomeDataSets Bioconductor package). The source code for the
+benchmarking experiments can be accessed through the OMA online book.}
 
 \end{figure}%
 
@@ -442,8 +452,8 @@ containers, while Table~\ref{tbl-elements} introduces the available data
 elements in each container.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
 \caption{Recommended data containers for microbiome
 analysis.}\label{tbl-containers}\tabularnewline
 \toprule\noalign{}
@@ -473,11 +483,11 @@ for sets of multi-omic experiments \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1700}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.6300}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0300}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0900}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0800}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1700}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.6300}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0300}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0900}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0800}}@{}}
 \caption{Key data elements in the employed data
 containers.}\label{tbl-elements}\tabularnewline
 \toprule\noalign{}
@@ -549,10 +559,10 @@ with the available tools for research and educational purposes (see
 Table~\ref{tbl-dataresources}).
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1500}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1500}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1500}}@{}}
 \caption{Open microbiome data resources supporting the
 framework.}\label{tbl-dataresources}\tabularnewline
 \toprule\noalign{}
@@ -703,7 +713,7 @@ described in the next section.
 
 \centering{
 
-\includegraphics{figures/workflow.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figures/workflow.png}}
 
 }
 
@@ -889,7 +899,7 @@ like TreeSE and MAE.
 
 \centering{
 
-\includegraphics{manuscript_files/figure-pdf/fig-downstream_analyses-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-pdf/fig-downstream_analyses-1.pdf}}
 
 }
 
@@ -984,7 +994,7 @@ versioning, portability across operating platforms, quality control
 (e.g.~unit testing, continuous integration), usability (APIs), and
 robustness (deprecation mechanisms), and a biannual release cycle.
 During the past two decades Bioconductor has grown into a repository of
-2,300 actively maintained software packages, of which 53 are classified
+2,300 actively maintained software packages, of which 58 are classified
 under the Microbiome Bioc task view. In order to enjoy the benefits of
 automation while maintaining flexibility, data scientists routinely
 remix open-source software into custom workflows. However, the lack of
@@ -1044,8 +1054,8 @@ microbiome data.
 
 \subsection{Consortia}\label{sec-consortium}
 
-The mia contributors: \textbf{we will list here main and consortium
-authors who approved their inclusion} on
+Mia Contributors: \textbf{we will list here main and consortium authors
+who approved their inclusion} on
 \href{https://docs.google.com/spreadsheets/d/1r6eiWS1yT2kDHvnez5uklcI5kDXrPGm-v252-eC1C_Y/edit?gid=1938866487\#gid=1938866487}{this
 sheet}. Sorted in alphabetical order by last name.
 
