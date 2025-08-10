@@ -404,9 +404,13 @@ experiment metadata are available. \textbf{(b) MultiAssayExperiment
 }
 
 \caption{\label{fig-benchmarking}\textbf{Benchmarking mia/TreeSE against
-phyloseq and speedyseq.} The TreeSE ecosystem outperforms phyloseq
-overall. While speedyseq is faster in certain operations, TreeSE scales
-more efficiently in both memory usage and computation time.}
+phyloseq and speedyseq.} TreeSE, phyloseq and speedyseq were benchmarked
+for five common analytical operations applied to random subsets of
+samples from the GrieneisenTSData experiment \citep{Grieneisen2021}.
+Overall, the TreeSE approach outperforms phyloseq. While speedyseq is
+faster in certain operations, TreeSE scales more efficiently in both
+execution time (t) and allocated memory (m) as sample size (n)
+increases.}
 
 \end{figure}%
 
@@ -980,7 +984,7 @@ versioning, portability across operating platforms, quality control
 (e.g.~unit testing, continuous integration), usability (APIs), and
 robustness (deprecation mechanisms), and a biannual release cycle.
 During the past two decades Bioconductor has grown into a repository of
-2,300 actively maintained software packages, of which 57 are classified
+2,300 actively maintained software packages, of which 53 are classified
 under the Microbiome Bioc task view. In order to enjoy the benefits of
 automation while maintaining flexibility, data scientists routinely
 remix open-source software into custom workflows. However, the lack of
