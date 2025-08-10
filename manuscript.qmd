@@ -401,7 +401,7 @@ user communities.
 
 :::
 
-![**Benchmarking mia/TreeSE against phyloseq and speedyseq.** The TreeSE ecosystem outperforms phyloseq overall. While speedyseq is faster in certain operations, TreeSE scales more efficiently in both memory usage and computation time.](figures/benchmarking.png){#fig-benchmarking}
+![**Benchmarking mia/TreeSE against phyloseq and speedyseq.** TreeSE, phyloseq and speedyseq were benchmarked for five common analytical operations applied to random subsets of samples from the GrieneisenTSData experiment [@Grieneisen2021]. Overall, the TreeSE approach outperforms phyloseq. While speedyseq is faster in certain operations, TreeSE scales more efficiently in both execution time (t) and allocated memory (m) as sample size (n) increases.](figures/benchmarking.png){#fig-benchmarking}
 
 **Multi-assay data structures.** When integrating data across multiple 
 modalities, such as taxonomy, metabolomics, or host genomics, more flexible
