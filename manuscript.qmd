@@ -536,7 +536,7 @@ such as MicrobiomeDB [@Oliveira2018] and in other languages
 (e.g. Julia). These bridges facilitate the broadest possible access to
 microbiome analysis methods.
 
-**Quality control and exploration.** After importing the data in R,
+**Quality control and exploration.** After importing the data into R,
 the recommended first step involves basic data exploration and quality
 control [@zuur2010]. In addition to methods for identifying
 contaminant sequences and calculating summary statistics, the
