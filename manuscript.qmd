@@ -655,8 +655,8 @@ and the phylogeny-aware UniFrac [@lozupone2005]. The community
 (dis)similarities are commonly visualized with unsupervised ordination
 methods that project the data on a lower-dimensional display
 [@goodrich2014]. Unsupervised techniques, such as Principal Component
-Analysis (PCA) and Principal Coordinates Analysis (PCoA) aka
-Multi-Dimensional Scaling (MDS), and and Non-metric MDS (NMDS)
+Analysis (PCA) and Principal Coordinates Analysis (PCoA) also known as 
+Multi-Dimensional Scaling (MDS), and Non-metric MDS (NMDS)
 (@fig-downstream_analyses) are common choices, with enhanced support
 for microbiome analysis and visualization. Statistical tests
 (e.g. PERMANOVA) and supervised visualization methods, such as the
