@@ -246,7 +246,7 @@ Bioconductor data structures support statistical analysis of complex
 data combinations [@huber2015] and are widely adopted by various
 user communities. They have been implemented through specialized
 object-oriented classes that integrate multiple data elements into
-a single structure known as *data container*
+a single structure known as a *data container*
 [@chambers2014]. The SummarizedExperiment (SE) class represents
 the primary data container underlying the Bioconductor ecosystem
 [@huber2015; @morgan2025]. Its position among the top-1\% most
@@ -393,7 +393,7 @@ Conversion functions and detailed cheat sheets
 between the two formats are available to bridge the gap between the respective 
 user communities. 
 
-::: {#fig-datacontainers layout-ncol=2 fig-cap="***Bioconductor data containers for microbiome data.*** **(a) TreeSummarizedExperiment (TreeSE).** TreeSE supports hierarchical and multi-table analysis in microbiome data science [@huang2021]. It links the numeric abundance matrix and potential alternative versions (statistical transformations, different taxonomic levels, dimensionality reduction) with tabular and hierarchical side information on the features (rows) and samples (columns). Additional slots for reference sequences and experiment metadata are available. **(b) MultiAssayExperiment (MAE).** MAE facilitates integration of data from multiple experiments [@ramos2017]."}
+::: {#fig-datacontainers layout-ncol=2 fig-cap="***Bioconductor data containers for microbiome data.*** **(a) TreeSummarizedExperiment (TreeSE).** TreeSE supports hierarchical and multi-table analysis in microbiome data science [@huang2021]. It links the numeric abundance matrix and potential alternative versions (statistical transformations, different taxonomic levels, dimensionality reduction) with tabular and hierarchical side information on the features (rows) and samples (columns). Additional slots for reference sequences and experiment metadata are available. (Figure modified from [@huang2021])]**(b) MultiAssayExperiment (MAE).** MAE facilitates integration of data from multiple experiments [@ramos2017]. (Figure from [@ramos2017])"}
   
 ![TreeSummarizedExperiment](figures/TreeSE.png){fig-subcap="(a)" width="100%"}
 
@@ -414,13 +414,13 @@ objects representing different omics modalities (see @fig-datacontainers).
 Whereas TreeSE is
 restricted to a one-to-one sample mapping between different data tables, MAE
 supports flexible mappings between multiple experiments from the same study. 
-Integration of multi-table data without such structured framework often 
+Integration of multi-table data without such a structured framework often 
 leads to ambiguous mappings and inconsistent results. 
 For instance, diagonal integration methods
 [@xu2022; @argelaguet2021computational] &ndash;
 where shared features across data types may not be explicitly defined &ndash;
-can benefit substantially from such systematic framework 
-that enforce anchor alignment. This mirrors lessons from single-cell 
+can benefit substantially from such a systematic framework 
+that enforces anchor alignment. This mirrors lessons from single-cell 
 data integration, where shared anchors and hierarchical mapping 
 have proven essential for interpretability. Flexible linking of samples across 
 several  data objects supports efficient data integration, methods sharing, and 
@@ -464,7 +464,7 @@ $^c$ sampleMap supports diverse mappings between samples from different experime
 (1-to-1, 1-to-many, many-to-1 and many-to-many).
 
 **Data resources.** Several open data resources support this framework
-for microbiome analysis and direct data import in the aforementioned
+for microbiome analysis and direct data import into the aforementioned
 data containers for further downstream analysis in
 Bioconductor. Examples of the available data resources include
 curatedMetagenomicData [@pasolli2017], HoloFood [@rogers2024],
@@ -519,7 +519,7 @@ direct comparison within a unified, version-resilient framework
 **Data import.** Most users will need to import data for their own
 analyses. The TreeSE data container can be populated with microbiome
 data from common tabular data types but non-standard file formats may
-require additional, custom data wrangling as usual. To streamline data
+require additional data wrangling. To streamline data
 import, we provide importers for a variety of standard microbiome file
 formats including BIOM [@mcdonald2012], MetaPhlAn/HUMAnN (MetaPhlAn
 v. 2-4, HUMAnN v. 3) [@mciver2017], Mothur [@schloss2009], QIIME2
@@ -536,7 +536,7 @@ such as MicrobiomeDB [@Oliveira2018] and in other languages
 (e.g. Julia). These bridges facilitate the broadest possible access to
 microbiome analysis methods.
 
-**Quality control and exploration.** After importing the data in R,
+**Quality control and exploration.** After importing the data into R,
 the recommended first step involves basic data exploration and quality
 control [@zuur2010]. In addition to methods for identifying
 contaminant sequences and calculating summary statistics, the
@@ -576,7 +576,7 @@ expert tasks.
 
 **Transformation.** Data transformations are frequently
 encountered in statistical analysis. Common transformations in
-microbiome research include the relative abundance [@gloor2017],
+microbiome research include relative abundance [@gloor2017],
 centered log-ratio (CLR) and its robust version (rCLR), which are used
 to mitigate compositionality bias [@Martino2019], and the tree-aware
 phylogenetic ILR (phILR) transformation [@silverman2017]. Data
@@ -648,15 +648,15 @@ diversity measures [@Cassol2025].
 
 **Community similarity** is commonly evaluated with beta diversity
 measures, which quantify multivariate dissimilarity and can be used to
-quantitatively comparecommunity composition. The
+quantitatively compare community composition. The
 framework supports common indices in microbial ecology including
-Bray-Curtis, Jaccard, and Aitchison [@bastiaanssen_bugs1_2023 ; @Martino2019], 
+Bray-Curtis, Jaccard, Aitchison [@bastiaanssen_bugs1_2023 ; @Martino2019], 
 and the phylogeny-aware UniFrac [@lozupone2005]. The community
 (dis)similarities are commonly visualized with unsupervised ordination
 methods that project the data on a lower-dimensional display
 [@goodrich2014]. Unsupervised techniques, such as Principal Component
-Analysis (PCA) and Principal Coordinates Analysis (PCoA) aka
-Multi-Dimensional Scaling (MDS), and and Non-metric MDS (NMDS)
+Analysis (PCA) and Principal Coordinates Analysis (PCoA) also known as 
+Multi-Dimensional Scaling (MDS), and Non-metric MDS (NMDS)
 (@fig-downstream_analyses) are common choices, with enhanced support
 for microbiome analysis and visualization. Statistical tests
 (e.g. PERMANOVA) and supervised visualization methods, such as the
@@ -674,7 +674,7 @@ community signatures [@Frioux2023]. These and other multivariate
 methods are provided for instance by mia, miaViz, and
 additional single-cell packages (scater, scuttle [@amezquita2020]). 
 
-**Differential abundance analysis (DAA).** DAA methods are used
+**Differential abundance analysis (DAA).** DAA methods are used to
 identify microbial taxa whose abundances vary across study groups or
 continuous gradients (@fig-downstream_analyses). Many dedicated DAA
 methods in microbiome research support the TreeSE framework including methods
@@ -700,7 +700,7 @@ microbiome analytics.
 
 **Function- and sequence-level analyses.** Taxonomic analysis is
 frequently complemented by functional analyses, either based on
-functional predictions derived from the amplicon or metagenomic
+functional predictions derived from amplicon or metagenomic
 sequences, or from parallel metabolomic or other functional
 assays. Our framework not only supports incorporation of functional
 abundance tables within the same data objects but specialized methods
@@ -760,7 +760,7 @@ ML-based prediction and classification [@Topcuoglu2021], enrichment
 analyses such as BugSigDB [@geistlinger2024] or Microbe Set Enrichment
 Analysis (MSEA) [@Kou2020]. The recent adoption of of interoperable
 data containers and the methodological similarities in related fields
-can greatly expand the selection of available toolkit in emerging
+can greatly expand the selection of available toolkits in emerging
 areas. In addition to the internal coherence within the Bioconductor ecosystem, 
 this framework supports integration with external platforms through interfaces 
 such as `reticulate` for Python, `Rcpp` for C++, and compatibility with
@@ -927,7 +927,7 @@ present a timely manifestation of this principle, with technical,
 legal, sociological and epistemic consequences [@Hocquet2024]. FAIR
 principles for software support 
 access to well-documented and user-friendly methods [@Barker2022], 
-and these are facilitated by the extensive quality control and 
+and are facilitated by the extensive quality control and 
 documentation standards enforced by Bioconductor [@huber2015]. 
 In addition to these technical
 demands, the development and quality control of academic software
@@ -974,7 +974,7 @@ R user community through shared data structures and training activities
 [@drnevich2025]. An active community of developers and users thrives online,
 supporting the software sustainability and promoting good practices in
 scientific computing [@Wilson2017]. The community interacts via several online
-communication channels, including Bioconductor Zulip, Github forum,
+communication channels, including Bioconductor Zulip, a Github forum,
 and an email list. The development of the framework is influenced by
 feedback from the user community through these channels, regular
 meetings and training workshops.
@@ -1103,7 +1103,7 @@ The mia contributors: **we will list here main and consortium authors who approv
 ## Contributions {#sec-contributions}
 
 LL and TB initiated and coordinated the work. All authors contributed
-material, participated the manuscript preparation, and approved the final
+material, participated in manuscript preparation, and approved the final
 version.
 
 ## Acknowledgments {#sec-acknowledgments}
