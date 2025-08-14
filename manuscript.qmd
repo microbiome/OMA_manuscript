@@ -234,13 +234,10 @@ heterogeneous data elements is essential in biological research, where the
 individual components of a system can be seldom studied in isolation. 
 The challenge for a data scientist is that different methods often require 
 variable and inconsistent input data formats, leading to technical 
-complications and time lost on repeated data wrangling during 
-routine analyses. Bioconductor is renowned for its ecosystem of interoperable 
-statistical methods for life sciences. A key to its broad adoption has been 
-its ability to mitigate those issues by providing standardized data structures 
-supported by an ecosystem of interoperable methods. This helps to avoid
-wrangling data and aligning methods and leaves more time to be invested in the
-core analytical tasks.
+complications and time lost on repeated data wrangling. 
+Bioconductor addresses this through standardized data structures supported by 
+an ecosystem of interoperable methods, allowing more time to be invested in core
+analytical tasks.
 
 Bioconductor data structures support statistical analysis of complex 
 data combinations [@huber2015] and are widely adopted by various
