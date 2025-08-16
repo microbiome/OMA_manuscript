@@ -405,7 +405,7 @@ modalities, such as taxonomy, metabolomics, or host genomics, more flexible
 sample mapping may become necessary. Multi-omics data is often sparse, and 
 samples can be only partially matched between experiments. In other cases, 
 a single sample in one modality can be matched by two or more samples in 
-another modality [see e.g. @Husso2023]. The MultiAssayExperiment (MAE) data 
+another modality [see *e.g.* @Husso2023]. The MultiAssayExperiment (MAE) data 
 container [@ramos2017] facilitates the integration of multiple data 
 objects representing different omics modalities (see @fig-datacontainers b).
 Whereas TreeSE is
@@ -497,10 +497,10 @@ integration and analysis based on the data containers, (Tree)SE and MAE
 The framework focuses primarily on the downstream analysis of
 high-throughput sequencing data from microbiome experiments after the
 original measurements have already been summarized into abundance
-tables representing e.g. taxonomic or functional profiles. Taxonomic
+tables representing *e.g.* taxonomic or functional profiles. Taxonomic
 abundance tables are one of the most commonly encountered data types.
 Common measurement platforms include amplicon-based marker gene
-studies (e.g. 16S rRNA) and metagenomic sequencing, but alternative profiling 
+studies (*e.g.* 16S rRNA) and metagenomic sequencing, but alternative profiling 
 techniques are available including phylogenetic microarrays
 [@RajilicStojanovic2009] and high-density optical mapping
 [@Abakumov2024]. Microbiome analyses can also yield variable metagenomic,
@@ -509,7 +509,7 @@ formats supports modular workflow design for integrating different
 omics through the Bioconductor ecosystem. This
 decisively mitigates reproducibility challenges posed by rapidly 
 evolving reference databases and profiling tools
-(e.g., MetaPhlAn2 vs. MetaPhlAn4) by enabling structured coexistence and
+(*e.g.*, MetaPhlAn2 vs. MetaPhlAn4) by enabling structured coexistence and
 direct comparison within a unified, version-resilient framework
 [@blanco2023; @truong2015].
 
@@ -530,7 +530,7 @@ supporting seamless conversions between TreeSE and BIOM, DADA2
 [@callahan2016] and phyloseq (the mia::convert\* functions), and
 TreeSE-based microbiome data objects can be exported into external services
 such as MicrobiomeDB [@Oliveira2018] and in other languages
-(e.g. Julia). These bridges facilitate the broadest possible access to
+(*e.g.* Julia). These bridges facilitate the broadest possible access to
 microbiome analysis methods.
 
 **Quality control and exploration.** After importing the data into R,
@@ -557,7 +557,7 @@ useful to remove very rare features that might be sequencing artifacts
 or present otherwise limited value for the analysis. The mechanism of
 alternative experiments (altExp) supports data agglomeration 
 by taxonomic levels and by other features such as
-pathogeneicity or functional potential (e.g. butyrate production
+pathogeneicity or functional potential (*e.g.* butyrate production
 [@Kullberg2024], gut-brain modules [@VallesColomer2019], and other 
 host-associated signatures [@geistlinger2024]). 
 The supporting methods incorporate the agglomerated levels
@@ -656,13 +656,13 @@ Analysis (PCA) and Principal Coordinates Analysis (PCoA) also known as
 Multi-Dimensional Scaling (MDS), and Non-metric MDS (NMDS)
 (@fig-downstream_analyses) are common choices, with enhanced support
 for microbiome analysis and visualization. Statistical tests
-(e.g. PERMANOVA) and supervised visualization methods, such as the
+(*e.g.* PERMANOVA) and supervised visualization methods, such as the
 distance-based redundancy analysis (dbRDA) can complement the
 unsupervised analyses, and help to uncover and quantify co-variation
 between community composition and covariates. This can benefit from
-compositionally robust measures (e.g. robust
+compositionally robust measures (*e.g.* robust
 Aitchison distance [@Martino2019]), or phylogeny-aware dissimilarity
-measures specifically developed for microbiome research (e.g. Unifrac
+measures specifically developed for microbiome research (*e.g.* Unifrac
 [@lozupone2005]). Sample dissimilarities provide the basis for many
 specialized microbiome techniques such as microbial community typing
 (clustering) with Dirichlet Multinomial Mixtures (DMM) [@Holmes2012]
@@ -689,7 +689,7 @@ also prone to subjective parameterization and limited
 generalizability. The grouping can be based on clustering of the
 abundance profiles or on external information such as phylogenetic
 relations, taxonomic classifications or functional properties
-(e.g. butyrate producers [@Kullberg2024]). Beyond these, 
+(*e.g.* butyrate producers [@Kullberg2024]). Beyond these, 
 advanced methods—such as causal mediation analysis tailored to microbiome 
 multi-omics data—are already being developed using SummarizedExperiment
 [@jiang2025], highlighting its readiness to support emerging innovations in
@@ -706,7 +706,7 @@ analyses the Notame package [@klavus2020] recently added SE support,
 and the R4MS project
 provides many interoperable tools [@gatto2025]. The framework has
 found recent applications in extended analyses of metagenomic
-features, i.e. antimicrobial resistance gene composition, diversity,
+features, *i.e.* antimicrobial resistance gene composition, diversity,
 and load [@Salehi2025]. We have converted a large-scale compilation of
 resistome profiles in 8,972 metagenome samples [@Lee2023] in the TreeSE format
 for research and educational purposes.
@@ -728,10 +728,10 @@ incorporated as a covariate or by estimating
 temporally or spatially resolved metrics, such as divergence,
 auto-correlation and modality. Another type of time series analysis
 includes the time-to-event, or survival models, which are encountered
-in e.g. population cohort studies; specialized survival analysis
+in *e.g.* population cohort studies; specialized survival analysis
 strategies for microbiome data have been proposed [@Salosensaari2021;
 @Calle2023]. We also provide methods to simulate time series from
-standard models of microbial community dynamics including e.g. the
+standard models of microbial community dynamics including *e.g.* the
 Hubbell's neutral model, generalized Lotka-Volterra, and
 consumer-resource model through the miaSim package [@gao2023].
 
@@ -1046,7 +1046,7 @@ pkg_stats <- paste0(pkg_stats[[1]], "%")
 developing open, peer-reviewed software for life sciences. Its
 strengths include the enforcement of minimal documentation standards,
 semantic versioning, portability across operating platforms, quality
-control (e.g. unit testing, continuous integration), usability (APIs),
+control (*e.g.* unit testing, continuous integration), usability (APIs),
 and robustness (deprecation mechanisms), and a biannual release
 cycle. During the past two decades Bioconductor has grown into a
 repository of 2,300 actively maintained software packages, of which
