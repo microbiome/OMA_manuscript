@@ -841,7 +841,7 @@ saveRDS(tse, "data/tse.rds")
 #| echo: false
 #| message: false
 #| warning: false
-#| fig-cap: "**Common visualization methods.** This set of visualizations present time series data on infants from three different countries. **Figure A** illustrates the phylogenetic relationships, while **Figure B** summarizes phyla abundances in the samples ordered based on age. Actinobacteria is more present in Bolivia and Bangladesh compared to Finland.  **Figures C and D** display the results of Multidimensional Scaling (MDS) using Unifrac distances and Distance-based Redundancy Analysis (dbRDA) based on Aitchison distance, respectively. Both ordination methods shows clear pattern separating microbial profiles in different countries. dbRDA shows additionally association between microbial profile and age. **Figures E and F** depict Faith's phylogenetic diversity visualized in respect to country and age. **Figure G** visualizes Differential Abundance Analysis (DAA) results with scatter plot. Two genera exhibit association with age. **Figure H** illustrates Unifrac divergence for consecutive time points. Results indicate slow stabilization of microbial communities."
+#| fig-cap: "Common visualization methods applied to time series data on infants from three different countries. **a**, Phylogenetic relationships. **b**, Phyla abundances of the samples ordered by age, stratified by country and gender. Actinobacteria is more present in Bolivia and Bangladesh compared to Finland.  **c-d**, Multidimensional Scaling (MDS) using Unifrac distances and Distance-based Redundancy Analysis (dbRDA) based on Aitchison distance, respectively. Both ordination methods shows clear pattern separating microbial profiles in different countries. dbRDA shows additionally association between microbial profile and age. **e-f**, Faith's phylogenetic diversity by country and age respectively. **g**, Differential Abundance Analysis (DAA) results. Two genera exhibit association with age. **h**, Unifrac divergence between consecutive time points. Results indicate slow stabilization of microbial communities."
 #| fig-width: 19
 #| fig-height: 10
 
@@ -857,16 +857,26 @@ if( !file.exists(file_path) ){
 }
 tse <- readRDS(file_path)
 
+# Get phylum names
+phylum_names <- sort(unique(rowData(altExp(tse, "Phylum"))[, "Phylum"]))
+# Named vector of phylum colors
+phylum_colors <- setNames(
+    scater:::.get_palette("tableau20")[seq_along(phylum_names)],
+    phylum_names)
+
 # Visualize phylogeny
 p_tree <- plotRowTree(
-    altExp(tse, "Family"), edge.colour.by = "Phylum", layout = "ape")
+    altExp(tse, "Family"), edge.colour.by = "Phylum", layout = "ape") + 
+    scale_color_manual(values = phylum_colors) + # Manually set colors
+    guides(color = "none")
 
 # Visualize abundances with barplot
 p_bar <- plotAbundance(
     altExp(tse, "Phylum"), assay.type = "relabundance",
     col.var = c("Country", "Sex"), facet.cols = TRUE, scales = "free",
     order.col.by = "Age_Months") +
-    guides(fill = guide_legend(title = "Phylum"))
+    guides(fill = guide_legend(title = "Phylum")) +
+    scale_color_manual(values = phylum_colors)
 
 # Visualize alpha diversity
 p_alpha <- plotColData(
@@ -880,10 +890,13 @@ p_alpha2 <- plotColData(
     labs(y = "Faith", x = "Age in months")
 
 # Visualize PCoA
-p_mds <- plotMDS(tse, colour_by = "Country")
+p_mds <- plotMDS(tse, colour_by = "Country") +
+    theme(legend.position = "inside",
+          legend.justification = c("right", "top"))
 
 # Visualize dbRDA
-p_rda <- plotRDA(tse, "RDA", colour.by = "Country", add.significance = FALSE)
+p_rda <- plotRDA(tse, "RDA", colour.by = "Country", add.significance = FALSE) +
+    theme(legend.position = "none") # Already present from p_mds
 
 # Visualize abundances vs age
 p_daa <- plotExpression(
@@ -903,15 +916,16 @@ p_divergence <- plotColData(tse_sub, y = "divergence", x = "Age_Months") +
     theme(legend.position = "none")
 
 # Combine plots
-p1 <- (p_tree / p_bar) +
-    plot_layout(heights = c(1.15, 0.85))
+p1 <- (p_tree / p_bar) + 
+    plot_layout(guides = "collect") 
 p2 <- (p_mds / p_rda) +
     plot_layout(heights = c(1, 1))
 p3 <- ((p_alpha|p_alpha2) / p_daa / p_divergence) +
     plot_layout(heights = c(1, 1, 1))
 p <- (p1 | p2 | p3) +
     plot_layout(widths = c(0.33, 0.4, 0.32)) +
-    plot_annotation(tag_levels = "A")
+    plot_annotation(tag_levels = "a") &
+    theme(plot.tag = element_text(size = 15, face = "bold"))
 p
 ```
 
