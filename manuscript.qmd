@@ -372,7 +372,7 @@ While maintaining interoperability with
 the broader Bioconductor ecosystem, the TreeSummarizedExperiment
 (TreeSE) class [@huang2021] extends the SE and SCE data structures to 
 hierarchical datasets by incorporating feature and sample organisations 
-as tree structures (@fig-datacontainers). Moreover, TreeSE supports the
+as tree structures (@fig-datacontainers a). Moreover, TreeSE supports the
 storage of other common aspects of microbiome data, such as reference sequences, 
 and incorporates results from common analytical procedures such as
 dimensionality reduction, statistical transformations, and agglomeration by 
@@ -407,7 +407,7 @@ samples can be only partially matched between experiments. In other cases,
 a single sample in one modality can be matched by two or more samples in 
 another modality [see e.g. @Husso2023]. The MultiAssayExperiment (MAE) data 
 container [@ramos2017] facilitates the integration of multiple data 
-objects representing different omics modalities (see @fig-datacontainers).
+objects representing different omics modalities (see @fig-datacontainers b).
 Whereas TreeSE is
 restricted to a one-to-one sample mapping between different data tables, MAE
 supports flexible mappings between multiple experiments from the same study. 
