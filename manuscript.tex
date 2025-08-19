@@ -405,12 +405,18 @@ facilitates integration of data from multiple experiments
 
 \caption{\label{fig-benchmarking}\textbf{Benchmarking mia/TreeSE against
 phyloseq and speedyseq.} TreeSE, phyloseq and speedyseq were benchmarked
-for five common analytical operations applied to random subsets of
-samples from the GrieneisenTSData experiment \citep{Grieneisen2021}.
-Overall, the TreeSE methods outperformed phyloseq. While speedyseq was
-faster in certain operations, TreeSE scaled more efficiently in both
-execution time (s) and allocated memory (MB) with increasing sample size
-(n).}
+on five common analytical operations using random subsets of samples
+from the GrieneisenTSData experiment \citep{Grieneisen2021}. Execution
+time (s) values and error bars represent the mean and standard error
+(SE) over 10 iterations, respectively. Allocated memory (MB) was
+estimated based on a single iteration. Overall, TreeSE outperformed
+phyloseq. While speedyseq achieved higher performance in the supported
+operations, TreeSE scaled more efficiently in both execution time and
+memory allocation with increasing sample size (n). The benchmarking
+analysis was conducted in R using the bench library with 8 CPU cores and
+32 GB RAM. All operations, except for UniFrac dissimilarity with
+phyloseq, could also be performed on a regular laptop (e.g., 4 CPU cores
+and 16 GB RAM).}
 
 \end{figure}%
 
