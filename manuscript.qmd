@@ -1097,7 +1097,7 @@ microbiome data.
 
 ## Consortia {#sec-consortium}
 
-The mia contributors: **we will list here main and consortium authors who approved their inclusion** on [this sheet](https://docs.google.com/spreadsheets/d/1r6eiWS1yT2kDHvnez5uklcI5kDXrPGm-v252-eC1C_Y/edit?gid=1938866487#gid=1938866487). Sorted in alphabetical order by last name.
+The mia contributors: Thomaz Bastiaanssen, Moritz E. Beber, Aituar Bektanov, Giulio Benedetti, Tuomas Borman, Domenick J. Braccia, Héctor Corrada Bravo, Matteo Calgaro, Danielle Callan, Yang Cao, Jiya Chaudhary, Sneha Das, Basil Courbayre Dussau, Henrik Eckermann, Pande Erawijantari, Felix M. Ernst, Elliot Gaudron-Parry, Maija Hakula, Kati Hanhineva, Aki Havulinna, Rasmus Hindström, Ruizhu Huang, Akewak Jeba, Leo Lahti, Himmi Lindgren, Yihan Liu, Himel Mallick, Dattatray Mongad, Christian L. Müller, Geraldson Muluh, Signe Nynäs, Jesse Pasanen, Joao Paulo, Juho Pelto, Stefanie Peschel, Renuka Potbhare, Théotime Pralas, Marcel Ramos, Aura Raulo, Artur Sannikov, Ely Seraidarian, Jacques Serizay, Sudarshan Shetty, Rajesh Shigdel, Vilhelm Suksi, Eetu Tammi, Benjamin Valderamma, Levi Waldron, Lu Yang.
 
 ## Contributions {#sec-contributions}
 
