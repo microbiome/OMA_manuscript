@@ -31,5 +31,5 @@ only using Quarto files, based on the
 
 ## Funding
 
-This project received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 952914 ([FindingPheno](https://findingpheno.eu/))
+This project received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 952914 ([FindingPheno](https://findingpheno.eu/)).
 
