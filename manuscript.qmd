@@ -1098,7 +1098,7 @@ microbiome data.
 
 ## Consortia {#sec-consortium}
 
-The mia contributors: Thomaz Bastiaanssen, Moritz E. Beber, Aituar Bektanov, Giulio Benedetti, Tuomas Borman, Domenick J. Braccia, Héctor Corrada Bravo, Matteo Calgaro, Danielle Callan, Yang Cao, Jiya Chaudhary, Sneha Das, Basil Courbayre Dussau, Henrik Eckermann, Pande Erawijantari, Felix M. Ernst, Elliot Gaudron-Parry, Maija Hakula, Kati Hanhineva, Aki Havulinna, Rasmus Hindström, Ruizhu Huang, Akewak Jeba, Leo Lahti, Himmi Lindgren, Yihan Liu, Himel Mallick, Dattatray Mongad, Christian L. Müller, Geraldson Muluh, Signe Nynäs, Jesse Pasanen, Joao Paulo, Juho Pelto, Stefanie Peschel, Renuka Potbhare, Théotime Pralas, Marcel Ramos, Aura Raulo, Artur Sannikov, Ely Seraidarian, Jacques Serizay, Sudarshan Shetty, Rajesh Shigdel, Vilhelm Suksi, Eetu Tammi, Benjamin Valderamma, Levi Waldron, Lu Yang.
+The mia contributors: Thomaz Bastiaanssen, Moritz E. Beber, Aituar Bektanov, Giulio Benedetti, Tuomas Borman, Domenick J. Braccia, Héctor Corrada Bravo, Matteo Calgaro, Danielle Callan, Yang Cao, Jiya Chaudhary, Sneha Das, Basil Courbayre Dussau, Henrik Eckermann, Pande Erawijantari, Felix M. Ernst, Elliot Gaudron-Parry, Maija Hakula, Kati Hanhineva, Aki Havulinna, Rasmus Hindström, Ruizhu Huang, Akewak Jeba, Leo Lahti, Himmi Lindgren, Yihan Liu, Himel Mallick, Dattatray Mongad, Christian L. Müller, Geraldson Muluh, Signe Nynäs, Jesse Pasanen, Joao Paulo, Juho Pelto, Stefanie Peschel, Renuka Potbhare, Théotime Pralas, Marcel Ramos, Aura Raulo, Artur Sannikov, Ely Seraidarian, Jacques Serizay, Sudarshan Shetty, Rajesh Shigdel, Vilhelm Suksi, Eetu Tammi, Benjamin Valderamma, Levi Waldron, Lu Yang, Morten Limborg, Shyam Gopalakrishnan.
 
 ## Contributions {#sec-contributions}
 
@@ -1115,6 +1115,6 @@ was additionally supported by the University of Turku Graduate School.
 We would like to thank the following individuals for their support for
 the project: Richa Ashma, Nitin Bayal, Chouaib Benchraka, Axel
 Dagnaud, Teo Dallier, Noah de Gunst, Karoline Faust, Samuel Hillman,
-Hervé Pagés, Mahkameh Salehi, Daniel Rios Garza, Matti Ruuskanen. We
-also extend our thanks to all contributors of the open-source
-resources used in this work.
+Hervé Pagés, Mahkameh Salehi, Daniel Rios Garza, Matti Ruuskanen, 
+Rob Finn, Lorna Richardson, Mark Robinson. We also extend our thanks 
+to all contributors of the open-source resources used in this work.
