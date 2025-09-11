@@ -279,7 +279,7 @@ SpatialExperiment [@righelli2022] classes, respectively.
 if( !require("BiocManager") ){
     install("BiocManager")
 }
-pkgs <- c("BiocPkgTools", "lubridate", "tidyverse")
+pkgs <- c("BiocPkgTools", "lubridate", "tidyverse", "see")
 temp <- sapply(pkgs, function(pkg){
     if( !require(pkg, character.only = TRUE) ){
         BiocManager::install(pkg)
@@ -324,7 +324,6 @@ fields <- sapply(pkgs$biocViews, function(x){
     return(field)
 })
 pkgs[["Field"]] <- fields
-pkgs[pkgs[["Package"]] %in% c("mia", "miaViz", "miaSim", "iSEEtree", "HoloFoodR", "MGnifyR"), "Field"] <- "Microbiome"
 # Get download stats 
 df <- biocDownloadStats()
 # Subset to include only packages which BiocView we have
@@ -362,7 +361,7 @@ pkgs_date[["Date"]] <- pkgs_date[["Date"]] |> as.Date()
 
 # Create a plot that shows number of package through date
 p <- ggplot(pkgs_date, aes(x = Date, y = N, fill = Field)) +
-    geom_area() + theme_classic() + scale_fill_brewer(palette = "Paired") +
+    geom_area() + theme_classic() + scale_fill_okabeito() +
     labs(x = "Year", y = "Number of packages") +
     scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 p
