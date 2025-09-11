@@ -28,3 +28,10 @@ only using Quarto files, based on the
 ├── sn-nature.bst # BibTeX style file (Nature style)
 └── sn-vancouver.bst # BibTeX style file (Vancouver style)
 ```
+
+## Funding
+
+<img src="figures/findingpheno_logo.png" align="right" width="160" />
+
+This project received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 952914 ([FindingPheno](https://findingpheno.eu/)).
+
