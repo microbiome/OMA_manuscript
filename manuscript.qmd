@@ -1097,7 +1097,20 @@ microbiome data.
 
 ## Consortia {#sec-consortium}
 
-The mia contributors: Thomaz Bastiaanssen, Moritz E. Beber, Aituar Bektanov, Giulio Benedetti, Tuomas Borman, Domenick J. Braccia, Héctor Corrada Bravo, Matteo Calgaro, Danielle Callan, Yang Cao, Jiya Chaudhary, Sneha Das, Basil Courbayre Dussau, Henrik Eckermann, Pande Erawijantari, Felix M. Ernst, Elliot Gaudron-Parry, Maija Hakula, Kati Hanhineva, Aki Havulinna, Rasmus Hindström, Ruizhu Huang, Akewak Jeba, Leo Lahti, Himmi Lindgren, Yihan Liu, Himel Mallick, Dattatray Mongad, Christian L. Müller, Geraldson Muluh, Signe Nynäs, Jesse Pasanen, Joao Paulo, Juho Pelto, Stefanie Peschel, Renuka Potbhare, Théotime Pralas, Marcel Ramos, Aura Raulo, Artur Sannikov, Ely Seraidarian, Jacques Serizay, Sudarshan Shetty, Rajesh Shigdel, Vilhelm Suksi, Eetu Tammi, Benjamin Valderamma, Levi Waldron, Lu Yang.
+The mia contributors: Bastiaanssen, Thomaz; Beber, Moritz E.; Bektanov, Aituar; 
+Benedetti, Giulio; Borman, Tuomas; Braccia, Domenick J.; Calgaro, Matteo; Callan, 
+Danielle; Cao, Yang; Chaudhary, Jiya; Corrada Bravo, Héctor; 
+
+Courbayre Dussau, Basil; Das, Sneha; Eckermann, Henrik; Erawijantari, Pande; 
+Ernst, Felix M.; Gaudron-Parry, Elliot; Gopalakrishnan, Shyam; Hakula, Maija; 
+Hanhineva, Kati; Havulinna, Aki; Hindström, Rasmus; Huang, Ruizhu; Jeba, Akewak; 
+Lahti, Leo; Limborg, Morten; Lindgren, Himmi; Liu, Yihan; Mallick, Himel; 
+
+Mongad, Dattatray; Müller, Christian L.; Muluh, Geraldson; Nynäs, Signe; 
+Pasanen, Jesse; Paulo, Joao; Pelto, Juho; Peschel, Stefanie; Potbhare, Renuka; 
+Pralas, Théotime; Ramos, Marcel; Raulo, Aura; Sannikov, Artur; Seraidarian, Ely; 
+Serizay, Jacques; Shetty, Sudarshan; Shigdel, Rajesh; Suksi, Vilhelm; 
+Tammi, Eetu; Valderamma, Benjamin; Waldron, Levi; Yang, Lu.
 
 ## Contributions {#sec-contributions}
 
@@ -1112,11 +1125,13 @@ research and innovation programme under grant agreement No 952914. TB
 was additionally supported by the University of Turku Graduate School.
 
 We would like to thank the following individuals for their support for
-the project: Richa Ashma, Nitin Bayal, Chouaib Benchraka, Axel
-Dagnaud, Teo Dallier, Noah de Gunst, Karoline Faust, Samuel Hillman,
-Hervé Pagés, Mahkameh Salehi, Daniel Rios Garza, Matti Ruuskanen. We
-also extend our thanks to all contributors of the open-source
-resources used in this work.
+the project: Ashma, Richa; Bayal, Nitin; Benchraka, Chouaib; Dagnaud, Axel; 
+Dallier, Teo; de Gunst, Noah; Faust, Karoline; Finn, Rob; Hillman, Samuel; 
+Pagés, Hervé; Richardson, Lorna; Rios Garza, Daniel; Richardson, Lorna;
+Robinson, Mark; Ruuskanen, Matti; Salehi, Mahkameh. 
+
+We also extend our thanks to all contributors of the open-source resources used 
+in this work.
 
 The authors wish to acknowledge CSC – IT Center for Science, Finland,
 for computational resources.
