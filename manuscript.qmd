@@ -263,7 +263,7 @@ modular and scalable data science methods [@drnevich2025].
 The shared data structures support the transfer of methods between 
 omics fields, yielding improved overall quality control and user support. 
 Consequently, the SE-based framework has been extended to
-similar data integration tasks in fields, such as single-cell
+similar data integration tasks, notably in single-cell
 and spatial omics through the SingleCellExperiment (SCE) [@amezquita2020] and
 SpatialExperiment [@righelli2022] classes, respectively.
 
@@ -374,8 +374,8 @@ the broader Bioconductor ecosystem, the TreeSummarizedExperiment
 (TreeSE) class [@huang2021] extends the SE and SCE data structures to 
 hierarchical datasets by incorporating feature and sample organisations 
 as tree structures (@fig-datacontainers a). Moreover, TreeSE supports the
-storage of other common aspects of microbiome data, such as reference sequences, 
-and incorporates results from common analytical procedures such as
+storage of other common aspects of microbiome data, for example reference 
+sequences, and incorporates results from common analytical procedures such as
 dimensionality reduction, statistical transformations, and agglomeration by 
 taxonomic, functional or other information. The interoperability with other 
 Bioconductor classes facilitates scalable analysis and the design of modular 
@@ -400,10 +400,25 @@ bridge the gap between the respective user communities.
 
 :::
 
-![**Comparison of execution time and memory consumption between alternative methods in Bioconductor** TreeSE, phyloseq and speedyseq were benchmarked for five common analytical operations applied to random subsets of samples from a large study on wild baboons [@Grieneisen2021] (accessible through the microbiomeDataSets Bioconductor package). Execution time (s) values and error bars represent the mean and standard error (SE) over 10 iterations, respectively. Allocated memory (MB) was estimated based on a single iteration. Overall, TreeSE outperformed phyloseq. While speedyseq achieved higher performance in the supported operations, TreeSE scaled more efficiently in both execution time and memory allocation with increasing sample size (n). The benchmarking analysis was conducted in R using the bench library with 8 CPU cores and 32 GB RAM. All operations, except for UniFrac dissimilarity with phyloseq, could also be performed on a regular laptop (e.g., 4 CPU cores and 16 GB RAM). The source code for the benchmarking experiments can be accessed through the OMA online book.](figures/benchmarking.png){#fig-benchmarking}
+![**Comparison of execution time and memory consumption between alternative 
+methods in Bioconductor** TreeSE, phyloseq and speedyseq were benchmarked for 
+five common analytical operations applied to random subsets of samples from a 
+large study on wild baboons [@Grieneisen2021] (accessible through the 
+microbiomeDataSets Bioconductor package). Execution time (s) values and error 
+bars represent the mean and standard error (SE) over 10 iterations, 
+respectively. Allocated memory (MB) was estimated based on a single iteration. 
+Overall, TreeSE outperformed phyloseq. While speedyseq achieved higher 
+performance in the supported operations, TreeSE scaled more efficiently in both 
+execution time and memory allocation with increasing sample size (n). The 
+benchmarking analysis was conducted in R using the bench library with 8 CPU 
+cores and 32 GB RAM. All operations, except for UniFrac dissimilarity with 
+phyloseq, could also be performed on a regular laptop (*e.g.*, 4 CPU cores and 
+16 GB RAM). The source code for the benchmarking experiments can be accessed 
+through the OMA online book.](figures/benchmarking.png){#fig-benchmarking}
 
 **Multi-assay data structures.** When integrating data across multiple 
-modalities, such as taxonomy, metabolomics, or host genomics, more flexible
+modalities, ranging from taxonomy to metabolomics and host genomics, more 
+flexible
 sample mapping may become necessary. Multi-omics data is often sparse, and 
 samples can be only partially matched between experiments. In other cases, 
 a single sample in one modality can be matched by two or more samples in 
@@ -628,8 +643,8 @@ properties. Community diversity represents a common measure in
 microbial ecology [@bastiaanssen_bugs1_2023]
 (@fig-downstream_analyses). Alpha diversity metrics generally quantify
 the observed or estimated number of distinct species ("richness") and
-their distribution ("evenness"). Many diversity indices, such as the
-Shannon index, combine these two aspects. Phylogenetic diversity
+their distribution ("evenness"). Many diversity indices (e.g.
+Shannon index), combine these two aspects. Phylogenetic diversity
 measures additionally consider the phylogenetic relatedness of
 community members [@faith1992]; the new implementation of the Stacked Faith's
 Phylogenetic Diversity can accelerate the performance 1-2
@@ -651,7 +666,7 @@ Bray-Curtis, Jaccard, Aitchison [@bastiaanssen_bugs1_2023 ; @Martino2019],
 and the phylogeny-aware UniFrac [@lozupone2005]. The community
 (dis)similarities are commonly visualized with unsupervised ordination
 methods that project the data on a lower-dimensional display
-[@goodrich2014]. Unsupervised techniques, such as Principal Component
+[@goodrich2014]. Unsupervised techniques,  Principal Component
 Analysis (PCA) and Principal Coordinates Analysis (PCoA) also known as 
 Multi-Dimensional Scaling (MDS), and Non-metric MDS (NMDS)
 (@fig-downstream_analyses) are common choices, with enhanced support
@@ -664,21 +679,22 @@ compositionally robust measures (*e.g.* robust
 Aitchison distance [@Martino2019]), or phylogeny-aware dissimilarity
 measures specifically developed for microbiome research (*e.g.* Unifrac
 [@lozupone2005]). Sample dissimilarities provide the basis for many
-specialized microbiome techniques such as microbial community typing
+specialized microbiome techniques including microbial community typing
 (clustering) with Dirichlet Multinomial Mixtures (DMM) [@Holmes2012]
 and community state types (CST) [@DiGiulio2015], or factorization into
 community signatures [@Frioux2023]. These and other multivariate
 methods are provided for instance by mia, miaViz, and
 additional single-cell packages (scater, scuttle [@amezquita2020]). 
 
-**Differential abundance and mediation analysis.** Differential abundance analysis (DAA)
+**Differential abundance and mediation analysis.** Differential abundance 
+analysis (DAA)
 and differential prevalence analysis (DPA) methods are used to
 identify microbial taxa whose abundances vary across study groups or
 continuous gradients (@fig-downstream_analyses). Many dedicated DAA
 methods in microbiome research support the TreeSE framework including methods
 such as ANCOM-BC2 [@lin2024], LimROTS [@Anwar2025], MaAsLin3
 [@nickols2024], and radEmu [@Clausen2024]. Recent studies by us and
-others indicated that elementary methods, such as log-transformed
+others indicated that elementary methods, for example log-transformed
 TSS-counts coupled with a linear model, or presence/absence data with
 logistic regression often yield the most consistent results
 [@Pelto2025]. The standard DAA typically focuses on individual
@@ -688,7 +704,7 @@ collinear features as a preprocessing step can reduce multiple
 testing, increase statistical power, and support interpretation but is
 also prone to subjective parameterization and limited
 generalizability. The grouping can be based on clustering of the
-abundance profiles or on external information such as phylogenetic
+abundance profiles or on external information drawn from phylogenetic
 relations, taxonomic classifications or functional properties
 (*e.g.* butyrate producers [@Kullberg2024]). Beyond these, 
 advanced methods—such as causal mediation analysis tailored to microbiome 
@@ -722,11 +738,11 @@ in microbiome analysis across scales [@Ruuskanen2021]. While spatial
 and temporal analyses require specialized methods, the miaTime R package
 offers dedicated solutions for longitudinal microbiome studies.
 In addition, Bioconductor provides methods from other application domains,
-such as single-cell sequencing [@amezquita2020] and spatial transcriptomics 
+among which single-cell sequencing [@amezquita2020] and spatial transcriptomics 
 [@righelli2022], which use closely related data containers
 (@fig-downstream_analyses). Spatial and temporal information can be
 incorporated as a covariate or by estimating
-temporally or spatially resolved metrics, such as divergence,
+temporally or spatially resolved metrics, for instance divergence,
 auto-correlation and modality. Another type of temporal analysis 
 includes the time-to-event, or survival models, which are encountered
 in *e.g.* epidemiological and population cohort studies; specialized survival analysis
@@ -737,7 +753,7 @@ Hubbell's neutral model, generalized Lotka-Volterra, and
 consumer-resource model through the miaSim package [@gao2023].
 
 **Multi-modal integration.** An increasing number of studies integrate
-microbial abundance data with further omics, such as transcriptomics,
+microbial abundance data with further omics, including transcriptomics,
 proteomics, and host genomics [@nyholm2020; @Qin2022;
 @moreno-indias2021; @Hintikka2021] (@fig-downstream_analyses). As
 demonstrated above, Bioconductor data containers support combinations
@@ -755,14 +771,14 @@ include cross-correlation analyses, canonical correspondence analysis
 A range of other methods are employed in microbiome
 data science. Examples include network analysis [@Peschel2021],
 ML-based prediction and classification [@Topcuoglu2021], enrichment
-analyses such as BugSigDB [@geistlinger2024] or Microbe Set Enrichment
+analyses via BugSigDB [@geistlinger2024] or Microbe Set Enrichment
 Analysis (MSEA) [@Kou2020]. The recent adoption of of interoperable
 data containers and the methodological similarities in related fields
 can greatly expand the selection of available toolkits in emerging
 areas. In addition to the internal coherence within the Bioconductor ecosystem, 
-this framework supports integration with external platforms through interfaces 
-such as `reticulate` for Python, `Rcpp` for C++, and compatibility with
-pipelines like bioBakery [@navarro2024; @mciver2017]. These connections empower
+this framework supports integration with external platforms through interfaces, 
+namely `reticulate` for Python, `Rcpp` for C++, and compatibility with
+pipelines  bioBakery [@navarro2024; @mciver2017]. These connections empower
 users to combine the best tools available across environments and languages
 while maintaining structured data interoperability via standard containers like
 TreeSE and MAE.
