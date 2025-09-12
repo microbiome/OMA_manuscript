@@ -548,11 +548,11 @@ microbiome analysis and visualization for TreeSE objects
 
 **Filtering and agglomeration.** Microbiome datasets may contain tens of
 thousands of unique features depending on the sequencing resolution,
-databases, and the scope of analysis. Often &ndash; to summarize data
-into biologically meaningful groups or to reduce multiple comparisons
-&ndash; the data is subsetted, filtered or agglomerated to higher-level
-taxonomic or functional categories or stratified by sample groups. 
-The package ecosystem and the mia package feature various
+databases, and the scope of analysis. To summarize data into biologically 
+meaningful groups or to reduce multiple comparisons the data are often 
+subsetted, filtered or agglomerated to higher-level taxonomic or functional 
+categories or stratified by sample groups.he package ecosystem and the mia 
+package feature various
 tools for such tasks. For instance, the prevalence methods can be
 useful to remove very rare features that might be sequencing artifacts
 or present otherwise limited value for the analysis. The mechanism of
@@ -593,8 +593,8 @@ that the data objects are initialized at the beginning of the
 workflow, where they can then be gradually enriched as the project advances.
 By systematically extending the upstream data preparation
 step &ndash; instead of ad-hoc calculations scattered along the
-workflow &ndash; the data scientist can achieve well-organized and
-transparent provenance of the data elements. Data can be enriched by
+workflow &ndash; the data scientist can ensure well-organized and transparent 
+records of data transformations. Data can be enriched by
 importing new external information as well as by deriving new
 information from the data itself into the same data container as
 described in the next section.
@@ -614,7 +614,7 @@ pose challenges for standard data analytical methods
 [@gloor2017; @Jeganathan2021]. Moreover, microbiome data is hierarchically
 structured across taxonomic, ecological, and spatial levels
 [@moreno-indias2021; @Ruuskanen2021]. Alternative processing pipelines
-pose different biases and generate varying data formats
+introduce different biases and generate varying data formats
 [@quince2017]. These and other unique characteristics have
 wide-reaching implications for microbiome analysis, necessating dedicated 
 analysis methods [@moreno-indias2021].
@@ -632,7 +632,7 @@ their distribution ("evenness"). Many diversity indices, such as the
 Shannon index, combine these two aspects. Phylogenetic diversity
 measures additionally consider the phylogenetic relatedness of
 community members [@faith1992]; the new implementation of the Stacked Faith's
-Phylogenetic Diversity can accelerate the performance 1-2
+Phylogenetic Diversity can accelerate the performance by 1-2
 orders of magnitude [@Armstrong2021]. Enhanced analyses with
 repeated rarefaction are supported [@Schloss2024b] albeit the use of
 rarefaction remains controversial [@schloss2024; @Willis2019b]. Other
@@ -656,7 +656,8 @@ Analysis (PCA) and Principal Coordinates Analysis (PCoA) also known as
 Multi-Dimensional Scaling (MDS), and Non-metric MDS (NMDS)
 (@fig-downstream_analyses) are common choices, with enhanced support
 for microbiome analysis and visualization. Statistical tests
-(*e.g.* PERMANOVA) and supervised visualization methods, such as the
+(*e.g.* Permutational Multivariate Analysis of Variance) and supervised 
+visualization methods, such as the
 distance-based redundancy analysis (dbRDA) can complement the
 unsupervised analyses, and help to uncover and quantify co-variation
 between community composition and covariates. This can benefit from
@@ -703,7 +704,7 @@ sequences, or from parallel metabolomic or other functional
 assays. Our framework not only supports incorporation of functional
 abundance tables within the same data objects but specialized methods
 on functional data are available; for instance, regarding metabolome
-analyses the Notame package [@klavus2020] recently added SE support, 
+analyses the notame package [@klavus2020] recently added SE support, 
 and the R4MS project
 provides many interoperable tools [@gatto2025]. The framework has
 found recent applications in extended analyses of metagenomic
@@ -751,8 +752,8 @@ latent variable modelling.  [@Jeganathan2021; @moiz2025;
 include cross-correlation analyses, canonical correspondence analysis
 (CCA), anansi [@bastiaanssen2023], and joint-RPCA [in press]. 
 
-**Other methods and programming environments.** 
-A range of other methods are employed in microbiome
+**Other methods and programming environments.** A range of other methods is 
+employed in microbiome
 data science. Examples include network analysis [@Peschel2021],
 ML-based prediction and classification [@Topcuoglu2021], enrichment
 analyses such as BugSigDB [@geistlinger2024] or Microbe Set Enrichment
@@ -947,9 +948,9 @@ critically relies on active critical source communities that can
 provide continuous benchmarking and support the identification and
 dissemination of evidence-based best practices [@berg2020 ;
 @Barker2022 ; @Hocquet2024]. We actively support community formation
-by online training resources and communication channels. These,
-together with the interactive applications, provide accessible entry
-points for prospective developers and users.
+by online training resources and communication channels. Together with the
+interactive applications, these resources provide accessible entry points for 
+prospective developers and users.
 
 **The OMA book.** _Orchestrating Microbiome Analysis with Bioconductor
 (OMA)_ (https://microbiome.github.io/OMA/docs/devel/) is an online book that provides
@@ -964,7 +965,7 @@ data structures [@huber2015; @ramos2017; @huang2021] have been adopted as a
 solution for multi-table data integration tasks in various
 domains such as single-cell sequencing (OSCA book) [@amezquita2020]
 and transciptomics [OSTA book](https://lmweber.org/OSTA/). These resources
-demonstrate how state-of-the-art data containers can support statistical
+demonstrate how standard data containers can support statistical
 programming on interlinked multi-table data sets in a highly optimized way. 
 
 **Interactive applications.** Graphical user interfaces provide
@@ -986,7 +987,7 @@ R user community through shared data structures and training activities
 [@drnevich2025]. An active community of developers and users thrives online,
 supporting the software sustainability and promoting good practices in
 scientific computing [@Wilson2017]. The community interacts via several online
-communication channels, including Bioconductor Zulip, a Github forum,
+communication channels, including Bioconductor Zulip, GitHub platform,
 and an email list. The development of the framework is influenced by
 feedback from the user community through these channels, regular
 meetings and training workshops.
