@@ -393,13 +393,7 @@ Conversion functions and detailed cheat sheets
 between the two formats are available to bridge the gap between the respective 
 user communities. 
 
-::: {#fig-datacontainers layout-ncol=2 fig-cap="***Bioconductor data containers for microbiome data.*** **(a) TreeSummarizedExperiment (TreeSE).** TreeSE supports hierarchical and multi-table analysis in microbiome data science [@huang2021]. It links the numeric abundance matrix and potential alternative versions (statistical transformations, different taxonomic levels, dimensionality reduction) with tabular and hierarchical side information on the features (rows) and samples (columns). Additional slots for reference sequences and experiment metadata are available. (Figure modified from [@huang2021])]**(b) MultiAssayExperiment (MAE).** MAE facilitates integration of data from multiple experiments [@ramos2017]. (Figure from [@ramos2017])"}
-  
-![TreeSummarizedExperiment](figures/TreeSE.png){fig-subcap="(a)" width="100%"}
-
-![MultiAssayExperiment](figures/mae.png){fig-subcap="(b)" width="60%"}
-
-:::
+![***Bioconductor data containers for microbiome data.*** **(a) TreeSummarizedExperiment (TreeSE).** TreeSE supports hierarchical and multi-table analysis in microbiome data science [@huang2021]. It links the numeric abundance matrix and potential alternative versions (statistical transformations, different taxonomic levels, dimensionality reduction) with tabular and hierarchical side information on the features (rows) and samples (columns). Additional slots for reference sequences and experiment metadata are available. (Figure modified from [@huang2021]) **(b) MultiAssayExperiment (MAE).** MAE facilitates integration of data from multiple experiments [@ramos2017]. (Figure from [@ramos2017])](figures/datacontainers.png){#fig-datacontainers}
 
 ![**Benchmarking mia/TreeSE against phyloseq and speedyseq.** TreeSE, phyloseq and speedyseq were benchmarked for five common analytical operations applied to random subsets of samples from the GrieneisenTSData experiment [@Grieneisen2021]. Overall, the TreeSE approach outperforms phyloseq. While speedyseq is faster in certain operations, TreeSE scales more efficiently in both execution time (t) and allocated memory (m) as sample size (n) increases.](figures/benchmarking.png){#fig-benchmarking}
 

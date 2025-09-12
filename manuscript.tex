@@ -81,15 +81,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 
@@ -155,9 +157,6 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage{bookmark}
 
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
@@ -299,7 +298,7 @@ Bioconductor data structures support statistical analysis of complex
 data combinations \citep{huber2015} and are widely adopted by various
 user communities. They have been implemented through specialized
 object-oriented classes that integrate multiple data elements into a
-single structure known as \emph{data container} \citep{chambers2014}.
+single structure known as a \emph{data container} \citep{chambers2014}.
 The SummarizedExperiment (SE) class represents the primary data
 container underlying the Bioconductor ecosystem
 \citep{huber2015, morgan2025}. Its position among the top-1\% most
@@ -327,7 +326,7 @@ classes, respectively.
 
 \centering{
 
-\includegraphics[width=0.7\textwidth,height=\textheight]{manuscript_files/figure-pdf/fig-bioc_packages-1.pdf}
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{manuscript_files/figure-pdf/fig-bioc_packages-1.pdf}
 
 }
 
@@ -367,19 +366,11 @@ the respective user communities.
 
 \begin{figure}
 
-\begin{minipage}{0.50\linewidth}
+\centering{
 
-\includegraphics[width=1\textwidth,height=\textheight]{figures/TreeSE.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figures/datacontainers.png}}
 
-\subcaption{\label{}TreeSummarizedExperiment}
-\end{minipage}%
-%
-\begin{minipage}{0.50\linewidth}
-
-\includegraphics[width=0.6\textwidth,height=\textheight]{figures/mae.png}
-
-\subcaption{\label{}MultiAssayExperiment}
-\end{minipage}%
+}
 
 \caption{\label{fig-datacontainers}\textbf{\emph{Bioconductor data
 containers for microbiome data.}} \textbf{(a) TreeSummarizedExperiment
@@ -389,9 +380,10 @@ abundance matrix and potential alternative versions (statistical
 transformations, different taxonomic levels, dimensionality reduction)
 with tabular and hierarchical side information on the features (rows)
 and samples (columns). Additional slots for reference sequences and
-experiment metadata are available. \textbf{(b) MultiAssayExperiment
-(MAE).} MAE facilitates integration of data from multiple experiments
-\citep{ramos2017}.}
+experiment metadata are available. (Figure modified from
+\citep{huang2021}) \textbf{(b) MultiAssayExperiment (MAE).} MAE
+facilitates integration of data from multiple experiments
+\citep{ramos2017}. (Figure from \citep{ramos2017})}
 
 \end{figure}%
 
@@ -399,7 +391,7 @@ experiment metadata are available. \textbf{(b) MultiAssayExperiment
 
 \centering{
 
-\includegraphics{figures/benchmarking.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figures/benchmarking.png}}
 
 }
 
@@ -426,24 +418,25 @@ representing different omics modalities (see
 Figure~\ref{fig-datacontainers}). Whereas TreeSE is restricted to a
 one-to-one sample mapping between different data tables, MAE supports
 flexible mappings between multiple experiments from the same study.
-Integration of multi-table data without such structured framework often
-leads to ambiguous mappings and inconsistent results. For instance,
-diagonal integration methods \citep{xu2022, argelaguet2021computational}
--- where shared features across data types may not be explicitly defined
--- can benefit substantially from such systematic framework that enforce
-anchor alignment. This mirrors lessons from single-cell data
-integration, where shared anchors and hierarchical mapping have proven
-essential for interpretability. Flexible linking of samples across
-several data objects supports efficient data integration, methods
-sharing, and overall interoperability.
+Integration of multi-table data without such a structured framework
+often leads to ambiguous mappings and inconsistent results. For
+instance, diagonal integration methods
+\citep{xu2022, argelaguet2021computational} -- where shared features
+across data types may not be explicitly defined -- can benefit
+substantially from such a systematic framework that enforces anchor
+alignment. This mirrors lessons from single-cell data integration, where
+shared anchors and hierarchical mapping have proven essential for
+interpretability. Flexible linking of samples across several data
+objects supports efficient data integration, methods sharing, and
+overall interoperability.
 
 Table~\ref{tbl-containers} summarizes the microbiome-related data
 containers, while Table~\ref{tbl-elements} introduces the available data
 elements in each container.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
 \caption{Recommended data containers for microbiome
 analysis.}\label{tbl-containers}\tabularnewline
 \toprule\noalign{}
@@ -473,11 +466,11 @@ for sets of multi-omic experiments \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1700}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.6300}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0300}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0900}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0800}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1700}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.6300}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0300}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0900}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0800}}@{}}
 \caption{Key data elements in the employed data
 containers.}\label{tbl-elements}\tabularnewline
 \toprule\noalign{}
@@ -536,7 +529,7 @@ samples from different experiments (1-to-1, 1-to-many, many-to-1 and
 many-to-many).
 
 \textbf{Data resources.} Several open data resources support this
-framework for microbiome analysis and direct data import in the
+framework for microbiome analysis and direct data import into the
 aforementioned data containers for further downstream analysis in
 Bioconductor. Examples of the available data resources include
 curatedMetagenomicData \citep{pasolli2017}, HoloFood \citep{rogers2024},
@@ -549,10 +542,10 @@ with the available tools for research and educational purposes (see
 Table~\ref{tbl-dataresources}).
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1500}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1500}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1500}}@{}}
 \caption{Open microbiome data resources supporting the
 framework.}\label{tbl-dataresources}\tabularnewline
 \toprule\noalign{}
@@ -621,11 +614,11 @@ version-resilient framework \citep{blanco2023, truong2015}.
 \textbf{Data import.} Most users will need to import data for their own
 analyses. The TreeSE data container can be populated with microbiome
 data from common tabular data types but non-standard file formats may
-require additional, custom data wrangling as usual. To streamline data
-import, we provide importers for a variety of standard microbiome file
-formats including BIOM \citep{mcdonald2012}, MetaPhlAn/HUMAnN (MetaPhlAn
-v. 2-4, HUMAnN v. 3) \citep{mciver2017}, Mothur \citep{schloss2009},
-QIIME2 \citep{bolyen2019} and the TAXonomic Profile Aggregation and
+require additional data wrangling. To streamline data import, we provide
+importers for a variety of standard microbiome file formats including
+BIOM \citep{mcdonald2012}, MetaPhlAn/HUMAnN (MetaPhlAn v. 2-4, HUMAnN v.
+3) \citep{mciver2017}, Mothur \citep{schloss2009}, QIIME2
+\citep{bolyen2019} and the TAXonomic Profile Aggregation and
 STAndardisation format (taxpasta) \citep{beber2023}. These importers can
 automatically load the data into the appropriate data containers, thus
 forming a bridge between low-level sequence processing methods and the
@@ -637,9 +630,9 @@ data objects can be exported into external services such as MicrobiomeDB
 \citep{Oliveira2018} and in other languages (e.g.~Julia). These bridges
 facilitate the broadest possible access to microbiome analysis methods.
 
-\textbf{Quality control and exploration.} After importing the data in R,
-the recommended first step involves basic data exploration and quality
-control \citep{zuur2010}. In addition to methods for identifying
+\textbf{Quality control and exploration.} After importing the data into
+R, the recommended first step involves basic data exploration and
+quality control \citep{zuur2010}. In addition to methods for identifying
 contaminant sequences and calculating summary statistics, the framework
 includes a versatile set of custom visualization methods to assess data
 variability, outliers, homogeneity of variance and other aspects that
@@ -674,8 +667,8 @@ assays and saves time for dedicated expert tasks.
 
 \textbf{Transformation.} Data transformations are frequently encountered
 in statistical analysis. Common transformations in microbiome research
-include the relative abundance \citep{gloor2017}, centered log-ratio
-(CLR) and its robust version (rCLR), which are used to mitigate
+include relative abundance \citep{gloor2017}, centered log-ratio (CLR)
+and its robust version (rCLR), which are used to mitigate
 compositionality bias \citep{Martino2019}, and the tree-aware
 phylogenetic ILR (phILR) transformation \citep{silverman2017}. Data
 rarification is a related concept that has been suggested to control for
@@ -703,7 +696,7 @@ described in the next section.
 
 \centering{
 
-\includegraphics{figures/workflow.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figures/workflow.png}}
 
 }
 
@@ -762,15 +755,15 @@ diversity measures \citep{Cassol2025}.
 
 \textbf{Community similarity} is commonly evaluated with beta diversity
 measures, which quantify multivariate dissimilarity and can be used to
-quantitatively comparecommunity composition. The framework supports
-common indices in microbial ecology including Bray-Curtis, Jaccard, and
+quantitatively compare community composition. The framework supports
+common indices in microbial ecology including Bray-Curtis, Jaccard,
 Aitchison \citep{bastiaanssen_bugs1_2023, Martino2019}, and the
 phylogeny-aware UniFrac \citep{lozupone2005}. The community
 (dis)similarities are commonly visualized with unsupervised ordination
 methods that project the data on a lower-dimensional display
 \citep{goodrich2014}. Unsupervised techniques, such as Principal
-Component Analysis (PCA) and Principal Coordinates Analysis (PCoA) aka
-Multi-Dimensional Scaling (MDS), and and Non-metric MDS (NMDS)
+Component Analysis (PCA) and Principal Coordinates Analysis (PCoA) also
+known as Multi-Dimensional Scaling (MDS), and Non-metric MDS (NMDS)
 (Figure~\ref{fig-downstream_analyses}) are common choices, with enhanced
 support for microbiome analysis and visualization. Statistical tests
 (e.g.~PERMANOVA) and supervised visualization methods, such as the
@@ -788,7 +781,7 @@ or factorization into community signatures \citep{Frioux2023}. These and
 other multivariate methods are provided for instance by mia, miaViz, and
 additional single-cell packages (scater, scuttle \citep{amezquita2020}).
 
-\textbf{Differential abundance analysis (DAA).} DAA methods are used
+\textbf{Differential abundance analysis (DAA).} DAA methods are used to
 identify microbial taxa whose abundances vary across study groups or
 continuous gradients (Figure~\ref{fig-downstream_analyses}). Many
 dedicated DAA methods in microbiome research support the TreeSE
@@ -814,11 +807,11 @@ support emerging innovations in microbiome analytics.
 
 \textbf{Function- and sequence-level analyses.} Taxonomic analysis is
 frequently complemented by functional analyses, either based on
-functional predictions derived from the amplicon or metagenomic
-sequences, or from parallel metabolomic or other functional assays. Our
-framework not only supports incorporation of functional abundance tables
-within the same data objects but specialized methods on functional data
-are available; for instance, regarding metabolome analyses the Notame
+functional predictions derived from amplicon or metagenomic sequences,
+or from parallel metabolomic or other functional assays. Our framework
+not only supports incorporation of functional abundance tables within
+the same data objects but specialized methods on functional data are
+available; for instance, regarding metabolome analyses the Notame
 package \citep{klavus2020} recently added SE support, and the R4MS
 project provides many interoperable tools \citep{gatto2025}. The
 framework has found recent applications in extended analyses of
@@ -875,7 +868,7 @@ classification \citep{Topcuoglu2021}, enrichment analyses such as
 BugSigDB \citep{geistlinger2024} or Microbe Set Enrichment Analysis
 (MSEA) \citep{Kou2020}. The recent adoption of of interoperable data
 containers and the methodological similarities in related fields can
-greatly expand the selection of available toolkit in emerging areas. In
+greatly expand the selection of available toolkits in emerging areas. In
 addition to the internal coherence within the Bioconductor ecosystem,
 this framework supports integration with external platforms through
 interfaces such as \texttt{reticulate} for Python, \texttt{Rcpp} for
@@ -889,7 +882,7 @@ like TreeSE and MAE.
 
 \centering{
 
-\includegraphics{manuscript_files/figure-pdf/fig-downstream_analyses-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-pdf/fig-downstream_analyses-1.pdf}}
 
 }
 
@@ -921,12 +914,12 @@ and the social structures around it present a timely manifestation of
 this principle, with technical, legal, sociological and epistemic
 consequences \citep{Hocquet2024}. FAIR principles for software support
 access to well-documented and user-friendly methods \citep{Barker2022},
-and these are facilitated by the extensive quality control and
-documentation standards enforced by Bioconductor \citep{huber2015}. In
-addition to these technical demands, the development and quality control
-of academic software critically relies on active critical source
-communities that can provide continuous benchmarking and support the
-identification and dissemination of evidence-based best practices
+and are facilitated by the extensive quality control and documentation
+standards enforced by Bioconductor \citep{huber2015}. In addition to
+these technical demands, the development and quality control of academic
+software critically relies on active critical source communities that
+can provide continuous benchmarking and support the identification and
+dissemination of evidence-based best practices
 \citep{berg2020, Barker2022, Hocquet2024}. We actively support community
 formation by online training resources and communication channels.
 These, together with the interactive applications, provide accessible
@@ -970,8 +963,8 @@ structures and training activities \citep{drnevich2025}. An active
 community of developers and users thrives online, supporting the
 software sustainability and promoting good practices in scientific
 computing \citep{Wilson2017}. The community interacts via several online
-communication channels, including Bioconductor Zulip, Github forum, and
-an email list. The development of the framework is influenced by
+communication channels, including Bioconductor Zulip, a Github forum,
+and an email list. The development of the framework is influenced by
 feedback from the user community through these channels, regular
 meetings and training workshops.
 
@@ -984,7 +977,7 @@ versioning, portability across operating platforms, quality control
 (e.g.~unit testing, continuous integration), usability (APIs), and
 robustness (deprecation mechanisms), and a biannual release cycle.
 During the past two decades Bioconductor has grown into a repository of
-2,300 actively maintained software packages, of which 53 are classified
+2,300 actively maintained software packages, of which 58 are classified
 under the Microbiome Bioc task view. In order to enjoy the benefits of
 automation while maintaining flexibility, data scientists routinely
 remix open-source software into custom workflows. However, the lack of
@@ -1044,16 +1037,24 @@ microbiome data.
 
 \subsection{Consortia}\label{sec-consortium}
 
-The mia contributors: \textbf{we will list here main and consortium
-authors who approved their inclusion} on
-\href{https://docs.google.com/spreadsheets/d/1r6eiWS1yT2kDHvnez5uklcI5kDXrPGm-v252-eC1C_Y/edit?gid=1938866487\#gid=1938866487}{this
-sheet}. Sorted in alphabetical order by last name.
+The mia contributors: Thomaz Bastiaanssen, Moritz E. Beber, Aituar
+Bektanov, Giulio Benedetti, Tuomas Borman, Domenick J. Braccia, Héctor
+Corrada Bravo, Matteo Calgaro, Danielle Callan, Yang Cao, Jiya
+Chaudhary, Sneha Das, Basil Courbayre Dussau, Henrik Eckermann, Pande
+Erawijantari, Felix M. Ernst, Elliot Gaudron-Parry, Maija Hakula, Kati
+Hanhineva, Aki Havulinna, Rasmus Hindström, Ruizhu Huang, Akewak Jeba,
+Leo Lahti, Himmi Lindgren, Yihan Liu, Himel Mallick, Dattatray Mongad,
+Christian L. Müller, Geraldson Muluh, Signe Nynäs, Jesse Pasanen, Joao
+Paulo, Juho Pelto, Stefanie Peschel, Renuka Potbhare, Théotime Pralas,
+Marcel Ramos, Aura Raulo, Artur Sannikov, Ely Seraidarian, Jacques
+Serizay, Sudarshan Shetty, Rajesh Shigdel, Vilhelm Suksi, Eetu Tammi,
+Benjamin Valderamma, Levi Waldron, Lu Yang.
 
 \subsection{Contributions}\label{sec-contributions}
 
 LL and TB initiated and coordinated the work. All authors contributed
-material, participated the manuscript preparation, and approved the
-final version.
+material, participated in manuscript preparation, and approved the final
+version.
 
 \subsection{Acknowledgments}\label{sec-acknowledgments}
 
