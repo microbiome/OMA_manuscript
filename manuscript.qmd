@@ -639,7 +639,7 @@ properties. Community diversity represents a common measure in
 microbial ecology [@bastiaanssen_bugs1_2023]
 (@fig-downstream_analyses). Alpha diversity metrics generally quantify
 the observed or estimated number of distinct species ("richness") and
-their distribution ("evenness"). Many diversity indices (e.g.
+their distribution ("evenness"). Many diversity indices (*e.g.*
 Shannon index), combine these two aspects. Phylogenetic diversity
 measures additionally consider the phylogenetic relatedness of
 community members [@faith1992]; the new implementation of the Stacked Faith's
