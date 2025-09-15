@@ -704,7 +704,7 @@ provides many interoperable tools [@gatto2025]. The framework has
 found recent applications in extended analyses of metagenomic
 features, i.e. antimicrobial resistance gene composition, diversity,
 and load [@Salehi2025]. We have converted a large-scale compilation of
-resistome profiles in 8,972 metagenome samples [@Lee2023] in the TreeSE format
+resistome profiles in 8,972 metagenome samples [@Lee2023] to the TreeSE format
 for research and educational purposes.
 
 **Spatio-temporal analyses and ecological modeling.** Microbiome time
@@ -718,7 +718,7 @@ in microbiome analysis across scales [@Ruuskanen2021]. While spatial
 and temporal analyses require specialized methods, solutions in
 Bioconductor are available from other application domains, such as
 single-cell sequencing [@amezquita2020] and spatial transcriptomics 
-[@righelli2022}, which use closely related data containers
+[@righelli2022], which use closely related data containers
 (@fig-downstream_analyses). Spatial and temporal information can be
 incorporated as a covariate or by estimating
 temporally or spatially resolved metrics, such as divergence,
