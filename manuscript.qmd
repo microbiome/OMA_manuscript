@@ -115,14 +115,7 @@ author:
         address: Address
         city: City
         postal-code: 0000000
-  - name: Felix M. Ernst
-    affiliations:
-      - name: Organization XB
-        id: 12
-        department: Department of Y
-        address: Address
-        city: City
-        postal-code: 0000000
+  - name: Felix G.M. Ernst
   - name: Levi Waldron
     affiliations:
       - name: Organization N
@@ -1135,7 +1128,7 @@ Benedetti, Giulio; Borman, Tuomas; Braccia, Domenick J.; Calgaro, Matteo; Callan
 Danielle; Cao, Yang; Chaudhary, Jiya; Corrada Bravo, Héctor;
 
 Courbayre Dussau, Basil; Das, Sneha; Eckermann, Henrik; Erawijantari, Pande;
-Ernst, Felix M.; Gaudron-Parry, Elliot; Gopalakrishnan, Shyam; Hakula, Maija;
+Ernst, Felix G.M.; Gaudron-Parry, Elliot; Gopalakrishnan, Shyam; Hakula, Maija;
 Hanhineva, Kati; Havulinna, Aki; Hindström, Rasmus; Huang, Ruizhu; Jeba, Akewak;
 Lahti, Leo; Limborg, Morten; Lindgren, Himmi; Liu, Yihan; Mallick, Himel;
 
