@@ -112,14 +112,7 @@ author:
         address: Address
         city: City
         postal-code: 0000000    
-  - name: Felix M. Ernst
-    affiliations:
-      - name: Organization XB
-        id: 12
-        department: Department of Y
-        address: Address
-        city: City
-        postal-code: 0000000
+  - name: Felix G.M. Ernst
   - name: Levi Waldron
     affiliations:
       - name: Organization N
