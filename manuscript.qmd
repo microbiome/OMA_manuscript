@@ -222,13 +222,14 @@ of evidence-based best practices in microbiome data science.
 
 # Data infrastructure {#sec-infra}
 
-Data scientists routinely
-deal with interlinked assays, side information, and hierarchical
-data such as ontologies, trees, or networks. The ability to integrate
-heterogeneous data elements is essential in biological research, where the
-individual components of a system can be seldom studied in isolation.
-The challenge for a data scientist is that different methods often require
-variable and inconsistent input data formats, leading to technical
+Data scientists routinely deal with interlinked assays, hierarchical data
+(*e.g.*, ontologies, trees), relational data (*e.g.*, networks), and additional
+side information. This side information can include
+sample attributes like treatment group, collection site, or time point. The
+ability to integrate heterogeneous data elements is essential in biological
+research, where the individual components of a system can be seldom studied in
+isolation. The challenge for a data scientist is that different methods often
+require variable and inconsistent input data formats, leading to technical
 complications and time lost on repeated data wrangling.
 Bioconductor addresses this through standardized data structures supported by
 an ecosystem of interoperable methods, allowing more time to be invested in core
@@ -533,14 +534,13 @@ import, we provide importers for a variety of standard microbiome file
 formats including BIOM [@mcdonald2012], MetaPhlAn/HUMAnN (MetaPhlAn
 v. 2-4, HUMAnN v. 3) [@mciver2017], Mothur [@schloss2009], QIIME2
 [@bolyen2019] and the TAXonomic Profile Aggregation and
-STAndardisation format (taxpasta) [@beber2023]. These importers can
-automatically load the data into the appropriate data containers, thus
-forming a bridge between low-level sequence processing methods and the
-high-level statistical programming framework in R. Moreover,
-converters between alternative data structures in R are available
-supporting seamless conversions between TreeSE and BIOM, DADA2
-[@callahan2016] and phyloseq (the mia::convert\* functions), and
-TreeSE-based microbiome data objects can be exported into external services
+STAndardisation format (taxpasta) [@beber2023]. These importers bridge the gap
+between raw sequence processing and statistical analysis in R,
+allowing researchers to focus on interpreting biological patterns rather than
+wrangling file formats. Moreover, converters between alternative data
+structures in R are available supporting seamless conversions between TreeSE
+and BIOM, DADA2 [@callahan2016] and phyloseq (the mia::convert\* functions),
+and TreeSE-based microbiome data objects can be exported into external services
 such as MicrobiomeDB [@Oliveira2018] and in other languages
 (*e.g.* Julia). These bridges facilitate the broadest possible access to
 microbiome analysis methods.
