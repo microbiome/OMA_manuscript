@@ -584,9 +584,9 @@ efficient management of interlinked assays and saves time for dedicated
 expert tasks.
 
 **Transformation.** Common statistical transformations in
-microbiome research include relative abundance [@gloor2017],
+microbiome research include relative abundance [@gloor2017];
 centered log-ratio (CLR) and its robust version (rCLR), which are commonly used
-to mitigate compositionality bias [@Martino2019], and the tree-aware
+to mitigate compositionality bias [@Martino2019]; and the tree-aware
 phylogenetic ILR (phILR) transformation [@silverman2017]. Data
 rarification is a related concept that has been suggested to control
 for uneven sequencing depths and it remains widely debated in
