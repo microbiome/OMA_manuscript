@@ -691,9 +691,9 @@ continuous gradients (@fig-downstream_analyses). Many dedicated DAA
 methods in microbiome research support the TreeSE framework including methods
 such as ANCOM-BC2 [@lin2024], LimROTS [@Anwar2025], MaAsLin3
 [@nickols2024], and radEmu [@Clausen2024]. Recent studies by us and
-others indicated that elementary methods, for example log-transformed
-TSS-counts coupled with a linear model, or presence/absence data with
-logistic regression often yield the most consistent results
+others indicated that elementary methods, for example log transformed 
+total sum scaled (TSS) counts coupled with a linear model, or presence/absence
+data with logistic regression often yield the most consistent results
 [@Pelto2025]. The standard DAA typically focuses on individual
 features, ignoring interactions and potential co-abundance
 variation. Thus, we support co-abundance analyses; agglomerating
