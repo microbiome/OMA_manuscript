@@ -80,7 +80,7 @@ author:
       - id: 1
       - name: University of Helsinki
         id: 6
-        department: Department of XYZ
+        department: Department of Microbiology
         address:
         city: Helsinki
         postal-code: 20014
