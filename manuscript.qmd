@@ -633,7 +633,7 @@ Our statistical programming framework supports the community-driven development
 and benchmarking of the solutions. The following sections provide an
 overview of the available tools.
 
-**Community indicators.** Various global indicators are available
+**Community indicators.** Various general indicators are available
 to quantify the microbial community state or other sample
 properties. Community diversity represents a common measure in
 microbial ecology [@bastiaanssen_bugs1_2023]
