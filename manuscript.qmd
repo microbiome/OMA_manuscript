@@ -80,7 +80,7 @@ author:
       - id: 1
       - name: University of Helsinki
         id: 6
-        department: Department of XYZ
+        department: Department of Microbiology
         address:
         city: Helsinki
         postal-code: 20014
@@ -222,13 +222,14 @@ of evidence-based best practices in microbiome data science.
 
 # Data infrastructure {#sec-infra}
 
-Data scientists routinely
-deal with interlinked assays, side information, and hierarchical
-data such as ontologies, trees, or networks. The ability to integrate
-heterogeneous data elements is essential in biological research, where the
-individual components of a system can be seldom studied in isolation.
-The challenge for a data scientist is that different methods often require
-variable and inconsistent input data formats, leading to technical
+Data scientists routinely deal with interlinked assays, hierarchical data
+(*e.g.*, ontologies, trees), relational data (*e.g.*, networks), and additional
+side information. This side information can include
+sample attributes like treatment group, collection site, or time point. The
+ability to integrate heterogeneous data elements is essential in biological
+research, where the individual components of a system can be seldom studied in
+isolation. The challenge for a data scientist is that different methods often
+require variable and inconsistent input data formats, leading to technical
 complications and time lost on repeated data wrangling.
 Bioconductor addresses this through standardized data structures supported by
 an ecosystem of interoperable methods, allowing more time to be invested in core
@@ -533,14 +534,13 @@ import, we provide importers for a variety of standard microbiome file
 formats including BIOM [@mcdonald2012], MetaPhlAn/HUMAnN (MetaPhlAn
 v. 2-4, HUMAnN v. 3) [@mciver2017], Mothur [@schloss2009], QIIME2
 [@bolyen2019] and the TAXonomic Profile Aggregation and
-STAndardisation format (taxpasta) [@beber2023]. These importers can
-automatically load the data into the appropriate data containers, thus
-forming a bridge between low-level sequence processing methods and the
-high-level statistical programming framework in R. Moreover,
-converters between alternative data structures in R are available
-supporting seamless conversions between TreeSE and BIOM, DADA2
-[@callahan2016] and phyloseq (the mia::convert\* functions), and
-TreeSE-based microbiome data objects can be exported into external services
+STAndardisation format (taxpasta) [@beber2023]. These importers bridge the gap
+between raw sequence processing and statistical analysis in R,
+allowing researchers to focus on interpreting biological patterns rather than
+wrangling file formats. Moreover, converters between alternative data
+structures in R are available supporting seamless conversions between TreeSE
+and BIOM, DADA2 [@callahan2016] and phyloseq (the mia::convert\* functions),
+and TreeSE-based microbiome data objects can be exported into external services
 such as MicrobiomeDB [@Oliveira2018] and in other languages
 (*e.g.* Julia). These bridges facilitate the broadest possible access to
 microbiome analysis methods.
@@ -583,14 +583,13 @@ experiments, ordinations, and side information. This supports the
 efficient management of interlinked assays and saves time for dedicated
 expert tasks.
 
-**Transformation.** Common statistical transformations in
-microbiome research include relative abundance [@gloor2017],
-centered log-ratio (CLR) and its robust version (rCLR), which are commonly used
-to mitigate compositionality bias [@Martino2019], and the tree-aware
-phylogenetic ILR (phILR) transformation [@silverman2017]. Data
-rarification is a related concept that has been suggested to control
-for uneven sequencing depths and it remains widely debated in
-microbial ecology [@mcmurdie2014 ; @schloss2024].
+**Transformation.** Statistical transformations commonly used in microbiome
+research include relative abundance (e.g. TSS) [@gloor2017],
+tree-aware phylogenetic ILR (phILR) [@silverman2017], centered log-ratio (CLR),
+and robust centered log-ratio (rCLR). The latter two of which aim to mitigate
+compositionality bias [@Martino2019]. Data rarification is a related concept
+that has been suggested to control for uneven sequencing depths and it remains
+widely debated in microbial ecology [@mcmurdie2014 ; @schloss2024].
 Our framework supports these and a variety of other
 transformations commonly applied to microbiome data.
 
@@ -623,7 +622,7 @@ Microbiome data analysis often relies on specialized statistical approaches
 as data sparsity, zero-inflation, compositionality, and heteroschedasticity
 pose challenges for standard data analytical methods
 [@gloor2017; @Jeganathan2021]. Moreover, microbiome data is hierarchically
-structured across taxonomic, ecological, and spatial levels
+structured across taxonomic, ecological, temporal, and spatial levels
 [@moreno-indias2021; @Ruuskanen2021]. Alternative processing pipelines
 introduce different biases and generate varying data formats
 [@quince2017]. These and other unique characteristics have
@@ -633,7 +632,7 @@ Our statistical programming framework supports the community-driven development
 and benchmarking of the solutions. The following sections provide an
 overview of the available tools.
 
-**Community indicators.** Various global indicators are available
+**Community indicators.** Various general indicators are available
 to quantify the microbial community state or other sample
 properties. Community diversity represents a common measure in
 microbial ecology [@bastiaanssen_bugs1_2023]
@@ -691,9 +690,9 @@ continuous gradients (@fig-downstream_analyses). Many dedicated DAA
 methods in microbiome research support the TreeSE framework including methods
 such as ANCOM-BC2 [@lin2024], LimROTS [@Anwar2025], MaAsLin3
 [@nickols2024], and radEmu [@Clausen2024]. Recent studies by us and
-others indicated that elementary methods, for example log-transformed
-TSS-counts coupled with a linear model, or presence/absence data with
-logistic regression often yield the most consistent results
+others indicated that elementary methods, for example log transformed 
+total sum scaled (TSS) counts coupled with a linear model, or presence/absence
+data with logistic regression often yield the most consistent results
 [@Pelto2025]. The standard DAA typically focuses on individual
 features, ignoring interactions and potential co-abundance
 variation. Thus, we support co-abundance analyses; agglomerating
