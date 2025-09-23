@@ -429,8 +429,8 @@ leads to ambiguous mappings and inconsistent results.
 For instance, diagonal integration methods
 [@xu2022; @argelaguet2021computational] &ndash;
 where shared features across data types may not be explicitly defined &ndash;
-can benefit substantially from such a systematic framework
-that enforces anchor alignment. This mirrors lessons from single-cell
+can benefit from such a systematic framework
+that enforces anchor alignment. This mirrors lessons learned from single-cell
 data integration, where shared anchors and hierarchical mapping
 have proven essential for interpretability. Flexible linking of samples across
 several  data objects supports efficient data integration, methods sharing, and
@@ -558,8 +558,8 @@ microbiome analysis and visualization for TreeSE objects
 (@fig-downstream_analyses).
 
 **Filtering and agglomeration.** Microbiome datasets may contain tens of
-thousands of unique features depending on the sequencing resolution,
-databases, and the scope of analysis. To summarize data into biologically
+thousands of unique features depending on the sequencing resolution, used
+reference databases, and the scope of analysis. To summarize data into biologically
 meaningful groups or to reduce multiple comparisons the data are often
 subsetted, filtered or agglomerated to higher-level taxonomic or functional
 categories or stratified by sample groups.he package ecosystem and the mia
@@ -604,7 +604,7 @@ that the data objects are initialized at the beginning of the
 workflow, where they can then be gradually enriched as the project advances.
 By systematically extending the upstream data preparation
 step &ndash; instead of ad-hoc calculations scattered along the
-workflow &ndash; the data scientist can ensure well-organized and transparent
+workflow &ndash; one can ensure well-organized and transparent
 records of data transformations. Data can be enriched by
 importing new external information as well as by deriving new
 information from the data itself into the same data container as
