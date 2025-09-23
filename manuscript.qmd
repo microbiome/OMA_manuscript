@@ -604,7 +604,7 @@ that the data objects are initialized at the beginning of the
 workflow, where they can then be gradually enriched as the project advances.
 By systematically extending the upstream data preparation
 step &ndash; instead of ad-hoc calculations scattered along the
-workflow &ndash; the data scientist can ensure well-organized and transparent
+workflow &ndash; one can ensure well-organized and transparent
 records of data transformations. Data can be enriched by
 importing new external information as well as by deriving new
 information from the data itself into the same data container as
