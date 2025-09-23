@@ -623,7 +623,7 @@ Microbiome data analysis often relies on specialized statistical approaches
 as data sparsity, zero-inflation, compositionality, and heteroschedasticity
 pose challenges for standard data analytical methods
 [@gloor2017; @Jeganathan2021]. Moreover, microbiome data is hierarchically
-structured across taxonomic, ecological, and spatial levels
+structured across taxonomic, ecological, temporal, and spatial levels
 [@moreno-indias2021; @Ruuskanen2021]. Alternative processing pipelines
 introduce different biases and generate varying data formats
 [@quince2017]. These and other unique characteristics have
