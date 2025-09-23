@@ -586,7 +586,7 @@ expert tasks.
 **Transformation.** Statistical transformations commonly used in microbiome
 research include relative abundance (e.g. TSS) [@gloor2017],
 tree-aware phylogenetic ILR (phILR) [@silverman2017], centered log-ratio (CLR),
-and robust centered log-ratio (rCLR). The latter two of which mitigate
+and robust centered log-ratio (rCLR). The latter two of which aim to mitigate
 compositionality bias [@Martino2019]. Data rarification is a related concept
 that has been suggested to control for uneven sequencing depths and it remains
 widely debated in microbial ecology [@mcmurdie2014 ; @schloss2024].
