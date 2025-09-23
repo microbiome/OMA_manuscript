@@ -429,8 +429,8 @@ leads to ambiguous mappings and inconsistent results.
 For instance, diagonal integration methods
 [@xu2022; @argelaguet2021computational] &ndash;
 where shared features across data types may not be explicitly defined &ndash;
-can benefit substantially from such a systematic framework
-that enforces anchor alignment. This mirrors lessons from single-cell
+can benefit from such a systematic framework
+that enforces anchor alignment. This mirrors lessons learned from single-cell
 data integration, where shared anchors and hierarchical mapping
 have proven essential for interpretability. Flexible linking of samples across
 several  data objects supports efficient data integration, methods sharing, and
