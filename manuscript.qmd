@@ -558,8 +558,8 @@ microbiome analysis and visualization for TreeSE objects
 (@fig-downstream_analyses).
 
 **Filtering and agglomeration.** Microbiome datasets may contain tens of
-thousands of unique features depending on the sequencing resolution,
-databases, and the scope of analysis. To summarize data into biologically
+thousands of unique features depending on the sequencing resolution, used
+reference databases, and the scope of analysis. To summarize data into biologically
 meaningful groups or to reduce multiple comparisons the data are often
 subsetted, filtered or agglomerated to higher-level taxonomic or functional
 categories or stratified by sample groups.he package ecosystem and the mia
