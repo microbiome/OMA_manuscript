@@ -502,32 +502,31 @@ specialized solutions [@Jeganathan2021; @Willis2019;
 @MarcosZambrano2023], the implementations typically differ in their
 expected input and output formats. Common data standards support
 modular data science workflows, speeding up methods development,
-benchmarking, and replication. Here, we describe an ecosystem of
-software packages that has recently emerged to support microbiome data
+benchmarking, and replication. Here, we describe a recently emerged
+ecosystem of software packages that support microbiome data
 integration and analysis based on the data containers, (Tree)SE and MAE
-(see @fig-workflow).
+(see @fig-workflow). On top of this package ecosystem we introduce a
+framework for microbiome data analysis.
 
-The framework focuses primarily on the downstream analysis of
+The framework is focused on the downstream analysis of
 high-throughput sequencing data from microbiome experiments after the
-original measurements have already been summarized into abundance
-tables representing, for example, taxonomic or functional profiles. Taxonomic
+original measurements have been summarized into abundance
+tables (*e.g.* taxonomic or functional profiles). Taxonomic
 abundance tables are one of the most commonly encountered data types.
 Common measurement platforms include amplicon-based marker gene
 studies (*e.g.* 16S rRNA) and metagenomic sequencing, but alternative profiling
 techniques are available including phylogenetic microarrays
 [@RajilicStojanovic2009] and high-density optical mapping
-[@Abakumov2024]. Microbiome analyses can also yield variable metagenomic,
-and functional features. The interoperability of the data
-formats supports modular workflow design for integrating different
-omics through the Bioconductor ecosystem. This
+[@Abakumov2024]. The interoperability of the data containers
+supports modular workflow design for integrating different
+omics data into the wider Bioconductor ecosystem. This
 decisively mitigates reproducibility challenges posed by rapidly
 evolving reference databases and profiling tools
 (*e.g.* MetaPhlAn2 vs. MetaPhlAn4) by enabling structured coexistence and
 direct comparison within a unified, version-resilient framework
 [@blanco2023; @truong2015].
 
-**Data import.** Most users will need to import data for their own
-analyses. The TreeSE data container can be populated with microbiome
+**Data import.** The TreeSE data container can be populated with microbiome
 data from common tabular data types but non-standard file formats may
 require additional data wrangling. To streamline data
 import, we provide importers for a variety of standard microbiome file
@@ -535,7 +534,7 @@ formats including BIOM [@mcdonald2012], MetaPhlAn/HUMAnN (MetaPhlAn
 v. 2-4, HUMAnN v. 3) [@mciver2017], Mothur [@schloss2009], QIIME2
 [@bolyen2019] and the TAXonomic Profile Aggregation and
 STAndardisation format (taxpasta) [@beber2023]. These importers bridge the gap
-between raw sequence processing and statistical analysis in R,
+between the raw sequence processing and statistical analysis in R,
 allowing researchers to focus on interpreting biological patterns rather than
 wrangling file formats. Moreover, converters between alternative data
 structures in R are available supporting seamless conversions between TreeSE
@@ -552,19 +551,18 @@ contaminant sequences and calculating summary statistics, the
 framework includes a versatile set of custom visualization methods to
 assess data variability, outliers, homogeneity of variance and other
 aspects that may need to be considered in downstream data
-analysis. The mia and miaViz packages, for instance, provide
+analysis. The mia and miaViz packages provide
 convenient access to many operations for common exploratory tasks in
 microbiome analysis and visualization for TreeSE objects
 (@fig-downstream_analyses).
 
-**Filtering and agglomeration.** Microbiome datasets may contain tens of
+**Filtering and agglomeration.** Microbiome datasets can contain tens of
 thousands of unique features depending on the sequencing resolution, used
 reference databases, and the scope of analysis. To summarize data into biologically
-meaningful groups or to reduce multiple comparisons the data are often
+meaningful groups or to reduce multiple comparisons data is often
 subsetted, filtered or agglomerated to higher-level taxonomic or functional
-categories or stratified by sample groups.he package ecosystem and the mia
-package feature various
-tools for such tasks. For instance, the prevalence methods can be
+categories or stratified by sample groups. The package ecosystem and the mia
+package feature various tools for such tasks. For instance, prevalence methods can be
 useful to remove very rare features that might be sequencing artifacts
 or present otherwise limited value for the analysis. The mechanism of
 alternative experiments (altExp) supports data agglomeration
@@ -573,25 +571,25 @@ pathogeneicity or functional potential (*e.g.* butyrate production
 [@Kullberg2024], gut-brain modules [@VallesColomer2019], and other
 host-associated signatures [@geistlinger2024]).
 The supporting methods incorporate the agglomerated levels
-within the same data object for parallel operations, and typically
-also take care of agglomerating the associated tree
-information and the alternative assays. The filtering,
-subsetting, and agglomeration operations are thus supported in both feature
-as well as sample spaces, and simultaneously
+within the same data object for parallel operations, and can 
+take care of agglomerating the associated tree
+information and any alternative assays. Thus, filtering,
+subsetting, and agglomeration operations are supported in both feature
+as well as sample space, and simultaneously
 propagate to cover the relevant alternative assays, alternative
 experiments, ordinations, and side information. This supports the
-efficient management of interlinked assays and saves time for dedicated
-expert tasks.
+efficient management of interlinked assays and reduces repetative
+actions on data.
 
 **Transformation.** Statistical transformations commonly used in microbiome
 research include relative abundance (e.g. TSS) [@gloor2017],
 tree-aware phylogenetic ILR (phILR) [@silverman2017], centered log-ratio (CLR),
 and robust centered log-ratio (rCLR). The latter two of which aim to mitigate
 compositionality bias [@Martino2019]. Data rarification is a related concept
-that has been suggested to control for uneven sequencing depths and it remains
+that has been suggested to control for uneven sequencing depths, however it remains
 widely debated in microbial ecology [@mcmurdie2014 ; @schloss2024].
-Our framework supports these and a variety of other
-transformations commonly applied to microbiome data.
+A variety of commonly applied transformations, not mentioned here,
+are supported by the framework.
 
 **Data enrichment.** Finally, incorporating additional data is a
 frequent operation in applied data analysis, and it often takes place
