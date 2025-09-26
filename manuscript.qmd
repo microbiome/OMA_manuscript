@@ -226,19 +226,18 @@ side information. This side information can include
 sample attributes like treatment group, collection site, or time point. The
 ability to integrate heterogeneous data elements is essential in biological
 research, where the individual components of a system can be seldom studied in
-isolation. The challenge for a data scientist is that different methods often
-require variable and inconsistent input data formats, leading to technical
-complications and time lost on repeated data wrangling.
-Bioconductor addresses this through standardized data structures supported by
-an ecosystem of interoperable methods, allowing more time to be invested in core
-analytical tasks.
+isolation. However, input data formats vary across different methods, leading
+to technical complications and time lost on data wrangling.
+Bioconductor addresses this through standardized data structures supported
+by an ecosystem of interoperable methods, allowing more time to be invested
+into analytical tasks.
 
 Bioconductor data structures support statistical analysis of complex
 data combinations [@huber2015] and are widely adopted by various
-user communities. They have been implemented through specialized
+research communities. They have been implemented through specialized
 object-oriented classes that integrate multiple data elements into
 a single structure known as a *data container*
-[@chambers2014]. The SummarizedExperiment (SE) class represents
+[@chambers2014]. The SummarizedExperiment (SE) class is
 the primary data container underlying the Bioconductor ecosystem
 [@huber2015; @morgan2025]. Its position among the top-1\% most
 downloaded packages in Bioconductor reflects its widespread recognition and
@@ -248,17 +247,15 @@ matrices with side information on features (rows) and samples (columns).
 Side information can include secondary details
 on the experiment, such as sample origin, collection time, or health status.
 
-|||FIX THIS|||
 The interoperability of SE with other Bioconductor data structures
-facilitates the transfer of methods across different fields of omics research.
+facilitates the transfer of methods across different fields of omics research,
+yielding improved overall quality control and user support.
 This is a major strength, which has facilitated the development of
 modular and scalable data science methods [@drnevich2025].
-The shared data structures support the transfer of methods between
-omics fields, yielding improved overall quality control and user support.
 Consequently, the SE-based framework has been extended to
 similar data integration tasks, notably in single-cell
 and spatial omics through the SingleCellExperiment (SCE) [@amezquita2020] and
-SpatialExperiment [@righelli2022] classes, respectively.
+SpatialExperiment [@righelli2022] classes.
 
 ```{r}
 #| label: fig-bioc_packages
