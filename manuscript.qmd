@@ -191,7 +191,7 @@ particular [@Timmis2024].
 Microbiome research focuses on how microbial communities vary, function and
 interact with their host and environment [@moreno-indias2021]. The technologies
 used in this field generate vast amounts of high-dimensional and hierarchically
-structured data. Rapid expansion of microbiome research has lead to the
+structured data. The rapid expansion of microbiome research has lead to the
 accumulation of interlinked, multi-modal datasets encompassing versatile
 taxonomic and functional assays. Leading microbiome data scientists to
 increasingly face the practical challenges of integrating heterogeneous data
