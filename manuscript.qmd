@@ -429,8 +429,8 @@ where shared features across data types may not be explicitly defined &mdash;
 can benefit from such a systematic framework
 that enforces anchor alignment. This mirrors lessons learned from single-cell
 data integration, where shared anchors and hierarchical mapping
-have proven essential for interpretability. Flexible linking of samples across
-several  data objects supports efficient data integration, methods sharing, and
+have proven essential for interpretability. Flexible mapping of samples across
+several data objects supports efficient data integration, methods sharing, and
 overall interoperability.
 
 @tbl-containers summarizes the microbiome-related data containers, while
