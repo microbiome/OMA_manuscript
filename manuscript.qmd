@@ -183,10 +183,10 @@ Bioconductor project has been established as a major distribution
 channel for open data science methods in the life sciences. Nowadays,
 its vast developer community maintains over 2,300 quality-controlled R
 packages for various fields of life science informatics [@gentleman2004].
-Additionally, Bioconductor has evolved into a global community that supports
-data science collaboration and training [@drnevich2025] in general, and now the |||FIX THIS|||
-international calls for enhancing microbiology education in particular
-[@Timmis2024]. 
+Additionally, Bioconductor has evolved into a global community that supports 
+data science collaboration and training [@drnevich2025]. Recent international
+calls highlight the need to enhance microbiology education in
+particular [@Timmis2024].
 
 Microbiome research focuses on the study of microbial communities and
 their diversity, function, and interactions with the host and
