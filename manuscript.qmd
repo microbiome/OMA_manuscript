@@ -611,7 +611,7 @@ described in the next section.
 
 # Downstream data analysis {#sec-analysis}
 
-The new Bioconductor framework for microbiome data science improves the management of
+This new Bioconductor framework for microbiome data science improves the management of
 integrative analysis workflows. It facilitates systematic linking of the different data
 elements and analysis outcomes, helping to shift the focus towards multi-modal analyses and
 methods development while supporting standard analysis tasks in microbiome research.
@@ -654,16 +654,15 @@ diversity measures [@Cassol2025].
 **Community similarity** is commonly evaluated with beta diversity
 measures, which quantify multivariate dissimilarity and can be used to
 quantitatively compare community composition. The
-framework supports common indices in microbial ecology including
+framework supports common dissimilarity metrics in microbial ecology including
 Bray-Curtis, Jaccard, Aitchison [@bastiaanssen_bugs1_2023 ; @Martino2019],
 and the phylogeny-aware UniFrac [@lozupone2005]. The community
-(dis)similarities are commonly visualized with unsupervised ordination
-methods that project the data on a lower-dimensional display
+dissimilarities are commonly visualized with unsupervised ordination
+methods that project the data onto a lower-dimensional display
 [@goodrich2014]. Unsupervised techniques, Principal Component
 Analysis (PCA) and Principal Coordinates Analysis (PCoA) also known as 
 Multi-Dimensional Scaling (MDS), and Non-metric MDS (NMDS)
-(@fig-downstream_analyses) are common choices, with enhanced support
-for microbiome analysis and visualization. Statistical tests
+(@fig-downstream_analyses) are commonly used. Statistical tests
 (*e.g.* Permutational Multivariate Analysis of Variance) and supervised
 visualization methods, such as the
 distance-based redundancy analysis (dbRDA) can complement the
@@ -677,7 +676,7 @@ specialized microbiome techniques including microbial community typing
 (clustering) with Dirichlet Multinomial Mixtures (DMM) [@Holmes2012]
 and community state types (CST) [@DiGiulio2015], or factorization into
 community signatures [@Frioux2023]. These and other multivariate
-methods are provided for instance by mia, miaViz, and
+methods are provided by mia, miaViz, and
 additional single-cell packages (scater, scuttle [@amezquita2020]).
 
 **Differential abundance and mediation analysis.** Differential abundance 
@@ -688,7 +687,7 @@ continuous gradients (@fig-downstream_analyses). Many dedicated DAA
 methods in microbiome research support the TreeSE framework including methods
 such as ANCOM-BC2 [@lin2024], LimROTS [@Anwar2025], MaAsLin3
 [@nickols2024], and radEmu [@Clausen2024]. Recent studies by us and
-others indicated that elementary methods, for example log transformed 
+others indicated that elementary methods, such as log transformed 
 total sum scaled (TSS) counts coupled with a linear model, or presence/absence
 data with logistic regression often yield the most consistent results
 [@Pelto2025]. The standard DAA typically focuses on individual
@@ -701,9 +700,9 @@ generalizability. The grouping can be based on clustering of the
 abundance profiles or on external information drawn from phylogenetic
 relations, taxonomic classifications or functional properties
 (*e.g.* butyrate producers [@Kullberg2024]). Beyond these,
-advanced methods—such as causal mediation analysis tailored to microbiome
-multi-omics data—are already being developed using SummarizedExperiment
-[@jiang2025], highlighting its readiness to support emerging innovations in
+advanced methods&mdash;such as causal mediation analysis tailored to microbiome
+multi-omics data&mdash;are being developed using SE [@jiang2025],
+highlighting its readiness to support emerging innovations in
 microbiome analytics.
 
 **Function- and sequence-level analyses.** Taxonomic analysis is
@@ -714,13 +713,12 @@ assays. Our framework not only supports incorporation of functional
 abundance tables within the same data objects but specialized methods
 on functional data are available; for instance, regarding metabolome
 analyses the notame package [@klavus2020] recently added SE support,
-and the R4MS project
-provides many interoperable tools [@gatto2025]. The framework has
-found recent applications in extended analyses of metagenomic
+and the R4MS project provides many interoperable tools [@gatto2025].
+The framework has found recent applications in extended analyses of metagenomic
 features, *i.e.* antimicrobial resistance gene composition, diversity,
-and load [@Salehi2025]. We have converted a large-scale compilation of
-resistome profiles in 8,972 metagenome samples [@Lee2023] in the TreeSE format
-for research and educational purposes.
+and load [@Salehi2025]. In addition, We have converted a large-scale
+compilation of resistome profiles in 8,972 metagenome samples [@Lee2023] in
+the TreeSE format for the purpose of research and education.
 
 **Spatio-temporal, ecological and epidemiological models.** Microbiome time
 series [@berg2020] encompass a wide range of study designs, ranging
@@ -731,20 +729,19 @@ studies have incorporated the spatial dimension
 in microbiome analysis across scales [@Ruuskanen2021]. While spatial
 and temporal analyses require specialized methods, the miaTime R package
 offers dedicated solutions for longitudinal microbiome studies.
-In addition, Bioconductor provides methods from other application domains,
-among which single-cell sequencing [@amezquita2020] and spatial transcriptomics 
-[@righelli2022], which use closely related data containers
+In addition, Bioconductor contains applicable methods from other
+research domains, namely single-cell sequencing [@amezquita2020] and spatial
+transcriptomics [@righelli2022], which use closely related data containers
 (@fig-downstream_analyses). Spatial and temporal information can be
 incorporated as a covariate or by estimating
 temporally or spatially resolved metrics, for instance divergence,
 auto-correlation and modality. Another type of temporal analysis 
 includes the time-to-event, or survival models, which are encountered
-in, for example, epidemiological and population cohort studies; specialized
-survival analysis
-strategies for microbiome data have been proposed [@Salosensaari2021;
-@Calle2023]. We also provide methods to simulate time series from
-standard models of microbial community dynamics including the
-Hubbell's neutral model, generalized Lotka-Volterra, and
+regularly in, epidemiological and population cohort studies; specialized
+survival analysis strategies for microbiome data have been
+proposed [@Salosensaari2021;@Calle2023]. We also provide methods to simulate
+time series from standard models of microbial community dynamics including
+Hubbell's neutral model, generalized Lotka-Volterra, and the
 consumer-resource model through the miaSim package [@gao2023].
 
 **Multi-modal integration.** An increasing number of studies integrate
