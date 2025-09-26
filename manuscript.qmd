@@ -188,31 +188,29 @@ data science collaboration and training [@drnevich2025]. Recent international
 calls highlight the need to enhance microbiology education in
 particular [@Timmis2024].
 
-Microbiome research focuses on the study of microbial communities and
-their diversity, function, and interactions with the host and
-environment [@moreno-indias2021]. The technologies used in
-this field generate vast amounts of high-dimensional, hierarchically structured
-data. The expansion of microbiome research has led to the accumulation of
-interlinked, multi-modal datasets encompassing versatile taxonomic and
-functional assays. Microbiome data scientists are thus increasingly facing
-the need to integrate heterogeneous data across multiple modalities while
-implementing reproducible workflows, which presents many practical challenges.
-First, the unique statistical properties and complexity of microbiome data
+Microbiome research focuses on how microbial communities vary, function and
+interact with their host and environment [@moreno-indias2021]. The technologies
+used in this field generate vast amounts high-dimensional and hierarchically
+structured data. Rapid expansion of microbiome research has lead to the
+accumulation of interlinked, multi-modal datasets encompassing versatile
+taxonomic and functional assays. Microbiome data scientists are
+increasingly facing the practical challenges of integrating heterogeneous data
+across multiple modalities into reproducible workflows.
+The unique statistical properties and complexity of microbiome data
 necessitate specialized approaches [@moreno-indias2021; @Jeganathan2021;
-@Willis2019]. Secondly, the diversity of proposed solutions can make it
+@Willis2019]. While the diversity of proposed solutions can make it
 difficult to identify the optimal methods and build interoperable workflows
 [@Wen2023 ; @Shetty2019]. Thus, the need for standardized microbiome data
-science infrastructures  has been widely recognized [@moreno-indias2021]
-and a variety of open microbiome data science
-frameworks have been developed, including Anvi'o [@Eren2021],
-Mothur [@schloss2009], QIIME2 [@bolyen2019], and phyloseq [@mcmurdie2012].
-However, platforms that exclusively focus on microbiome data science may not be
-able to optimally address the need to link data across different multiple
-modalities originating from different research domains.
+science infrastructures has been widely recognized [@moreno-indias2021]
+and a variety of open microbiome data science frameworks have been developed,
+including Anvi'o [@Eren2021], Mothur [@schloss2009], QIIME2 [@bolyen2019],
+and phyloseq [@mcmurdie2012]. However, platforms focused solely on
+microbiome data science may struggle to address the need to integrate
+data across diverse modalities and research domains.
 
 The Bioconductor project embeds the methods of microbiome data science
 into a wider statistical programming framework
-alongside with the concurrent development of interoperable methods and
+alongside the concurrent development of interoperable methods and
 workflows for transcriptomics [@righelli2022], single-cell [@amezquita2020],
 metabolomics [@gatto2025], proteomics [@gatto2025; @Anwar2025], and other
 fields. Here, we introduce a community-developed open-source framework,
