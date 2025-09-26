@@ -205,7 +205,7 @@ science infrastructures has been widely recognized [@moreno-indias2021]
 and a variety of open microbiome data science frameworks have been developed,
 including Anvi'o [@Eren2021], Mothur [@schloss2009], QIIME2 [@bolyen2019],
 and phyloseq [@mcmurdie2012]. However, platforms focused solely on
-microbiome data science may struggle to address the need to integrate
+microbiome data science struggle to address the need to integrate
 data across diverse modalities and research domains.
 
 The Bioconductor project embeds the methods of microbiome data science
