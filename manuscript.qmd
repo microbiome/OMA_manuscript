@@ -193,8 +193,8 @@ interact with their host and environment [@moreno-indias2021]. The technologies
 used in this field generate vast amounts of high-dimensional and hierarchically
 structured data. Rapid expansion of microbiome research has lead to the
 accumulation of interlinked, multi-modal datasets encompassing versatile
-taxonomic and functional assays. Microbiome data scientists are
-increasingly facing the practical challenges of integrating heterogeneous data
+taxonomic and functional assays. Leading microbiome data scientists to
+increasingly face the practical challenges of integrating heterogeneous data
 across multiple modalities into reproducible workflows.
 The unique statistical properties and complexity of microbiome data
 necessitate specialized approaches [@moreno-indias2021; @Jeganathan2021;
