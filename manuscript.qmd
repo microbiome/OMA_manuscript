@@ -486,7 +486,7 @@ be accessed with the available tools for research and educational purposes.
 |-------------------------------------------------|------------------------------------------|-----------------------|-----------|
 | Curated metagenomic data [@pasolli2017] | curatedMetagenomicData [@pasolli2017]    | 93                    | 22,588    |
 | HoloFood [@rogers2024]                          | HoloFoodR [@holofoodr]                   |                      - | 9,990     |
-| MGnify [@gurbich2023]                           | MGnifyR [@mgnifyr]                       | 5129                  | 616,138   |
+| MGnify [@gurbich2023]                           | MGnifyR [@mgnifyr]                       | 5,129                  | 616,138   |
 | microbiomeDataSets [@microbiomedatasets]        | microbiomeDataSets [@microbiomedatasets] | 6                     | 19,100    |
 
 : Open microbiome data resources supporting the framework. {#tbl-dataresources tbl-colwidths="[30,40,15,15]"}
