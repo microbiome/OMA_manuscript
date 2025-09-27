@@ -162,7 +162,7 @@ abstract: |
   interoperable infrastructure comprises of open-source datasets,
   methods, tutorials and an active online community. Its functionality
   and usage are detailed in the OMA book
-  (https://microbiome.github.io/OMA/docs/devel), which offers guidance for
+  [https://microbiome.github.io/OMA](https://microbiome.github.io/OMA/docs/devel), which offers guidance for
   prospective users and contributors.
 
 keywords: [microbiome, Bioconductor, data science, data integration]
@@ -1071,7 +1071,8 @@ facilitates the formation of broad developer and user communities.
 **Microbiome research** has shifted towards integrative analyses
 aiming at mechanistic and causal inference [@joos2024;
 @bastiaanssen_bugs1_2023]. Technological advances in long-read
-sequencing, functional assays, spatial profiling, and single-cell have
+sequencing, functional assays, spatial profiling, and single-cell analysis
+have
 created an increasing demand for integrative data analysis
 techniques. Thus, microbiome data is increasingly linked with other
 omics along varying spatial and temporal dimensions. Our framework
