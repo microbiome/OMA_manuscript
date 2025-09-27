@@ -518,7 +518,7 @@ studies (*e.g.* 16S rRNA) and metagenomic sequencing, but alternative profiling
 techniques are available including phylogenetic microarrays
 [@RajilicStojanovic2009] and high-density optical mapping
 [@Abakumov2024]. The interoperability of the data containers
-supports modular workflow design for integrating different
+support modular workflow design for integrating different
 omics data into the wider Bioconductor ecosystem. This
 decisively mitigates reproducibility challenges posed by rapidly
 evolving reference databases and profiling tools
@@ -573,13 +573,13 @@ host-associated signatures [@geistlinger2024]).
 The supporting methods incorporate the agglomerated levels
 within the same data object for parallel operations, and can 
 take care of agglomerating the associated tree
-information and any alternative assays. Thus, filtering,
+information and alternative assays. Thus, filtering,
 subsetting, and agglomeration operations are supported in both feature
 as well as sample space, and simultaneously
 propagate to cover the relevant alternative assays, alternative
 experiments, ordinations, and side information. This supports the
 efficient management of interlinked assays and reduces repetative
-actions on data.
+operations on data.
 
 **Transformation.** Statistical transformations commonly used in microbiome
 research include relative abundance (e.g. TSS) [@gloor2017],
@@ -588,8 +588,8 @@ and robust centered log-ratio (rCLR). The latter two of which aim to mitigate
 compositionality bias [@Martino2019]. Data rarification is a related concept
 that has been suggested to control for uneven sequencing depths, however it remains
 widely debated in microbial ecology [@mcmurdie2014 ; @schloss2024].
-A variety of commonly applied transformations, not mentioned here,
-are supported by the framework.
+Our framework supports these and a variety of other
+transformations commonly applied to microbiome data.
 
 **Data enrichment.** Finally, incorporating additional data is a
 frequent operation in applied data analysis, and it often takes place
@@ -700,8 +700,8 @@ generalizability. The grouping can be based on clustering of the
 abundance profiles or on external information drawn from phylogenetic
 relations, taxonomic classifications or functional properties
 (*e.g.* butyrate producers [@Kullberg2024]). Beyond these,
-advanced methods&mdash;such as causal mediation analysis tailored to microbiome
-multi-omics data&mdash;are being developed using SE [@jiang2025],
+advanced methods &mdash; such as causal mediation analysis tailored to microbiome
+multi-omics data &mdash; are being developed using SE [@jiang2025],
 highlighting its readiness to support emerging innovations in
 microbiome analytics.
 
@@ -718,7 +718,7 @@ The framework has found recent applications in extended analyses of metagenomic
 features, *i.e.* antimicrobial resistance gene composition, diversity,
 and load [@Salehi2025]. In addition, We have converted a large-scale
 compilation of resistome profiles in 8,972 metagenome samples [@Lee2023] in
-the TreeSE format for the purpose of research and education.
+the TreeSE format for research and educational purposes.
 
 **Spatio-temporal, ecological and epidemiological models.** Microbiome time
 series [@berg2020] encompass a wide range of study designs, ranging
