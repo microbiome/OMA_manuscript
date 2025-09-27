@@ -230,7 +230,7 @@ isolation. However, input data formats vary across different methods, leading
 to technical complications and time lost on data wrangling.
 Bioconductor addresses this through standardized data structures supported
 by an ecosystem of interoperable methods, allowing more time to be invested
-into analytical tasks.
+into core analytical tasks.
 
 Bioconductor data structures support statistical analysis of complex
 data combinations [@huber2015] and are widely adopted by various
@@ -597,8 +597,8 @@ data on samples and features. We generally recommend
 that the data objects are initialized at the beginning of the
 workflow, where they can then be gradually enriched as the project advances.
 By systematically extending the upstream data preparation
-step &ndash; instead of ad-hoc calculations scattered amidst the
-workflow &ndash; one can ensure well-organized and transparent
+step &mdash; instead of ad-hoc calculations scattered amidst the
+workflow &mdash; one can ensure well-organized and transparent
 records of data transformations. Data can be enriched by
 importing new external information as well as by deriving new
 information from the data itself into the same data container as
