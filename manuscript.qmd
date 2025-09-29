@@ -509,9 +509,10 @@ be accessed with the available tools for research and educational purposes.
 | HoloFood [@rogers2024]                   | HoloFoodR [@holofoodr]                   | -                     | 9,990     |
 | MGnify [@gurbich2023]                    | MGnifyR [@mgnifyr]                       | 5,129                 | 629,821   |
 | microbiomeDataSets [@microbiomedatasets] | microbiomeDataSets [@microbiomedatasets] | 6                     | 19,100    |
-| MicrobiomeBenchmarkData [@Gamboa-Tuz2025]| MicrobiomeBenchmarkData [@Gamboa-Tuz2025]| 6                     | 1,125     |
+| Microbiome Benchmark Data [@Gamboa-Tuz2025]| MicrobiomeBenchmarkData [@Gamboa-Tuz2025]| 6                     | 1,125     |
+| Human Microbiome Project 2 [@HMP2data]   | HMP2data [@HMP2data]                     | 3                     | 11,493    |
 
-: Open microbiome data resources supporting the framework (accessed 27/09/2025). {#tbl-dataresources tbl-colwidths="[30,40,15,15]"}
+: Open microbiome data resources supporting the framework (accessed 29/09/2025). {#tbl-dataresources tbl-colwidths="[30,40,15,15]"}
 
 # Data preparation {#sec-process}
 
