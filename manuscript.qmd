@@ -382,11 +382,13 @@ as tree structures (@fig-datacontainers a). Moreover, TreeSE supports the
 storage of other common aspects of microbiome data, for example, reference 
 sequences, and incorporates results from common analytical procedures such as
 dimensionality reduction, statistical transformations, and agglomeration by 
-taxonomic, functional or other information. The interoperability with other 
-Bioconductor classes facilitates scalable analysis and the design of modular 
-yet flexible workflows. The direct interoperability with the widely adopted 
-SE data science ecosystem distinguishes our TreeSE-based approach from phyloseq, 
-which is another popular Bioconductor data container originally 
+taxonomic, functional or other information. Discussed later,
+the MultiAssayExperiment (MAE) class offers even more flexibility for
+data integration (@fig-datacontainers b). The interoperability with other
+Bioconductor classes facilitates scalable analysis and the design of modular
+yet flexible workflows. The direct interoperability of TreeSE with the widely
+adopted SE data science ecosystem distinguishes our TreeSE-based approach from
+phyloseq, which is another popular Bioconductor data container originally
 developed with a focus on 16S amplicon data analysis [@mcmurdie2012]. 
 TreeSE is a superset that can accommodate all elements of a phyloseq object
 (taxa abundances, sample metadata, and phylogenetic tree) while also
