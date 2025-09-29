@@ -738,9 +738,9 @@ analyses the notame package [@klavus2020] recently added SE support,
 and the R4MS project provides many interoperable tools [@gatto2025].
 The framework has found recent applications in extended analyses of metagenomic
 features, for instance, antimicrobial resistance gene composition, diversity,
-and load [@Salehi2025]. Following this, we have have converted a large-scale
-compilation of resistome profiles in 8,972 metagenome samples [@Lee2023] in
-the TreeSE format for research and educational purposes.
+and load [@Salehi2025]. Following this, we converted a large-scale
+compilation of resistome profiles in 8,972 metagenome samples [@Lee2023] into 
+the TreeSE format for use in research and education.
 
 **Spatio-temporal, ecological and epidemiological models.** Microbiome time
 series [@berg2020] encompass a wide range of study designs, ranging
