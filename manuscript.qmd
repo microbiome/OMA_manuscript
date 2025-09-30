@@ -606,9 +606,11 @@ operations on data.
 research include relative abundance (e.g. TSS) [@gloor2017],
 tree-aware phylogenetic ILR (phILR) [@silverman2017], centered log-ratio (CLR),
 and robust centered log-ratio (rCLR). The latter two of which aim to mitigate
-compositionality bias [@Martino2019]. Data rarification is a related concept
-that has been suggested to control for uneven sequencing depths, however it remains
-widely debated in microbial ecology [@mcmurdie2014 ; @schloss2024].
+compositionality bias [@Martino2019]. A related concept that controls for
+unequal sampling depth, is data rarefaction [@schloss2024b]. Rarefaction is
+the process of repeatedly subsampling data to equal read depth and averaging
+computed metrics. Subsampling to equal depth (*rarefying*) data
+without iteration is not recommended [@mcmurdie2014;@schloss2024;@Willis2019b].
 Our framework supports these and a variety of other
 transformations commonly applied to microbiome data.
 
@@ -666,8 +668,7 @@ measures additionally consider the breadth of phylogenetic relatedness of
 community members [@faith1992]; the new implementation of the Stacked Faith's
 Phylogenetic Diversity can accelerate the computational performance by 1-2
 orders of magnitude [@Armstrong2021]. Enhanced analyses with
-repeated rarefaction are supported [@Schloss2024b] albeit the use of
-rarefaction remains controversial [@schloss2024; @Willis2019b]. Other
+rarefaction is supported [@Schloss2024b]. Other
 global indices of community state include measures of dominance,
 rarity, skewness, kurtosis, modality, library size (number of reads),
 or absolute abundance quantification. Sample information in the TreeSE object
