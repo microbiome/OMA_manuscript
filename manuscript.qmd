@@ -75,6 +75,10 @@ author:
   - name: OMA consortium
     affiliations:
       - id: 6
+  - name: Rasmus Hindström
+    affiliations:
+        id: 1
+        orcid: 0009-0004-5731-178X
   - name: Katariina Pärnänen
     affiliations:
       - id: 1
