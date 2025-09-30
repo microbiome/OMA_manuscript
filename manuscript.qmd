@@ -609,7 +609,7 @@ and robust centered log-ratio (rCLR). The latter two of which aim to mitigate
 compositionality bias [@Martino2019]. A related concept that controls for
 unequal sampling depth, is data rarefaction [@schloss2024b]. Rarefaction is
 the process of repeatedly subsampling data to equal read depth and averaging
-computed metrics. Subsampling to equal depth (*rarefying*) data
+computed metrics. Subsampling data to equal read depth (*rarefying*)
 without iteration is not recommended [@mcmurdie2014;@schloss2024;@Willis2019b].
 Our framework supports these and a variety of other
 transformations commonly applied to microbiome data.
