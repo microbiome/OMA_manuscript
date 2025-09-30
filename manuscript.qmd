@@ -667,8 +667,8 @@ Shannon index), combine these two aspects. Phylogenetic diversity
 measures additionally consider the breadth of phylogenetic relatedness of
 community members [@faith1992]; the new implementation of the Stacked Faith's
 Phylogenetic Diversity can accelerate the computational performance by 1-2
-orders of magnitude [@Armstrong2021]. Enhanced analyses with
-rarefaction is supported [@Schloss2024b]. Other
+orders of magnitude [@Armstrong2021]. The framework supports enhanced analyses
+with rarefaction through the mia package [@Schloss2024b]. Other
 global indices of community state include measures of dominance,
 rarity, skewness, kurtosis, modality, library size (number of reads),
 or absolute abundance quantification. Sample information in the TreeSE object
