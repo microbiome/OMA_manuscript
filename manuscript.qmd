@@ -607,9 +607,9 @@ research include relative abundance (e.g. TSS) [@gloor2017],
 tree-aware phylogenetic ILR (phILR) [@silverman2017], centered log-ratio (CLR),
 and robust centered log-ratio (rCLR). The latter two of which aim to mitigate
 compositionality bias [@Martino2019]. A related concept that controls for
-unequal sampling depth, is data rarefaction [@schloss2024b]. Rarefaction is
+unequal sampling depth, is data rarefaction. Rarefaction is
 the process of repeatedly subsampling data to equal read depth and averaging
-computed metrics. Subsampling data to equal read depth (*rarefying*)
+computed metrics [@schloss2024b]. Subsampling data to equal read depth (*rarefying*)
 without iteration is not recommended [@mcmurdie2014;@schloss2024;@Willis2019b].
 Our framework supports these and a variety of other
 transformations commonly applied to microbiome data.
