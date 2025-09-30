@@ -81,17 +81,15 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi%
-}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 % Set default figure placement to htbp
+\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 
@@ -157,6 +155,9 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage{bookmark}
 
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
@@ -332,7 +333,7 @@ SingleCellExperiment (SCE) \citep{amezquita2020} and SpatialExperiment
 
 \centering{
 
-\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{manuscript_files/figure-pdf/fig-bioc_packages-1.pdf}
+\includegraphics[width=0.7\textwidth,height=\textheight]{manuscript_files/figure-pdf/fig-bioc_packages-1.pdf}
 
 }
 
@@ -382,7 +383,7 @@ the gap between the respective user communities.
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{figures/datacontainers.png}}
+\includegraphics{figures/datacontainers.png}
 
 }
 
@@ -405,7 +406,7 @@ facilitates integration of data from multiple experiments
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{figures/benchmarking.png}}
+\includegraphics{figures/benchmarking.png}
 
 }
 
@@ -444,9 +445,9 @@ flexible mappings between multiple experiments from the same study.
 Integration of multi-table data without such a structured framework
 often leads to ambiguous mappings and inconsistent results. For
 instance, diagonal integration methods
-\citep{xu2022, argelaguet2021computational} --- where shared features
-across data types may not be explicitly defined --- can benefit from
-such a systematic framework that enforces anchor alignment. This mirrors
+\citep{xu2022, argelaguet2021computational}---where shared features
+across data types may not be explicitly defined---can benefit from such
+a systematic framework that enforces anchor alignment. This mirrors
 lessons learned from single-cell data integration, where shared anchors
 and hierarchical mapping have proven essential for interpretability.
 Flexible mapping of samples across several data objects supports
@@ -458,8 +459,8 @@ containers, while Table~\ref{tbl-elements} introduces the available data
 elements in each container.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
 \caption{Recommended data containers for microbiome
 analysis.}\label{tbl-containers}\tabularnewline
 \toprule\noalign{}
@@ -489,11 +490,11 @@ for sets of multi-omic experiments \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1700}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.6300}}
-  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0300}}
-  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0900}}
-  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0800}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1700}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.6300}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0300}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0900}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0800}}@{}}
 \caption{Key data elements in the employed data
 containers.}\label{tbl-elements}\tabularnewline
 \toprule\noalign{}
@@ -565,12 +566,12 @@ studies and tens of thousands samples that can be accessed with the
 available tools for research and educational purposes.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1500}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1500}}@{}}
 \caption{Open microbiome data resources supporting the framework
-(accessed 27/09/2025).}\label{tbl-dataresources}\tabularnewline
+(accessed 29/09/2025).}\label{tbl-dataresources}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Data resource
@@ -604,6 +605,10 @@ MGnify \citep{gurbich2023} & MGnifyR \citep{mgnifyr} & 5,129 &
 629,821 \\
 microbiomeDataSets \citep{microbiomedatasets} & microbiomeDataSets
 \citep{microbiomedatasets} & 6 & 19,100 \\
+Microbiome Benchmark Data \citep{Gamboa-Tuz2025} &
+MicrobiomeBenchmarkData \citep{Gamboa-Tuz2025} & 6 & 1,125 \\
+Human Microbiome Project 2 \citep{HMP2data} & HMP2data \citep{HMP2data}
+& 3 & 11,493 \\
 \end{longtable}
 
 \section{Data preparation}\label{sec-process}
@@ -710,8 +715,8 @@ including transformations, aggregated data, dimension reduction, and
 derived data on samples and features. We generally recommend that the
 data objects are initialized at the beginning of the workflow, where
 they can then be gradually enriched as the project advances. By
-systematically extending the upstream data preparation step --- instead
-of ad-hoc calculations scattered amidst the workflow --- one can ensure
+systematically extending the upstream data preparation step---instead of
+ad-hoc calculations scattered amidst the workflow---one can ensure
 well-organized and transparent records of data transformations. Data can
 be enriched by importing new external information as well as by deriving
 new information from the data itself into the same data container as
@@ -721,7 +726,7 @@ described in the next section.
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{figures/workflow.png}}
+\includegraphics{figures/workflow.png}
 
 }
 
@@ -822,18 +827,18 @@ as ANCOM-BC2 \citep{lin2024}, LimROTS \citep{Anwar2025}, MaAsLin3
 us and others indicated that elementary methods, such as log transformed
 total sum scaled (TSS) counts coupled with a linear model, or
 presence/absence data with logistic regression often yield the most
-consistent results \citep{Pelto2025}. The standard DAA typically focuses
-on individual features, ignoring interactions or other covariation among
-feature abundances. Thus, we support covariation analyses; indeed,
-agglomerating collinear features as a preprocessing step can reduce
-multiple testing, increase statistical power, and support interpretation
-but is also prone to subjective parameterization and limited
-generalizability. The grouping can be based on clustering of the
-abundance profiles or on external information drawn from phylogenetic
-relations, taxonomic classifications or functional properties
-(\emph{e.g.}, lump together all butyrate producers
-\citep{Kullberg2024}). Beyond these, advanced methods --- such as causal
-mediation analysis tailored to microbiome multi-omics data --- are being
+consistent results \citep{Pelto2025, Gamboa-Tuz2025}. The standard DAA
+typically focuses on individual features, ignoring interactions or other
+covariation among feature abundances. Thus, we support covariation
+analyses; indeed, agglomerating collinear features as a preprocessing
+step can reduce multiple testing, increase statistical power, and
+support interpretation but is also prone to subjective parameterization
+and limited generalizability. The grouping can be based on clustering of
+the abundance profiles or on external information drawn from
+phylogenetic relations, taxonomic classifications or functional
+properties (\emph{e.g.}, lump together all butyrate producers
+\citep{Kullberg2024}). Beyond these, advanced methods---such as causal
+mediation analysis tailored to microbiome multi-omics data---are being
 developed using SE \citep{jiang2025}, highlighting its readiness to
 support emerging innovations in microbiome analytics.
 
@@ -849,9 +854,9 @@ project provides many interoperable tools \citep{gatto2025}. The
 framework has found recent applications in extended analyses of
 metagenomic features, for instance, antimicrobial resistance gene
 composition, diversity, and load \citep{Salehi2025}. Following this, we
-have have converted a large-scale compilation of resistome profiles in
-8,972 metagenome samples \citep{Lee2023} in the TreeSE format for
-research and educational purposes.
+converted a large-scale compilation of resistome profiles in 8,972
+metagenome samples \citep{Lee2023} into the TreeSE format for use in
+research and education.
 
 \textbf{Spatio-temporal, ecological and epidemiological models.}
 Microbiome time series \citep{berg2020} encompass a wide range of study
@@ -917,7 +922,7 @@ interoperability via standard containers like TreeSE and MAE.
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-pdf/fig-downstream_analyses-1.pdf}}
+\includegraphics{manuscript_files/figure-pdf/fig-downstream_analyses-1.pdf}
 
 }
 
