@@ -524,8 +524,7 @@ modular data science workflows, speeding up methods development,
 benchmarking, and replication. Here, we describe a recently emerged
 ecosystem of software packages that support microbiome data
 integration and analysis based on the data containers, (Tree)SE and MAE
-(Figure \ref{fig:workflow}). On top of this package ecosystem we introduce a
-framework for microbiome data analysis.
+(Figure \ref{fig:workflow}).
 
 The framework is focused on the downstream analysis of
 high-throughput sequencing data from microbiome experiments after the
