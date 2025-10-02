@@ -1174,8 +1174,8 @@ was additionally supported by the University of Turku Graduate School.
 
 We would like to thank the following individuals for their support for
 the project: Ashma, Richa; Bayal, Nitin; Benchraka, Chouaib; Cao, Yang; Dagnaud, Axel;
-Dallier, Teo; de Gunst, Noah; Faust, Karoline; Finn, Rob; Hillman, Samuel;
-Pagés, Hervé; Huang, Ruizhu; Richardson, Lorna; Rios Garza, Daniel;
+Dallier, Teo; de Gunst, Noah; Faust, Karoline; Finn, Rob; Hillman, Samuel; Huang, Ruizhu;
+Pagés, Hervé; Richardson, Lorna; Rios Garza, Daniel;
 Robinson, Mark; Ruuskanen, Matti; Salehi, Mahkameh.
 
 We also extend our thanks to all contributors of the open-source resources used
