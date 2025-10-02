@@ -81,15 +81,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 
@@ -155,9 +157,6 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage{bookmark}
 
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
@@ -333,7 +332,7 @@ SingleCellExperiment (SCE) \citep{amezquita2020} and SpatialExperiment
 
 \centering{
 
-\includegraphics[width=0.7\textwidth,height=\textheight]{manuscript_files/figure-pdf/fig-bioc_packages-1.pdf}
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{manuscript_files/figure-pdf/fig-bioc_packages-1.pdf}
 
 }
 
@@ -383,7 +382,7 @@ the gap between the respective user communities.
 
 \centering{
 
-\includegraphics{figures/datacontainers.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figures/datacontainers.png}}
 
 }
 
@@ -406,7 +405,7 @@ facilitates integration of data from multiple experiments
 
 \centering{
 
-\includegraphics{figures/benchmarking.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figures/benchmarking.png}}
 
 }
 
@@ -459,8 +458,8 @@ containers, while Table~\ref{tbl-elements} introduces the available data
 elements in each container.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
 \caption{Recommended data containers for microbiome
 analysis.}\label{tbl-containers}\tabularnewline
 \toprule\noalign{}
@@ -490,11 +489,11 @@ for sets of multi-omic experiments \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1700}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.6300}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0300}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0900}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0800}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1700}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.6300}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0300}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0900}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0800}}@{}}
 \caption{Key data elements in the employed data
 containers.}\label{tbl-elements}\tabularnewline
 \toprule\noalign{}
@@ -566,10 +565,10 @@ studies and tens of thousands samples that can be accessed with the
 available tools for research and educational purposes.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1500}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1500}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1500}}@{}}
 \caption{Open microbiome data resources supporting the framework
 (accessed 29/09/2025).}\label{tbl-dataresources}\tabularnewline
 \toprule\noalign{}
@@ -621,7 +620,7 @@ formats. Common data standards support modular data science workflows,
 speeding up methods development, benchmarking, and replication. Here, we
 describe a recently emerged ecosystem of software packages that support
 microbiome data integration and analysis based on the data containers,
-(Tree)SE and MAE (see Figure~\ref{fig-workflow}). On top of this package
+(Tree)SE and MAE (Figure \ref{fig:workflow}). On top of this package
 ecosystem we introduce a framework for microbiome data analysis.
 
 The framework is focused on the downstream analysis of high-throughput
@@ -700,11 +699,14 @@ microbiome research include relative abundance (e.g.~TSS)
 \citep{gloor2017}, tree-aware phylogenetic ILR (phILR)
 \citep{silverman2017}, centered log-ratio (CLR), and robust centered
 log-ratio (rCLR). The latter two of which aim to mitigate
-compositionality bias \citep{Martino2019}. Data rarification is a
-related concept that has been suggested to control for uneven sequencing
-depths, however it remains widely debated in microbial ecology
-\citep{mcmurdie2014, schloss2024}. Our framework supports these and a
-variety of other transformations commonly applied to microbiome data.
+compositionality bias \citep{Martino2019}. A related concept that
+controls for unequal sampling depth, is data rarefaction. Rarefaction is
+the process of repeatedly subsampling data to equal read depth and
+averaging computed metrics \citep{schloss2024b}. Subsampling data to
+equal read depth (\emph{rarefying}) without iteration is not recommended
+\citep{mcmurdie2014, schloss2024, Willis2019b}. Our framework supports
+these and a variety of other transformations commonly applied to
+microbiome data.
 
 \textbf{Data enrichment.} Incorporating additional data, for example,
 new versions of feature abundance data resulting from data
@@ -722,23 +724,17 @@ be enriched by importing new external information as well as by deriving
 new information from the data itself into the same data container as
 described in the next section.
 
-\begin{figure}
-
-\centering{
-
-\includegraphics{figures/workflow.png}
-
-}
-
-\caption{\label{fig-workflow}\textbf{Examples of Bioconductor tools
-along the microbiome data science workflow.} A typical microbiome
-workflow starts with taxonomic and functional annotation. The processed
-microbiome data can then be imported to Bioconductor data container
-(TreeSE), or integrated with other omics using the MAE container for
-downstream statistical analysis. (Figure adapted from
-\citep{amezquita2020})}
-
-\end{figure}%
+\begin{figure}[htbp]
+\centering
+\begin{minipage}{0.5\textwidth} % Portion for image
+\includegraphics[width=\linewidth]{figures/workflow.png}
+\end{minipage}%
+\hspace{0.01\textwidth} % gap size as portion
+\begin{minipage}{0.48\textwidth} % Portion for text
+\caption{OMA workflow. After data generation and pre-processing (top two panels), the OMA workflow provides tools for five steps of microbiome data analysis: 1) Data is wrapped into a TreeSummarizedExperiment data object, containing information on the samples (tube icons) and their features, such as ASVs or other taxonomic units (colored circles). TreeSummarizedExperiment objects consist of i) “assays” that describe the abundances of features in each sample, ii) “colData” containing metadata on each sample, iii) “rowData” containing taxonomy of each feature and iv) the phylogenetic tree among features. Unlike phyloseq, TreeSummarizedExperiment objects accommodate multiple assay tables as well as additional hierarchical structures. 2) The TreeSummarizedExperiment data object can then be processed to get cleaner data. This can include filtering out low-quality samples and features, transforming assay data for example by normalizing it to make sample-specific abundances comparable, or agglomerating the feature data to a specific taxonomic level. 3) The clean data can now be analysed using statistical models to reveal compositional clustering patterns among samples (e.g., with PCoA), analyse drivers of variation in sample alpha and beta diversity or test for differential abundance of features across sample variables (e.g., sampling time or location). 4) The OMA workflow also allows integration of various different types of data using MultiAssayExperiment. Here, for example, the taxonomic and metabolic profiles of samples can be summarized and compared and cross-association maps among features (e.g. taxa or metabolites) can be constructed. 5) Finally, OMA workflow supports reporting of analysis using for example Quarto, to aid reproducible sharing of results.}
+\label{fig:workflow}
+\end{minipage}
+\end{figure}
 
 \section{Downstream data analysis}\label{sec-analysis}
 
@@ -775,9 +771,8 @@ combine these two aspects. Phylogenetic diversity measures additionally
 consider the breadth of phylogenetic relatedness of community members
 \citep{faith1992}; the new implementation of the Stacked Faith's
 Phylogenetic Diversity can accelerate the computational performance by
-1-2 orders of magnitude \citep{Armstrong2021}. Enhanced analyses with
-repeated rarefaction are supported \citep{Schloss2024b} albeit the use
-of rarefaction remains controversial \citep{schloss2024, Willis2019b}.
+1-2 orders of magnitude \citep{Armstrong2021}. The framework supports
+analyses with rarefaction through the mia package \citep{schloss2024b}.
 Other global indices of community state include measures of dominance,
 rarity, skewness, kurtosis, modality, library size (number of reads), or
 absolute abundance quantification. Sample information in the TreeSE
@@ -922,7 +917,7 @@ interoperability via standard containers like TreeSE and MAE.
 
 \centering{
 
-\includegraphics{manuscript_files/figure-pdf/fig-downstream_analyses-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-pdf/fig-downstream_analyses-1.pdf}}
 
 }
 
