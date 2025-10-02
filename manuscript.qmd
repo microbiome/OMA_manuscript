@@ -72,13 +72,13 @@ author:
         address: Address
         city: City
         postal-code: 0000000
-  - name: OMA consortium
-    affiliations:
-      - id: 6
   - name: Rasmus Hindström
     affiliations:
         id: 1
         orcid: 0009-0004-5731-178X
+  - name: OMA consortium
+    affiliations:
+      - id: 6
   - name: Katariina Pärnänen
     affiliations:
       - id: 1
