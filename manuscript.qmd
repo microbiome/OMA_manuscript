@@ -1147,11 +1147,11 @@ microbiome data.
 
 OMA consortium: Bastiaanssen, Thomaz; Beber, Moritz E.; Bektanov, Aituar;
 Benedetti, Giulio; Borman, Tuomas; Braccia, Domenick J.; Calgaro, Matteo; Callan,
-Danielle; Cao, Yang; Chaudhary, Jiya; Corrada Bravo, Héctor;
+Danielle; Chaudhary, Jiya; Corrada Bravo, Héctor;
 
 Courbayre Dussau, Basil; Das, Sneha; Eckermann, Henrik; Erawijantari, Pande;
 Ernst, Felix G.M.; Gaudron-Parry, Elliot; Gopalakrishnan, Shyam; Hakula, Maija;
-Hanhineva, Kati; Havulinna, Aki; Hindström, Rasmus; Huang, Ruizhu; Jeba, Akewak;
+Hanhineva, Kati; Havulinna, Aki; Hindström, Rasmus; Jeba, Akewak;
 Lahti, Leo; Limborg, Morten; Lindgren, Himmi; Liu, Yihan; Mallick, Himel;
 
 Mongad, Dattatray; Müller, Christian L.; Muluh, Geraldson; Nynäs, Signe;
@@ -1176,7 +1176,7 @@ We would like to thank the following individuals for their support for
 the project: Ashma, Richa; Bayal, Nitin; Benchraka, Chouaib; Dagnaud, Axel;
 Dallier, Teo; de Gunst, Noah; Faust, Karoline; Finn, Rob; Hillman, Samuel;
 Pagés, Hervé; Richardson, Lorna; Rios Garza, Daniel;
-Robinson, Mark; Ruuskanen, Matti; Salehi, Mahkameh.
+Robinson, Mark; Ruuskanen, Matti; Salehi, Mahkameh; Huang, Ruizhu; Cao, Yang.
 
 We also extend our thanks to all contributors of the open-source resources used
 in this work.
