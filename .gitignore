@@ -7,3 +7,8 @@
 DAA_example
 manuscript_files
 misc
+manuscript.rmarkdown
+*.log
+*.aux
+*.bbl
+*.blg
