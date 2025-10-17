@@ -1083,47 +1083,46 @@ pkg_stats <- pkgDownloadRank("mia")
 pkg_stats <- paste0(pkg_stats[[1]], "%")
 ```
 
-**The Bioconductor community** has a well-established reputation in
-developing open, peer-reviewed software for life sciences. Its
-strengths include the enforcement of minimal documentation standards,
-semantic versioning, portability across operating platforms, quality
-control (*e.g.*, unit testing, continuous integration), usability (APIs),
-robustness (deprecation mechanisms), and a biannual release
-cycle. During the past two decades Bioconductor has grown into a
-repository of 2,300 actively maintained software packages, of which
-`r sum(pkgs$Field == "Microbiome")` are classified under the Microbiome
-Bioc task view. In order to enjoy the benefits of automation while
+In order to enjoy the benefits of automation while
 maintaining flexibility, data scientists routinely remix open-source
-software into custom workflows. However, the lack of commonly adopted
+software components into custom workflows. However, the lack of commonly adopted
 data representation standards often hinders the development, sharing,
-and application of statistical workflows. At the core of the
-Bioconductor's data science strategy is the idea of shared data
-representation. The enhanced interoperability can help to minimize
-redundant efforts and facilitate the translation of methods between
-different research areas [@DElia2023; @Barker2022] and, importantly,
-facilitates the formation of broad developer and user communities.
+and application of modular, interoperable statistical workflows. 
+
+**The Bioconductor community** is widely recognized for
+developing open research software for life sciences. Its
+strengths include minimal documentation standards,
+portability across operating platforms, quality
+control (*e.g.* peer-review, unit testing, and continuous integration), usability (APIs),
+robustness (dependency testing and deprecation mechanisms), and a biannual release
+cycle with semantic versioning. Over the past two decades Bioconductor has grown into a
+repository of more than 2,300 actively maintained software packages, of which
+`r sum(pkgs$Field == "Microbiome")` are now classified under the _Microbiome_
+Task View. At the core of the Bioconductor's data science strategy has been the idea of shared data
+representations [@gentleman2004, @Lawrence2013]. This has enhanced interoperability, mitigated redundant efforts and 
+facilitated the translation of methods between research domains [@DElia2023; @Barker2022]. 
+In addition to these technical advances, the shared standards have played an important role in 
+the formation of broad developer and user communities [@drnevich2025].
 
 **Microbiome research** has shifted towards integrative analyses
-aiming at mechanistic and causal inference [@joos2024;
+linking various omics' towards enhanced mechanistic and causal insights [@joos2024;
 @bastiaanssen_bugs1_2023]. Technological advances in long-read
 sequencing, functional assays, spatial profiling, and single-cell analysis
-have
-created an increasing demand for integrative data analysis
-techniques. Thus, microbiome data is increasingly linked with other
-omics along varying spatial and temporal dimensions. Our framework
-addresses this need, together with parallel developments in other
-areas of omics.
-
-Recent developments in microbiome and multi-omics workflows increasingly
-rely on Bayesian modeling and Gaussian processes to accommodate uncertainty
-and temporal or spatial structures [@cheng2019]. Our framework is compatible
-with these approaches, providing the structured input necessary for
-probabilistic inference and scalable computation. Building on these
-statistical foundations, the rapid emergence of foundation models
-and deep learning approaches in biomedicine calls for robust, scalable
-data representations [@awais2025]. Our framework, through its use of
-standardized containers, is well-positioned to support
-such advances. Applications include transfer learning across studies,
+have created an increasing demand for integrative analysis
+techniques that can link microbiome data with other
+omics along varying spatial and temporal dimensions. In concert with parallel 
+developments in other omics, our framework specifically addresses the need to integrate 
+and jointly analyse interlinked abundance tables and supporting hierarchical and tabular 
+side information across different omics. Whereas our framework supports the basic data 
+wrangling and microbiomedata science operations, it also provides the structured input necessary 
+for probabilistic inference and scalable computation. This is essential as the recent 
+developments in microbiome and multi-omics 
+workflows increasingly rely on advanced statistical and machine learning techniques such as 
+Bayesian modeling and Gaussian processes to accommodate uncertainty
+and temporal or spatial structures [@cheng2019].  Building on these statistical foundations,
+the rapid emergence of foundation models and deep learning approaches in biomedicine 
+calls for robust, scalable data representations [@awais2025] such as those we have adopted.  
+Applications include transfer learning across studies,
 interpretable embeddings of microbiome multi-omic profiles,
 computational prediction of microbial function and metabolites
 [@mallick2019; @weiss2016], and integration with AI agents for hypothesis
@@ -1134,15 +1133,16 @@ of reproducible research and a vast body of applications critically
 rely on open-source methods and workflows [@berg2020; @Barker2022;
 @Hocquet2024]. Standardized data structures can enhance the transparency,
 reliability, and explainability of analysis workflows. We have
-documented the interoperable framework built on widely adopted data
-containers, open data resources, analysis methods and reproducible
-workflows for multi-modal microbiome research. Further developments could
-include extended methodology for temporal, spatial, and multi-omic
-analyses. Supporting interoperability between R and other
-programming languages can facilitate the application of other ML
-frameworks. As the field evolves, Bioconductor will continue
+documented the open data science ecosystem for multi-modal microbiome research
+built on widely adopted Bioconductor data containers, software libraries,  
+data resources, tutorials, and a growing community of developers. 
+Further extensions could include methods for temporal, spatial, and multi-omic
+analyses. Finally, supporting interoperability between R and other
+programming languages could facilitate the application of other machine learning
+frameworks. As the field evolves, the developer communities will continue
 to integrate new tools and approaches to improve integrative analyses of
 microbiome data.
+
 
 # References
 <!-- the pattern below controls the placement of the references -->
