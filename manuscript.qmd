@@ -416,6 +416,8 @@ formats are available to bridge the gap between the respective user communities.
 #| echo: false
 #| message: false
 
+# Adapted from https://github.com/microbiome/benchmarking/tree/main/article
+
 # Import libraries
 library(bench)
 library(DelayedArray)
@@ -546,6 +548,8 @@ benchmark_df <- benchmark_df %>%
 #| eval: false
 #| echo: false
 #| message: false
+
+# Adapted from https://github.com/microbiome/benchmarking/tree/main/article
 
 scientific_10 <- function(y) {
   sapply(y, function(z) {
