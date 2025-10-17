@@ -134,13 +134,13 @@ affiliations:
     postal-code: 10027
 
   - id: 19
-    name: University of Maryland, College Park
+    name: TBD
 
   - id: 20
-    name: Genentech
+    name: TBD
 
   - id: 21
-    name: Karer Consulting
+    name: TBD
 
   - id: 22
     name: Amsterdam University Medical Centres
@@ -216,6 +216,13 @@ author:
     orcid: 0009-0008-0462-7501
     email: yihan.liu@yale.edu
     affiliations: [8, 9, 10, 11, 12]
+
+  - name: Rasmus Hindström
+    orcid: 0009-0004-5731-178X
+    affiliations: [1]
+
+  - name: OMA consortium
+    affiliations: [19]
 
   - name: Katariina Pärnänen
     orcid: 0000-0003-2220-1738
