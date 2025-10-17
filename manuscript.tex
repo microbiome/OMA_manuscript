@@ -1,4 +1,5 @@
 % Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
@@ -8,21 +9,22 @@
 ]{sn-jnl}
 
 
-
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage{lmodern}
-\ifPDFTeX\else  
-    % xetex/luatex font selection
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -40,9 +42,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -68,8 +67,7 @@
 \makeatother
 
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -81,17 +79,32 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+
 
 %%%% Standard Packages
 
@@ -154,14 +167,9 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage{bookmark}
-
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={Orchestrating Microbiome Analysis with Bioconductor},
   pdfauthor={Tuomas Borman; Giulio Benedetti; Geraldson Muluh; Aura Raulo; Benjamin Valderamma; Artur Sannikov; Stefanie Peschel; Yihan Liu; Rasmus Hindström; OMA consortium; Katariina Pärnänen; Christian L. Müller; Aki Havulinna; Sudarshan Shetty; Marcel Ramos; Domenick J. Braccia; Héctor Corrada Bravo; Felix G.M. Ernst; Levi Waldron; Thomaz Bastiaanssen; Himel Mallick; Leo Lahti},
@@ -263,15 +271,18 @@ of proposed solutions can make it difficult to identify the optimal
 methods and build interoperable workflows \citep{Wen2023, Shetty2019}.
 For example, different approaches for indicator taxa analysis often
 produce inconsistent results
-\citep{Nearing2022, Pelto2025, Gamboa-Tuz2025}. Accordingly, the need
-for standardized microbiome data science infrastructures has been widely
-recognized \citep{moreno-indias2021} and a variety of open microbiome
-data science frameworks have been developed, including Anvi'o
-\citep{Eren2021}, Mothur \citep{schloss2009}, QIIME2 \citep{bolyen2019},
-and phyloseq \citep{mcmurdie2012}. However, platforms focused solely on
-microbiome data science struggle to address the need to integrate data
-across diverse modalities and research domains, from metagenomics to
-metabolomics.
+\citep{Nearing2022, Pelto2025, Gamboa-Tuz2025}. Accordingly, a need for
+standardization has been highlighted \citep{moreno-indias2021}. Open
+microbiome data science \emph{frameworks} have emerged to provide sets
+of interoperable methodology in specific computational environments
+\citep{Eren2021, schloss2009, bolyen2019, mcmurdie2012}, and a broader
+ecosystem with extensive documentation and vibrant user communities and
+culture that can extend thecapacities far beyond the underlying
+technical framework.
+
+However, platforms focused solely on microbiome data science struggle to
+address the need to integrate data across diverse modalities and
+research domains, from metagenomics to metabolomics.
 
 The Bioconductor project embeds the methods of microbiome data science
 into a wider statistical programming framework alongside the concurrent
@@ -333,7 +344,7 @@ SingleCellExperiment (SCE) \citep{amezquita2020} and SpatialExperiment
 
 \centering{
 
-\includegraphics{manuscript_files/figure-pdf/fig-bioc_packages-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-pdf/fig-bioc_packages-1.pdf}}
 
 }
 
@@ -382,7 +393,7 @@ the gap between the respective user communities.
 
 \centering{
 
-\includegraphics{figures/benchmarking.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figures/benchmarking.png}}
 
 }
 
@@ -435,8 +446,8 @@ containers, while Table~\ref{tbl-elements} introduces the available data
 elements in each container.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
 \caption{Recommended data containers for microbiome
 analysis.}\label{tbl-containers}\tabularnewline
 \toprule\noalign{}
@@ -466,11 +477,11 @@ for sets of multi-omic experiments \\
 \end{longtable}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1700}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.6300}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0300}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0900}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0800}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1700}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.6300}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0300}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0900}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0800}}@{}}
 \caption{Key data elements in the employed data
 containers.}\label{tbl-elements}\tabularnewline
 \toprule\noalign{}
@@ -532,7 +543,7 @@ many-to-many).
 
 \centering{
 
-\includegraphics{figures/datacontainers.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figures/datacontainers.png}}
 
 }
 
@@ -565,10 +576,10 @@ studies and tens of thousands samples that can be accessed with the
 available tools for research and educational purposes.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1500}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1500}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1500}}@{}}
 \caption{Open microbiome data resources supporting the framework
 (accessed 29/09/2025).}\label{tbl-dataresources}\tabularnewline
 \toprule\noalign{}
@@ -906,7 +917,7 @@ interoperability via standard containers like TreeSE and MAE.
 
 \centering{
 
-\includegraphics{manuscript_files/figure-pdf/fig-downstream_analyses-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{manuscript_files/figure-pdf/fig-downstream_analyses-1.pdf}}
 
 }
 
@@ -1001,7 +1012,7 @@ versioning, portability across operating platforms, quality control
 (\emph{e.g.}, unit testing, continuous integration), usability (APIs),
 robustness (deprecation mechanisms), and a biannual release cycle.
 During the past two decades Bioconductor has grown into a repository of
-2,300 actively maintained software packages, of which 60 are classified
+2,300 actively maintained software packages, of which 58 are classified
 under the Microbiome Bioc task view. In order to enjoy the benefits of
 automation while maintaining flexibility, data scientists routinely
 remix open-source software into custom workflows. However, the lack of
@@ -1063,14 +1074,14 @@ microbiome data.
 
 OMA consortium: Bastiaanssen, Thomaz; Beber, Moritz E.; Bektanov,
 Aituar; Benedetti, Giulio; Borman, Tuomas; Braccia, Domenick J.;
-Calgaro, Matteo; Callan, Danielle; Cao, Yang; Chaudhary, Jiya; Corrada
-Bravo, Héctor;
+Calgaro, Matteo; Callan, Danielle; Chaudhary, Jiya; Corrada Bravo,
+Héctor;
 
 Courbayre Dussau, Basil; Das, Sneha; Eckermann, Henrik; Erawijantari,
 Pande; Ernst, Felix G.M.; Gaudron-Parry, Elliot; Gopalakrishnan, Shyam;
-Hakula, Maija; Hanhineva, Kati; Havulinna, Aki; Hindström, Rasmus;
-Huang, Ruizhu; Jeba, Akewak; Lahti, Leo; Limborg, Morten; Lindgren,
-Himmi; Liu, Yihan; Mallick, Himel;
+Hakula, Maija; Hanhineva, Kati; Havulinna, Aki; Hindström, Rasmus; Jeba,
+Akewak; Lahti, Leo; Limborg, Morten; Lindgren, Himmi; Liu, Yihan;
+Mallick, Himel;
 
 Mongad, Dattatray; Müller, Christian L.; Muluh, Geraldson; Nynäs, Signe;
 Pasanen, Jesse; Paulo, Joao; Pelto, Juho; Peschel, Stefanie; Potbhare,
@@ -1092,10 +1103,10 @@ research and innovation programme under grant agreement No 952914. TB
 was additionally supported by the University of Turku Graduate School.
 
 We would like to thank the following individuals for their support for
-the project: Ashma, Richa; Bayal, Nitin; Benchraka, Chouaib; Dagnaud,
-Axel; Dallier, Teo; de Gunst, Noah; Faust, Karoline; Finn, Rob; Hillman,
-Samuel; Pagés, Hervé; Richardson, Lorna; Rios Garza, Daniel; Robinson,
-Mark; Ruuskanen, Matti; Salehi, Mahkameh.
+the project: Ashma, Richa; Bayal, Nitin; Benchraka, Chouaib; Cao, Yang;
+Dagnaud, Axel; Dallier, Teo; de Gunst, Noah; Faust, Karoline; Finn, Rob;
+Hillman, Samuel; Huang, Ruizhu; Pagés, Hervé; Richardson, Lorna; Rios
+Garza, Daniel; Robinson, Mark; Ruuskanen, Matti; Salehi, Mahkameh.
 
 We also extend our thanks to all contributors of the open-source
 resources used in this work.

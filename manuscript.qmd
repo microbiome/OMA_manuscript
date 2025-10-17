@@ -212,11 +212,14 @@ difficult to identify the optimal methods and build interoperable workflows
 [@Wen2023; @Shetty2019]. For example, different approaches for indicator taxa
 analysis often produce inconsistent results
 [@Nearing2022; @Pelto2025; @Gamboa-Tuz2025].
-Accordingly, the need for standardized microbiome data
-science infrastructures has been widely recognized [@moreno-indias2021]
-and a variety of open microbiome data science frameworks have been developed,
-including Anvi'o [@Eren2021], Mothur [@schloss2009], QIIME2 [@bolyen2019],
-and phyloseq [@mcmurdie2012]. However, platforms focused solely on
+Accordingly, a need for standardization has been highlighted [@moreno-indias2021].
+Open microbiome data science _frameworks_ have emerged to provide sets of 
+interoperable methodology in specific computational environments
+[@Eren2021; @schloss2009; @bolyen2019; @mcmurdie2012], and a broader ecosystem
+with extensive documentation and vibrant user communities and culture that 
+can extend thecapacities far beyond the underlying technical framework.
+
+However, platforms focused solely on
 microbiome data science struggle to address the need to integrate
 data across diverse modalities and research domains, from metagenomics to
 metabolomics.
@@ -994,10 +997,8 @@ interactive applications, these resources provide accessible entry points for
 all developers and users.
 
 **The OMA book.** _Orchestrating Microbiome Analysis with Bioconductor
-(OMA)_ [https://microbiome.github.io/OMA](https://microbiome.github.io/OMA/docs/devel/) is an online book that provides
-a comprehensive introduction to the microbiome data science framework
-in Bioconductor.
-It offers practical guidance, reproducible workflows,
+(OMA)_ [https://microbiome.github.io/OMA](https://microbiome.github.io/OMA/docs/devel/) is an online book that provides a comprehensive introduction to the microbiome data science framework
+in Bioconductor. It offers practical guidance, reproducible workflows,
 and training material for integrative microbiome analyses. The book is
 versioned to match Bioconductor's biannual software release cycles. The work
 incorporates rich feedback from the user community and microbiome training
