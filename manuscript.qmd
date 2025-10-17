@@ -1153,15 +1153,9 @@ microbiome data.
 
 OMA consortium: Bastiaanssen, Thomaz; Beber, Moritz E.; Bektanov, Aituar;
 Benedetti, Giulio; Borman, Tuomas; Braccia, Domenick J.; Calgaro, Matteo; Callan,
-Danielle; Chaudhary, Jiya; Corrada Bravo, Héctor;
-
-Courbayre Dussau, Basil; Das, Sneha; Eckermann, Henrik; Erawijantari, Pande;
-Ernst, Felix G.M.; Gaudron-Parry, Elliot; Gopalakrishnan, Shyam; Hakula, Maija;
+Danielle; Chaudhary, Jiya; Corrada Bravo, Héctor; Courbayre Dussau, Basil; Das, Sneha; Eckermann, Henrik; Erawijantari, Pande; Ernst, Felix G.M.; Gaudron-Parry, Elliot; Gopalakrishnan, Shyam; Hakula, Maija;
 Hanhineva, Kati; Havulinna, Aki; Hindström, Rasmus; Jeba, Akewak;
-Lahti, Leo; Limborg, Morten; Lindgren, Himmi; Liu, Yihan; Mallick, Himel;
-
-Mongad, Dattatray; Müller, Christian L.; Muluh, Geraldson; Nynäs, Signe;
-Pasanen, Jesse; Paulo, Joao; Pelto, Juho; Peschel, Stefanie; Potbhare, Renuka;
+Lahti, Leo; Limborg, Morten; Lindgren, Himmi; Liu, Yihan; Mallick, Himel; Mongad, Dattatray; Müller, Christian L.; Muluh, Geraldson; Nynäs, Signe; Pasanen, Jesse; Paulo, Joao; Pelto, Juho; Peschel, Stefanie; Potbhare, Renuka;
 Pralas, Théotime; Ramos, Marcel; Raulo, Aura; Sannikov, Artur; Seraidarian, Ely;
 Serizay, Jacques; Shetty, Sudarshan; Shigdel, Rajesh; Suksi, Vilhelm;
 Tammi, Eetu; Valderamma, Benjamin; Waldron, Levi; Yang, Lu.
@@ -1170,22 +1164,17 @@ Tammi, Eetu; Valderamma, Benjamin; Waldron, Levi; Yang, Lu.
 
 LL and TB initiated and coordinated the work. All authors contributed
 material, participated in manuscript preparation, and approved the final
-version.
+version. 
 
 ## Acknowledgments {#sec-acknowledgments}
 
 This project received funding from the European Union’s Horizon 2020
 research and innovation programme under grant agreement No 952914. TB
-was additionally supported by the University of Turku Graduate School.
-
-We would like to thank the following individuals for their support for
+was additionally supported by the University of Turku Graduate School. We would like to thank the following individuals for their support for
 the project: Ashma, Richa; Bayal, Nitin; Benchraka, Chouaib; Cao, Yang; Dagnaud, Axel;
 Dallier, Teo; de Gunst, Noah; Faust, Karoline; Finn, Rob; Hillman, Samuel; Huang, Ruizhu;
 Pagés, Hervé; Richardson, Lorna; Rios Garza, Daniel;
 Robinson, Mark; Ruuskanen, Matti; Salehi, Mahkameh.
-
 We also extend our thanks to all contributors of the open-source resources used
-in this work.
-
-The authors wish to acknowledge CSC – IT Center for Science, Finland,
+in this work and acknowledge CSC – IT Center for Science, Finland,
 for computational resources.
