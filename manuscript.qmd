@@ -215,14 +215,12 @@ analysis often produce inconsistent results
 Accordingly, a need for standardization has been highlighted [@moreno-indias2021].
 Open microbiome data science _frameworks_ have emerged to provide sets of 
 interoperable methodology in specific computational environments
-[@Eren2021; @schloss2009; @bolyen2019; @mcmurdie2012], and a broader ecosystem
-with extensive documentation and vibrant user communities and culture that 
-can extend thecapacities far beyond the underlying technical framework.
-
-However, platforms focused solely on
-microbiome data science struggle to address the need to integrate
-data across diverse modalities and research domains, from metagenomics to
-metabolomics.
+[@Eren2021; @schloss2009; @bolyen2019; @mcmurdie2012], and a broader ecosystem 
+of digital resources, vibrant user communities and collaboration culture that 
+extend the capacities far beyond the underlying technical framework [@Katz2019]. 
+However, frameworks focused solely on microbiome data science fall short on 
+addressing the need to integrate data across diverse modalities, such as 
+metagenomics, metabolomics, and host genomics.
 
 The Bioconductor project embeds the methods of microbiome data science
 into a wider statistical programming framework
