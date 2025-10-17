@@ -219,6 +219,7 @@ author:
 
   - name: Rasmus Hindström
     orcid: 0009-0004-5731-178X
+    email: rasmus.hindstrom@utu.fi
     affiliations: [1]
 
   - name: OMA consortium
