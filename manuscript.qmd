@@ -411,7 +411,7 @@ between the two
 formats are available to bridge the gap between the respective user communities.
 
 ```{r}
-#| label: benchmark
+#| label: benchmark-analysis
 #| eval: false
 #| echo: false
 #| message: false
@@ -538,6 +538,14 @@ benchmark_df <- benchmark_df %>%
             NoGC = sum(gc == "none"), .groups = "drop") %>%
   mutate(method = factor(method, levels = names(methods)),
          object = factor(object, levels = names(classes)))
+```
+
+
+```{r}
+#| label: benchmark-viz
+#| eval: false
+#| echo: false
+#| message: false
 
 scientific_10 <- function(y) {
   sapply(y, function(z) {
