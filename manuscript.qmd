@@ -22,132 +22,197 @@ author:
     affiliations:
       - name: University of Turku
         id: 1
-        orcid: 0000-0002-8563-8884
-        department: Department of Computing
-        address:
-        city: Turku
-        postal-code: 20014
-    email: tvborm@utu.fi
+    orcid: 0000-0002-8563-8884
+    email: tuomas.v.borman@utu.fi
     attributes:
       corresponding: true
   - name: Giulio Benedetti
     affiliations:
+      - name: University of Turku
         id: 1
-        orcid: 0000-0002-8732-7692
+    orcid: 0000-0002-8732-7692
+    email: giulio.benedetti@utu.fi
     attributes:
       equal-contributor: true
   - name: Geraldson Muluh
     affiliations:
+      - name: University of Turku
         id: 1
+    orcid: 0000-0002-9721-5192
+    department: Department of Computing
+    address:
+      city: Turku
+      postal-code: '20014'
+      street-address: University of Turku
+    email: geraldson.muluh@utu.fi
     attributes:
       equal-contributor: true
   - name: Aura Raulo
     affiliations:
-        id: 1
+      - name: University of Oxford
+        id: 2
+    orcid: 0000-0003-4860-7840
+    department: Department of Biology & Queen's college
+    address:
+      city: Oxford
+      postal-code: OX1 3SZ
+      street-address: 11a Mansfield road
+    email: aura.raulo@utu.fi
   - name: Benjamin Valderamma
     affiliations:
-      - name: Organization XK
-        id: 2
-        department: Department of Y
-        address:
-        city: City
-        postal-code: 0000000
+      - name: University College Cork
+        id: 3
+      - name: APC Microbiome Ireland
+        id: 4
+    orcid: 0000-0002-4740-8965
+    department: Department of Anatomy and Neuroscience; University College Cork; APC Microbiome Ireland
+    address:
+      city: Cork
+      postal-code: T12 K8AF
+      street-address: College Road
+    email: 123116261@umail.ucc.ie
   - name: Artur Sannikov
     affiliations:
-      - id: 1
+      - name: University of Turku
+        id: 1
+    orcid: 0000-0001-7765-123X
+    department: Department of Life Technologies
+    address:
+      city: Turku
+      postal-code: '20014'
+      street-address: University of Turku
+    email: artur.sannikov@utu.fi
   - name: Stefanie Peschel
     affiliations:
-      - name: Organization D
-        id: 4
-        department:
-        address:
-        city:
-        postal-code:
-    email:
+      - name: LMU München
+        id: 5
+    orcid: 0000-0002-7936-7627
+    department: Department of Statistics
+    address:
+      city: Munich
+      postal-code: D-80539
+      street-address: Ludwigstraße 33
+    email: stefpeschel@gmail.com
   - name: Yihan Liu
     affiliations:
-      - name: Cornell
-        id: 5
-        department: Department of Y
-        address: Address
-        city: City
-        postal-code: 0000000
-  - name: Rasmus Hindström
-    affiliations:
-        id: 1
-        orcid: 0009-0004-5731-178X
-  - name: OMA consortium
-    affiliations:
-      - id: 6
+      - name: Cornell University
+        id: 6
+      - name: Yale University
+        id: 7
+    orcid: 0009-0008-0462-7501
+    department: 1. Department of Population Health Sciences, Weill Cornell Medicine; 2. Department of Biomedical Informatics & Data Science; Department of Biostatistics
+    address:
+      city: 1. New York, NY; 2. New Haven, CT
+      postal-code: '1. 10065; 2. 06510'
+      street-address: 1. 425 E 61st Street; 2. 101 College St
+    email: yihan.liu@yale.edu
   - name: Katariina Pärnänen
     affiliations:
-      - id: 1
       - name: University of Helsinki
-        id: 6
-        department: Department of Microbiology
-        address:
-        city: Helsinki
-        postal-code: 20014
+        id: 8
+    orcid: 0000-0003-2220-1738
+    department: Department of Microbiology
+    address:
+      city: Helsinki
+      postal-code: '00014'
+      street-address: Fabianinkatu 33)
+    email: katariina.parnanen@helsinki.fi
   - name: Christian L. Müller
     affiliations:
-        - id: 4
-  - name: Aki Havulinna
+      - name: Helmholtz Munich, LMU Munich, Flatiron Insti
+        id: 9
+    orcid: 0000-0002-3821-7083
+    email: christian.mueller@helmholtz-munich.de
+  - name: Aki S. Havulinna
     affiliations:
-        - id: 1
+      - name: University of Turku
+        id: 1
+      - name: Institute for Molecular Medicine Finland,FIMM- HiLIFE
+        id: 10
+    orcid: 0000-0002-4787-8959
+    department: Department of Computing
+    address:
+      city: Turku
+      postal-code: '20014'
+      street-address: University of Turku
+    email: aki.havulinna@utu.fi
   - name: Sudarshan Shetty
+    affiliations:
+      - name: Danone Research and Innovation
+        id: 11
+    orcid: 0000-0001-7280-9915
+    address:
+      city: Utrecht
+      postal-code: 3584 CT
+      street-address: Uppsalalaan 12
+    email: sudarshanshetty9@gmail.com
   - name: Marcel Ramos
     affiliations:
-      - name: Organization X
-        id: 9
-        department: Department of Y
-        address: Address
-        city: City
-        postal-code: 0000000
+      - name: CUNY Graduate School of Public Health and Health Policy
+        id: 12
+    orcid: 0000-0002-3242-0582
+    department: Department of Epidemiology and Biostatistics
+    address:
+      city: New York
+      postal-code: '10027'
+      street-address: 55 W 125th St
+    email: Marcel.Ramos@sph.cuny.edu
   - name: Domenick J. Braccia
-    affiliations:
-      - name: Organization XA
-        id: 10
-        department: Department of Y
-        address: Address
-        city: City
-        postal-code: 0000000
+    orcid: 0000-0002-4606-6254
+    email: domenick.braccia@gmail.com
   - name: Héctor Corrada Bravo
-    affiliations:
-      - name: Organization XP
-        id: 11
-        department: Department of YS
-        address: Address
-        city: City
-        postal-code: 0000000
-  - name: Felix G.M. Ernst
+    orcid: 0000-0002-1255-4444
+    email: hcorrada@gmail.com; corrada-bravo.hector@gene.com
+  - name: Felix M. Ernst
+    orcid: 0000-0001-5064-0928
+    email: felix.ernst@karer-consulting.com
   - name: Levi Waldron
     affiliations:
-      - name: Organization N
-        id: 13
-        department: Department of Y
-        address: Address
-        city: City
-        postal-code: 0000000
-  - name: Thomaz Bastiaanssen
+      - name: CUNY Graduate School of Public Health and Health Policy
+        id: 12
+    orcid: 0000-0003-2725-0694
+    department: Department of Epidemiology and Biostatistics
+    address:
+      city: New York
+      postal-code: '10027'
+      street-address: 55 W 125th St
+    email: Levi.Waldron@sph.cuny.edu
+  - name: Thomaz F. S. Bastiaanssen
     affiliations:
-      - name: Organization XX
-        id: 14
-        department: Department of Y
-        address:
-        city: City
-        postal-code: 0000000
+      - name: Amsterdam University Medical Centres
+        id: 13
+    orcid: 0000-0001-6891-734X
+    department: Department of Psychiatry, Amsterdam Public Health
+    address:
+      city: Amsterdam
+      postal-code: 1081 HJ
+      street-address: Oldenaller 1
+    email: t.f.s.bastiaanssen@amsterdamumc.nl
     attributes:
       equal-contributor: true
   - name: Himel Mallick
     affiliations:
-        id: 5
+      - name: Cornell University
+        id: 6
+    orcid: 0000-0003-4956-2429
+    department: Department of Population Health Sciences, Weill Cornell Medicine; Division of Gastroenterology and Hepatology, Weill Cornell Medicine; Department of Statistics and Data Science
+    address:
+      city: New York, NY
+      postal-code: '10065'
+      street-address: 425 E 61st Street
+    email: him4004@med.cornell.edu
     attributes:
       equal-contributor: true
   - name: Leo Lahti
     affiliations:
+      - name: University of Turku
         id: 1
-        orcid: 0000-0001-5537-637X
-    email: lemila@utu.fi
+    orcid: 0000-0001-5537-637X
+    department: Department of Computing
+    address:
+      city: Turku
+      postal-code: '20014'
+    email: leo.lahti@utu.fi
     attributes:
       corresponding: true
 abstract: |
