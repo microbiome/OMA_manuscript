@@ -17,202 +17,269 @@ format:
         path: _extensions/andrewheiss/wordcount/citeproc.lua
       - at: pre-quarto
         path: _extensions/andrewheiss/wordcount/wordcount.lua
+affiliations:
+  - id: 1
+    name: University of Turku
+    department: Department of Computing
+    city: Turku
+    postal-code: 20014
+
+  - id: 2
+    name: University of Turku
+    department: Department of Life Technologies
+    street-address: University of Turku
+    city: Turku
+    postal-code: 20014
+
+  - id: 3
+    name: University of Oxford
+    department: Department of Biology
+    street-address: 11a Mansfield Road
+    city: Oxford
+    postal-code: OX1 3SZ
+
+  - id: 4
+    name: University of Oxford
+    department: Queen’s College
+    street-address: 11a Mansfield Road
+    city: Oxford
+    postal-code: OX1 3SZ
+
+  - id: 5
+    name: University College Cork
+    department: Department of Anatomy and Neuroscience
+    street-address: College Road
+    city: Cork
+    postal-code: T12 K8AF
+
+  - id: 6
+    name: University College Cork
+    department: APC Microbiome Ireland
+    street-address: College Road
+    city: Cork
+    postal-code: T12 K8AF
+
+  - id: 7
+    name: LMU München
+    department: Department of Statistics
+    street-address: Ludwigstraße 33
+    city: Munich
+    postal-code: D-80539
+
+  - id: 8
+    name: Cornell University
+    department: Department of Population Health Sciences, Weill Cornell Medicine
+    street-address: 425 E 61st Street
+    city: New York, NY
+    postal-code: 10065
+
+  - id: 9
+    name: Cornell University
+    department: Department of Biomedical Informatics & Data Science
+    street-address: 425 E 61st Street
+    city: New York, NY
+    postal-code: 10065
+
+  - id: 10
+    name: Cornell University
+    department: Department of Biostatistics
+    street-address: 425 E 61st Street
+    city: New York, NY
+    postal-code: 10065
+
+  - id: 11
+    name: Yale University
+    department: Department of Biomedical Informatics & Data Science
+    street-address: 101 College St
+    city: New Haven, CT
+    postal-code: 06510
+
+  - id: 12
+    name: Yale University
+    department: Department of Biostatistics
+    street-address: 101 College St
+    city: New Haven, CT
+    postal-code: 06510
+
+  - id: 13
+    name: University of Helsinki
+    department: Department of Microbiology
+    street-address: Fabianinkatu 33
+    city: Helsinki
+    postal-code: 00014
+
+  - id: 14
+    name: Helmholtz Munich
+
+  - id: 15
+    name: Flatiron Institute
+
+  - id: 16
+    name: Institute for Molecular Medicine Finland, FIMM-HiLIFE
+    street-address: University of Helsinki
+    city: Helsinki
+    postal-code: 00014
+
+  - id: 17
+    name: Danone Research and Innovation
+    street-address: Uppsalalaan 12
+    city: Utrecht
+    postal-code: 3584 CT
+
+  - id: 18
+    name: CUNY Graduate School of Public Health and Health Policy
+    department: Department of Epidemiology and Biostatistics
+    street-address: 55 W 125th St
+    city: New York
+    postal-code: 10027
+
+  - id: 19
+    name: University of Maryland, College Park
+
+  - id: 20
+    name: Genentech
+
+  - id: 21
+    name: Karer Consulting
+
+  - id: 22
+    name: Amsterdam University Medical Centres
+    department: Department of Psychiatry
+    street-address: Oldenaller 1
+    city: Amsterdam
+    postal-code: 1081 HJ
+
+  - id: 23
+    name: Amsterdam University Medical Centres
+    department: Amsterdam Public Health
+    street-address: Oldenaller 1
+    city: Amsterdam
+    postal-code: 1081 HJ
+
+  - id: 24
+    name: Cornell University
+    department: Division of Gastroenterology and Hepatology, Weill Cornell Medicine
+    street-address: 425 E 61st Street
+    city: New York, NY
+    postal-code: 10065
+
+  - id: 25
+    name: Cornell University
+    department: Department of Statistics and Data Science
+    street-address: 425 E 61st Street
+    city: New York, NY
+    postal-code: 10065
+
 author:
   - name: Tuomas Borman
-    affiliations:
-      - name: University of Turku
-        id: 1
     orcid: 0000-0002-8563-8884
     email: tuomas.v.borman@utu.fi
+    affiliations: [1]
     attributes:
       corresponding: true
+
   - name: Giulio Benedetti
-    affiliations:
-      - name: University of Turku
-        id: 1
     orcid: 0000-0002-8732-7692
     email: giulio.benedetti@utu.fi
+    affiliations: [1]
     attributes:
       equal-contributor: true
+
   - name: Geraldson Muluh
-    affiliations:
-      - name: University of Turku
-        id: 1
     orcid: 0000-0002-9721-5192
-    department: Department of Computing
-    address:
-      city: Turku
-      postal-code: '20014'
-      street-address: University of Turku
     email: geraldson.muluh@utu.fi
+    affiliations: [1]
     attributes:
       equal-contributor: true
+
   - name: Aura Raulo
-    affiliations:
-      - name: University of Oxford
-        id: 2
     orcid: 0000-0003-4860-7840
-    department: Department of Biology & Queen's college
-    address:
-      city: Oxford
-      postal-code: OX1 3SZ
-      street-address: 11a Mansfield road
     email: aura.raulo@utu.fi
+    affiliations: [3, 4]
+
   - name: Benjamin Valderamma
-    affiliations:
-      - name: University College Cork
-        id: 3
-      - name: APC Microbiome Ireland
-        id: 4
     orcid: 0000-0002-4740-8965
-    department: Department of Anatomy and Neuroscience; University College Cork; APC Microbiome Ireland
-    address:
-      city: Cork
-      postal-code: T12 K8AF
-      street-address: College Road
     email: 123116261@umail.ucc.ie
+    affiliations: [5, 6]
+
   - name: Artur Sannikov
-    affiliations:
-      - name: University of Turku
-        id: 1
     orcid: 0000-0001-7765-123X
-    department: Department of Life Technologies
-    address:
-      city: Turku
-      postal-code: '20014'
-      street-address: University of Turku
     email: artur.sannikov@utu.fi
+    affiliations: [2]
+
   - name: Stefanie Peschel
-    affiliations:
-      - name: LMU München
-        id: 5
     orcid: 0000-0002-7936-7627
-    department: Department of Statistics
-    address:
-      city: Munich
-      postal-code: D-80539
-      street-address: Ludwigstraße 33
     email: stefpeschel@gmail.com
+    affiliations: [7]
+
   - name: Yihan Liu
-    affiliations:
-      - name: Cornell University
-        id: 6
-      - name: Yale University
-        id: 7
     orcid: 0009-0008-0462-7501
-    department: 1. Department of Population Health Sciences, Weill Cornell Medicine; 2. Department of Biomedical Informatics & Data Science; Department of Biostatistics
-    address:
-      city: 1. New York, NY; 2. New Haven, CT
-      postal-code: '1. 10065; 2. 06510'
-      street-address: 1. 425 E 61st Street; 2. 101 College St
     email: yihan.liu@yale.edu
+    affiliations: [8, 9, 10, 11, 12]
+
   - name: Katariina Pärnänen
-    affiliations:
-      - name: University of Helsinki
-        id: 8
     orcid: 0000-0003-2220-1738
-    department: Department of Microbiology
-    address:
-      city: Helsinki
-      postal-code: '00014'
-      street-address: Fabianinkatu 33)
     email: katariina.parnanen@helsinki.fi
+    affiliations: [13]
+
   - name: Christian L. Müller
-    affiliations:
-      - name: Helmholtz Munich, LMU Munich, Flatiron Insti
-        id: 9
     orcid: 0000-0002-3821-7083
     email: christian.mueller@helmholtz-munich.de
+    affiliations: [14, 7, 15]
+
   - name: Aki S. Havulinna
-    affiliations:
-      - name: University of Turku
-        id: 1
-      - name: Institute for Molecular Medicine Finland,FIMM- HiLIFE
-        id: 10
     orcid: 0000-0002-4787-8959
-    department: Department of Computing
-    address:
-      city: Turku
-      postal-code: '20014'
-      street-address: University of Turku
     email: aki.havulinna@utu.fi
+    affiliations: [1, 16]
+
   - name: Sudarshan Shetty
-    affiliations:
-      - name: Danone Research and Innovation
-        id: 11
     orcid: 0000-0001-7280-9915
-    address:
-      city: Utrecht
-      postal-code: 3584 CT
-      street-address: Uppsalalaan 12
     email: sudarshanshetty9@gmail.com
+    affiliations: [17]
+
   - name: Marcel Ramos
-    affiliations:
-      - name: CUNY Graduate School of Public Health and Health Policy
-        id: 12
     orcid: 0000-0002-3242-0582
-    department: Department of Epidemiology and Biostatistics
-    address:
-      city: New York
-      postal-code: '10027'
-      street-address: 55 W 125th St
-    email: Marcel.Ramos@sph.cuny.edu
+    email: marcel.ramos@sph.cuny.edu
+    affiliations: [18]
+
   - name: Domenick J. Braccia
     orcid: 0000-0002-4606-6254
     email: domenick.braccia@gmail.com
+    affiliations: [18]
+
   - name: Héctor Corrada Bravo
     orcid: 0000-0002-1255-4444
-    email: hcorrada@gmail.com; corrada-bravo.hector@gene.com
+    email: hcorrada@gmail.com
+    affiliations: [19, 20]
+
   - name: Felix M. Ernst
     orcid: 0000-0001-5064-0928
     email: felix.ernst@karer-consulting.com
+    affiliations: [21]
+
   - name: Levi Waldron
-    affiliations:
-      - name: CUNY Graduate School of Public Health and Health Policy
-        id: 12
     orcid: 0000-0003-2725-0694
-    department: Department of Epidemiology and Biostatistics
-    address:
-      city: New York
-      postal-code: '10027'
-      street-address: 55 W 125th St
-    email: Levi.Waldron@sph.cuny.edu
+    email: levi.waldron@sph.cuny.edu
+    affiliations: [18]
+
   - name: Thomaz F. S. Bastiaanssen
-    affiliations:
-      - name: Amsterdam University Medical Centres
-        id: 13
     orcid: 0000-0001-6891-734X
-    department: Department of Psychiatry, Amsterdam Public Health
-    address:
-      city: Amsterdam
-      postal-code: 1081 HJ
-      street-address: Oldenaller 1
     email: t.f.s.bastiaanssen@amsterdamumc.nl
+    affiliations: [22, 23]
     attributes:
       equal-contributor: true
+
   - name: Himel Mallick
-    affiliations:
-      - name: Cornell University
-        id: 6
     orcid: 0000-0003-4956-2429
-    department: Department of Population Health Sciences, Weill Cornell Medicine; Division of Gastroenterology and Hepatology, Weill Cornell Medicine; Department of Statistics and Data Science
-    address:
-      city: New York, NY
-      postal-code: '10065'
-      street-address: 425 E 61st Street
     email: him4004@med.cornell.edu
+    affiliations: [8, 24, 25]
     attributes:
       equal-contributor: true
+
   - name: Leo Lahti
-    affiliations:
-      - name: University of Turku
-        id: 1
     orcid: 0000-0001-5537-637X
-    department: Department of Computing
-    address:
-      city: Turku
-      postal-code: '20014'
     email: leo.lahti@utu.fi
+    affiliations: [1]
     attributes:
       corresponding: true
 abstract: |
