@@ -134,36 +134,30 @@ affiliations:
     postal-code: 10027
 
   - id: 19
-    name: TBD
+    name: No affiliation
 
   - id: 20
-    name: TBD
-
-  - id: 21
-    name: TBD
-
-  - id: 22
     name: Amsterdam University Medical Centres
     department: Department of Psychiatry
     street-address: Oldenaller 1
     city: Amsterdam
     postal-code: 1081 HJ
 
-  - id: 23
+  - id: 21
     name: Amsterdam University Medical Centres
     department: Amsterdam Public Health
     street-address: Oldenaller 1
     city: Amsterdam
     postal-code: 1081 HJ
 
-  - id: 24
+  - id: 22
     name: Cornell University
     department: Division of Gastroenterology and Hepatology, Weill Cornell Medicine
     street-address: 425 E 61st Street
     city: New York, NY
     postal-code: 10065
 
-  - id: 25
+  - id: 23
     name: Cornell University
     department: Department of Statistics and Data Science
     street-address: 425 E 61st Street
@@ -180,46 +174,38 @@ author:
 
   - name: Giulio Benedetti
     orcid: 0000-0002-8732-7692
-    email: giulio.benedetti@utu.fi
     affiliations: [1]
     attributes:
       equal-contributor: true
 
   - name: Geraldson Muluh
     orcid: 0000-0002-9721-5192
-    email: geraldson.muluh@utu.fi
     affiliations: [1]
     attributes:
       equal-contributor: true
 
   - name: Aura Raulo
     orcid: 0000-0003-4860-7840
-    email: aura.raulo@utu.fi
     affiliations: [3, 4]
 
   - name: Benjamin Valderamma
     orcid: 0000-0002-4740-8965
-    email: 123116261@umail.ucc.ie
     affiliations: [5, 6]
 
   - name: Artur Sannikov
     orcid: 0000-0001-7765-123X
-    email: artur.sannikov@utu.fi
     affiliations: [2]
 
   - name: Stefanie Peschel
     orcid: 0000-0002-7936-7627
-    email: stefpeschel@gmail.com
     affiliations: [7]
 
   - name: Yihan Liu
     orcid: 0009-0008-0462-7501
-    email: yihan.liu@yale.edu
     affiliations: [8, 9, 10, 11, 12]
 
   - name: Rasmus Hindström
     orcid: 0009-0004-5731-178X
-    email: rasmus.hindstrom@utu.fi
     affiliations: [1]
 
   - name: OMA consortium
@@ -227,60 +213,49 @@ author:
 
   - name: Katariina Pärnänen
     orcid: 0000-0003-2220-1738
-    email: katariina.parnanen@helsinki.fi
     affiliations: [13]
 
   - name: Christian L. Müller
     orcid: 0000-0002-3821-7083
-    email: christian.mueller@helmholtz-munich.de
-    affiliations: [14, 7, 15]
+    affiliations: [7, 14, 15]
 
   - name: Aki S. Havulinna
     orcid: 0000-0002-4787-8959
-    email: aki.havulinna@utu.fi
     affiliations: [1, 16]
 
   - name: Sudarshan Shetty
     orcid: 0000-0001-7280-9915
-    email: sudarshanshetty9@gmail.com
     affiliations: [17]
 
   - name: Marcel Ramos
     orcid: 0000-0002-3242-0582
-    email: marcel.ramos@sph.cuny.edu
     affiliations: [18]
 
   - name: Domenick J. Braccia
     orcid: 0000-0002-4606-6254
-    email: domenick.braccia@gmail.com
     affiliations: [18]
 
   - name: Héctor Corrada Bravo
     orcid: 0000-0002-1255-4444
-    email: hcorrada@gmail.com
-    affiliations: [19, 20]
+    affiliations: [19]
 
   - name: Felix M. Ernst
     orcid: 0000-0001-5064-0928
-    email: felix.ernst@karer-consulting.com
-    affiliations: [21]
+    affiliations: [19]
 
   - name: Levi Waldron
     orcid: 0000-0003-2725-0694
-    email: levi.waldron@sph.cuny.edu
     affiliations: [18]
 
   - name: Thomaz F. S. Bastiaanssen
     orcid: 0000-0001-6891-734X
-    email: t.f.s.bastiaanssen@amsterdamumc.nl
-    affiliations: [22, 23]
+    affiliations: [20, 21]
     attributes:
       equal-contributor: true
 
   - name: Himel Mallick
     orcid: 0000-0003-4956-2429
-    email: him4004@med.cornell.edu
-    affiliations: [8, 24, 25]
+    affiliations: [8, 22, 23]
     attributes:
       equal-contributor: true
 
