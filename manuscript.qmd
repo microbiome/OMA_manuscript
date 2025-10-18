@@ -931,7 +931,7 @@ p_alpha <- plotColData(
     tse, y = "faith", x = "Country", colour_by = "Country",
     show_boxplot = TRUE, show_violin = FALSE, point_alpha = 0.2) +
     labs(y = "Faith", x = "Country") +
-    theme(legend.position = "none", text = element_text(size = 16))
+    theme(legend.position = "none", text = element_text(size = s))
 p_alpha2 <- plotColData(
     tse, y = "faith", x = "Age_Months") +
     geom_smooth(method = "lm") +
@@ -946,7 +946,7 @@ p_mds <- plotMDS(tse, colour_by = "Country") +
 
 # Visualize dbRDA
 p_rda <- plotRDA(tse, "RDA", colour.by = "Country", add.significance = FALSE) +
-    theme(legend.position = "none", text = element_text(size = 16)) # Already present from p_mds
+    theme(legend.position = "none", text = element_text(size = s)) # Already present from p_mds
 
 # Visualize abundances vs age
 p_daa <- plotExpression(
