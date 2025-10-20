@@ -21,117 +21,88 @@ affiliations:
   - id: 1
     name: University of Turku
     department: Department of Computing
-    city: Turku
-    postal-code: 20014
+    address: Turku, Finland
 
   - id: 2
     name: University of Turku
     department: Department of Life Technologies
-    street-address: University of Turku
-    city: Turku
-    postal-code: 20014
+    address: Turku, Finland
 
   - id: 3
     name: University of Oxford
     department: Department of Biology
-    street-address: 11a Mansfield Road
-    city: Oxford
-    postal-code: OX1 3SZ
+    address: Oxford, England
 
   - id: 4
     name: University of Oxford
     department: Queen’s College
-    street-address: 11a Mansfield Road
-    city: Oxford
-    postal-code: OX1 3SZ
+    address: Oxford, England
 
   - id: 5
     name: University College Cork
     department: Department of Anatomy and Neuroscience
-    street-address: College Road
-    city: Cork
-    postal-code: T12 K8AF
+    address: Cork, Ireland
 
   - id: 6
     name: University College Cork
     department: APC Microbiome Ireland
-    street-address: College Road
-    city: Cork
-    postal-code: T12 K8AF
+    address: Cork, Ireland
 
   - id: 7
     name: LMU München
     department: Department of Statistics
-    street-address: Ludwigstraße 33
-    city: Munich
-    postal-code: D-80539
+    address: Munich, Germany
 
   - id: 8
     name: Cornell University
     department: Department of Population Health Sciences, Weill Cornell Medicine
-    street-address: 425 E 61st Street
-    city: New York, NY
-    postal-code: 10065
+    address: New York, USA
 
   - id: 9
     name: Cornell University
     department: Department of Biomedical Informatics & Data Science
-    street-address: 425 E 61st Street
-    city: New York, NY
-    postal-code: 10065
+    address: New York, USA
 
   - id: 10
     name: Cornell University
     department: Department of Biostatistics
-    street-address: 425 E 61st Street
-    city: New York, NY
-    postal-code: 10065
+    address: New York, USA
 
   - id: 11
     name: Yale University
     department: Department of Biomedical Informatics & Data Science
-    street-address: 101 College St
-    city: New Haven, CT
-    postal-code: 06510
+    address: New Haven, USA
 
   - id: 12
     name: Yale University
     department: Department of Biostatistics
-    street-address: 101 College St
-    city: New Haven, CT
-    postal-code: 06510
+    address: New Haven, USA
 
   - id: 13
     name: University of Helsinki
     department: Department of Microbiology
-    street-address: Fabianinkatu 33
-    city: Helsinki
-    postal-code: 00014
+    address: Helsinki, Finland
 
   - id: 14
     name: Helmholtz Munich
+    address: Munich, Germany
 
   - id: 15
     name: Flatiron Institute
+    address: New York, USA
 
   - id: 16
     name: Institute for Molecular Medicine Finland, FIMM-HiLIFE
-    street-address: University of Helsinki
-    city: Helsinki
-    postal-code: 00014
+    address: Helsinki, Finland
 
   - id: 17
     name: Danone Research and Innovation
-    street-address: Uppsalalaan 12
-    city: Utrecht
-    postal-code: 3584 CT
+    address: Utrecht, Netherlands
 
   - id: 18
     name: CUNY Graduate School of Public Health and Health Policy
     department: Department of Epidemiology and Biostatistics
-    street-address: 55 W 125th St
-    city: New York
-    postal-code: 10027
+    address: New York, USA
 
   - id: 19
     name: No affiliation
@@ -139,30 +110,22 @@ affiliations:
   - id: 20
     name: Amsterdam University Medical Centres
     department: Department of Psychiatry
-    street-address: Oldenaller 1
-    city: Amsterdam
-    postal-code: 1081 HJ
+    address: Amsterdam, Netherlands
 
   - id: 21
     name: Amsterdam University Medical Centres
     department: Amsterdam Public Health
-    street-address: Oldenaller 1
-    city: Amsterdam
-    postal-code: 1081 HJ
+    address: Amsterdam, Netherlands
 
   - id: 22
     name: Cornell University
     department: Division of Gastroenterology and Hepatology, Weill Cornell Medicine
-    street-address: 425 E 61st Street
-    city: New York, NY
-    postal-code: 10065
+    address: New York, USA
 
   - id: 23
     name: Cornell University
     department: Department of Statistics and Data Science
-    street-address: 425 E 61st Street
-    city: New York, NY
-    postal-code: 10065
+    address: New York, USA
 
 author:
   - name: Tuomas Borman
