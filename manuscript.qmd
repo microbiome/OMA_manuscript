@@ -787,7 +787,7 @@ of complex omics data [@huber2015; @ramos2017; @amezquita2020].
 Available computational approaches for multi-table analysis in microbiome
 research can be broadly categorized into three groups: Machine Learning (ML)
 predictive modelling [@mallick2024], association-based modelling, and
-latent variable modelling.  [@Jeganathan2021; @moiz2025;
+latent variable modelling.  [@Jeganathan2021; @Sherwani2025;
 @moreno-indias2021; @mallick2024; @bastiaanssen2023;
 @argelaguet2020]. Some of the currently supported multi-omic methods
 include cross-correlation analyses, canonical correspondence analysis
