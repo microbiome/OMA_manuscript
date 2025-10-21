@@ -131,101 +131,135 @@ author:
   - name: Tuomas Borman
     orcid: 0000-0002-8563-8884
     email: tuomas.v.borman@utu.fi
-    affiliations: [1]
+    affiliations:
+      - ref: 1
     attributes:
       corresponding: true
 
   - name: Giulio Benedetti
     orcid: 0000-0002-8732-7692
-    affiliations: [1]
+    affiliations:
+      - ref: 1
     attributes:
       equal-contributor: true
 
   - name: Geraldson Muluh
     orcid: 0000-0002-9721-5192
-    affiliations: [1]
+    affiliations:
+      - ref: 1
     attributes:
       equal-contributor: true
 
   - name: Aura Raulo
     orcid: 0000-0003-4860-7840
-    affiliations: [3, 4]
+    affiliations:
+      - ref: 3
+      - ref: 4
 
-  - name: Benjamin Valderamma
+  - name: Benjamin Valderrama
     orcid: 0000-0002-4740-8965
-    affiliations: [5, 6]
+    affiliations:
+      - ref: 5
+      - ref: 6
 
   - name: Artur Sannikov
     orcid: 0000-0001-7765-123X
-    affiliations: [2]
+    affiliations:
+      - ref: 2
 
   - name: Stefanie Peschel
     orcid: 0000-0002-7936-7627
-    affiliations: [7]
+    affiliations:
+      - ref: 7
 
   - name: Yihan Liu
     orcid: 0009-0008-0462-7501
-    affiliations: [8, 9, 10, 11, 12]
+    affiliations:
+      - ref: 8
+      - ref: 9
+      - ref: 10
+      - ref: 11
+      - ref: 12
 
   - name: Rasmus Hindström
     orcid: 0009-0004-5731-178X
-    affiliations: [1]
+    affiliations:
+      - ref: 1
 
   - name: OMA consortium
-    affiliations: [19]
+    affiliations:
+      - ref: 19
 
   - name: Katariina Pärnänen
     orcid: 0000-0003-2220-1738
-    affiliations: [13]
+    affiliations:
+      - ref: 13
 
   - name: Christian L. Müller
     orcid: 0000-0002-3821-7083
-    affiliations: [7, 14, 15]
+    affiliations:
+      - ref: 7
+      - ref: 14
+      - ref: 15
 
   - name: Aki S. Havulinna
     orcid: 0000-0002-4787-8959
-    affiliations: [1, 16]
+    affiliations:
+      - ref: 1
+      - ref: 16
 
   - name: Sudarshan Shetty
     orcid: 0000-0001-7280-9915
-    affiliations: [17]
+    affiliations:
+      - ref: 17
 
   - name: Marcel Ramos
     orcid: 0000-0002-3242-0582
-    affiliations: [18]
+    affiliations:
+      - ref: 18
 
   - name: Domenick J. Braccia
     orcid: 0000-0002-4606-6254
-    affiliations: [18]
+    affiliations:
+      - ref: 18
 
   - name: Héctor Corrada Bravo
     orcid: 0000-0002-1255-4444
-    affiliations: [19]
+    affiliations:
+      - ref: 19
 
   - name: Felix M. Ernst
     orcid: 0000-0001-5064-0928
-    affiliations: [19]
+    affiliations:
+      - ref: 19
 
   - name: Levi Waldron
     orcid: 0000-0003-2725-0694
-    affiliations: [18]
+    affiliations:
+      - ref: 18
 
   - name: Thomaz F. S. Bastiaanssen
     orcid: 0000-0001-6891-734X
-    affiliations: [20, 21]
+    affiliations:
+      - ref: 20
+      - ref: 21
     attributes:
       equal-contributor: true
 
   - name: Himel Mallick
     orcid: 0000-0003-4956-2429
-    affiliations: [8, 22, 23]
+    affiliations:
+      - ref: 8
+      - ref: 22
+      - ref: 23
     attributes:
       equal-contributor: true
 
   - name: Leo Lahti
     orcid: 0000-0001-5537-637X
     email: leo.lahti@utu.fi
-    affiliations: [1]
+    affiliations:
+      - ref: 1
     attributes:
       corresponding: true
 abstract: |
