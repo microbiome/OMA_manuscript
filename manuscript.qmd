@@ -797,7 +797,7 @@ time series from standard models of microbial community dynamics including
 Hubbell's neutral model, generalized Lotka-Volterra, and the
 consumer-resource model through the miaSim package [@gao2023]. Our framework 
 provides a robust basis for developing extended methods for longitudinal 
-multi-omics, which is currently an active area of investigation [@moiz2025].
+multi-omics, which is currently an active area of investigation [@Sherwani2025].
 
 **Multi-modal integration.** A key benefit of the ecosystem lays in its ability to  
 support the integration of microbial abundance data with other omics modalities, such as 
@@ -806,8 +806,8 @@ host genomes [@Qin2022], transcriptomes, or proteomes [@nyholm2020; @moreno-indi
 containers support complex combinations omics data sets [@huber2015; @ramos2017; @amezquita2020].
 Such integrative approaches in microbiome
 research can be broadly categorized into three groups: Machine Learning (ML)
-predictive models [@mallick2024], association-based models, and
-latent variable models [@Jeganathan2021; @moiz2025;
+predictive modelling [@mallick2024], association-based modelling, and
+latent variable modelling.  [@Jeganathan2021; @Sherwani2025;
 @moreno-indias2021; @mallick2024; @bastiaanssen2023;
 @argelaguet2020]. Examples of the currently supported methods for multi-modal 
 analysis include cross-correlation, canonical correspondence analysis
