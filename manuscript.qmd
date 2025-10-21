@@ -17,137 +17,215 @@ format:
         path: _extensions/andrewheiss/wordcount/citeproc.lua
       - at: pre-quarto
         path: _extensions/andrewheiss/wordcount/wordcount.lua
+affiliations:
+  - id: 1
+    name: University of Turku
+    department: Department of Computing
+    address: Turku, Finland
+
+  - id: 2
+    name: University of Turku
+    department: Department of Life Technologies
+    address: Turku, Finland
+
+  - id: 3
+    name: University of Oxford
+    department: Department of Biology
+    address: Oxford, England
+
+  - id: 4
+    name: University of Oxford
+    department: Queen’s College
+    address: Oxford, England
+
+  - id: 5
+    name: University College Cork
+    department: Department of Anatomy and Neuroscience
+    address: Cork, Ireland
+
+  - id: 6
+    name: University College Cork
+    department: APC Microbiome Ireland
+    address: Cork, Ireland
+
+  - id: 7
+    name: LMU München
+    department: Department of Statistics
+    address: Munich, Germany
+
+  - id: 8
+    name: Cornell University
+    department: Department of Population Health Sciences, Weill Cornell Medicine
+    address: New York, USA
+
+  - id: 9
+    name: Cornell University
+    department: Department of Biomedical Informatics & Data Science
+    address: New York, USA
+
+  - id: 10
+    name: Cornell University
+    department: Department of Biostatistics
+    address: New York, USA
+
+  - id: 11
+    name: Yale University
+    department: Department of Biomedical Informatics & Data Science
+    address: New Haven, USA
+
+  - id: 12
+    name: Yale University
+    department: Department of Biostatistics
+    address: New Haven, USA
+
+  - id: 13
+    name: University of Helsinki
+    department: Department of Microbiology
+    address: Helsinki, Finland
+
+  - id: 14
+    name: Helmholtz Munich
+    address: Munich, Germany
+
+  - id: 15
+    name: Flatiron Institute
+    address: New York, USA
+
+  - id: 16
+    name: Institute for Molecular Medicine Finland, FIMM-HiLIFE
+    address: Helsinki, Finland
+
+  - id: 17
+    name: Danone Research and Innovation
+    address: Utrecht, Netherlands
+
+  - id: 18
+    name: CUNY Graduate School of Public Health and Health Policy
+    department: Department of Epidemiology and Biostatistics
+    address: New York, USA
+
+  - id: 19
+    name: No affiliation
+
+  - id: 20
+    name: Amsterdam University Medical Centres
+    department: Department of Psychiatry
+    address: Amsterdam, Netherlands
+
+  - id: 21
+    name: Amsterdam University Medical Centres
+    department: Amsterdam Public Health
+    address: Amsterdam, Netherlands
+
+  - id: 22
+    name: Cornell University
+    department: Division of Gastroenterology and Hepatology, Weill Cornell Medicine
+    address: New York, USA
+
+  - id: 23
+    name: Cornell University
+    department: Department of Statistics and Data Science
+    address: New York, USA
+
 author:
   - name: Tuomas Borman
-    affiliations:
-      - name: University of Turku
-        id: 1
-        orcid: 0000-0002-8563-8884
-        department: Department of Computing
-        address:
-        city: Turku
-        postal-code: 20014
-    email: tvborm@utu.fi
+    orcid: 0000-0002-8563-8884
+    email: tuomas.v.borman@utu.fi
+    affiliations: [1]
     attributes:
       corresponding: true
+
   - name: Giulio Benedetti
-    affiliations:
-        id: 1
-        orcid: 0000-0002-8732-7692
+    orcid: 0000-0002-8732-7692
+    affiliations: [1]
     attributes:
       equal-contributor: true
+
   - name: Geraldson Muluh
-    affiliations:
-        id: 1
+    orcid: 0000-0002-9721-5192
+    affiliations: [1]
     attributes:
       equal-contributor: true
+
   - name: Aura Raulo
-    affiliations:
-        id: 1
+    orcid: 0000-0003-4860-7840
+    affiliations: [3, 4]
+
   - name: Benjamin Valderamma
-    affiliations:
-      - name: Organization XK
-        id: 2
-        department: Department of Y
-        address:
-        city: City
-        postal-code: 0000000
+    orcid: 0000-0002-4740-8965
+    affiliations: [5, 6]
+
   - name: Artur Sannikov
-    affiliations:
-      - id: 1
+    orcid: 0000-0001-7765-123X
+    affiliations: [2]
+
   - name: Stefanie Peschel
-    affiliations:
-      - name: Organization D
-        id: 4
-        department:
-        address:
-        city:
-        postal-code:
-    email:
+    orcid: 0000-0002-7936-7627
+    affiliations: [7]
+
   - name: Yihan Liu
-    affiliations:
-      - name: Cornell
-        id: 5
-        department: Department of Y
-        address: Address
-        city: City
-        postal-code: 0000000
+    orcid: 0009-0008-0462-7501
+    affiliations: [8, 9, 10, 11, 12]
+
   - name: Rasmus Hindström
-    affiliations:
-        id: 1
-        orcid: 0009-0004-5731-178X
+    orcid: 0009-0004-5731-178X
+    affiliations: [1]
+
   - name: OMA consortium
-    affiliations:
-      - id: 6
+    affiliations: [19]
+
   - name: Katariina Pärnänen
-    affiliations:
-      - id: 1
-      - name: University of Helsinki
-        id: 6
-        department: Department of Microbiology
-        address:
-        city: Helsinki
-        postal-code: 20014
+    orcid: 0000-0003-2220-1738
+    affiliations: [13]
+
   - name: Christian L. Müller
-    affiliations:
-        - id: 4
-  - name: Aki Havulinna
-    affiliations:
-        - id: 1
+    orcid: 0000-0002-3821-7083
+    affiliations: [7, 14, 15]
+
+  - name: Aki S. Havulinna
+    orcid: 0000-0002-4787-8959
+    affiliations: [1, 16]
+
   - name: Sudarshan Shetty
+    orcid: 0000-0001-7280-9915
+    affiliations: [17]
+
   - name: Marcel Ramos
-    affiliations:
-      - name: Organization X
-        id: 9
-        department: Department of Y
-        address: Address
-        city: City
-        postal-code: 0000000
+    orcid: 0000-0002-3242-0582
+    affiliations: [18]
+
   - name: Domenick J. Braccia
-    affiliations:
-      - name: Organization XA
-        id: 10
-        department: Department of Y
-        address: Address
-        city: City
-        postal-code: 0000000
+    orcid: 0000-0002-4606-6254
+    affiliations: [18]
+
   - name: Héctor Corrada Bravo
-    affiliations:
-      - name: Organization XP
-        id: 11
-        department: Department of YS
-        address: Address
-        city: City
-        postal-code: 0000000
-  - name: Felix G.M. Ernst
+    orcid: 0000-0002-1255-4444
+    affiliations: [19]
+
+  - name: Felix M. Ernst
+    orcid: 0000-0001-5064-0928
+    affiliations: [19]
+
   - name: Levi Waldron
-    affiliations:
-      - name: Organization N
-        id: 13
-        department: Department of Y
-        address: Address
-        city: City
-        postal-code: 0000000
-  - name: Thomaz Bastiaanssen
-    affiliations:
-      - name: Organization XX
-        id: 14
-        department: Department of Y
-        address:
-        city: City
-        postal-code: 0000000
+    orcid: 0000-0003-2725-0694
+    affiliations: [18]
+
+  - name: Thomaz F. S. Bastiaanssen
+    orcid: 0000-0001-6891-734X
+    affiliations: [20, 21]
     attributes:
       equal-contributor: true
+
   - name: Himel Mallick
-    affiliations:
-        id: 5
+    orcid: 0000-0003-4956-2429
+    affiliations: [8, 22, 23]
     attributes:
       equal-contributor: true
+
   - name: Leo Lahti
-    affiliations:
-        id: 1
-        orcid: 0000-0001-5537-637X
-    email: lemila@utu.fi
+    orcid: 0000-0001-5537-637X
+    email: leo.lahti@utu.fi
+    affiliations: [1]
     attributes:
       corresponding: true
 abstract: |
@@ -797,7 +875,7 @@ time series from standard models of microbial community dynamics including
 Hubbell's neutral model, generalized Lotka-Volterra, and the
 consumer-resource model through the miaSim package [@gao2023]. Our framework 
 provides a robust basis for developing extended methods for longitudinal 
-multi-omics, which is currently an active area of investigation [@moiz2025].
+multi-omics, which is currently an active area of investigation [@Sherwani2025].
 
 **Multi-modal integration.** A key benefit of the ecosystem lays in its ability to  
 support the integration of microbial abundance data with other omics modalities, such as 
@@ -807,7 +885,7 @@ containers support complex combinations omics data sets [@huber2015; @ramos2017;
 Such integrative approaches in microbiome
 research can be broadly categorized into three groups: Machine Learning (ML)
 predictive models [@mallick2024], association-based models, and
-latent variable models [@Jeganathan2021; @moiz2025;
+latent variable models [@Jeganathan2021; @Sherwani2025;
 @moreno-indias2021; @mallick2024; @bastiaanssen2023;
 @argelaguet2020]. Examples of the currently supported methods for multi-modal 
 analysis include cross-correlation, canonical correspondence analysis
