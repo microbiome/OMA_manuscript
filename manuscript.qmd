@@ -1275,7 +1275,7 @@ version.
 This project received funding from the European Union’s Horizon 2020
 research and innovation programme under grant agreement No 952914. TB
 was additionally supported by the University of Turku Graduate School. We would like to thank the following individuals for their support for the project: 
-Axel Dagnaud; Chouaib Benchraka; Daniel Rios Garza; Hervé Pagés; Karoline Faust; Lorna Richardson; Mahkameh Salehi; Mark Robinson; Matti Ruuskanen; Nitin Bayal; Noah de Gunst; Richa Ashma; Rob Finn; Ruizhu Huang; Samuel Hillman; Teo Dallier; Yang Cao. 
+Richa Ashma; Nitin Bayal; Chouaib Benchraka; Yang Cao; Axel Dagnaud; Teo Dallier; Noah de Gunst; Karoline Faust; Rob Finn; Samuel Hillman; Ruizhu Huang; Hervé Pagés; Lorna Richardson; Daniel Rios Garza; Mark Robinson; Matti Ruuskanen; Mahkameh Salehi. 
 We would like to thank Christopher Quince and Kihyun Lee for providing the resistome profiling data, 
 Laura Grieneisen and Johannes Björk for support with the baboon data compilation, 
 Justin Silverman for philr support, and 
