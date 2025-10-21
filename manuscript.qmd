@@ -988,7 +988,7 @@ saveRDS(tse, "data/tse.rds")
 #| echo: false
 #| message: false
 #| warning: false
-#| fig-cap: "Common visualization methods applied to time series data on infants from three different countries. **a**, Phylogenetic relationships. **b**, Phyla abundances of the samples ordered by age, stratified by country and gender. Actinobacteria is more present in Bolivia and Bangladesh compared to Finland.  **c-d**, Multidimensional Scaling (MDS) using UniFrac distances and Distance-based Redundancy Analysis (dbRDA) based on Aitchison distance, respectively. Both ordination methods shows clear pattern separating microbial profiles in different countries. dbRDA shows an additional association between microbial profile and age. **e-f**, Faith's phylogenetic diversity by country and age, respectively. **g**, Differential Abundance Analysis (DAA) results. Two genera exhibit an association with age. **h**, UniFrac divergence between consecutive time points. Results indicate slow stabilization of microbial communities."
+#| fig-cap: "Common visualization methods applied to time series data on infants from three different countries (Finland, Bangladesh, and Bolivia) based on public datasets - SprockettTHData() [@Sprockett2020; @Subramanian2014; @Vatanen2016] available via microbiomeDataSets [@microbiomedatasets]. **a**, Phylogenetic relationships. **b**, Phyla abundances of the samples ordered by age, stratified by country and gender. Actinobacteria is more abundant in Bolivia and Bangladesh compared to Finland.  **c-d**, Multidimensional Scaling (MDS) using UniFrac distances and Distance-based Redundancy Analysis (dbRDA) based on Aitchison distance, respectively. Both ordination methods shows clear pattern separating microbial profiles in different countries. dbRDA shows an additional association between microbial profile and age. **e-f**, Faith's phylogenetic diversity by country and age respectively. **g**, Differential Abundance Analysis (DAA) results. Two genera exhibit an association with age. **h**, UniFrac divergence between consecutive time points. Results indicate slow stabilization of microbial communities."
 #| fig-width: 19
 #| fig-height: 10
 
@@ -1011,11 +1011,15 @@ phylum_colors <- setNames(
     scater:::.get_palette("tableau20")[seq_along(phylum_names)],
     phylum_names)
 
+# Define a base font size
+s <- 16
+
 # Visualize phylogeny
 p_tree <- plotRowTree(
     altExp(tse, "Family"), edge.colour.by = "Phylum", layout = "ape") +
     scale_color_manual(values = phylum_colors) + # Manually set colors
-    guides(color = "none")
+    guides(color = "none") +
+    theme(text = element_text(size = s))
 
 # Visualize abundances with barplot
 p_bar <- plotAbundance(
@@ -1023,27 +1027,30 @@ p_bar <- plotAbundance(
     col.var = c("Country", "Sex"), facet.cols = TRUE, scales = "free",
     order.col.by = "Age_Months") +
     guides(fill = guide_legend(title = "Phylum")) +
-    scale_color_manual(values = phylum_colors)
+    scale_color_manual(values = phylum_colors) +
+    theme(text = element_text(size = s))
 
 # Visualize alpha diversity
 p_alpha <- plotColData(
     tse, y = "faith", x = "Country", colour_by = "Country",
     show_boxplot = TRUE, show_violin = FALSE, point_alpha = 0.2) +
     labs(y = "Faith", x = "Country") +
-    theme(legend.position = "none")
+    theme(legend.position = "none", text = element_text(size = s))
 p_alpha2 <- plotColData(
     tse, y = "faith", x = "Age_Months") +
     geom_smooth(method = "lm") +
-    labs(y = "Faith", x = "Age in months")
+    labs(y = "Faith", x = "Age in months") +
+    theme(text = element_text(size = s))
 
 # Visualize PCoA
 p_mds <- plotMDS(tse, colour_by = "Country") +
     theme(legend.position = "inside",
-          legend.justification = c("right", "top"))
+          legend.justification = c("right", "top"),
+          text = element_text(size = s))
 
 # Visualize dbRDA
 p_rda <- plotRDA(tse, "RDA", colour.by = "Country", add.significance = FALSE) +
-    theme(legend.position = "none") # Already present from p_mds
+    theme(legend.position = "none", text = element_text(size = s)) # Already present from p_mds
 
 # Visualize abundances vs age
 p_daa <- plotExpression(
@@ -1053,14 +1060,15 @@ p_daa <- plotExpression(
     ) +
     scale_y_log10() +
     geom_smooth() +
-    labs(x = "Age in months", y = "Relative abundance")
+    labs(x = "Age in months", y = "Relative abundance") +
+    theme(text = element_text(size = s))
 
 # Visualize divergence
 tse_sub <- tse[, !is.na(tse[["time_diff"]]) & tse[["time_diff"]]>=0.8 & tse[["time_diff"]]<=1.2]
 p_divergence <- plotColData(tse_sub, y = "divergence", x = "Age_Months") +
     geom_smooth(method = "lm") +
     labs(x = "Age in months", y = expression(Delta ~ "UniFrac" ~ "(N, N-1)") ) +
-    theme(legend.position = "none")
+    theme(legend.position = "none", text = element_text(size = s))
 
 # Combine plots
 p1 <- (p_tree / p_bar) +
@@ -1072,7 +1080,7 @@ p3 <- ((p_alpha|p_alpha2) / p_daa / p_divergence) +
 p <- (p1 | p2 | p3) +
     plot_layout(widths = c(0.33, 0.4, 0.32)) +
     plot_annotation(tag_levels = "a") &
-    theme(plot.tag = element_text(size = 15, face = "bold"))
+    theme(plot.tag = element_text(size = 22, face = "bold"))
 p
 ```
 
