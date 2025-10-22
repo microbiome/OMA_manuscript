@@ -918,8 +918,8 @@ host genomes [@Qin2022], transcriptomes, or proteomes [@nyholm2020; @moreno-indi
 containers support complex combinations omics data sets [@huber2015; @ramos2017; @amezquita2020].
 Such integrative approaches in microbiome
 research can be broadly categorized into three groups: Machine Learning (ML)
-predictive modelling [@mallick2024], association-based modelling, and
-latent variable modelling.  [@Jeganathan2021; @Sherwani2025;
+prediction [@mallick2024], association-based approaches, and
+latent variable modelling  [@Jeganathan2021; @Sherwani2025;
 @moreno-indias2021; @mallick2024; @bastiaanssen2023;
 @argelaguet2020]. Examples of the currently supported methods for multi-modal 
 analysis include cross-correlation, canonical correspondence analysis
