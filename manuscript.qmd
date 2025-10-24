@@ -304,9 +304,9 @@ data science collaboration and training [@drnevich2025], aligning with recent
 international calls to enhance microbiology education [@Timmis2024].
 
 Microbiome research focuses on how microbial communities vary, function and
-interact with their environment and potential host [@moreno-indias2021]. The
+interact with their environment and a potential host [@moreno-indias2021]. The
 technologies used in this field generate vast amounts of high-dimensional and
-hierarchically structured data, commonly in form of microbial DNA sequences
+hierarchically structured data, commonly in the form of microbial DNA sequences
 detected in a set of samples. Following the rapid expansion of microbiome research and
 technological advances, metagenomic sequencing is increasingly complemented by other 
 types of high-throughput measurements. This has
@@ -345,7 +345,7 @@ It provides harmonized data import and presentation, and fast,
 robust methods for transforming abundance tables into biological insights. The
 methods are extensively tested and distributed through R/Bioconductor
 packages ([https://bioconductor.org/packages](https://bioconductor.org/packages)), 
-supporting the community-driven development of the framework. To  promote evidence-based 
+supporting the community-driven development of the framework. To promote evidence-based 
 best practices, we present the online book [https://microbiome.github.io/OMA](https://microbiome.github.io/OMA/docs/devel)
 that introduces many dedicated topics in microbiome analysis.
 
@@ -360,7 +360,7 @@ ability to integrate heterogeneous data elements is essential in biological
 research, where the individual components of a system can seldom be studied in
 isolation. However, input data formats vary across different methods, leading
 to technical complications and time lost on data wrangling.
-Bioconductor addresses this through standardized data structures supported
+Bioconductor addresses this through standardised data structures supported
 by an ecosystem of interoperable methods, allowing the analyst to invest more time
 into core analytical tasks.
 
@@ -371,10 +371,9 @@ object-oriented classes that integrate multiple data elements into
 a single structure known as a *data container*
 [@chambers2014]. The SummarizedExperiment (SE) class is
 the primary data container underlying the Bioconductor ecosystem
-[@huber2015; @morgan2025]. Its position among the top-1\% most
-downloaded packages in Bioconductor reflects its widespread recognition and
+[@huber2015; @morgan2025]. Its position among the top 1\% most-downloaded packages in Bioconductor reflects its widespread recognition and
 increasing adoption among developers (@fig-bioc_packages). SE provides a
-standardized solution to store tabular data by linking numeric abundance
+standardised solution to store tabular data by linking numeric abundance
 matrices with side information on features or rows  (*e.g.*, taxonomy),
 and samples or columns (*e.g.*, origin, collection time, host health).
 
@@ -543,12 +542,12 @@ transcriptome, proteome, and metabolome profiling data, dedicated data container
 have been developed for certain modalities by the Bioconductor community 
 to address their specific characteristics; examples include single cell 
 sequencing [@amezquita2020] and host genomics [@Lawrence2013].
-The subsequent linking the data from the distinct modalities often comes with an additional challenge: 
+The subsequent linking of the data from distinct modalities often presents an additional challenge: 
 multi-omics data is often sparse, so that samples can be only partially matched between experiments. In other cases,
 a single sample in one modality may link to two or more samples in another modality [see @Husso2023]. 
 Integrating data across multiple modalities could thus benefit from flexible sample mappings and the ability to accommodate potentially different data containers corresponding to the different modalities.
 The MultiAssayExperiment (MAE) data container [@ramos2017] provides a solution to these two tasks and
-facilitate the integration of different omics modalities (@fig-datacontainers b).
+facilitates the integration of different omics modalities (@fig-datacontainers b).
 Integration of multi-table data without such a structured framework could
 lead to ambiguous mappings and inconsistent results.
 For instance, diagonal integration methods
@@ -686,7 +685,7 @@ such as MicrobiomeDB [@Oliveira2018] and in other languages
 (*e.g.*, Julia). These converters facilitate widespread access to
 microbiome analysis methods. Imported data sets from different omics modalities 
 can then be interlinked within the MAE data container with its flexible sample
-mappings as described above. This integrated data object can be then analysed 
+mappings as described above. This integrated data object can then be analysed 
 with dedicated downstream methods.
 
 **Quality control and exploration.** After importing the data into R,
@@ -727,7 +726,7 @@ efficient management of interlinked multi-modal data sets.
 **Transformation.** Statistical transformations commonly used in microbiome
 research include relative abundance (e.g. TSS) [@gloor2017],
 tree-aware phylogenetic ILR (phILR) [@silverman2017], centered log-ratio (CLR),
-and robust centered log-ratio (rCLR). The latter three of which aim to mitigate
+and robust centered log-ratio (rCLR). The latter three aim to mitigate
 compositionality bias [@Martino2019]. A related concept that controls for
 unequal sampling depth, is data rarefaction. Rarefaction is
 the process of repeatedly subsampling data to equal read depth and averaging
@@ -743,7 +742,7 @@ iteratively. The integrative data containers
 support gradual and organized accumulation of interlinked data elements
 including transformations, aggregated data, dimension reduction, and derived
 data on samples and features. We generally recommend
-to initialize the data objects at the beginning of the
+initializing the data objects at the beginning of the
 workflow, where they can then be gradually enriched as the project advances.
 Data can be enriched by importing new external information as well as by deriving new
 information from the data itself into the same data container as
@@ -836,7 +835,7 @@ community signatures [@Frioux2023]. These and other multivariate
 methods are provided by mia, miaViz, and
 additional single-cell packages (scater, scuttle [@amezquita2020]). Quantification
 of sample dissimilarities is a common task, and many omics modalities can benefit from
-access to the shared, standardized methods supporting the integrative data containers.
+access to the shared, standardised methods supporting the integrative data containers.
 
 
 **Differential abundance and mediation analysis.** Differential abundance 
@@ -891,7 +890,7 @@ to multivariate and multi-omic monitoring [@Velten2022], and real,
 pseudo, or simulated time series. Moreover, an increasing number of
 studies incorporate spatial dimension in microbiome analysis [@Ruuskanen2021]. 
 While spatio-temporal analyses require specialized methods, the miaTime R package
-offers a set of daa wrangling methods to support longitudinal, multi-modal 
+offers a set of data wrangling methods to support longitudinal, multi-modal 
 microbiome analysis. In addition, Bioconductor contains applicable methods from other
 research domains, namely single-cell sequencing [@amezquita2020] and spatial
 transcriptomics [@righelli2022], which use closely related data containers.
@@ -911,11 +910,11 @@ consumer-resource model through the miaSim package [@gao2023]. Our framework
 provides a robust basis for developing extended methods for longitudinal 
 multi-omics, which is currently an active area of investigation [@Sherwani2025].
 
-**Multi-modal integration.** A key benefit of the ecosystem lays in its ability to  
+**Multi-modal integration.** A key benefit of the ecosystem lies in its ability to  
 support the integration of microbial abundance data with other omics modalities, such as 
 resistomes [@Salehi2025], metabolomes [@Hintikka2021], 
 host genomes [@Qin2022], transcriptomes, or proteomes [@nyholm2020; @moreno-indias2021] (@fig-downstream_analyses). As we have demonstrated, the integrative data 
-containers support complex combinations omics data sets [@huber2015; @ramos2017; @amezquita2020].
+containers support complex combinations of omics data sets [@huber2015; @ramos2017; @amezquita2020].
 Such integrative approaches in microbiome
 research can be broadly categorized into three groups: Machine Learning (ML)
 prediction [@mallick2024], association-based approaches, and
@@ -936,7 +935,7 @@ will accelerate the development, benchmarking, and standardisation of
 employed in microbiome data science. Examples include network analysis [@Peschel2021],
 ML-based prediction and classification [@Topcuoglu2021], enrichment
 analyses via BugSigDB [@geistlinger2024] or Microbe Set Enrichment
-Analysis (MSEA) [@Kou2020]. The recent adoption of of interoperable
+Analysis (MSEA) [@Kou2020]. The recent adoption of interoperable
 data containers and the methodological similarities in related fields
 can greatly expand the selection of available toolkits in emerging
 areas. In addition to the internal coherence within the Bioconductor ecosystem, 
@@ -1277,7 +1276,7 @@ generation and automated analysis, among others [@zou2025; @gao2024].
 **Open data science infrastructures** have become critical components
 of reproducible research and a vast body of applications critically
 rely on open-source methods and workflows [@berg2020; @Barker2022;
-@Hocquet2024]. Standardized data structures can enhance the transparency,
+@Hocquet2024]. standardised data structures can enhance the transparency,
 reliability, and explainability of analysis workflows. We have
 documented the open data science ecosystem for multi-modal microbiome research
 built on widely adopted Bioconductor data containers, software libraries,  
