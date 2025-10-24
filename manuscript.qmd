@@ -651,6 +651,11 @@ benchmark_df <- benchmark_df %>%
             NoGC = sum(gc == "none"), .groups = "drop") %>%
   mutate(method = factor(method, levels = names(methods)),
          object = factor(object, levels = names(classes)))
+
+# Write to file
+benchmark_df %>%
+  mutate(Time = as.numeric(Time), Memory = as.numeric(Memory)) %>%
+  write.csv(file = "article/benchmark_results.csv", row.names = FALSE)
 ```
 
 
@@ -725,13 +730,12 @@ ggsave("benchmarkmarking.png",
        height = 7)
 ```
 
-![**Execution time and memory consumption for microbiome data containers** 
+![**Execution time and memory consumption for microbiome data containers.** 
 The Bioconductor's TreeSE, phyloseq and speedyseq are commonly used data containers in microbiome analysis.
 We benchmarked them for five common operations applied to random subsets of samples from a
 large study on wild baboons [@Grieneisen2021] (accessible through the
-microbiomeDataSets package in Bioconductor). Execution time (s) and error
-bars represent the mean and standard error (SE) over 10 iterations,
-respectively. Allocated memory (MB) was estimated based on a single iteration.
+microbiomeDataSets package in Bioconductor). Execution time (s) was measured as
+the mean value over 10 iterations, whereas allocated memory (MB) was estimated based on a single iteration.
 The benchmarking was conducted in R using the bench library with 8 CPU
 cores and 32 GB RAM. All operations, except for UniFrac dissimilarity with
 phyloseq, could also be performed on a regular laptop (*e.g.*, 4 CPU cores and
