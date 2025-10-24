@@ -269,7 +269,7 @@ abstract: |
   large and heterogeneous multi-modal microbiome data would benefit from
   unified approaches supporting the design of modular data science workflows 
   through interoperable methods. The Bioconductor project
-  has recently developed an optimised statistical programming framework for
+  has recently developed an optimized statistical programming framework for
   multi-assay data integration. Building on this
   foundation, we introduce a community-developed open source ecosystem
   for microbiome data science. In contrast to the previous alternatives, 
@@ -496,7 +496,7 @@ in order to accurately reflect fine-scale variability in microbiome data.
 While maintaining interoperability with
 the broader Bioconductor ecosystem, the TreeSummarizedExperiment
 (TreeSE) class [@huang2021] extends the SE and SCE data structures to
-hierarchical datasets by incorporating both feature and sample organisations
+hierarchical datasets by incorporating both feature and sample organizations
 as tree structures (@fig-datacontainers a). Moreover, TreeSE supports the
 storage of other common aspects of microbiome data, for example, reference 
 sequences, and incorporates results from common analytical procedures such as
@@ -515,7 +515,7 @@ and alternative feature representations. It can also offer substantial
 gains in memory efficiency and computing speed over phyloseq (@fig-benchmarking). 
 While speedyseq is faster in certain operations, TreeSE tends to scale more
 efficiently in terms of execution time (t) and allocated memory (m) as sample size
-(n) increases. Despite these advantages, optimising time and memory consumption 
+(n) increases. Despite these advantages, optimizing time and memory consumption 
 presents an obvious area for further development in the TreeSE-based framework. 
 Conversion functions and detailed cheat sheets between the two formats are available to 
 support interoperability between the respective user communities.
