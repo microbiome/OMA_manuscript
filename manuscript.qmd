@@ -1276,7 +1276,7 @@ generation and automated analysis, among others [@zou2025; @gao2024].
 **Open data science infrastructures** have become critical components
 of reproducible research and a vast body of applications critically
 rely on open-source methods and workflows [@berg2020; @Barker2022;
-@Hocquet2024]. standardized data structures can enhance the transparency,
+@Hocquet2024]. Standardized data structures can enhance the transparency,
 reliability, and explainability of analysis workflows. We have
 documented the open data science ecosystem for multi-modal microbiome research
 built on widely adopted Bioconductor data containers, software libraries,  
