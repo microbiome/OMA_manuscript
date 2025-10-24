@@ -318,7 +318,7 @@ Microbiome data scientists
 are thus increasingly facing the practical challenges of integrating
 heterogeneous data across multiple data modes into reproducible workflows.
 The unique statistical properties and complexity of microbiome data
-necessitate specialized approaches in their analysis
+necessitate specialised approaches in their analysis
 [@moreno-indias2021; @Jeganathan2021; @Willis2019], yet the diversity of
 proposed solutions and inconsistent outcomes
 [@Nearing2022; @Pelto2025; @Gamboa-Tuz2025] can make it
@@ -366,7 +366,7 @@ into core analytical tasks.
 
 Bioconductor data structures support statistical analysis of complex
 data combinations [@huber2015] and are widely adopted by various
-research communities. They have been implemented through specialized
+research communities. They have been implemented through specialised
 object-oriented classes that integrate multiple data elements into
 a single structure known as a *data container*
 [@chambers2014]. The SummarizedExperiment (SE) class is
@@ -455,7 +455,7 @@ if( is.null(df) || nrow(pkgs) == 0L ){
     df <- df[df[["Package"]] %in% pkgs[["Package"]], ]
     df[["Field"]] <- pkgs[match(df[["Package"]], pkgs[["Package"]]), "Field"][[1]]
 
-    # Get information on when the package become available in Bioconductor
+    # Get information on when the package became available in Bioconductor
     dates <- df[["Date"]] |> unique()
     dates <- dates[ dates < floor_date(Sys.time(), "month") ]
     available <- lapply(dates, function(date){
@@ -468,7 +468,7 @@ if( is.null(df) || nrow(pkgs) == 0L ){
     available <- do.call(cbind, available) |> as.data.frame()
     rownames(available) <- unique(df[["Package"]])
 
-    # Create a table showing the number packages by field through time
+    # Create a table showing the number of packages by field through time
     ind <- pkgs[match(unique(df[["Package"]]), pkgs[["Package"]]), "Field"][[1]]
     pkgs_date <- rowsum(available, group = ind)
     pkgs_date <- pkgs_date |>
@@ -640,7 +640,7 @@ be accessed with the available tools for research and educational purposes.
 # Data preparation {#sec-process}
 
 While microbiome data scientists continue to develop
-specialized solutions for data analysis [@Jeganathan2021; @Willis2019;
+specialised solutions for data analysis [@Jeganathan2021; @Willis2019;
 @MarcosZambrano2023], the implementations typically differ in their
 expected input and output formats. Common data standards support
 modular data science workflows, speeding up methods development,
@@ -696,7 +696,7 @@ framework includes a versatile set of custom visualization methods to
 assess data variability, outliers, homogeneity of variance and other
 aspects that may need to be considered in downstream data
 analysis. The mia and miaViz packages provide
-convenient access to many operations for the integrative 
+convenient access to many operations for the integrative
 data containers regarding common tasks in microbiome 
 data exploration and visualization (@fig-downstream_analyses). 
 
@@ -756,7 +756,7 @@ provenance of the integrated data object.
 \begin{center}
 \includegraphics[height=\textheight]{figures/workflow.png}
 \end{center}
-\captionof{figure}{\textbf{Multi-modal data integration workflow.} Following data generation and preprocessing (top two panels), the integrative framework covers five steps of microbiome data integration and analysis: 1) Data is wrapped into a TreSE data object (see Figure~\ref{fig-datacontainers}), containing information on the samples (tube icons) and their features (e.g. taxonomic, functional, or resistome profiles; colored circles). TreeSE objects can accommodate multiple assay tables as well as additional hierarchical structures. 2) The TreeSE data object can then be processed to get cleaner data. This can include filtering out low-quality samples and features, transforming assay data for example by normalizing it to enhance the comparability of sample-specific abundances, or agglomerating the feature data to specific taxonomic levels or functional categories. 3) The cleaned data can then be analysed using statistical models to uncover relations among samples (e.g., with PCoA), analyse drivers of variation in community diversity and composition or test for differential abundance (e.g. between sampling time or location). 4) The framework supports the integration of various types of omics modalities through MultiAssayExperiment and the specialized data structures for each omics provided by Bioconductor. Here, for example, the taxonomic and metabolomic profiles of samples can be summarized and compared with joint analysis among features. 5) Finally, Quarto notebooks can aid reproducible analysis and reporting.}
+\captionof{figure}{\textbf{Multi-modal data integration workflow.} Following data generation and preprocessing (top two panels), the integrative framework covers five steps of microbiome data integration and analysis: 1) Data is wrapped into a TreSE data object (see Figure~\ref{fig-datacontainers}), containing information on the samples (tube icons) and their features (e.g. taxonomic, functional, or resistome profiles; colored circles). TreeSE objects can accommodate multiple assay tables as well as additional hierarchical structures. 2) The TreeSE data object can then be processed to get cleaner data. This can include filtering out low-quality samples and features, transforming assay data for example by normalizing it to enhance the comparability of sample-specific abundances, or agglomerating the feature data to specific taxonomic levels or functional categories. 3) The cleaned data can then be analysed using statistical models to uncover relations among samples (e.g., with PCoA), analyse drivers of variation in community diversity and composition or test for differential abundance (e.g. between sampling time or location). 4) The framework supports the integration of various types of omics modalities through MultiAssayExperiment and the specialised data structures for each omics provided by Bioconductor. Here, for example, the taxonomic and metabolomic profiles of samples can be summarized and compared with joint analysis among features. 5) Finally, Quarto notebooks can aid reproducible analysis and reporting.}
 \label{fig:workflow}
 :::
 
@@ -768,7 +768,7 @@ helping to shift the focus towards multi-modal analyses and
 methods development while also supporting standard data analyses in 
 microbiome research.
 
-Microbiome data analysis often relies on specialized statistical approaches
+Microbiome data analysis often relies on specialised statistical approaches
 as data sparsity, zero-inflation, compositionality, and heteroschedasticity
 pose challenges for standard methods [@gloor2017; @Jeganathan2021]. 
 Moreover, microbiome data is hierarchically
@@ -816,8 +816,8 @@ and the phylogeny-aware UniFrac [@lozupone2005]. The community
 dissimilarities are commonly visualized with unsupervised ordination
 methods that project the data onto a lower-dimensional display
 [@goodrich2014]. Unsupervised techniques commonly used include Principal Component
-Analysis (PCA), Principal Coordinates Analysis (PCoA) also known as 
-Multi-Dimensional Scaling (MDS), and Non-metric MDS (NMDS)
+Analysis (PCA), Principal Coordinates Analysis (PCoA; also known as 
+Multi-Dimensional Scaling, MDS), and Non-metric MDS (NMDS)
 (@fig-downstream_analyses). Statistical tests
 (*e.g.*, Permutational Multivariate Analysis of Variance) and supervised
 visualization methods, such as the
@@ -828,7 +828,7 @@ from compositionally robust measures (*e.g.*, robust
 Aitchison distance [@Martino2019]), or phylogeny-aware dissimilarity
 measures specifically developed for microbiome research (*e.g.*, UniFrac
 [@lozupone2005]). Sample dissimilarities provide the basis for many
-specialized microbiome techniques including microbial community typing
+specialised microbiome techniques including microbial community typing
 (clustering) with Dirichlet Multinomial Mixtures (DMM) [@Holmes2012]
 and community state types (CST) [@DiGiulio2015], or factorization into
 community signatures [@Frioux2023]. These and other multivariate
@@ -873,9 +873,9 @@ frequently complemented by functional analyses, either based on
 functional predictions derived from amplicon or metagenomic
 sequences, or from parallel metabolomic or other functional
 assays. Our framework not only supports the incorporation of functional
-abundance tables within the same data objects but specialized methods
+abundance tables within the same data objects but specialised methods
 for functional data are available as well; for instance, regarding metabolome
-analyses the notame package [@klavus2020] has recently added SE support,
+analyses, the notame package [@klavus2020] has recently added SE support,
 and the R4MS project provides many interoperable tools [@gatto2025].
 The framework has found recent applications in extended analyses of metagenomic
 features, for instance, antimicrobial resistome composition [@Salehi2025]. 
@@ -889,7 +889,7 @@ from short to long follow-up times, sparse to dense data, univariate
 to multivariate and multi-omic monitoring [@Velten2022], and real,
 pseudo, or simulated time series. Moreover, an increasing number of
 studies incorporate spatial dimension in microbiome analysis [@Ruuskanen2021]. 
-While spatio-temporal analyses require specialized methods, the miaTime R package
+While spatio-temporal analyses require specialised methods, the miaTime R package
 offers a set of data wrangling methods to support longitudinal, multi-modal 
 microbiome analysis. In addition, Bioconductor contains applicable methods from other
 research domains, namely single-cell sequencing [@amezquita2020] and spatial
@@ -902,7 +902,7 @@ related samples), and feature modality (whether a feature exhibits multiple
 abundance states). Another type of temporal analysis 
 includes the time-to-event, or survival models, which are encountered
 regularly in epidemiological and population cohort studies; for microbiome
-data, these analyses require specialized approaches, as proposed in previous
+data, these analyses require specialised approaches, as proposed in previous
 studies [@Salosensaari2021; @Calle2023]. We also provide methods to simulate
 time series from standard models of microbial community dynamics including
 Hubbell's neutral model, generalized Lotka-Volterra, and the
@@ -910,7 +910,7 @@ consumer-resource model through the miaSim package [@gao2023]. Our framework
 provides a robust basis for developing extended methods for longitudinal 
 multi-omics, which is currently an active area of investigation [@Sherwani2025].
 
-**Multi-modal integration.** A key benefit of the ecosystem lies in its ability to  
+**Multi-modal integration.** A key benefit of the ecosystem lies in its ability to 
 support the integration of microbial abundance data with other omics modalities, such as 
 resistomes [@Salehi2025], metabolomes [@Hintikka2021], 
 host genomes [@Qin2022], transcriptomes, or proteomes [@nyholm2020; @moreno-indias2021] (@fig-downstream_analyses). As we have demonstrated, the integrative data 
