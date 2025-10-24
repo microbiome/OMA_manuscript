@@ -269,7 +269,7 @@ abstract: |
   large and heterogeneous multi-modal microbiome data would benefit from
   unified approaches supporting the design of modular data science workflows 
   through interoperable methods. The Bioconductor project
-  has recently developed an optimized statistical programming framework for
+  has recently developed an optimised statistical programming framework for
   multi-assay data integration. Building on this
   foundation, we introduce a community-developed open source ecosystem
   for microbiome data science. In contrast to the previous alternatives, 
@@ -511,11 +511,11 @@ TreeSE is a superset that can accommodate all elements of a phyloseq object
 (taxa abundances, sample metadata, phylogenetic tree, and reference sequences). In addition, 
 TreeSE can also accommodate multi-modal datasets encompassing parallel taxonomic levels, 
 functional predictions, and resistome, metabolome or other profiles 
-and alternative feature representations. Often it can also offer substantial
+and alternative feature representations. It can also offer substantial
 gains in memory efficiency and computing speed over phyloseq (@fig-benchmarking). 
 While speedyseq is faster in certain operations, TreeSE tends to scale more
 efficiently in terms of execution time (t) and allocated memory (m) as sample size
-(n) increases. Despite these advantages, optimization of the time and memory consumption 
+(n) increases. Despite these advantages, optimising time and memory consumption 
 presents an obvious area for further development in the TreeSE-based framework. 
 Conversion functions and detailed cheat sheets between the two formats are available to 
 support interoperability between the respective user communities.
@@ -542,7 +542,7 @@ transcriptome, proteome, and metabolome profiling data, dedicated data container
 have been developed for certain modalities by the Bioconductor community 
 to address their specific characteristics; examples include single cell 
 sequencing [@amezquita2020] and host genomics [@Lawrence2013].
-The subsequent linking of the data from distinct modalities often presents an additional challenge: 
+Subsequent linking of the data from distinct modalities often presents an additional challenge: 
 multi-omics data is often sparse, so that samples can be only partially matched between experiments. In other cases,
 a single sample in one modality may link to two or more samples in another modality [see @Husso2023]. 
 Integrating data across multiple modalities could thus benefit from flexible sample mappings and the ability to accommodate potentially different data containers corresponding to the different modalities.
@@ -597,13 +597,13 @@ $^c$ The sampleMap supports diverse mappings between samples from different expe
 
 ![**Bioconductor data containers for microbiome data.** **(a)
 TreeSummarizedExperiment (TreeSE)** supports hierarchical, multi-table microbiome 
-analysis. A data object can accommodate of i) “assays” that describe the abundances of features 
+analysis. A data object can accommodate: i) “assays” that describe the abundances of features 
 in each sample (e.g. taxonomic units, resistance genes, or predicted functions), 
 ii) “colData” with tabular metadata on each sample, 
 iii) “rowData” with tabular metadata on each feature (e.g. taxonomic mappings), and 
 iv) tree information describing feature hierarchies, such as phylogenetic relations 
-between the taxonomic units (rowTree) or host species (colTree). TreeSE can thus link numeric 
-multiple abundance tables and their derived versions (e.g. statistical transformations, 
+between the taxonomic units (rowTree) or host species (colTree). TreeSE can thus link multiple 
+numeric abundance tables and their derived versions (e.g. statistical transformations, 
 different taxonomic levels, dimensionality reduction) with tabular and hierarchical side 
 information on the features (rows) and samples (columns). Additional slots for reference
 sequences and experiment metadata are available. (Figure adapted from [@huang2021]) **(b) MultiAssayExperiment
@@ -698,7 +698,7 @@ aspects that may need to be considered in downstream data
 analysis. The mia and miaViz packages provide
 convenient access to many operations for the integrative 
 data containers regarding common tasks in microbiome 
-data exploration and visualization  (@fig-downstream_analyses). 
+data exploration and visualization (@fig-downstream_analyses). 
 
 **Filtering and agglomeration.** Microbiome datasets can contain tens of
 thousands of unique features depending on the sequencing resolution, used
@@ -728,7 +728,7 @@ research include relative abundance (e.g. TSS) [@gloor2017],
 tree-aware phylogenetic ILR (phILR) [@silverman2017], centered log-ratio (CLR),
 and robust centered log-ratio (rCLR). The latter three aim to mitigate
 compositionality bias [@Martino2019]. A related concept that controls for
-unequal sampling depth, is data rarefaction. Rarefaction is
+unequal sampling depth is data rarefaction. Rarefaction is
 the process of repeatedly subsampling data to equal read depth and averaging
 computed metrics [@schloss2024b]. Subsampling data to equal read depth (*rarefying*)
 without iteration is not recommended [@mcmurdie2014;@schloss2024;@Willis2019b].
@@ -756,7 +756,7 @@ provenance of the integrated data object.
 \begin{center}
 \includegraphics[height=\textheight]{figures/workflow.png}
 \end{center}
-\captionof{figure}{\textbf{Multi-modal data integration worklow.} Following data generation and preprocessing (top two panels), the integrative framework covers five steps of microbiome data integration and analysis: 1) Data is wrapped into a TreSE data object (see Figure~\ref{fig-datacontainers}), containing information on the samples (tube icons) and their features (e.g. taxonomic, functional, or resistome profiles; colored circles). TreeSE objects can accommodate multiple assay tables as well as additional hierarchical structures. 2) The TreeSE data object can then be processed to get cleaner data. This can include filtering out low-quality samples and features, transforming assay data for example by normalizing it to enhance the comparability of sample-specific abundances, or agglomerating the feature data to specific taxonomic levels or functional categories. 3) The cleaned data can then be analysed using statistical models to uncover relations among samples (e.g., with PCoA), analyse drivers of variation in community diversity and composition or test for differential abundance (e.g. between sampling time or location). 4) The framework supports the integration of various types of omics modalities through MultiAssayExperiment and the specialized data structures for each omics provided by Bioconductor. Here, for example, the taxonomic and metabolomic profiles of samples can be summarized and compared with joint analysis among features. 5) Finally, Quarto notebooks can aid reproducible analysis and reporting.}
+\captionof{figure}{\textbf{Multi-modal data integration workflow.} Following data generation and preprocessing (top two panels), the integrative framework covers five steps of microbiome data integration and analysis: 1) Data is wrapped into a TreSE data object (see Figure~\ref{fig-datacontainers}), containing information on the samples (tube icons) and their features (e.g. taxonomic, functional, or resistome profiles; colored circles). TreeSE objects can accommodate multiple assay tables as well as additional hierarchical structures. 2) The TreeSE data object can then be processed to get cleaner data. This can include filtering out low-quality samples and features, transforming assay data for example by normalizing it to enhance the comparability of sample-specific abundances, or agglomerating the feature data to specific taxonomic levels or functional categories. 3) The cleaned data can then be analysed using statistical models to uncover relations among samples (e.g., with PCoA), analyse drivers of variation in community diversity and composition or test for differential abundance (e.g. between sampling time or location). 4) The framework supports the integration of various types of omics modalities through MultiAssayExperiment and the specialized data structures for each omics provided by Bioconductor. Here, for example, the taxonomic and metabolomic profiles of samples can be summarized and compared with joint analysis among features. 5) Finally, Quarto notebooks can aid reproducible analysis and reporting.}
 \label{fig:workflow}
 :::
 
@@ -815,10 +815,10 @@ Bray-Curtis, Jaccard, Aitchison [@bastiaanssen_bugs1_2023 ; @Martino2019],
 and the phylogeny-aware UniFrac [@lozupone2005]. The community
 dissimilarities are commonly visualized with unsupervised ordination
 methods that project the data onto a lower-dimensional display
-[@goodrich2014]. Unsupervised techniques, Principal Component
-Analysis (PCA) and Principal Coordinates Analysis (PCoA) also known as 
+[@goodrich2014]. Unsupervised techniques commonly used include Principal Component
+Analysis (PCA), Principal Coordinates Analysis (PCoA) also known as 
 Multi-Dimensional Scaling (MDS), and Non-metric MDS (NMDS)
-(@fig-downstream_analyses) are commonly used. Statistical tests
+(@fig-downstream_analyses). Statistical tests
 (*e.g.*, Permutational Multivariate Analysis of Variance) and supervised
 visualization methods, such as the
 distance-based redundancy analysis (dbRDA) can complement the
@@ -901,7 +901,7 @@ between consecutive time points), autocorrelation (similarity of closely
 related samples), and feature modality (whether a feature exhibits multiple
 abundance states). Another type of temporal analysis 
 includes the time-to-event, or survival models, which are encountered
-regularly in, epidemiological and population cohort studies; for microbiome
+regularly in epidemiological and population cohort studies; for microbiome
 data, these analyses require specialized approaches, as proposed in previous
 studies [@Salosensaari2021; @Calle2023]. We also provide methods to simulate
 time series from standard models of microbial community dynamics including
@@ -984,7 +984,7 @@ tse <- addRDA(
     tse, assay.type = "clr", method = "euclidean",
     formula = x ~ Age_Months + Country, na.action = na.exclude
     )
-# Remove the RDA object as it takes lot of space
+# Remove the RDA object as it takes a lot of space
 attr(reducedDim(tse, "RDA"), "obj") <- NULL
 
 # Perform DAA
