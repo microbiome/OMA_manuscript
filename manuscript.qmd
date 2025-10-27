@@ -388,6 +388,83 @@ and spatial omics through the SingleCellExperiment (SCE) [@amezquita2020] and
 SpatialExperiment [@righelli2022] classes.
 
 ```{r}
+#| label: bioc_packages
+#| eval: false
+#| echo: false
+#| message: false
+
+if( !require("BiocManager") ){
+    install("BiocManager")
+    library("BiocManager")
+}
+pkgs <- c("BiocPkgTools", "lubridate", "tidyverse")
+temp <- sapply(pkgs, function(pkg){
+    if( !require(pkg, character.only = TRUE) ){
+        install(pkg)
+        library(pkg, character.only = TRUE)
+    }
+})
+
+# Get packages and info based on their BiocViews
+pkgs <- biocPkgList()
+# Get how many times these packages are loaded
+df <- biocDownloadStats()
+
+# Take only packages that depend on SE
+pkgs[["SE"]] <- sapply(pkgs[["Depends"]], function(x) any(grepl("summarizedexperiment", x, ignore.case = TRUE)) )
+pkgs <- pkgs[pkgs[["SE"]], ]
+
+# Extract the package topic based on biocView
+fields <- sapply(pkgs[["biocViews"]], function(x){
+    field <- "Other"
+    if( any(grepl("genomic|genetic|gene|genom|DNA", x, ignore.case = TRUE)) ) field <- "Genomics"
+    if( any(grepl("proteomics|protein", x, ignore.case = TRUE)) ) field <- "Proteomics"
+    if( any(grepl("metabolomics|metabolome|metabolite|Lipidom|massspectro", x, ignore.case = TRUE)) ) field <- "Metabolomics"
+    if( any(grepl("transcripto|RNA-seq|RNA", x, ignore.case = TRUE)) ) field <- "Transcriptomics"
+    if( any(grepl("immuno", x, ignore.case = TRUE)) ) field <- "Immunology"
+    if( any(grepl("cytom", x, ignore.case = TRUE)) ) field <- "Cytometrics"
+    if( any(grepl("microarray|chip", x, ignore.case = TRUE)) ) field <- "Microarray"
+    if( any(grepl("single-cell|singlecell", x, ignore.case = TRUE)) ) field <- "Single-cell"
+    if( any(grepl("metagenom|microbiome|16S|microbiota|amplicon|shotgun|microb|metatranscript|metametabolo|metaproteo", x, ignore.case = TRUE)) ) field <- "Microbiome"
+    return(field)
+})
+pkgs[["Field"]] <- fields
+
+# Subset downloads table and add field to it
+df <- df[df[["Package"]] %in% pkgs[["Package"]], ]
+df[["Field"]] <- pkgs[match(df[["Package"]], pkgs[["Package"]]), "Field"][[1]]
+
+# Get information on when the package became available in Bioconductor
+dates <- df[["Date"]] |> unique()
+dates <- dates[ dates < floor_date(Sys.time(), "month") ]
+available <- lapply(dates, function(date){
+    temp <- df[df[["Date"]] == date, ]
+    temp <- temp[match(unique(df[["Package"]]), temp[["Package"]]), ]
+    temp <- temp[["Nb_of_distinct_IPs"]] > 0 | temp[["Nb_of_downloads"]] > 0
+    temp[is.na(temp)] <- FALSE
+    as.numeric(temp)
+})
+available <- do.call(cbind, available) |> as.data.frame()
+rownames(available) <- unique(df[["Package"]])
+
+# Create a table showing the number of packages by field through time
+ind <- pkgs[match(unique(df[["Package"]]), pkgs[["Package"]]), "Field"][[1]]
+pkgs_date <- rowsum(available, group = ind)
+pkgs_date <- pkgs_date |>
+    rownames_to_column("Field") |>
+    pivot_longer(
+        cols = -Field,
+        names_to = "Date",
+        values_to = "N"
+    )
+pkgs_date[["Date"]] <- as.Date(pkgs_date[["Date"]])
+
+# Save results
+pkgs_date |>
+  write.csv(file = file.path("data", "bioc_packages_stats.csv"), row.names = FALSE)
+```
+
+```{r}
 #| label: fig-bioc_packages
 #| eval: true
 #| echo: false
@@ -400,7 +477,7 @@ if( !require("BiocManager") ){
     install("BiocManager")
     library("BiocManager")
 }
-pkgs <- c("BiocPkgTools", "lubridate", "tidyverse", "see")
+pkgs <- c("tidyverse", "see")
 temp <- sapply(pkgs, function(pkg){
     if( !require(pkg, character.only = TRUE) ){
         install(pkg)
@@ -408,78 +485,8 @@ temp <- sapply(pkgs, function(pkg){
     }
 })
 
-# Get packages and info based on their BiocViews
-pkgs <- tryCatch({
-    biocPkgList() |> suppressWarnings()
-}, error = function(e){
-    return(NULL)
-})
-
-# If failed, create an empty result to avoid breaking later steps
-if( is.null(pkgs) ){
-    pkgs <- data.frame(Package = character(), SE = logical(), Field = character())
-}
-
-# Try to fetch download stats safely
-df <- tryCatch({
-    biocDownloadStats() |> suppressWarnings()
-}, error = function(e){
-    return(NULL)
-})
-
-if( TRUE || is.null(df) || nrow(pkgs) == 0L ){
-    # Construct an empty dataset for plotting
-    pkgs_date <- data.frame(Field = character(), Date = as.Date(character()), N = numeric())
-} else {
-    # Take only packages that depend on SE
-    pkgs[["SE"]] <- sapply(pkgs[["Depends"]], function(x) any(grepl("summarizedexperiment", x, ignore.case = TRUE)) )
-    pkgs <- pkgs[pkgs[["SE"]], ]
-    
-    # Extract the package topic based on biocView
-    fields <- sapply(pkgs[["biocViews"]], function(x){
-        field <- "Other"
-        if( any(grepl("genomic|genetic|gene|genom|DNA", x, ignore.case = TRUE)) ) field <- "Genomics"
-        if( any(grepl("proteomics|protein", x, ignore.case = TRUE)) ) field <- "Proteomics"
-        if( any(grepl("metabolomics|metabolome|metabolite|Lipidom|massspectro", x, ignore.case = TRUE)) ) field <- "Metabolomics"
-        if( any(grepl("transcripto|RNA-seq|RNA", x, ignore.case = TRUE)) ) field <- "Transcriptomics"
-        if( any(grepl("immuno", x, ignore.case = TRUE)) ) field <- "Immunology"
-        if( any(grepl("cytom", x, ignore.case = TRUE)) ) field <- "Cytometrics"
-        if( any(grepl("microarray|chip", x, ignore.case = TRUE)) ) field <- "Microarray"
-        if( any(grepl("single-cell|singlecell", x, ignore.case = TRUE)) ) field <- "Single-cell"
-        if( any(grepl("metagenom|microbiome|16S|microbiota|amplicon|shotgun|microb|metatranscript|metametabolo|metaproteo", x, ignore.case = TRUE)) ) field <- "Microbiome"
-        return(field)
-    })
-    pkgs[["Field"]] <- fields
-
-    # Subset downloads table and add field to it
-    df <- df[df[["Package"]] %in% pkgs[["Package"]], ]
-    df[["Field"]] <- pkgs[match(df[["Package"]], pkgs[["Package"]]), "Field"][[1]]
-
-    # Get information on when the package became available in Bioconductor
-    dates <- df[["Date"]] |> unique()
-    dates <- dates[ dates < floor_date(Sys.time(), "month") ]
-    available <- lapply(dates, function(date){
-        temp <- df[df[["Date"]] == date, ]
-        temp <- temp[match(unique(df[["Package"]]), temp[["Package"]]), ]
-        temp <- temp[["Nb_of_distinct_IPs"]] > 0 | temp[["Nb_of_downloads"]] > 0
-        temp[is.na(temp)] <- FALSE
-        as.numeric(temp)
-    })
-    available <- do.call(cbind, available) |> as.data.frame()
-    rownames(available) <- unique(df[["Package"]])
-
-    # Create a table showing the number of packages by field through time
-    ind <- pkgs[match(unique(df[["Package"]]), pkgs[["Package"]]), "Field"][[1]]
-    pkgs_date <- rowsum(available, group = ind)
-    pkgs_date <- pkgs_date |>
-        rownames_to_column("Field") |>
-        pivot_longer(
-            cols = -Field,
-            names_to = "Date",
-            values_to = "N"
-        )
-    pkgs_date[["Date"]] <- as.Date(pkgs_date[["Date"]])
-}
+# Import data
+pkgs_date <- read.csv(file.path("data", "bioc_packages_stats.csv"))
 
 # Create the plot
 p <- ggplot(pkgs_date, aes(x = Date, y = N, fill = Field)) +
@@ -521,7 +528,7 @@ Conversion functions and detailed cheat sheets between the two formats are avail
 support interoperability between the respective user communities.
 
 ```{r}
-#| label: benchmark-analysis
+#| label: benchmark_analysis
 #| eval: false
 #| echo: false
 #| message: false
@@ -529,19 +536,19 @@ support interoperability between the respective user communities.
 # Adapted from https://github.com/microbiome/benchmarking/tree/main/article
 
 # Import libraries
-library(bench)
-library(DelayedArray)
-library(dplyr)
-library(ggplot2)
-library(mia)
-library(microbiome)
-library(microbiomeDataSets)
-library(patchwork)
-library(philr)
-library(phyloseq)
-library(picante)
-library(speedyseq)
-library(tidyr)
+if( !require("BiocManager") ){
+    install("BiocManager")
+    library("BiocManager")
+}
+pkgs <- c(
+  "bench", "DelayedArray", "mia", "microbiome", "microbiomeDataSets", "philr",
+  "phyloseq", "picante", "tidyverse", "speedyseq")
+temp <- sapply(pkgs, function(pkg){
+    if( !require(pkg, character.only = TRUE) ){
+        install(pkg)
+        library(pkg, character.only = TRUE)
+    }
+})
 
 # Set seed for reproducibility
 set.seed(123)
@@ -633,39 +640,62 @@ benchmark_out <- bench::press(
 )
 
 # Retrieve benchmarking results for each experiment and iteration
-benchmark_df <- benchmark_out %>%
-  unnest(c(time, gc)) %>%
-  dplyr::select(expression, N, time, gc, mem_alloc) %>%
+benchmark_df <- benchmark_out |>
+  unnest(c(time, gc)) |>
+  dplyr::select(expression, N, time, gc, mem_alloc) |>
   separate_wider_delim(cols = expression, delim = "_",
-                       names = c("method", "object")) %>%
+                       names = c("method", "object")) |>
   filter(method != "beta" |
            (object == "pseq" & N <= beta_threshold[[1]]) |
            (object == "tse" & N <= beta_threshold[[2]]))
 
 # Summarise benchmarking results with mean time and standard deviation
-benchmark_df <- benchmark_df %>%
-  group_by(method, object, N) %>%
+benchmark_df <- benchmark_df |>
+  group_by(method, object, N) |>
   summarise(Time = as.numeric(mean(time)), Memory = as.numeric(mean(mem_alloc)),
             TimeSD = sd(time), TimeSE = TimeSD / sqrt(n_iter),
-            NoGC = sum(gc == "none"), .groups = "drop") %>%
+            NoGC = sum(gc == "none"), .groups = "drop") |>
   mutate(method = factor(method, levels = names(methods)),
          object = factor(object, levels = names(classes)))
 
 # Write to file
-benchmark_df %>%
-  mutate(Time = as.numeric(Time), Memory = as.numeric(Memory)) %>%
-  write.csv(file = "data/benchmark_results.csv", row.names = FALSE)
+benchmark_df |>
+  mutate(Time = as.numeric(Time), Memory = as.numeric(Memory)) |>
+  write.csv(file = file.path("data", "benchmark_results.csv"), row.names = FALSE)
 ```
 
 
 ```{r}
-#| label: benchmark-viz
-#| eval: false
+#| label: fig-benchmarking
 #| echo: false
 #| message: false
+#| warning: false
+#| fig-cap: "**Execution time and memory consumption for microbiome data containers.** The Bioconductor's TreeSE, phyloseq and speedyseq are commonly used data containers in microbiome analysis. We benchmarked them for five common operations applied to random subsets of samples from a large study on wild baboons [@Grieneisen2021] (accessible through the microbiomeDataSets package in Bioconductor). Execution time (s) was measured as the mean value over 10 iterations, whereas allocated memory (MB) was estimated based on a single iteration. The benchmarking was conducted in R using the bench library with 8 CPU cores and 32 GB RAM. All operations, except for UniFrac dissimilarity with phyloseq, could also be performed on a regular laptop (*e.g.*, 4 CPU cores and 16 GB RAM). The source code for the benchmarking experiments is available through the OMA online book."
+#| fig-width: 12
+#| fig-height: 6
 
 # Adapted from https://github.com/microbiome/benchmarking/tree/main/article
 
+pkgs <- c("patchwork", "tidyverse")
+temp <- sapply(pkgs, function(pkg){
+    if( !require(pkg, character.only = TRUE) ){
+        install(pkg)
+        library(pkg, character.only = TRUE)
+    }
+})
+
+# Import results
+benchmark_df <- read.csv(file.path("data", "benchmark_results.csv"))
+classes <- c(tse = "TreeSE", pseq = "phyloseq", spseq = "speedyseq")
+methods <- c(alpha = "Faith diversity",
+             beta = "UniFrac dissimilarity",
+             melt = "Melting",
+             trans = "PhILR transformation",
+             agg = "Family agglomeration")
+# Select only points from 10, 100, 1000, 10000
+benchmark_df <- benchmark_df[benchmark_df[["N"]] %in% c(10, 100, 1000, 10000), ]
+
+# Specify plot layouts
 scientific_10 <- function(y) {
   sapply(y, function(z) {
     if (is.na(z)){
@@ -679,13 +709,14 @@ scientific_10 <- function(y) {
     }
   })
 }
+breaks <- benchmark_df[["N"]][ log10(benchmark_df[["N"]]) %% 1 == 0 ] |> unique()
 
-# Visualise benchmarking results
+# Visualise benchmarking results: time
 p1 <- ggplot(benchmark_df, aes(x = N, y = Time, colour = object)) +
   geom_errorbar(aes(ymin = Time - TimeSE, ymax = Time + TimeSE), width = 0) +
   geom_line() +
   geom_point() +
-  scale_x_log10(breaks = N, limits = c(N[[1]], N[[length(N)]]), labels = scientific_10) +
+  scale_x_log10(breaks = breaks, limits = benchmark_df[["N"]] |> range(), labels = scientific_10) +
   scale_y_log10(labels = scientific_10) +
   scale_colour_manual(labels = classes,
                       values = c("black", "darkgrey", "lightgrey")) +
@@ -699,11 +730,11 @@ p1 <- ggplot(benchmark_df, aes(x = N, y = Time, colour = object)) +
         axis.ticks.x = element_blank(),
         strip.text = element_text(size = 15),
         strip.background = element_blank())
-  
+# Visualise benchmarking results: memory
 p2 <- ggplot(benchmark_df, aes(x = N, y = Memory / 1e6, colour = object)) +
   geom_line() +
   geom_point() +
-  scale_x_log10(breaks = N, limits = c(N[[1]], N[[length(N)]]), labels = scientific_10) +
+  scale_x_log10(breaks = breaks, limits = benchmark_df[["N"]] |> range(), labels = scientific_10) +
   scale_y_log10(labels = scientific_10) +
   scale_colour_manual(labels = classes,
                       values = c("black", "darkgrey", "lightgrey")) +
@@ -715,7 +746,7 @@ p2 <- ggplot(benchmark_df, aes(x = N, y = Memory / 1e6, colour = object)) +
         axis.text = element_text(size = 12),
         strip.text = element_blank()) +
   guides(colour = "none")
-
+# Combine results
 p <- (p1 / p2) +
   plot_layout(guides = "collect") &
   theme(legend.position = "bottom",
@@ -723,23 +754,8 @@ p <- (p1 / p2) +
         legend.title = element_text(size = 15),
         legend.key.size = unit(1.2, "cm"))
 
-# Save plot to file
-ggsave("benchmarkmarking.png",
-       width = 15,
-       height = 7)
+p
 ```
-
-![**Execution time and memory consumption for microbiome data containers.** 
-The Bioconductor's TreeSE, phyloseq and speedyseq are commonly used data containers in microbiome analysis.
-We benchmarked them for five common operations applied to random subsets of samples from a
-large study on wild baboons [@Grieneisen2021] (accessible through the
-microbiomeDataSets package in Bioconductor). Execution time (s) was measured as
-the mean value over 10 iterations, whereas allocated memory (MB) was estimated based on a single iteration.
-The benchmarking was conducted in R using the bench library with 8 CPU
-cores and 32 GB RAM. All operations, except for UniFrac dissimilarity with
-phyloseq, could also be performed on a regular laptop (*e.g.*, 4 CPU cores and
-16 GB RAM). The source code for the benchmarking experiments is available
-through the OMA online book.](figures/benchmarking.png){#fig-benchmarking}
 
 **Multi-assay data structures.** Contemporary microbiome research frequently 
 incorporates data across multiple measurement modalities for enhanced functional 
@@ -1218,7 +1234,7 @@ tse <- addStepwiseDivergence(
 
 # Save object so that it can be used in visualization step without running the
 # analyses
-saveRDS(tse, "data/tse.rds")
+saveRDS(tse, file.path("data", "tse.rds"))
 ```
 
 ```{r}
@@ -1236,7 +1252,7 @@ temp <- sapply(pkgs, function(x)
     suppressMessages(require(x, character.only = TRUE)))
 
 # Load data
-file_path <- "data/tse.rds"
+file_path <- file.path("data", "tse.rds")
 if( !file.exists(file_path) ){
     stop("Run manually the chunk above. '", file_path, "' cannot found.")
 }
