@@ -393,13 +393,13 @@ SpatialExperiment [@righelli2022] classes.
 #| echo: false
 #| message: false
 
-if( !require("BiocManager") ){
+if (!require("BiocManager")) {
     install("BiocManager")
     library("BiocManager")
 }
 pkgs <- c("BiocPkgTools", "lubridate", "tidyverse")
-temp <- sapply(pkgs, function(pkg){
-    if( !require(pkg, character.only = TRUE) ){
+temp <- sapply(pkgs, function(pkg) {
+    if (!require(pkg, character.only = TRUE)) {
         install(pkg)
         library(pkg, character.only = TRUE)
     }
@@ -411,21 +411,21 @@ pkgs <- biocPkgList()
 df <- biocDownloadStats()
 
 # Take only packages that depend on SE
-pkgs[["SE"]] <- sapply(pkgs[["Depends"]], function(x) any(grepl("summarizedexperiment", x, ignore.case = TRUE)) )
+pkgs[["SE"]] <- sapply(pkgs[["Depends"]], function(x) any(grepl("summarizedexperiment", x, ignore.case = TRUE)))
 pkgs <- pkgs[pkgs[["SE"]], ]
 
 # Extract the package topic based on biocView
-fields <- sapply(pkgs[["biocViews"]], function(x){
+fields <- sapply(pkgs[["biocViews"]], function(x) {
     field <- "Other"
-    if( any(grepl("genomic|genetic|gene|genom|DNA", x, ignore.case = TRUE)) ) field <- "Genomics"
-    if( any(grepl("proteomics|protein", x, ignore.case = TRUE)) ) field <- "Proteomics"
-    if( any(grepl("metabolomics|metabolome|metabolite|Lipidom|massspectro", x, ignore.case = TRUE)) ) field <- "Metabolomics"
-    if( any(grepl("transcripto|RNA-seq|RNA", x, ignore.case = TRUE)) ) field <- "Transcriptomics"
-    if( any(grepl("immuno", x, ignore.case = TRUE)) ) field <- "Immunology"
-    if( any(grepl("cytom", x, ignore.case = TRUE)) ) field <- "Cytometrics"
-    if( any(grepl("microarray|chip", x, ignore.case = TRUE)) ) field <- "Microarray"
-    if( any(grepl("single-cell|singlecell", x, ignore.case = TRUE)) ) field <- "Single-cell"
-    if( any(grepl("metagenom|microbiome|16S|microbiota|amplicon|shotgun|microb|metatranscript|metametabolo|metaproteo", x, ignore.case = TRUE)) ) field <- "Microbiome"
+    if (any(grepl("genomic|genetic|gene|genom|DNA", x, ignore.case = TRUE))) field <- "Genomics"
+    if (any(grepl("proteomics|protein", x, ignore.case = TRUE))) field <- "Proteomics"
+    if (any(grepl("metabolomics|metabolome|metabolite|Lipidom|massspectro", x, ignore.case = TRUE))) field <- "Metabolomics"
+    if (any(grepl("transcripto|RNA-seq|RNA", x, ignore.case = TRUE))) field <- "Transcriptomics"
+    if (any(grepl("immuno", x, ignore.case = TRUE))) field <- "Immunology"
+    if (any(grepl("cytom", x, ignore.case = TRUE))) field <- "Cytometrics"
+    if (any(grepl("microarray|chip", x, ignore.case = TRUE))) field <- "Microarray"
+    if (any(grepl("single-cell|singlecell", x, ignore.case = TRUE))) field <- "Single-cell"
+    if (any(grepl("metagenom|microbiome|16S|microbiota|amplicon|shotgun|microb|metatranscript|metametabolo|metaproteo", x, ignore.case = TRUE))) field <- "Microbiome"
     return(field)
 })
 pkgs[["Field"]] <- fields
@@ -436,8 +436,8 @@ df[["Field"]] <- pkgs[match(df[["Package"]], pkgs[["Package"]]), "Field"][[1]]
 
 # Get information on when the package became available in Bioconductor
 dates <- df[["Date"]] |> unique()
-dates <- dates[ dates < floor_date(Sys.time(), "month") ]
-available <- lapply(dates, function(date){
+dates <- dates[dates < floor_date(Sys.time(), "month")]
+available <- lapply(dates, function(date) {
     temp <- df[df[["Date"]] == date, ]
     temp <- temp[match(unique(df[["Package"]]), temp[["Package"]]), ]
     temp <- temp[["Nb_of_distinct_IPs"]] > 0 | temp[["Nb_of_downloads"]] > 0
@@ -461,7 +461,7 @@ pkgs_date[["Date"]] <- as.Date(pkgs_date[["Date"]])
 
 # Save results
 pkgs_date |>
-  write.csv(file = file.path("data", "bioc_packages_stats.csv"), row.names = FALSE)
+    write.csv(file = file.path("data", "bioc_packages_stats.csv"), row.names = FALSE)
 ```
 
 ```{r}
@@ -473,13 +473,13 @@ pkgs_date |>
 #| fig-width: 6
 #| fig-cap: "**Adoption of the SummarizedExperiment (SE) data container among Bioconductor developers.** The growth in the number of Bioconductor packages supporting SE over time is shown, categorized by their respective fields. Packages are counted by the date they were added to Bioconductor. Some packages added the SE support after their original release."
 
-if( !require("BiocManager") ){
+if (!require("BiocManager")) {
     install("BiocManager")
     library("BiocManager")
 }
 pkgs <- c("tidyverse", "see")
-temp <- sapply(pkgs, function(pkg){
-    if( !require(pkg, character.only = TRUE) ){
+temp <- sapply(pkgs, function(pkg) {
+    if (!require(pkg, character.only = TRUE)) {
         install(pkg)
         library(pkg, character.only = TRUE)
     }
@@ -490,7 +490,9 @@ pkgs_date <- read.csv(file.path("data", "bioc_packages_stats.csv"))
 
 # Create the plot
 p <- ggplot(pkgs_date, aes(x = Date, y = N, fill = Field)) +
-    geom_area() + theme_classic() + scale_fill_okabeito() +
+    geom_area() +
+    theme_classic() +
+    scale_fill_okabeito() +
     labs(x = "Year", y = "Number of packages") +
     scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
 
@@ -536,15 +538,16 @@ support interoperability between the respective user communities.
 # Adapted from https://github.com/microbiome/benchmarking/tree/main/article
 
 # Import libraries
-if( !require("BiocManager") ){
+if (!require("BiocManager")) {
     install("BiocManager")
     library("BiocManager")
 }
 pkgs <- c(
-  "bench", "DelayedArray", "mia", "microbiome", "microbiomeDataSets", "philr",
-  "phyloseq", "picante", "tidyverse", "speedyseq")
-temp <- sapply(pkgs, function(pkg){
-    if( !require(pkg, character.only = TRUE) ){
+    "bench", "DelayedArray", "mia", "microbiome", "microbiomeDataSets", "philr",
+    "phyloseq", "picante", "tidyverse", "speedyseq"
+)
+temp <- sapply(pkgs, function(pkg) {
+    if (!require(pkg, character.only = TRUE)) {
         install(pkg)
         library(pkg, character.only = TRUE)
     }
@@ -563,11 +566,13 @@ N <- c(10, 100, 1000, 10000)
 classes <- c(tse = "TreeSE", pseq = "phyloseq", spseq = "speedyseq")
 
 # Define method names
-methods <- c(alpha = "Faith diversity",
-             beta = "UniFrac dissimilarity",
-             melt = "Melting",
-             trans = "PhILR transformation",
-             agg = "Family agglomeration")
+methods <- c(
+    alpha = "Faith diversity",
+    beta = "UniFrac dissimilarity",
+    melt = "Melting",
+    trans = "PhILR transformation",
+    agg = "Family agglomeration"
+)
 
 # Import dataset
 GTSD <- GrieneisenTSData()
@@ -578,90 +583,96 @@ GTSD <- mia::agglomerateByRank(GTSD, rank = "Genus")
 
 # Run benchmark for each sample size
 benchmark_out <- bench::press(
-  N = N,
-  {
-    # Select a random subset of samples
-    tse <- GTSD[ , sample(ncol(GTSD), N)]
-    # Convert TreeSE to phyloseq
-    pseq <- mia::convertToPhyloseq(tse)
-    
-    # List expressions to benchmark
-    expressions <- list(
-      # Estimate faith from phyloseq
-      alpha_pseq = quote(picante::pd(samp = t(otu_table(pseq)), tree = phy_tree(pseq))[ , 1]),
-      # Estimate faith from TreeSE
-      alpha_tse = quote(mia::getAlpha(tse, index = "faith_diversity")),
-      # philr transform phyloseq
-      trans_pseq = quote(philr::philr(t(otu_table(pseq)), tree = phy_tree(pseq), pseudocount = 1)),
-      # philr transform TreeSE
-      trans_tse = quote(mia::transformAssay(tse, method = "philr", MARGIN = 1L, pseudocount = 1)),
-      # Melt phyloseq
-      melt_pseq = quote(phyloseq::psmelt(pseq)),
-      # Melt speedyseq
-      melt_spseq = quote(speedyseq::psmelt(pseq)),
-      # Melt TreeSE
-      melt_tse = quote(mia::meltSE(tse, add.row = TRUE, add.col = TRUE)),
-      # Agglomerate phyloseq
-      agg_pseq = quote(phyloseq::tax_glom(pseq, taxrank = "Family")),
-      # Agglomerate speedyseq
-      agg_spseq = quote(speedyseq::tax_glom(pseq, taxrank = "Family")),
-      # Agglomerate TreeSE
-      agg_tse = quote(mia::agglomerateByRank(tse, rank = "Family"))
-    )
-    
-    if( N <= beta_threshold[[1]] ){
-      # Estimate unifrac from phyloseq
-      expressions[["beta_pseq"]] = quote(
-        phyloseq::UniFrac(pseq)
-      )
-    }else{
-      # Use dummy expression because all results must have the same length
-      expressions[["beta_pseq"]] = quote(1 + 1)
+    N = N,
+    {
+        # Select a random subset of samples
+        tse <- GTSD[, sample(ncol(GTSD), N)]
+        # Convert TreeSE to phyloseq
+        pseq <- mia::convertToPhyloseq(tse)
+
+        # List expressions to benchmark
+        expressions <- list(
+            # Estimate faith from phyloseq
+            alpha_pseq = quote(picante::pd(samp = t(otu_table(pseq)), tree = phy_tree(pseq))[, 1]),
+            # Estimate faith from TreeSE
+            alpha_tse = quote(mia::getAlpha(tse, index = "faith_diversity")),
+            # philr transform phyloseq
+            trans_pseq = quote(philr::philr(t(otu_table(pseq)), tree = phy_tree(pseq), pseudocount = 1)),
+            # philr transform TreeSE
+            trans_tse = quote(mia::transformAssay(tse, method = "philr", MARGIN = 1L, pseudocount = 1)),
+            # Melt phyloseq
+            melt_pseq = quote(phyloseq::psmelt(pseq)),
+            # Melt speedyseq
+            melt_spseq = quote(speedyseq::psmelt(pseq)),
+            # Melt TreeSE
+            melt_tse = quote(mia::meltSE(tse, add.row = TRUE, add.col = TRUE)),
+            # Agglomerate phyloseq
+            agg_pseq = quote(phyloseq::tax_glom(pseq, taxrank = "Family")),
+            # Agglomerate speedyseq
+            agg_spseq = quote(speedyseq::tax_glom(pseq, taxrank = "Family")),
+            # Agglomerate TreeSE
+            agg_tse = quote(mia::agglomerateByRank(tse, rank = "Family"))
+        )
+
+        if (N <= beta_threshold[[1]]) {
+            # Estimate unifrac from phyloseq
+            expressions[["beta_pseq"]] <- quote(
+                phyloseq::UniFrac(pseq)
+            )
+        } else {
+            # Use dummy expression because all results must have the same length
+            expressions[["beta_pseq"]] <- quote(1 + 1)
+        }
+
+        if (N <= beta_threshold[[2]]) {
+            # Estimate unifrac from TreeSE
+            expressions[["beta_tse"]] <- quote(
+                mia::getDissimilarity(tse, method = "unifrac")
+            )
+        } else {
+            # Use dummy expression because all results must have the same length
+            expressions[["beta_tse"]] <- quote(1 + 1)
+        }
+
+        # Run benchmark
+        bench::mark(
+            iterations = n_iter,
+            memory = if (N <= memory_threshold) TRUE else FALSE,
+            check = FALSE,
+            exprs = expressions
+        )
     }
-    
-    if( N <= beta_threshold[[2]] ){
-      # Estimate unifrac from TreeSE
-      expressions[["beta_tse"]] <- quote(
-        mia::getDissimilarity(tse, method = "unifrac")
-      )
-    }else{
-      # Use dummy expression because all results must have the same length
-      expressions[["beta_tse"]] <- quote(1 + 1)
-    }
-    
-    # Run benchmark
-    bench::mark(
-      iterations = n_iter,
-      memory = if (N <= memory_threshold) TRUE else FALSE,
-      check = FALSE,
-      exprs = expressions
-    )
-  }
 )
 
 # Retrieve benchmarking results for each experiment and iteration
 benchmark_df <- benchmark_out |>
-  unnest(c(time, gc)) |>
-  dplyr::select(expression, N, time, gc, mem_alloc) |>
-  separate_wider_delim(cols = expression, delim = "_",
-                       names = c("method", "object")) |>
-  filter(method != "beta" |
-           (object == "pseq" & N <= beta_threshold[[1]]) |
-           (object == "tse" & N <= beta_threshold[[2]]))
+    unnest(c(time, gc)) |>
+    dplyr::select(expression, N, time, gc, mem_alloc) |>
+    separate_wider_delim(
+        cols = expression, delim = "_",
+        names = c("method", "object")
+    ) |>
+    filter(method != "beta" |
+        (object == "pseq" & N <= beta_threshold[[1]]) |
+        (object == "tse" & N <= beta_threshold[[2]]))
 
 # Summarise benchmarking results with mean time and standard deviation
 benchmark_df <- benchmark_df |>
-  group_by(method, object, N) |>
-  summarise(Time = as.numeric(mean(time)), Memory = as.numeric(mean(mem_alloc)),
-            TimeSD = sd(time), TimeSE = TimeSD / sqrt(n_iter),
-            NoGC = sum(gc == "none"), .groups = "drop") |>
-  mutate(method = factor(method, levels = names(methods)),
-         object = factor(object, levels = names(classes)))
+    group_by(method, object, N) |>
+    summarise(
+        Time = as.numeric(mean(time)), Memory = as.numeric(mean(mem_alloc)),
+        TimeSD = sd(time), TimeSE = TimeSD / sqrt(n_iter),
+        NoGC = sum(gc == "none"), .groups = "drop"
+    ) |>
+    mutate(
+        method = factor(method, levels = names(methods)),
+        object = factor(object, levels = names(classes))
+    )
 
 # Write to file
 benchmark_df |>
-  mutate(Time = as.numeric(Time), Memory = as.numeric(Memory)) |>
-  write.csv(file = file.path("data", "benchmark_results.csv"), row.names = FALSE)
+    mutate(Time = as.numeric(Time), Memory = as.numeric(Memory)) |>
+    write.csv(file = file.path("data", "benchmark_results.csv"), row.names = FALSE)
 ```
 
 
@@ -677,8 +688,8 @@ benchmark_df |>
 # Adapted from https://github.com/microbiome/benchmarking/tree/main/article
 
 pkgs <- c("patchwork", "tidyverse")
-temp <- sapply(pkgs, function(pkg){
-    if( !require(pkg, character.only = TRUE) ){
+temp <- sapply(pkgs, function(pkg) {
+    if (!require(pkg, character.only = TRUE)) {
         install(pkg)
         library(pkg, character.only = TRUE)
     }
@@ -687,72 +698,85 @@ temp <- sapply(pkgs, function(pkg){
 # Import results
 benchmark_df <- read.csv(file.path("data", "benchmark_results.csv"))
 classes <- c(tse = "TreeSE", pseq = "phyloseq", spseq = "speedyseq")
-methods <- c(alpha = "Faith diversity",
-             beta = "UniFrac dissimilarity",
-             melt = "Melting",
-             trans = "PhILR transformation",
-             agg = "Family agglomeration")
+methods <- c(
+    alpha = "Faith diversity",
+    beta = "UniFrac dissimilarity",
+    melt = "Melting",
+    trans = "PhILR transformation",
+    agg = "Family agglomeration"
+)
 # Select only points from 10, 100, 1000, 10000
 benchmark_df <- benchmark_df[benchmark_df[["N"]] %in% c(10, 100, 1000, 10000), ]
 
 # Specify plot layouts
 scientific_10 <- function(y) {
-  sapply(y, function(z) {
-    if (is.na(z)){
-      return(NA)
-    } else if (z == 1) {
-      return("1")
-    } else if (z == 10) {
-      return("10")
-    } else {
-      return(parse(text = paste0("10^", log10(z))))
-    }
-  })
+    sapply(y, function(z) {
+        if (is.na(z)) {
+            return(NA)
+        } else if (z == 1) {
+            return("1")
+        } else if (z == 10) {
+            return("10")
+        } else {
+            return(parse(text = paste0("10^", log10(z))))
+        }
+    })
 }
-breaks <- benchmark_df[["N"]][ log10(benchmark_df[["N"]]) %% 1 == 0 ] |> unique()
+breaks <- benchmark_df[["N"]][log10(benchmark_df[["N"]]) %% 1 == 0] |> unique()
 
 # Visualise benchmarking results: time
 p1 <- ggplot(benchmark_df, aes(x = N, y = Time, colour = object)) +
-  geom_errorbar(aes(ymin = Time - TimeSE, ymax = Time + TimeSE), width = 0) +
-  geom_line() +
-  geom_point() +
-  scale_x_log10(breaks = breaks, limits = benchmark_df[["N"]] |> range(), labels = scientific_10) +
-  scale_y_log10(labels = scientific_10) +
-  scale_colour_manual(labels = classes,
-                      values = c("black", "darkgrey", "lightgrey")) +
-  facet_grid(. ~ method, labeller = labeller(method = methods)) +
-  labs(x = "# Samples", y = "Execution time (s)", colour = "Object") +
-  theme_bw() +
-  theme(axis.title.x = element_blank(),
+    geom_errorbar(aes(ymin = Time - TimeSE, ymax = Time + TimeSE), width = 0) +
+    geom_line() +
+    geom_point() +
+    scale_x_log10(breaks = breaks, limits = benchmark_df[["N"]] |> range(), labels = scientific_10) +
+    scale_y_log10(labels = scientific_10) +
+    scale_colour_manual(
+        labels = classes,
+        values = c("black", "darkgrey", "lightgrey")
+    ) +
+    facet_grid(. ~ method, labeller = labeller(method = methods)) +
+    labs(x = "# Samples", y = "Execution time (s)", colour = "Object") +
+    theme_bw() +
+    theme(
+        axis.title.x = element_blank(),
         axis.title.y = element_text(size = 15),
         axis.text.x = element_blank(),
         axis.text.y = element_text(size = 12),
         axis.ticks.x = element_blank(),
         strip.text = element_text(size = 15),
-        strip.background = element_blank())
+        strip.background = element_blank()
+    )
 # Visualise benchmarking results: memory
 p2 <- ggplot(benchmark_df, aes(x = N, y = Memory / 1e6, colour = object)) +
-  geom_line() +
-  geom_point() +
-  scale_x_log10(breaks = breaks, limits = benchmark_df[["N"]] |> range(), labels = scientific_10) +
-  scale_y_log10(labels = scientific_10) +
-  scale_colour_manual(labels = classes,
-                      values = c("black", "darkgrey", "lightgrey")) +
-  facet_grid(. ~ method,
-             labeller = labeller(method = methods)) +
-  labs(x = "Sample size (n)", y = "Allocated memory (MB)", colour = "Object") +
-  theme_bw() +
-  theme(axis.title = element_text(size = 15),
+    geom_line() +
+    geom_point() +
+    scale_x_log10(breaks = breaks, limits = benchmark_df[["N"]] |> range(), labels = scientific_10) +
+    scale_y_log10(labels = scientific_10) +
+    scale_colour_manual(
+        labels = classes,
+        values = c("black", "darkgrey", "lightgrey")
+    ) +
+    facet_grid(. ~ method,
+        labeller = labeller(method = methods)
+    ) +
+    labs(x = "Sample size (n)", y = "Allocated memory (MB)", colour = "Object") +
+    theme_bw() +
+    theme(
+        axis.title = element_text(size = 15),
         axis.text = element_text(size = 12),
-        strip.text = element_blank()) +
-  guides(colour = "none")
+        strip.text = element_blank()
+    ) +
+    guides(colour = "none")
 # Combine results
 p <- (p1 / p2) +
-  plot_layout(guides = "collect") &
-  theme(legend.position = "bottom",
+    plot_layout(guides = "collect") &
+    theme(
+        legend.position = "bottom",
         legend.text = element_text(size = 12),
         legend.title = element_text(size = 15),
-        legend.key.size = unit(1.2, "cm"))
+        legend.key.size = unit(1.2, "cm")
+    )
 
 p
 ```
@@ -1175,8 +1199,9 @@ TreeSE and MAE.
 
 # Load packages
 pkgs <- c("maaslin3", "mia", "miaTime", "microbiomeDataSets")
-temp <- sapply(pkgs, function(x)
-    suppressMessages(require(x, character.only = TRUE)))
+temp <- sapply(pkgs, function(x) {
+    suppressMessages(require(x, character.only = TRUE))
+})
 
 # Load data
 tse <- SprockettTHData()
@@ -1188,11 +1213,16 @@ tse <- tse[, tse[["Age_Class"]] %in% c("Infant")]
 tse <- agglomerateByRanks(tse)
 tse <- transformAssay(tse, method = "relabundance", altexp = altExpNames(tse))
 tse <- transformAssay(
-    tse, method = "clr", pseudocount = TRUE, altexp = altExpNames(tse))
+    tse,
+    method = "clr", pseudocount = TRUE, altexp = altExpNames(tse)
+)
 altExp(tse, "prev_genus") <- subsetByPrevalent(
-    altExp(tse, "Genus"), prevalence = 0.5, detection = 0.001)
+    altExp(tse, "Genus"),
+    prevalence = 0.5, detection = 0.001
+)
 rownames(altExp(tse, "prev_genus")) <- gsub(
-    "/| ", "_", rownames(altExp(tse, "prev_genus")))
+    "/| ", "_", rownames(altExp(tse, "prev_genus"))
+)
 
 # Calculate alpha diversity
 tse <- addAlpha(tse, index = "faith")
@@ -1202,9 +1232,10 @@ tse <- addMDS(tse, assay.type = "counts", method = "unifrac", niter = 10L)
 
 # Perform dbRDA
 tse <- addRDA(
-    tse, assay.type = "clr", method = "euclidean",
+    tse,
+    assay.type = "clr", method = "euclidean",
     formula = x ~ Age_Months + Country, na.action = na.exclude
-    )
+)
 # Remove the RDA object as it takes a lot of space
 attr(reducedDim(tse, "RDA"), "obj") <- NULL
 
@@ -1218,19 +1249,22 @@ res_full <- maaslin3(
     verbosity = "ERROR"
 )
 res <- res_full[["fit_data_abundance"]][["results"]]
-res <- res[res[["value"]] == "Age_Months",  ]
+res <- res[res[["value"]] == "Age_Months", ]
 signif_feat <- res[
     !is.na(res[["qval_individual"]]) & res[["qval_individual"]] < 0.05,
-    "feature"]
+    "feature"
+]
 rowData(altExp(tse, "prev_genus"))[["signif"]] <- rownames(
-    altExp(tse, "prev_genus")) %in% signif_feat
+    altExp(tse, "prev_genus")
+) %in% signif_feat
 
 # Calculate time divergence
 tse <- addStepwiseDivergence(
-    tse, time.col = "Age_Months",
+    tse,
+    time.col = "Age_Months",
     group = "Subject_ID", method = "bray",
     tree = rowTree(tse)
-    )
+)
 
 # Save object so that it can be used in visualization step without running the
 # analyses
@@ -1248,12 +1282,13 @@ saveRDS(tse, file.path("data", "tse.rds"))
 
 # Load packages
 pkgs <- c("miaViz", "patchwork", "scater")
-temp <- sapply(pkgs, function(x)
-    suppressMessages(require(x, character.only = TRUE)))
+temp <- sapply(pkgs, function(x) {
+    suppressMessages(require(x, character.only = TRUE))
+})
 
 # Load data
 file_path <- file.path("data", "tse.rds")
-if( !file.exists(file_path) ){
+if (!file.exists(file_path)) {
     stop("Run manually the chunk above. '", file_path, "' cannot found.")
 }
 tse <- readRDS(file_path)
@@ -1263,44 +1298,55 @@ phylum_names <- sort(unique(rowData(altExp(tse, "Phylum"))[, "Phylum"]))
 # Named vector of phylum colors
 phylum_colors <- setNames(
     scater:::.get_palette("tableau20")[seq_along(phylum_names)],
-    phylum_names)
+    phylum_names
+)
 
 # Define a base font size
 s <- 16
 
 # Visualize phylogeny
 p_tree <- plotRowTree(
-    altExp(tse, "Family"), edge.colour.by = "Phylum", layout = "ape") +
+    altExp(tse, "Family"),
+    edge.colour.by = "Phylum", layout = "ape"
+) +
     scale_color_manual(values = phylum_colors) + # Manually set colors
     guides(color = "none") +
     theme(text = element_text(size = s))
 
 # Visualize abundances with barplot
 p_bar <- plotAbundance(
-    altExp(tse, "Phylum"), assay.type = "relabundance",
+    altExp(tse, "Phylum"),
+    assay.type = "relabundance",
     col.var = c("Country", "Sex"), facet.cols = TRUE, scales = "free",
-    order.col.by = "Age_Months") +
+    order.col.by = "Age_Months"
+) +
     guides(fill = guide_legend(title = "Phylum")) +
     scale_color_manual(values = phylum_colors) +
     theme(text = element_text(size = s))
 
 # Visualize alpha diversity
 p_alpha <- plotColData(
-    tse, y = "faith", x = "Country", colour_by = "Country",
-    show_boxplot = TRUE, show_violin = FALSE, point_alpha = 0.2) +
+    tse,
+    y = "faith", x = "Country", colour_by = "Country",
+    show_boxplot = TRUE, show_violin = FALSE, point_alpha = 0.2
+) +
     labs(y = "Faith", x = "Country") +
     theme(legend.position = "none", text = element_text(size = s))
 p_alpha2 <- plotColData(
-    tse, y = "faith", x = "Age_Months") +
+    tse,
+    y = "faith", x = "Age_Months"
+) +
     geom_smooth(method = "lm") +
     labs(y = "Faith", x = "Age in months") +
     theme(text = element_text(size = s))
 
 # Visualize PCoA
 p_mds <- plotMDS(tse, colour_by = "Country") +
-    theme(legend.position = "inside",
-          legend.justification = c("right", "top"),
-          text = element_text(size = s))
+    theme(
+        legend.position = "inside",
+        legend.justification = c("right", "top"),
+        text = element_text(size = s)
+    )
 
 # Visualize dbRDA
 p_rda <- plotRDA(tse, "RDA", colour.by = "Country", add.significance = FALSE) +
@@ -1311,17 +1357,17 @@ p_daa <- plotExpression(
     altExp(tse, "prev_genus"),
     features = rownames(altExp(tse, "prev_genus"))[rowData(altExp(tse, "prev_genus"))[["signif"]]],
     assay.type = "relabundance", x = "Age_Months", ncol = 3L,
-    ) +
+) +
     scale_y_log10() +
     geom_smooth() +
     labs(x = "Age in months", y = "Relative abundance") +
     theme(text = element_text(size = s))
 
 # Visualize divergence
-tse_sub <- tse[, !is.na(tse[["time_diff"]]) & tse[["time_diff"]]>=0.8 & tse[["time_diff"]]<=1.2]
+tse_sub <- tse[, !is.na(tse[["time_diff"]]) & tse[["time_diff"]] >= 0.8 & tse[["time_diff"]] <= 1.2]
 p_divergence <- plotColData(tse_sub, y = "divergence", x = "Age_Months") +
     geom_smooth(method = "lm") +
-    labs(x = "Age in months", y = expression(Delta ~ "UniFrac" ~ "(N, N-1)") ) +
+    labs(x = "Age in months", y = expression(Delta ~ "UniFrac" ~ "(N, N-1)")) +
     theme(legend.position = "none", text = element_text(size = s))
 
 # Combine plots
@@ -1329,7 +1375,7 @@ p1 <- (p_tree / p_bar) +
     plot_layout(guides = "collect")
 p2 <- (p_mds / p_rda) +
     plot_layout(heights = c(1, 1))
-p3 <- ((p_alpha|p_alpha2) / p_daa / p_divergence) +
+p3 <- ((p_alpha | p_alpha2) / p_daa / p_divergence) +
     plot_layout(heights = c(1, 1, 1))
 p <- (p1 | p2 | p3) +
     plot_layout(widths = c(0.33, 0.4, 0.32)) +
@@ -1405,40 +1451,40 @@ meetings, and training workshops.
 #| echo: false
 #| message: false
 
-if( !require("BiocPkgTools") ){
+if (!require("BiocPkgTools")) {
     BiocManager::install("BiocPkgTools")
     library("BiocPkgTools")
 }
 # Get packages and info based on their BiocViews
 pkgs <- biocPkgList()
 #
-fields <- sapply(pkgs[["biocViews"]], function(x){
+fields <- sapply(pkgs[["biocViews"]], function(x) {
     field <- "Other"
-    if( any(grepl("genomic|genetic|gene|genom|DNA", x, ignore.case = TRUE)) ){
+    if (any(grepl("genomic|genetic|gene|genom|DNA", x, ignore.case = TRUE))) {
         field <- "Genomics"
     }
-    if( any(grepl("proteomics|protein", x, ignore.case = TRUE)) ){
+    if (any(grepl("proteomics|protein", x, ignore.case = TRUE))) {
         field <- "Proteomics"
     }
-    if( any(grepl("metabolomics|metabolome|metabolite|Lipidom|massspectro", x, ignore.case = TRUE)) ){
+    if (any(grepl("metabolomics|metabolome|metabolite|Lipidom|massspectro", x, ignore.case = TRUE))) {
         field <- "Metabolomics"
     }
-    if( any(grepl("transcripto|RNA-seq|RNA", x, ignore.case = TRUE)) ){
+    if (any(grepl("transcripto|RNA-seq|RNA", x, ignore.case = TRUE))) {
         field <- "Transcriptomics"
     }
-    if( any(grepl("immuno", x, ignore.case = TRUE)) ){
+    if (any(grepl("immuno", x, ignore.case = TRUE))) {
         field <- "Immunology"
     }
-    if( any(grepl("cytom", x, ignore.case = TRUE)) ){
+    if (any(grepl("cytom", x, ignore.case = TRUE))) {
         field <- "Cytometrics"
     }
-    if( any(grepl("microarray|chip", x, ignore.case = TRUE)) ){
+    if (any(grepl("microarray|chip", x, ignore.case = TRUE))) {
         field <- "Microarray"
     }
-    if( any(grepl("single-cell|singlecell", x, ignore.case = TRUE)) ){
+    if (any(grepl("single-cell|singlecell", x, ignore.case = TRUE))) {
         field <- "Single-cell"
     }
-    if( any(grepl("metagenom|microbiome|16S|microbiota|amplicon|shotgun|microb|metatranscript|metametabolo|metaproteo", x, ignore.case = TRUE)) ){
+    if (any(grepl("metagenom|microbiome|16S|microbiota|amplicon|shotgun|microb|metatranscript|metametabolo|metaproteo", x, ignore.case = TRUE))) {
         field <- "Microbiome"
     }
     return(field)
