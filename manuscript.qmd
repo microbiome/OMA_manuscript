@@ -427,7 +427,7 @@ df <- tryCatch({
     return(NULL)
 })
 
-if( is.null(df) || nrow(pkgs) == 0L ){
+if( TRUE || is.null(df) || nrow(pkgs) == 0L ){
     # Construct an empty dataset for plotting
     pkgs_date <- data.frame(Field = character(), Date = as.Date(character()), N = numeric())
 } else {
@@ -598,12 +598,12 @@ $^c$ The sampleMap supports diverse mappings between samples from different expe
 ![**Bioconductor data containers for microbiome data.** **(a)
 TreeSummarizedExperiment (TreeSE)** supports hierarchical, multi-table microbiome 
 analysis. A data object can accommodate: i) “assays” that describe the abundances of features 
-in each sample (e.g. taxonomic units, resistance genes, or predicted functions), 
+in each sample (*e.g.* taxonomic units, resistance genes, or predicted functions), 
 ii) “colData” with tabular metadata on each sample, 
-iii) “rowData” with tabular metadata on each feature (e.g. taxonomic mappings), and 
+iii) “rowData” with tabular metadata on each feature (*e.g.* taxonomic mappings), and 
 iv) tree information describing feature hierarchies, such as phylogenetic relations 
 between the taxonomic units (rowTree) or host species (colTree). TreeSE can thus link multiple 
-numeric abundance tables and their derived versions (e.g. statistical transformations, 
+numeric abundance tables and their derived versions (*e.g.* statistical transformations, 
 different taxonomic levels, dimensionality reduction) with tabular and hierarchical side 
 information on the features (rows) and samples (columns). Additional slots for reference
 sequences and experiment metadata are available. (Figure adapted from [@huang2021]) **(b) MultiAssayExperiment
@@ -631,9 +631,6 @@ be accessed with the available tools for research and educational purposes.
 | Microbiome Benchmark Data [@Gamboa-Tuz2025]| MicrobiomeBenchmarkData [@Gamboa-Tuz2025]| 6                   | 1,125     |
 | Human Microbiome Project 2 [@HMP2data]   | HMP2data [@HMP2data]                     | 3                     | 11,493    |
 | A compilation of open microbiome data sets   | https://github.com/microbiome/data   | 8                     | 18,777    |
-
-
-
 
 : Supporting open microbiome data resources (accessed 29/09/2025). {#tbl-dataresources tbl-colwidths="[30,40,15,15]"}
 
@@ -756,7 +753,7 @@ provenance of the integrated data object.
 \begin{center}
 \includegraphics[height=\textheight]{figures/workflow.png}
 \end{center}
-\captionof{figure}{\textbf{Multi-modal data integration workflow.} Following data generation and preprocessing (top two panels), the integrative framework covers five steps of microbiome data integration and analysis: 1) Data is wrapped into a TreSE data object (see Figure~\ref{fig-datacontainers}), containing information on the samples (tube icons) and their features (e.g. taxonomic, functional, or resistome profiles; colored circles). TreeSE objects can accommodate multiple assay tables as well as additional hierarchical structures. 2) The TreeSE data object can then be processed to get cleaner data. This can include filtering out low-quality samples and features, transforming assay data for example by normalizing it to enhance the comparability of sample-specific abundances, or agglomerating the feature data to specific taxonomic levels or functional categories. 3) The cleaned data can then be analyzed using statistical models to uncover relations among samples (e.g., with PCoA), analyze drivers of variation in community diversity and composition or test for differential abundance (e.g. between sampling time or location). 4) The framework supports the integration of various types of omics modalities through MultiAssayExperiment and the specialized data structures for each omics provided by Bioconductor. Here, for example, the taxonomic and metabolomic profiles of samples can be summarized and compared with joint analysis among features. 5) Finally, Quarto notebooks can aid reproducible analysis and reporting.}
+\captionof{figure}{\textbf{Multi-modal data integration workflow.} Following data generation and preprocessing (top two panels), the integrative framework covers five steps of microbiome data integration and analysis: 1) Data is wrapped into a TreeSE data object (see Figure~\ref{fig-datacontainers}), containing information on the samples (tube icons) and their features (\textit{e.g.} taxonomic, functional, or resistome profiles; colored circles). TreeSE objects can accommodate multiple assay tables as well as additional hierarchical structures. 2) The TreeSE data object can then be processed to get cleaner data. This can include filtering out low-quality samples and features, transforming assay data for example by normalizing it to enhance the comparability of sample-specific abundances, or agglomerating the feature data to specific taxonomic levels or functional categories. 3) The cleaned data can then be analyzed using statistical models to uncover relations among samples (\textit{e.g.}, with PCoA), analyze drivers of variation in community diversity and composition or test for differential abundance (\textit{e.g.} between sampling time or location). 4) The framework supports the integration of various types of omics modalities through MultiAssayExperiment and the specialized data structures for each omics provided by Bioconductor. Here, for example, the taxonomic and metabolomic profiles of samples can be summarized and compared with joint analysis among features. 5) Finally, Quarto notebooks can aid reproducible analysis and reporting.}
 \label{fig:workflow}
 :::
 
@@ -815,7 +812,7 @@ Bray-Curtis, Jaccard, Aitchison [@bastiaanssen_bugs1_2023 ; @Martino2019],
 and the phylogeny-aware UniFrac [@lozupone2005]. The community
 dissimilarities are commonly visualized with unsupervised ordination
 methods that project the data onto a lower-dimensional display
-[@goodrich2014]. Unsupervised techniques commonly used include Principal Component
+[@goodrich2014]. Among unsupervised techniques, those most frequently applied include Principal Component
 Analysis (PCA), Principal Coordinates Analysis (PCoA; also known as 
 Multi-Dimensional Scaling, MDS), and Non-metric MDS (NMDS)
 (@fig-downstream_analyses). Statistical tests
@@ -847,7 +844,7 @@ samples (@fig-downstream_analyses). Many dedicated DAA
 methods in microbiome research support the TreeSE framework, including methods
 such as ANCOM-BC2 [@lin2024], LimROTS [@Anwar2025], MaAsLin3
 [@nickols2024], and radEmu [@Clausen2024]. Many of these methods have also found 
-applications with other omics modalities, such as transcriptomics (e.g. DESeq2), 
+applications with other omics modalities, such as transcriptomics (*e.g.* DESeq2), 
 metabolomics [@nickols2024], or proteomics [@Anwar2025] and the shared SE-based 
 Bioconductor data containers have greatly facilitated this. Recent studies by us and
 others indicated that elementary methods, such as log transformed 
