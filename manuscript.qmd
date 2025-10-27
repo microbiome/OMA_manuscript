@@ -890,7 +890,7 @@ reference sequences and experiment metadata are available. (Figure adapted from
 [@huang2021]) **(b) MultiAssayExperiment (MAE)** facilitates the integration of
 interlinked data sets that may represent different omics modalities
 linked by potentially non-trivial sample mappings; (figure from
-[@ramos2017])](figures/datacontainers.png){#fig-datacontainers}
+[@ramos2017])](figures/data_containers.png){#fig-datacontainers}
 
 **Data resources.** Several open microbiome data resources are supported,
 enabling direct data import into the aforementioned data containers for further
