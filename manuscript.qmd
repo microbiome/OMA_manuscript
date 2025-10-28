@@ -153,7 +153,7 @@ author:
 abstract: |
   The expansion of microbiome research has led to the accumulation of
   interlinked datasets encompassing versatile taxonomic and functional
-  assays. While critical to advance the field, the analysis of increasingly
+  assays. The analysis of increasingly
   large and heterogeneous multi-modal microbiome data would benefit from
   unified approaches supporting interoperability between methods
   and the design of modular data science workflows. The Bioconductor project
@@ -164,8 +164,8 @@ abstract: |
   of hierarchical, interlinked, and heterogeneous datasets that
   are increasingly common in modern microbiome research. This
   interoperable infrastructure comprises of open-source datasets,
-  methods, tutorials and an active online community, allowing analyst to
-  perform data wrangling, analysis and visualization in a coherent and
+  methods, tutorials and an active online community, allowing data wrangling, 
+  analysis and visualization in a coherent and
   standardized manner. Its functionality and usage are detailed in the OMA book
   [https://microbiome.github.io/OMA](https://microbiome.github.io/OMA/docs/devel),
   which offers guidance for prospective users and contributors.
@@ -181,27 +181,27 @@ https://communities.springernature.com/posts/how-to-write-an-abstract
 # Introduction {#sec-intro}
 
 Modern data science applications critically rely on open-source methods created
-by the research community [@Barker2022; @Pearson2025] and open
+by the research community [@Barker2022; @Pearson2025]. Open
 software ecosystems have become central innovation hubs, driving
 technological and cultural transformation [@Hocquet2024]. The
 Bioconductor project has been established as a major distribution
-channel for open data science methods in the life sciences. Nowadays,
-its vast developer community maintains over 2,300 quality-controlled R
+channel for open data science methods in the life sciences. 
+Its vast developer community maintains over 2,300 quality-controlled R
 packages for various fields of life science informatics [@gentleman2004].
 Additionally, Bioconductor has evolved into a global community that supports 
 data science collaboration and training [@drnevich2025], aligning with recent
 international calls to enhance microbiology education in particular
-[@Timmis2024].
+[@Timmis2024].***The last sentence transition to microbial eduction is a bit abrupt***
 
 Microbiome research focuses on how microbial communities vary, function and
-interact with their environment and potential host [@moreno-indias2021]. The
-technologies used in this field generate vast amounts of high-dimensional and
+interact with their environment and host [@moreno-indias2021]. The
+technologies used in microbiome research generate vast amounts of high-dimensional and
 hierarchically structured data, commonly in form of microbial DNA sequences
 detected in a list of samples. The rapid expansion of microbiome research and
 technological advances have
-lead to the accumulation of interlinked, multi-modal datasets encompassing
+led to the accumulation of interlinked, multi-modal datasets encompassing
 diverse taxonomic and functional assays, ranging from microbial abundances and
-phylogenetic relationships to functional profiles. Microbiome data scientists
+phylogenetic relationships to functional profiles. ***Maybe mention in half a sentence what multi-modal means.*** Microbiome data scientists
 are thus increasingly facing the practical challenges of integrating
 heterogeneous data across multiple data modes into reproducible workflows.
 The unique statistical properties and complexity of microbiome data
@@ -213,7 +213,7 @@ difficult to identify the optimal methods and build interoperable workflows
 analysis often produce inconsistent results
 [@Nearing2022; @Pelto2025; @Gamboa-Tuz2025].
 Accordingly, the need for standardized microbiome data
-science infrastructures has been widely recognized [@moreno-indias2021]
+science infrastructure has been widely recognized [@moreno-indias2021]
 and a variety of open microbiome data science frameworks have been developed,
 including Anvi'o [@Eren2021], Mothur [@schloss2009], QIIME2 [@bolyen2019],
 and phyloseq [@mcmurdie2012]. However, platforms focused solely on
@@ -226,14 +226,14 @@ into a wider statistical programming framework
 alongside the concurrent development of interoperable methods and
 workflows for transcriptomics [@righelli2022], single-cell [@amezquita2020],
 metabolomics [@gatto2025], proteomics [@gatto2025; @Anwar2025], and other
-fields. Here, we introduce a community-developed open-source framework, that
+fields. Here, we introduce a community-developed open-source framework that
 supports the integration of multi-modal microbiome datasets. It provides
 harmonized data presentation, streamlined data import, and fast, robust methods
 for transforming abundance tables into biological insights. The
 methods are extensively tested and distributed through R/Bioconductor
-packages, references being available in
+packages, with references available in
 [https://bioconductor.org/packages](https://bioconductor.org/packages). To help
-users to leverage the framework and promote evidence-based best
+users employ this framework and promote evidence-based best
 practices, we present online book
 [https://microbiome.github.io/OMA](https://microbiome.github.io/OMA/docs/devel)
 that features installation, sources of help and dedicated topics for specific
@@ -242,8 +242,8 @@ aspects of microbiome analysis.
 # Data infrastructure {#sec-infra}
 
 Data scientists routinely deal with interlinked assays, hierarchical data
-(*e.g.*, ontologies, trees), relational data (*e.g.*, networks), and additional
-side information. This side information can include
+(*e.g.*, ontologies, trees), relational data (*e.g.*, networks), and additional 
+extra information. This extra information can include
 sample attributes like treatment group, collection site, or time point. The
 ability to integrate heterogeneous data elements is essential in biological
 research, where the individual components of a system can be seldom studied in
@@ -251,7 +251,7 @@ isolation. However, input data formats vary across different methods, leading
 to technical complications and time lost on data wrangling.
 Bioconductor addresses this through standardized data structures supported
 by an ecosystem of interoperable methods, allowing more time to be invested
-into core analytical tasks.
+in core analytical tasks.
 
 Bioconductor data structures support statistical analysis of complex
 data combinations [@huber2015] and are widely adopted by various
@@ -264,7 +264,7 @@ the primary data container underlying the Bioconductor ecosystem
 downloaded packages in Bioconductor reflects its widespread recognition and
 increasing adoption among developers (@fig-bioc_packages). SE provides a
 standardized solution to store tabular data by linking numeric abundance
-matrices with side information on features or rows  (*e.g.*, taxonomy),
+matrices with extra information on features or rows  (*e.g.*, taxonomy),
 and samples or columns (*e.g.*, origin, collection time, host health).
 
 The interoperability of SE with other Bioconductor data structures
@@ -397,11 +397,11 @@ yet flexible workflows. The direct interoperability of TreeSE with the widely
 adopted SE data science ecosystem distinguishes our TreeSE-based approach from
 phyloseq, which is another popular Bioconductor data container originally
 developed with a focus on 16S amplicon data analysis [@mcmurdie2012]. 
-TreeSE is a superset that can accommodate all elements of a phyloseq object
+TreeSE is a superset ***superset of what?***that can accommodate all elements of a phyloseq object
 (taxa abundances, sample metadata, and phylogenetic tree) while also
 accommodating multi-modal datasets, including functional profiles, metabolomics
-measurements, or alternative feature representations. Additionally, it offers
-often substantial
+measurements, or alternative feature representations. Additionally, it 
+often offers substantial
 gains in memory efficiency and computing speed (@fig-benchmarking). Overall, the
 TreeSE approach outperforms phyloseq in benchmarks. While the phyloseq
 extension speedyseq is faster in certain operations, TreeSE scales more
@@ -428,7 +428,7 @@ through the OMA online book.](figures/benchmarking.png){#fig-benchmarking}
 
 **Multi-assay data structures.** When integrating data across multiple
 modalities, such as taxonomy, metabolomics, or host genomics, more flexible
-sample mapping can be very useful. Multi-omics data is often sparse, and
+sample mapping can be very useful ***not obvioud before reading the rest of the paragraph what flexible sample mapping means - maybe rephrase***. Multi-omics data is often sparse, and
 samples can be only partially matched between experiments. In other cases,
 a single sample in one modality can be matched by two or more samples in
 another modality [see @Husso2023]. The MultiAssayExperiment (MAE) data
@@ -528,10 +528,10 @@ specialized solutions for data analysis [@Jeganathan2021; @Willis2019;
 @MarcosZambrano2023], the implementations typically differ in their
 expected input and output formats. Common data standards support
 modular data science workflows, speeding up methods development,
-benchmarking, and replication. Here, we describe a recently emerged
+benchmarking, and replication. Here, we describe a ~~recently emerged~~
 ecosystem of software packages that support microbiome data
 integration and analysis based on the data containers, (Tree)SE and MAE
-(Figure \ref{fig:workflow}).
+(Figure \ref{fig:workflow}). ***last sentence almost looks like it belongs earlier***
 
 The framework is focused on the downstream analysis of
 high-throughput sequencing data from microbiome experiments after the
@@ -544,8 +544,7 @@ techniques are available including phylogenetic microarrays
 [@RajilicStojanovic2009] and high-density optical mapping
 [@Abakumov2024]. The interoperability of the data containers
 support modular workflow design for integrating different
-omics data into the wider Bioconductor ecosystem. This
-decisively mitigates reproducibility challenges posed by rapidly
+omics data into the wider Bioconductor ecosystem. This mitigates reproducibility challenges posed by rapidly
 evolving reference databases and profiling tools
 (*e.g.*, MetaPhlAn2 vs. MetaPhlAn4) by enabling structured coexistence and
 direct comparison within a unified, version-resilient framework
@@ -574,7 +573,7 @@ the recommended first step involves basic data exploration and quality
 control [@zuur2010]. In addition to methods for identifying
 contaminant sequences and calculating summary statistics, the
 framework includes a versatile set of custom visualization methods to
-assess data variability, outliers, homogeneity of variance and other
+assess data variability, outliers, homoscedasticity and other
 aspects that may need to be considered in downstream data
 analysis. The mia and miaViz packages provide
 convenient access to many operations for common exploratory tasks in
@@ -588,10 +587,10 @@ meaningful groups or to reduce multiple comparisons the data is often
 subsetted, filtered or agglomerated to higher-level taxonomic or functional
 categories or stratified by sample groups. The package ecosystem and the mia
 package in particular feature various
-tools for such tasks. For instance, the prevalence based methods can be
+tools for such tasks. For instance, the prevalence-based methods can be
 useful to remove rare features that are likely sequencing artifacts
 or present otherwise limited value for the analysis. The mechanism of
-alternative experiments (altExp) mechanism allows agglomeration
+alternative experiments (altExp) allows agglomeration
 by taxonomic levels or other features such as
 pathogenicity or functional potential (*e.g.*, butyrate production
 [@Kullberg2024], gut-brain modules [@VallesColomer2019], and other
@@ -604,7 +603,7 @@ management of interlinked data without redundant processing.
 **Transformation.** Statistical transformations commonly used in microbiome
 research include relative abundance (e.g. TSS) [@gloor2017],
 tree-aware phylogenetic ILR (phILR) [@silverman2017], centered log-ratio (CLR),
-and robust centered log-ratio (rCLR). The latter three of which aim to mitigate
+and robust centered log-ratio (rCLR), the latter three of which aim to mitigate
 compositionality bias [@Martino2019]. A related concept that controls for
 unequal sampling depth, is data rarefaction. Rarefaction is
 the process of repeatedly subsampling data to equal read depth and averaging
@@ -646,7 +645,7 @@ elements and analysis outcomes, helping to shift the focus towards multi-modal a
 methods development while supporting standard analysis tasks in microbiome research.
 
 Microbiome data analysis often relies on specialized statistical approaches
-as data sparsity, zero-inflation, compositionality, and heteroschedasticity
+since data sparsity, zero-inflation, compositionality, and heteroscedasticity
 pose challenges for standard data analytical methods
 [@gloor2017; @Jeganathan2021]. Moreover, microbiome data is hierarchically
 structured across taxonomic, ecological, temporal, and spatial levels
@@ -672,7 +671,7 @@ Shannon index), combine these two aspects. Phylogenetic diversity
 metrics additionally account the breadth of phylogenetic relatedness of
 community members [@faith1992]; the new implementation of the Stacked Faith's
 Phylogenetic Diversity can accelerate the computational performance by 1-2
-orders of magnitude [@Armstrong2021]. The framework supports analyses
+orders of magnitude [@Armstrong2021] ***the part after the colon is very throwaway***. The framework supports analyses
 with rarefaction through the mia package [@schloss2024b]. Other
 global indices of community state include measures of dominance,
 rarity, skewness, kurtosis, modality, library size (number of reads),
@@ -690,7 +689,7 @@ Bray-Curtis, Jaccard, Aitchison [@bastiaanssen_bugs1_2023 ; @Martino2019],
 and the phylogeny-aware UniFrac [@lozupone2005]. The community
 dissimilarities are commonly visualized with unsupervised ordination
 methods that project the data onto a lower-dimensional display
-[@goodrich2014]. Unsupervised techniques, Principal Component
+[@goodrich2014]. Unsupervised techniques such as Principal Components
 Analysis (PCA) and Principal Coordinates Analysis (PCoA) also known as 
 Multi-Dimensional Scaling (MDS), and Non-metric MDS (NMDS)
 (@fig-downstream_analyses) are commonly used. Statistical tests
@@ -718,8 +717,7 @@ or continuous gradients, for example, spatial or temporal distance between
 samples (@fig-downstream_analyses). Many dedicated DAA
 methods in microbiome research support the TreeSE framework including methods
 such as ANCOM-BC2 [@lin2024], LimROTS [@Anwar2025], MaAsLin3
-[@nickols2024], and radEmu [@Clausen2024]. Recent studies by us and
-others indicated that elementary methods, such as log transformed 
+[@nickols2024], and radEmu [@Clausen2024]. Recent studies indicate that elementary methods, such as log transformed 
 total sum scaled (TSS) counts coupled with a linear model, or presence/absence
 data with logistic regression often yield the most consistent results
 [@Pelto2025;@Gamboa-Tuz2025]. The standard DAA typically focuses on individual
@@ -744,9 +742,9 @@ sequences, or from parallel metabolomic or other functional
 assays. Our framework not only supports incorporation of functional
 abundance tables within the same data objects but specialized methods
 on functional data are available; for instance, regarding metabolome
-analyses the notame package [@klavus2020] recently added SE support,
+analyses, the notame package [@klavus2020] recently added SE support,
 and the R4MS project provides many interoperable tools [@gatto2025].
-The framework has found recent applications in extended analyses of metagenomic
+The framework has found recent application in extended analyses of metagenomic
 features, for instance, antimicrobial resistance gene composition, diversity,
 and load [@Salehi2025]. Following this, we converted a large-scale
 compilation of resistome profiles in 8,972 metagenome samples [@Lee2023] into 
@@ -778,6 +776,7 @@ time series from standard models of microbial community dynamics including
 Hubbell's neutral model, generalized Lotka-Volterra, and the
 consumer-resource model through the miaSim package [@gao2023].
 
+***Just a comment- A lot of the early part of the ms is talking about multi-modality but this is quite a late introduction to its use***
 **Multi-modal integration.** An increasing number of studies integrate
 microbial abundance data with further omics, including transcriptomics,
 proteomics, and host genomics [@nyholm2020; @Qin2022;
@@ -798,7 +797,7 @@ employed in microbiome
 data science. Examples include network analysis [@Peschel2021],
 ML-based prediction and classification [@Topcuoglu2021], enrichment
 analyses via BugSigDB [@geistlinger2024] or Microbe Set Enrichment
-Analysis (MSEA) [@Kou2020]. The recent adoption of of interoperable
+Analysis (MSEA) [@Kou2020]. The recent adoption of interoperable
 data containers and the methodological similarities in related fields
 can greatly expand the selection of available toolkits in emerging
 areas. In addition to the internal coherence within the Bioconductor ecosystem, 
