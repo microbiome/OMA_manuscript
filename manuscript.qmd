@@ -1353,7 +1353,7 @@ saveRDS(tse, file.path("data", "tse.rds"))
 #| fig-height: 10
 
 # Load packages
-pkgs <- c("miaViz", "patchwork", "scater")
+pkgs <- c("miaViz", "patchwork", "TreeSummarizedExperiment", "scater")
 temp <- sapply(pkgs, function(x) {
     suppressMessages(require(x, character.only = TRUE))
 })
