@@ -1030,7 +1030,6 @@ preparation step&mdash;instead of ad-hoc calculations scattered amidst the
 workflow&mdash;one can achieve a well-organized and transparent
 provenance of the integrated data object. 
 
-
 ::: {.figure}
 \begin{center}
 \includegraphics[height=\textheight]{figures/workflow.png}
@@ -1138,7 +1137,6 @@ methods are provided by mia, miaViz, and additional single-cell packages
 a common task, and many omics modalities can benefit from access to the shared,
 standardized methods supporting the integrative data containers.
 
-
 **Differential abundance and mediation analysis.** Differential abundance 
 analysis (DAA)
 and differential prevalence analysis (DPA) methods are used to
@@ -1168,7 +1166,6 @@ first implementations of advanced methods&mdash;such as causal mediation
 analysis tailored to microbiome multi-omics data&mdash;have been implemented for
 SE [@jiang2025], highlighting its readiness to support the adoption of
 constantly developing methodology. 
-
 
 **Function- and sequence-level analyses.** Taxonomic analysis is
 frequently complemented by functional analyses, either based on
@@ -1635,7 +1632,6 @@ programming languages could facilitate the application of other machine learning
 frameworks. As the field evolves, the developer communities will continue
 to integrate new tools and approaches to improve integrative analyses of
 microbiome data.
-
 
 # References
 <!-- the pattern below controls the placement of the references -->
