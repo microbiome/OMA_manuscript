@@ -286,10 +286,6 @@ keywords: [microbiome, Bioconductor, data science, data integration]
 bibliography: bibliography.bib
 ---
 
-<!---
-https://communities.springernature.com/posts/how-to-write-an-abstract
--->
-
 # Introduction {#sec-intro}
 
 Modern data science applications critically rely on open-source methods created
@@ -589,8 +585,6 @@ methods <- c(
 GTSD <- GrieneisenTSData()
 # Agglomerate by Genus to reduce size
 GTSD <- mia::agglomerateByRank(GTSD, rank = "Genus")
-# Convert assay to DelayedMatrix
-# assay(GTSD, "counts") <- DelayedArray(assay(GTSD, "counts"))
 
 # Run benchmark for each sample size
 benchmark_out <- bench::press(
