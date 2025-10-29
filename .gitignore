@@ -5,7 +5,6 @@
 *.Rproj
 *DS_Store
 DAA_example
-manuscript_files
 misc
 manuscript.rmarkdown
 *.log
