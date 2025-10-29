@@ -20,16 +20,24 @@
           f {
             pkgs = import inputs.nixpkgs {
               inherit system;
+              overlays = [ inputs.self.overlays.default ];
             };
           }
         );
     in
     {
+      overlays.default = final: prev: rec {
+        rEnv = final.rWrapper.override {
+          packages = with final.rPackages; [ languageserver ];
+        };
+      };
+
       devShells = forEachSupportedSystem (
         { pkgs }:
         {
           default = pkgs.mkShellNoCC {
             packages = with pkgs; [
+              rEnv
               quarto
             ];
           };
