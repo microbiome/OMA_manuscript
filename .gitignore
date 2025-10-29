@@ -12,3 +12,4 @@ manuscript.rmarkdown
 *.aux
 *.bbl
 *.blg
+renv
