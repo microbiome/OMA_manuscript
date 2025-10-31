@@ -8,6 +8,4 @@ RUN apt-get update && \
 
 RUN R -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
-RUN R -s -e "renv::init(bare = TRUE)"
-RUN R -s -e "renv::restore()"
-
+RUN R -s -e "renv::init(bare = TRUE);renv::restore();renv::isolate()"
