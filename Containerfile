@@ -1,4 +1,4 @@
-FROM docker.io/bioconductor/bioconductor_docker:RELEASE_3_21-R-4.5.1
+FROM docker.io/bioconductor/bioconductor_docker:RELEASE_3_22-R-4.5.1
 
 WORKDIR /project
 COPY renv.lock renv.lock
