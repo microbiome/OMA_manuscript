@@ -1,0 +1,41 @@
+Package: omaManuscript
+Type: Package
+Version: 0.0.1
+Authors@R:
+    c(person(given = "Tuomas", family = "Borman", role = c("aut", "cre"),
+             email = "tuomas.v.borman@utu.fi",
+             comment = c(ORCID = "0000-0002-8563-8884")))
+biocViews: Microbiome, Software, DataImport
+License: Artistic-2.0 | file LICENSE
+Encoding: UTF-8
+LazyData: false
+Depends:
+    R (>= 4.0)
+Imports:
+    bench,
+    BiocPkgTools,
+    DelayedArray,
+    dplyr,
+    ggh4x,
+    lubridate,
+    maaslin3,
+    mia,
+    miaTime,
+    miaViz,
+    microbiome,
+    microbiomeDataSets,
+    patchwork,
+    philr,
+    picante,
+    scater,
+    see,
+    speedyseq,
+    tidyverse
+Suggests:
+    knitr
+Remotes:
+    microbiome/miaTime@39abd1c95db45f6f944decce20f518d15d5e79cb,
+    mikemc/speedyseq@0057652ff7a4244ccef2b786dca58d901ec2fc62
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+VignetteBuilder: knitr
