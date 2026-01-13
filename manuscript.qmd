@@ -712,8 +712,6 @@ temp <- sapply(pkgs, function(pkg) {
     }
 })
 
-# Import results
-benchmark_df <- read.csv(file.path("data", "benchmark_results.csv"))
 classes <- c(tse = "TreeSE", pseq = "phyloseq", spseq = "speedyseq")
 methods <- c(
     alpha = "Faith diversity",
@@ -722,6 +720,12 @@ methods <- c(
     trans = "PhILR transformation",
     agg = "Family agglomeration"
 )
+
+# Import results
+benchmark_df <- read.csv(file.path("data", "benchmark_results.csv")) %>%
+    mutate(method = factor(method, levels = names(methods)),
+           object = factor(object, levels = names(classes)))
+
 # Select only points from 10, 100, 1000, 10000
 benchmark_df <- benchmark_df[benchmark_df[["N"]] %in% c(10, 100, 1000, 10000), ]
 
