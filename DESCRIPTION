@@ -21,6 +21,7 @@ Authors@R:
              comment = c(ORCID = "0009-0008-0462-7501")),
       person(given = "Rasmus", family = "Hindström", role = c("aut"),
              comment = c(ORCID = "0009-0004-5731-178X")),
+      person("OMA consortium", role = c("aut")),
       person(given = "Katariina", family = "Pärnänen", role = c("aut"),
              comment = c(ORCID = "0000-0003-2220-1738")),
       person(given = "Christian L.", family = "Müller", role = c("aut"),
