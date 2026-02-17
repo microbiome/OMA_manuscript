@@ -2,6 +2,9 @@ name: Build Docker image for OMA manuscript
 on:
   workflow_dispatch:
   push:
+  pull_request:
+    branches:
+      - devel
 
 jobs:
   build-and-push:
