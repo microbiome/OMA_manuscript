@@ -1,7 +1,4 @@
 name: Build Docker image for OMA manuscript
-env:
-  REPOSITORY_OWNER: ${{ github.repository_owner }}
-  DOCKER_IMAGE_NAME: oma-manuscript
 on:
   workflow_dispatch:
   push:
@@ -26,14 +23,14 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN}}
 
       - name: Extract metadata for Docker image
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.actor }}/oma-manuscript
+          images: ghcr.io/${{ github.repository_owner }}/oma-manuscript
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
