@@ -566,7 +566,9 @@ other profiles and alternative feature representations. It also offers
 substantial gains in memory efficiency and computing speed over phyloseq
 (@fig-benchmarking). While speedyseq is faster in certain operations, TreeSE
 tends to scale more efficiently in terms of execution time (t) and allocated
-memory (m) as sample size (n) increases. Despite these advantages, optimizing
+memory (m) as sample size (n) increases, especially as SE-based data containers
+also offer built-in support for sparse and delayed matrices, which can improve
+performance. Despite these advantages, optimizing
 time and memory consumption presents an obvious area for further development
 in the TreeSE-based framework. Conversion functions and detailed cheat sheets
 between the two formats are available to support interoperability between the
@@ -1517,7 +1519,12 @@ demands, the development and quality control of academic software
 critically relies on active and critical communities that can
 provide continuous benchmarking and support the identification and
 dissemination of evidence-based best practices [@berg2020;
-@barker2022; @hocquet2024]. Harmonized data structures and access to validated
+@barker2022; @hocquet2024]. For example, starting with simple methods, early
+computation of key measurements, and initial visual exploration improves
+transparency, interpretability, and understanding of the data, while explicit
+code and clear commenting further support traceability and verification.
+
+Harmonized data structures and access to validated
 methods help shape such best practices by enabling transparent benchmarking and
 fostering community-driven consensus, while allowing users to flexibly select
 and evaluate methods appropriate for their specific data and research questions.
@@ -1547,10 +1554,11 @@ programming on interlinked multi-table data sets.
 **Interactive applications.** Graphical user interfaces provide
 accessible entry points to the framework. The iSEEtree and miaDash
 packages provide interactive analysis and visualization tools for
-microbiome data [@benedetti2025]. Their
-interface supports automatic generation of source code and replicable
-workflows as well as analysis templates for users without a strong
-programming expertise. Moreover, the tidy R paradigm, available
+microbiome data [@benedetti2025]. The former extends iSEE to provide support for
+TreeSE objects, while the latter builds on iSEEtree to enable analyses without
+requiring any programming. Their interface supports automatic generation of
+source code and replicable workflows as well as analysis templates for users
+without a strong programming expertise. Moreover, the tidy R paradigm, available
 through tidyomics, simplifies the syntax and can streamline the
 workflows [@hutchison2024]. These tools allow users to analyze and 
 visualize complex data combinations with ease.
@@ -1624,7 +1632,12 @@ In order to enjoy the benefits of automation while
 maintaining flexibility, data scientists routinely remix open-source
 software components into custom workflows. However, the lack of commonly adopted
 data representation standards often hinders the development, sharing,
-and application of modular, interoperable statistical workflows. 
+and application of modular, interoperable statistical workflows. Here we present
+a R/Bioconductor ecosystem for microbiome data science. While TreeSE and MAE are
+prior contributions, we have built an ecosystem around them through further
+method and community development. We also provide a comprehensive online book
+supporting learning and reproducible analysis, resulting in an ecosystem ready
+for microbiome research.
 
 **The Bioconductor community** is widely recognized for
 developing open research software for life sciences. Its
@@ -1678,7 +1691,9 @@ documented the open data science ecosystem for multi-modal microbiome research
 built on widely adopted Bioconductor data containers, software libraries,  
 data resources, tutorials, and a growing community of developers. 
 Further extensions could include methods for temporal, spatial, and multi-omic
-analyses. Finally, supporting interoperability between R and other
+analyses along with an end-to-end case study demonstrating how an example
+analysis can be conducted in practice from raw data to results.
+Finally, supporting interoperability between R and other
 programming languages could facilitate the application of other machine learning
 frameworks. As the field evolves, the developer communities will continue
 to integrate new tools and approaches to improve integrative analyses of
