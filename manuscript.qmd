@@ -351,15 +351,15 @@ evidence-based best practices, we present the online book
 [https://microbiome.github.io/OMA](https://microbiome.github.io/OMA/docs/devel)
 that introduces many dedicated topics in microbiome analysis.
 
-# Computational environments {#sec-computational_environments}
+# Data analytical frameworks {#sec-data_frameworks}
 
-Several computational environments are available for microbiome data science,
-each distinguished by its underlying paradigms, user communities, and scope of
-functionality. For example, tools such as QIIME 2 [@bolyen2019], Anvi'o
+Several data analytical frameworks are available for microbiome data science,
+each distinguished by its underlying paradigms, user communities, and scope.
+For example, tools such as QIIME 2 [@bolyen2019], Anvi'o
 [@eren2021], and Mothur [@schloss2009] emphasize standardized, workflow-oriented
-approaches tailored to microbiome analysis. While these platforms provide robust
-and well-validated solutions for microbiome data, they are typically designed
-around specific data types and predefined pipelines, which can limit flexibility
+approaches tailored to microbiome analysis. While these platforms provide
+validated solutions for microbiome data, they are typically designed
+around specific data types and predefined pipelines. This can limit flexibility
 when integrating heterogeneous data modalities within a unified analytical
 framework. In addition, their workflow-centric design may not fully accommodate
 the iterative nature of exploratory microbiome research.
@@ -568,7 +568,7 @@ substantial gains in memory efficiency and computing speed over phyloseq
 tends to scale more efficiently in terms of execution time (t) and allocated
 memory (m) as sample size (n) increases, especially as SE-based data containers
 also offer built-in support for sparse and delayed matrices, which can improve
-performance. Despite these advantages, optimizing
+performance [@huber2015]. Despite these advantages, optimizing
 time and memory consumption presents an obvious area for further development
 in the TreeSE-based framework. Conversion functions and detailed cheat sheets
 between the two formats are available to support interoperability between the
@@ -1633,8 +1633,9 @@ maintaining flexibility, data scientists routinely remix open-source
 software components into custom workflows. However, the lack of commonly adopted
 data representation standards often hinders the development, sharing,
 and application of modular, interoperable statistical workflows. Here we present
-a R/Bioconductor ecosystem for microbiome data science. While TreeSE and MAE are
-prior contributions, we have built an ecosystem around them through further
+a R/Bioconductor ecosystem for multimodal microbiome data science. While
+TreeSE and MAE are prior contributions [@huang2021; @ramos2017], we have built
+an ecosystem around them through further
 method and community development. We also provide a comprehensive online book
 supporting learning and reproducible analysis, resulting in an ecosystem ready
 for microbiome research.
