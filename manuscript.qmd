@@ -357,7 +357,7 @@ Several data analytical frameworks are available for microbiome data science,
 each distinguished by its underlying paradigms, user communities, and scope.
 For example, tools such as QIIME 2 [@bolyen2019], Anvi'o
 [@eren2021], and Mothur [@schloss2009] emphasize standardized, workflow-oriented
-approaches tailored to microbiome analysis. While these platforms provide
+approaches tailored to microbiome analysis. While these frameworks provide
 validated solutions for microbiome data, they are typically designed
 around specific data types and predefined pipelines. This can limit flexibility
 when integrating heterogeneous data modalities within a unified analytical
@@ -852,7 +852,8 @@ include single cell sequencing [@amezquita2020] and host genomics
 [@lawrence2013]. Linking data across modalities presents an additional technical
 challenge, as multi-omics data are often sparse and only partially matched
 across experiments. For example, one study may include 100 samples with
-metagenomics sequencing data but only 40 with matched metabolomics. In other
+metagenomics sequencing data but only 40 with matched metabolomics
+[@sherwani2025]. In other
 cases, a single sample in one modality may link to two or more samples in
 another modality (*e.g.*, due to technical or spatial replication)
 [see @husso2023]. These scenarios require flexible sample mappings and the
