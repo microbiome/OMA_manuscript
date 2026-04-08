@@ -357,31 +357,26 @@ Several data analytical frameworks are available for microbiome data science,
 each distinguished by its underlying paradigms, user communities, and scope.
 For example, tools such as QIIME 2 [@bolyen2019], Anvi'o
 [@eren2021], and Mothur [@schloss2009] emphasize standardized, workflow-oriented
-approaches tailored to microbiome analysis. While these frameworks provide
-validated solutions for microbiome data, they are typically designed
-around specific data types and predefined pipelines. This can limit flexibility
+approaches tailored to microbiome analysis. These frameworks provide
+validated and user-friendly solutions, enabling development of efficient
+end-to-end workflows for microbiome research. However, they are typically
+designed around specific data types, which can limit flexibility
 when integrating heterogeneous data modalities within a unified analytical
-framework. In addition, their workflow-centric design may not fully accommodate
-the iterative nature of exploratory microbiome research.
-Python-based ecosystems built around libraries such as Biopython [@cock2009]
-and scikit-bio [@aton2025] provide flexible, general-purpose toolkits, but
-are less comprehensive than Bioconductor. As a result, users are often required
-to implement more custom scripting and assemble their own analytical workflows.
+framework. In contrast, Bioconductor supports a more exploratory, statistical
+analysis oriented paradigm spanning multiple areas of bioinformatics beyond
+microbiome research.
 
-Bioconductor provides a comprehensive ecosystem of tools spanning multiple areas
-of bioinformatics, extending beyond microbiome research. It facilitates
-interoperability across domains by leveraging a shared data infrastructure,
-enabling more seamless integration of multi-omics data. Rather than focusing on
-predefined workflows, Bioconductor is oriented towards exploratory and
-statistical data analysis, with components that can be flexibly combined into
-custom workflows. While Python-based ecosystems benefit from rapidly evolving
-machine learning and artificial intelligence tools, Bioconductor’s strengths lie
-in robust statistical modeling and strong interoperability with other
-computational environments. In addition, it is supported by a large, active
-community and a mature, well-curated package ecosystem. Although this breadth
-and complexity can introduce challenges, such as dependency management and
-package compatibility, these are actively addressed through community standards,
-coordinated release cycles, and continuous integration practices.
+This data analytical paradigm of Bioconductor is similar to scikit-bio's
+[@aton2025]. While scikit-bio as a Python-based ecosystem benefits from rapidly
+evolving machine learning and artificial intelligence tools, Bioconductor’s
+strengths lie in robust statistical modeling and strong interoperability with
+other computational environments. Another key distinction is community
+structure: scikit-bio is relatively centralized, whereas Bioconductor packages
+are developed and maintained by a distributed community, resulting in a broad
+toolset. Although this can introduce challenges, such as dependency management
+and package compatibility, these are actively addressed through community
+standards, coordinated release cycles, and continuous integration practices,
+including shared data structures.
 
 # Data infrastructure {#sec-infra}
 
