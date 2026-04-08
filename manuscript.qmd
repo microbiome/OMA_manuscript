@@ -364,7 +364,7 @@ when integrating heterogeneous data modalities within a unified analytical
 framework. In addition, their workflow-centric design may not fully accommodate
 the iterative nature of exploratory microbiome research.
 Python-based ecosystems built around libraries such as Biopython [@cock2009]
-and scikit-bio [@rideout2023] provide flexible, general-purpose toolkits, but
+and scikit-bio [@aton2025] provide flexible, general-purpose toolkits, but
 are less comprehensive than Bioconductor. As a result, users are often required
 to implement more custom scripting and assemble their own analytical workflows.
 
