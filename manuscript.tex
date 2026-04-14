@@ -172,7 +172,7 @@
 \urlstyle{same}
 \hypersetup{
   pdftitle={Orchestrating Microbiome Analysis with Bioconductor},
-  pdfauthor={Tuomas Borman; Giulio Benedetti; Geraldson Muluh; Aura Raulo; Benjamin Valderamma; Artur Sannikov; Stefanie Peschel; Yihan Liu; Rasmus Hindström; OMA consortium; Katariina Pärnänen; Christian L. Müller; Aki Havulinna; Sudarshan Shetty; Marcel Ramos; Domenick J. Braccia; Héctor Corrada Bravo; Felix G.M. Ernst; Levi Waldron; Thomaz Bastiaanssen; Himel Mallick; Leo Lahti},
+  pdfauthor={Tuomas Borman; Giulio Benedetti; Geraldson Muluh; Aura Raulo; Benjamin Valderamma; Artur Sannikov; Stefanie Peschel; Yihan Liu; Rasmus Hindström; OMA consortium; Katariina Pärnänen; Christian L. Müller; Aki S. Havulinna; Sudarshan Shetty; Marcel Ramos; Domenick J. Braccia; Héctor Corrada Bravo; Felix M. Ernst; Levi Waldron; Thomaz F. S. Bastiaanssen; Himel Mallick; Leo Lahti},
   pdfkeywords={microbiome, Bioconductor, data science, data
 integration},
   colorlinks=true,
@@ -187,26 +187,85 @@ integration},
 Bioconductor]{Orchestrating Microbiome Analysis with Bioconductor}
 
 % author setup
-\author*[1]{\fnm{Tuomas} \sur{Borman}}\email{tvborm@utu.fi}\author[1]{\fnm{Giulio} \sur{Benedetti}}\equalcont{These authors contributed equally to this work.}\author[1]{\fnm{Geraldson} \sur{Muluh}}\equalcont{These authors contributed equally to this work.}\author[1]{\fnm{Aura} \sur{Raulo}}\author[2]{\fnm{Benjamin} \sur{Valderamma}}\author[1]{\fnm{Artur} \sur{Sannikov}}\author[4]{\fnm{Stefanie} \sur{Peschel}}\author[5]{\fnm{Yihan} \sur{Liu}}\author[1]{\fnm{Rasmus} \sur{Hindström}}\author[1]{\fnm{OMA} \sur{consortium}}\author[1,6]{\fnm{Katariina} \sur{Pärnänen}}\author[1]{\fnm{Christian L.} \sur{Müller}}\author[1]{\fnm{Aki} \sur{Havulinna}}\author[]{\fnm{Sudarshan} \sur{Shetty}}\author[9]{\fnm{Marcel} \sur{Ramos}}\author[10]{\fnm{Domenick J.} \sur{Braccia}}\author[11]{\fnm{Héctor Corrada} \sur{Bravo}}\author[]{\fnm{Felix G. M.} \sur{Ernst}}\author[13]{\fnm{Levi} \sur{Waldron}}\author[14]{\fnm{Thomaz} \sur{Bastiaanssen}}\equalcont{These authors contributed equally to this work.}\author[1]{\fnm{Himel} \sur{Mallick}}\equalcont{These authors contributed equally to this work.}\author*[1]{\fnm{Leo} \sur{Lahti}}\email{lemila@utu.fi}
+\author*[aff-1]{\fnm{Tuomas} \sur{Borman}}\email{tuomas.v.borman@utu.fi}\author[aff-1]{\fnm{Giulio} \sur{Benedetti}}\equalcont{These authors contributed equally to this work.}\author[aff-1]{\fnm{Geraldson} \sur{Muluh}}\equalcont{These authors contributed equally to this work.}\author[aff-2,aff-3]{\fnm{Aura} \sur{Raulo}}\author[aff-4,aff-5]{\fnm{Benjamin} \sur{Valderamma}}\author[aff-6]{\fnm{Artur} \sur{Sannikov}}\author[aff-7]{\fnm{Stefanie} \sur{Peschel}}\author[aff-8,aff-9,aff-10,aff-11,aff-12]{\fnm{Yihan} \sur{Liu}}\author[aff-1]{\fnm{Rasmus} \sur{Hindström}}\author[aff-13]{\fnm{OMA} \sur{consortium}}\author[aff-14]{\fnm{Katariina} \sur{Pärnänen}}\author[aff-7,aff-15,aff-16]{\fnm{Christian L.} \sur{Müller}}\author[aff-1,aff-17]{\fnm{Aki S.} \sur{Havulinna}}\author[aff-18]{\fnm{Sudarshan} \sur{Shetty}}\author[aff-19]{\fnm{Marcel} \sur{Ramos}}\author[aff-19]{\fnm{Domenick J.} \sur{Braccia}}\author[aff-13]{\fnm{Héctor Corrada} \sur{Bravo}}\author[aff-13]{\fnm{Felix M.} \sur{Ernst}}\author[aff-19]{\fnm{Levi} \sur{Waldron}}\author[aff-20,aff-21]{\fnm{Thomaz F. S.} \sur{Bastiaanssen}}\equalcont{These authors contributed equally to this work.}\author[aff-8,aff-22,aff-23]{\fnm{Himel} \sur{Mallick}}\equalcont{These authors contributed equally to this work.}\author*[aff-1]{\fnm{Leo} \sur{Lahti}}\email{leo.lahti@utu.fi}
 % affil setup
+\affil[aff-1]{, \orgname{1}}
+\affil[aff-2]{, \orgname{3}}
+\affil[aff-3]{, \orgname{4}}
+\affil[aff-4]{, \orgname{5}}
+\affil[aff-5]{, \orgname{6}}
+\affil[aff-6]{, \orgname{2}}
+\affil[aff-7]{, \orgname{7}}
+\affil[aff-8]{, \orgname{8}}
+\affil[aff-9]{, \orgname{9}}
+\affil[aff-10]{, \orgname{10}}
+\affil[aff-11]{, \orgname{11}}
+\affil[aff-12]{, \orgname{12}}
+\affil[aff-13]{, \orgname{19}}
+\affil[aff-14]{, \orgname{13}}
+\affil[aff-15]{, \orgname{14}}
+\affil[aff-16]{, \orgname{15}}
+\affil[aff-17]{, \orgname{16}}
+\affil[aff-18]{, \orgname{17}}
+\affil[aff-19]{, \orgname{18}}
+\affil[aff-20]{, \orgname{20}}
+\affil[aff-21]{, \orgname{21}}
+\affil[aff-22]{, \orgname{22}}
+\affil[aff-23]{, \orgname{23}}
 \affil[1]{\orgdiv{Department of Computing}, \orgname{University of
-Turku}}
-\affil[1]{}
-\affil[2]{\orgdiv{Department of Y}, \orgname{Organization XK}}
-\affil[4]{, \orgname{Organization D}}
-\affil[5]{\orgdiv{Department of
-Y}, \orgname{Cornell}, \orgaddress{\street{Address}, \city{City}, \postcode{0}}}
-\affil[6]{\orgdiv{Department of Microbiology}, \orgname{University of
-Helsinki}}
-\affil[9]{\orgdiv{Department of Y}, \orgname{Organization
-X}, \orgaddress{\street{Address}, \city{City}, \postcode{0}}}
-\affil[10]{\orgdiv{Department of Y}, \orgname{Organization
-XA}, \orgaddress{\street{Address}, \city{City}, \postcode{0}}}
-\affil[11]{\orgdiv{Department of YS}, \orgname{Organization
-XP}, \orgaddress{\street{Address}, \city{City}, \postcode{0}}}
-\affil[13]{\orgdiv{Department of Y}, \orgname{Organization
-N}, \orgaddress{\street{Address}, \city{City}, \postcode{0}}}
-\affil[14]{\orgdiv{Department of Y}, \orgname{Organization XX}}
+Turku}, \orgaddress{\street{Turku, Finland}}}
+\affil[2]{\orgdiv{Department of Life Technologies}, \orgname{University
+of Turku}, \orgaddress{\street{Turku, Finland}}}
+\affil[3]{\orgdiv{Department of Biology}, \orgname{University of
+Oxford}, \orgaddress{\street{Oxford, England}}}
+\affil[4]{\orgdiv{Queen's College}, \orgname{University of
+Oxford}, \orgaddress{\street{Oxford, England}}}
+\affil[5]{\orgdiv{Department of Anatomy and
+Neuroscience}, \orgname{University College
+Cork}, \orgaddress{\street{Cork, Ireland}}}
+\affil[6]{\orgdiv{APC Microbiome Ireland}, \orgname{University College
+Cork}, \orgaddress{\street{Cork, Ireland}}}
+\affil[7]{\orgdiv{Department of Statistics}, \orgname{LMU
+München}, \orgaddress{\street{Munich, Germany}}}
+\affil[8]{\orgdiv{Department of Population Health Sciences, Weill
+Cornell Medicine}, \orgname{Cornell University}, \orgaddress{\street{New
+York, USA}}}
+\affil[9]{\orgdiv{Department of Biomedical Informatics \& Data
+Science}, \orgname{Cornell University}, \orgaddress{\street{New York,
+USA}}}
+\affil[10]{\orgdiv{Department of Biostatistics}, \orgname{Cornell
+University}, \orgaddress{\street{New York, USA}}}
+\affil[11]{\orgdiv{Department of Biomedical Informatics \& Data
+Science}, \orgname{Yale University}, \orgaddress{\street{New Haven,
+USA}}}
+\affil[12]{\orgdiv{Department of Biostatistics}, \orgname{Yale
+University}, \orgaddress{\street{New Haven, USA}}}
+\affil[13]{\orgdiv{Department of Microbiology}, \orgname{University of
+Helsinki}, \orgaddress{\street{Helsinki, Finland}}}
+\affil[14]{, \orgname{Helmholtz Munich}, \orgaddress{\street{Munich,
+Germany}}}
+\affil[15]{, \orgname{Flatiron Institute}, \orgaddress{\street{New York,
+USA}}}
+\affil[16]{, \orgname{Institute for Molecular Medicine Finland,
+FIMM-HiLIFE}, \orgaddress{\street{Helsinki, Finland}}}
+\affil[17]{, \orgname{Danone Research and
+Innovation}, \orgaddress{\street{Utrecht, Netherlands}}}
+\affil[18]{\orgdiv{Department of Epidemiology and
+Biostatistics}, \orgname{CUNY Graduate School of Public Health and
+Health Policy}, \orgaddress{\street{New York, USA}}}
+\affil[19]{, \orgname{No affiliation}}
+\affil[20]{\orgdiv{Department of Psychiatry}, \orgname{Amsterdam
+University Medical Centres}, \orgaddress{\street{Amsterdam,
+Netherlands}}}
+\affil[21]{\orgdiv{Amsterdam Public Health}, \orgname{Amsterdam
+University Medical Centres}, \orgaddress{\street{Amsterdam,
+Netherlands}}}
+\affil[22]{\orgdiv{Division of Gastroenterology and Hepatology, Weill
+Cornell Medicine}, \orgname{Cornell University}, \orgaddress{\street{New
+York, USA}}}
+\affil[23]{\orgdiv{Department of Statistics and Data
+Science}, \orgname{Cornell University}, \orgaddress{\street{New York,
+USA}}}
 
 % abstract 
 
@@ -916,7 +975,7 @@ including Hubbell's neutral model, generalized Lotka-Volterra, and the
 consumer-resource model through the miaSim package \citep{gao2023}. Our
 framework provides a robust basis for developing extended methods for
 longitudinal multi-omics, which is currently an active area of
-investigation \citep{moiz2025}.
+investigation \citep{Sherwani2025}.
 
 \textbf{Multi-modal integration.} A key benefit of the ecosystem lays in
 its ability to\\
@@ -930,7 +989,7 @@ integrative data containers support complex combinations omics data sets
 in microbiome research can be broadly categorized into three groups:
 Machine Learning (ML) predictive models \citep{mallick2024},
 association-based models, and latent variable models
-\citep{Jeganathan2021, moiz2025, moreno-indias2021, mallick2024, bastiaanssen2023, argelaguet2020}.
+\citep{Jeganathan2021, Sherwani2025, moreno-indias2021, mallick2024, bastiaanssen2023, argelaguet2020}.
 Examples of the currently supported methods for multi-modal analysis
 include cross-correlation, canonical correspondence analysis (CCA),
 anansi \citep{bastiaanssen2023}, and joint-RPCA \citep{martino2025}.
