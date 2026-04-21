@@ -374,9 +374,13 @@ other computational environments. Another key distinction is community
 structure: scikit-bio is relatively centralized, whereas Bioconductor packages
 are developed and maintained by a distributed community, resulting in a broad
 toolset. Although this can introduce challenges, such as dependency management
-and package compatibility, these are actively addressed through community
-standards, coordinated release cycles, and continuous integration practices,
-including shared data structures.
+and package compatibility, these are actively addressed through several coordinated
+mechanisms. First, Bioconductor follows synchronized, semiannual release cycle,
+during which packages are frozen and mutually compatible. Second, all packages
+are continuously tested within Bioconductor's automated build system, which
+ensures that breaking changes are rapidly detected. Finally, community guidelines
+and continuous integration practices, together with shared data structures,
+further improve interoperability between packages.
 
 # Data infrastructure {#sec-infra}
 
@@ -712,7 +716,6 @@ benchmark_df |>
     mutate(Time = as.numeric(Time), Memory = as.numeric(Memory)) |>
     write.csv(file = file.path("data", "benchmark_results.csv"), row.names = FALSE)
 ```
-
 
 ```{r}
 #| label: fig-benchmarking
