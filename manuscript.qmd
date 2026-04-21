@@ -566,8 +566,8 @@ also offer built-in support for sparse and delayed matrices, which can improve
 performance [@huber2015]. Despite these advantages, optimizing
 time and memory consumption presents an obvious area for further development
 in the TreeSE-based framework. Conversion functions and detailed cheat sheets
-between the two formats are available to support interoperability between the
-respective user communities.
+between the two formats are available in the online book to support interoperability
+between the respective user communities.
 
 ```{r}
 #| label: benchmark_analysis
