@@ -378,7 +378,7 @@ and package compatibility, these are actively addressed through several coordina
 mechanisms. First, Bioconductor follows synchronized, semiannual release cycle,
 during which packages are frozen and mutually compatible. Second, all packages
 are continuously tested within Bioconductor's automated build system, which
-ensures that breaking changes are rapidly detected. Finally, community guidelines
+ensures that breaking changes are rapidly detected and fixed. Finally, community guidelines
 and continuous integration practices, together with shared data structures,
 further improve interoperability between packages.
 
