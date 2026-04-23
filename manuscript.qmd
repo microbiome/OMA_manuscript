@@ -378,11 +378,12 @@ package compatibility, and differences in package maturity, these are actively
 addressed through several coordinated mechanisms. First, submitted packages undergo
 peer review, ensuring relevance and adherence to standards such as documentation
 and working examples. Secondly, Bioconductor follows synchronized, semiannual
-release cycle, during which packages are frozen and mutually compatible. Thirdly, all packages
-are continuously tested within Bioconductor's automated build system, which
-ensures that breaking changes are rapidly detected and fixed. Finally, community guidelines
-and continuous integration practices, together with shared data structures,
-further improve interoperability between packages.
+release cycle, during which packages are frozen and mutually compatible. Thirdly,
+all packages are continuously tested within Bioconductor's automated build system,
+which ensures that breaking changes are rapidly detected. Each package has an active
+maintainer who is notified of failures and resolves them in a timely manner. Finally,
+community guidelines and continuous integration practices, together with shared
+data structures, further improve interoperability between packages.
 
 # Data infrastructure {#sec-infra}
 
