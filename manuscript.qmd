@@ -373,7 +373,8 @@ strengths lie in robust statistical modeling and strong interoperability with
 other computational environments. Another key distinction is community
 structure: scikit-bio is relatively centralized, whereas Bioconductor packages
 are developed and maintained by a distributed community, resulting in a broad
-toolset. Although this can introduce challenges, such as dependency management,
+toolset (see the online book for a comprehensive overview of packages in the ecosystem).
+Although this can introduce challenges, such as dependency management,
 package compatibility, and differences in package maturity, these are actively
 addressed through several coordinated mechanisms. First, submitted packages undergo
 peer review, ensuring relevance and adherence to standards such as documentation
