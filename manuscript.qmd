@@ -845,7 +845,7 @@ p
 incorporates data across multiple measurement modalities for enhanced functional 
 and mechanistic insights. This brings the need to find an appropriate
 representation for each data type and map the links between these. Whereas the
-TreeSE data container is broadly applicable to different modalities such as
+Tree)SE data container is broadly applicable to different modalities such as
 taxonomic, resistome, transcriptome, proteome, and metabolome profiling data,
 dedicated data containers have been developed for certain modalities by the
 Bioconductor community to address their specific characteristics; examples
@@ -992,7 +992,7 @@ evolving reference databases and profiling tools
 direct comparison within a unified, version-resilient framework
 [@blanco2023; @truong2015].
 
-**Data import.** The TreeSE data container can be populated with microbiome
+**Data import.** The (Tree)SE data container can be populated with microbiome
 data from common tabular data types but non-standard file formats may
 require additional data wrangling. To streamline data
 import, we provide importers for a variety of standard microbiome file
@@ -1003,9 +1003,9 @@ standardization format (taxpasta) [@beber2023]. These importers bridge the gap
 between the raw sequence processing and downstream statistical analysis in R,
 allowing researchers to focus on interpreting biological patterns rather than
 wrangling file formats. Moreover, converters between alternative data
-structures in R are available supporting seamless conversions between TreeSE
+structures in R are available supporting seamless conversions between (Tree)SE
 and BIOM, DADA2 [@callahan2016] and phyloseq (the mia::convert\* functions),
-and TreeSE-based microbiome data objects can be exported into external services
+and (Tree)SE-based microbiome data objects can be exported into external services
 such as MicrobiomeDB [@oliveira2018] and in other languages
 (*e.g.*, Julia). These converters facilitate widespread access to
 microbiome analysis methods. Imported data sets from different omics modalities 
@@ -1083,11 +1083,11 @@ provenance of the integrated data object.
 \captionof{figure}{\textbf{Multi-modal data integration workflow.} Following
 data generation and preprocessing (top two panels), the integrative framework
 covers five steps of microbiome data integration and analysis: 1) Data is
-wrapped into a TreeSE data object (see Figure~\ref{fig-datacontainers}),
+wrapped into a (Tree)SE data object (see Figure~\ref{fig-datacontainers}),
 containing information on the samples (tube icons) and their features
 (\textit{e.g.} taxonomic, functional, or resistome profiles; colored circles).
-TreeSE objects can accommodate multiple assay tables as well as additional
-hierarchical structures. 2) The TreeSE data object can then be processed to get
+(Tree)SE objects can accommodate multiple assay tables as well as additional
+hierarchical structures. 2) The (Tree)SE data object can then be processed to get
 cleaner data. This can include filtering out low-quality samples and features,
 transforming assay data for example by normalizing it to enhance the
 comparability of sample-specific abundances, or agglomerating the feature data
@@ -1144,7 +1144,7 @@ orders of magnitude [@armstrong2021]. The framework supports analyses
 with rarefaction through the mia package [@schloss2024b]. Other
 global indices of community state include measures of dominance,
 rarity, skewness, kurtosis, modality, library size (number of reads),
-or absolute abundance quantification. Sample information in the TreeSE object
+or absolute abundance quantification. Sample information in the (Tree)SE object
 (colData) can be enriched with these derived quantities. By default,
 the mia::addAlpha method returns a set of complementary alpha
 diversity measures [@cassol2025]. Alpha diversity indices have been frequently
@@ -1189,7 +1189,7 @@ and differential prevalence analysis (DPA) methods are used to
 identify indicator microbial features whose abundances vary across study groups
 or continuous gradients, for example, spatial or temporal distance between
 samples (@fig-downstream_analyses). Many dedicated DAA
-methods in microbiome research support the TreeSE framework, including methods
+methods in microbiome research support the (Tree)SE framework, including methods
 such as ANCOM-BC2 [@lin2024], LimROTS [@anwar2025], MaAsLin3
 [@nickols2024], and radEmu [@clausen2024]. Many of these methods have also found 
 applications with other omics modalities, such as transcriptomics
@@ -1225,7 +1225,7 @@ and the R4MS project provides many interoperable tools [@gatto2025].
 The framework has found recent applications in extended analyses of metagenomic
 features, for instance, antimicrobial resistome composition [@salehi2025]. 
 We have also converted a large-scale compilation of resistome profiles in 8,972 
-metagenome samples [@lee2023] into the TreeSE format to support 
+metagenome samples [@lee2023] into the (Tree)SE format to support 
 research and training activities in this area of microbiome analysis.
 
 **Spatio-temporal, ecological, and epidemiological models.** Microbiome time
@@ -1295,7 +1295,7 @@ namely `reticulate` for Python, `Rcpp` for C++, and compatibility with
 bioBakery pipelines [@navarro2024; @mciver2017] as well as Julia
 (MicrobiomeAnalysis.jl package). These connections empower users to combine the
 best tools available across environments and languages while maintaining
-structured data interoperability via standard containers such as TreeSE and MAE.
+structured data interoperability via standard containers such as (Tree)SE and MAE.
 
 ```{r}
 #| label: downstream_analyses
@@ -1557,7 +1557,7 @@ programming on interlinked multi-table data sets.
 accessible entry points to the framework. The iSEEtree and miaDash
 packages provide interactive analysis and visualization tools for
 microbiome data [@benedetti2025]. The former extends iSEE to provide support for
-TreeSE objects, while the latter builds on iSEEtree to enable analyses without
+(Tree)SE objects, while the latter builds on iSEEtree to enable analyses without
 requiring any programming. Their interface supports automatic generation of
 source code and replicable workflows as well as analysis templates for users
 without a strong programming expertise. Moreover, the tidy R paradigm, available
@@ -1636,7 +1636,7 @@ software components into custom workflows. However, the lack of commonly adopted
 data representation standards often hinders the development, sharing,
 and application of modular, interoperable statistical workflows. Here we present
 a R/Bioconductor ecosystem for multimodal microbiome data science. While
-TreeSE and MAE are prior contributions [@huang2021; @ramos2017], we have built
+(Tree)SE and MAE are prior contributions [@huang2021; @ramos2017], we have built
 an ecosystem around them through further
 method and community development. We also provide a comprehensive online book
 supporting learning and reproducible analysis, resulting in an ecosystem ready
