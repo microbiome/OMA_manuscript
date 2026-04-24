@@ -845,7 +845,7 @@ p
 incorporates data across multiple measurement modalities for enhanced functional 
 and mechanistic insights. This brings the need to find an appropriate
 representation for each data type and map the links between these. Whereas the
-Tree)SE data container is broadly applicable to different modalities such as
+(Tree)SE data container is broadly applicable to different modalities such as
 taxonomic, resistome, transcriptome, proteome, and metabolome profiling data,
 dedicated data containers have been developed for certain modalities by the
 Bioconductor community to address their specific characteristics; examples
