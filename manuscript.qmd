@@ -1270,18 +1270,30 @@ mismatches), and enables the creation of modular, efficient, and reproducible
 workflows. Such integrative approaches in microbiome
 research can be broadly categorized into three groups: Machine Learning (ML)
 prediction [@mallick2024], association-based approaches, and
-latent variable modeling  [@jeganathan2021; @sherwani2025;
+latent variable modeling [@jeganathan2021; @sherwani2025;
 @moreno-indias2021; @mallick2024; @bastiaanssen2023;
-@argelaguet2020]. Examples of the currently supported methods for multi-modal 
-analysis include cross-correlation, canonical correspondence analysis
-(CCA), anansi [@bastiaanssen2023], and joint-RPCA [@martino2025]. Whereas the 
-cross-correlation analysis can be used to quantify direct associations of
-samples or features between two data sets, anansi can supervise such analyses 
-by incorporating known functional relations, and CCA and Joint-RPCA 
-provide further tools to discover and visualize shared latent variation.
-We hope that systematic integrative frameworks, such as the one proposed here, 
-will accelerate the development, benchmarking, and standardization of 
- multi-modal extensions for microbiome analysis.
+@argelaguet2020; @singh2019; mangnier2025].
+Machine learning approaches aim to integrate multiple omics modalities into a
+single predictive model. However, naive concatenation of feature tables can
+obscure modality-specific signals and reduce predictive performance. Methods
+such as IntegratedLearner [@mallick2024] address this limitation by modeling
+each modality separately while leveraging their complementary predictive
+information within a unified framework.
+Association-based methods aim to quantify relationships between datasets.
+Whereas the cross-correlation analysis can be used to capture direct
+associations of samples or features between two data sets, anansi can supervise
+such analyses  by incorporating known functional relations. While these
+association-based approaches are often easier to interpret, they do not
+explicitly account for the fact that microbes operate within complex
+communities. In contrast, latent variable methods such
+as CCA, joint-RPCA [@martino2025] and multiblock partial least squares
+discriminant analysis (PLS-DA) [@singh2019] model shared latent structure across
+modalities, enabling the discovery and visualization of coordinated variation
+at the community level.
+The available methodologies are rapidly increasing, and we hope that systematic
+integrative frameworks, such as the one proposed here, 
+will further accelerate the development, benchmarking, and standardization of 
+multi-modal extensions for microbiome analysis.
 
 **Other methods and programming environments.** A range of other methods have
 been employed in microbiome data science. Examples include network analysis
