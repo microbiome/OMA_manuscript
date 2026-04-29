@@ -1286,10 +1286,11 @@ such analyses  by incorporating known functional relations. While these
 association-based approaches are often easier to interpret, they do not
 explicitly account for the fact that microbes operate within complex
 communities. In contrast, latent variable methods such
-as CCA, joint-RPCA [@martino2025] and multiblock partial least squares
-discriminant analysis (PLS-DA) [@singh2019] model shared latent structure across
-modalities, enabling the discovery and visualization of coordinated variation
-at the community level.
+as multi-omics factor analysis (MOFA) [@argelaguet2020],
+joint robust PCA (joint-RPCA) [@martino2025] and multiblock partial least
+squares discriminant analysis (PLS-DA) [@singh2019] model shared latent
+structure across modalities, enabling the discovery and visualization of
+coordinated variation at the community level.
 The available methodologies are rapidly increasing, and we hope that systematic
 integrative frameworks, such as the one proposed here, 
 will further accelerate the development, benchmarking, and standardization of 
