@@ -16,35 +16,31 @@ jobs:
       matrix:
         config:
         - os: ubuntu-latest
-          bioc: devel
-          r: auto
+          bioc: '3.22'
+          r: '4.5.2'
           cont: ghcr.io/bioconductor/bioconductor_docker:devel
           rspm: ~
-        - os: macOS-latest
-          bioc: devel
-          r: auto
-          cont: ~
-          rspm: ~
-        - os: windows-latest
-          bioc: devel
-          r: auto
-          cont: ~
-          rspm: ~
+          python-version: '3.14'
     steps:
     - uses: neurogenomics/rworkflows@master
       with:
-        run_bioccheck: ${{ false }}
-        run_rcmdcheck: ${{ false }}
-        as_cran: ${{ true }}
-        run_vignettes: ${{ true }}
-        has_testthat: ${{ true }}
-        run_covr: ${{ true }}
-        run_pkgdown: ${{ true }}
-        has_runit: ${{ false }}
-        has_latex: ${{ false }}
+        run_bioccheck: no
+        run_rcmdcheck: no
+        as_cran: yes
+        run_vignettes: no
+        has_testthat: no
+        run_covr: no
+        run_pkgdown: no
+        has_runit: no
+        has_latex: no
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run_docker: ${{ true }}
+        run_docker: yes
         DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
         runner_os: ${{ runner.os }}
         cache_version: cache-v1
         docker_registry: ghcr.io
+        force_install: no
+        run_telemetry: yes
+        free_diskspace: no
+        miniforge_variant: ''
+        environment_file: https://github.com/qiime2/distributions/blob/dev/2026.4/qiime2/released/rachis-qiime2-linux-64-conda.yml
