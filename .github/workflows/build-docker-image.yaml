@@ -1,45 +1,50 @@
 name: Build Docker image for OMA manuscript
-env:
-  REPOSITORY_OWNER: ${{ github.repository_owner }}
-  DOCKER_IMAGE_NAME: oma-manuscript
-on:
-  workflow_dispatch:
+'on':
   push:
-
+    branches:
+    - devel
+env:
+  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 jobs:
-  build-and-push:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+  rworkflows:
+    permissions: write-all
+    runs-on: ${{ matrix.config.os }}
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+    container: ${{ matrix.config.cont }}
+    strategy:
+      fail-fast: ${{ false }}
+      matrix:
+        config:
+        - os: ubuntu-latest
+          bioc: devel
+          r: auto
+          cont: ghcr.io/bioconductor/bioconductor_docker:devel
+          rspm: ~
+        - os: macOS-latest
+          bioc: devel
+          r: auto
+          cont: ~
+          rspm: ~
+        - os: windows-latest
+          bioc: devel
+          r: auto
+          cont: ~
+          rspm: ~
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-        with:
-          repository: ${{ github.event.inputs.repository }}
-          fetch-depth: 0
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Login to Docker Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN}}
-
-      - name: Extract metadata for Docker image
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ghcr.io/${{ github.actor }}/oma-manuscript
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: ./Containerfile
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+    - uses: neurogenomics/rworkflows@master
+      with:
+        run_bioccheck: ${{ false }}
+        run_rcmdcheck: ${{ false }}
+        as_cran: ${{ true }}
+        run_vignettes: ${{ true }}
+        has_testthat: ${{ true }}
+        run_covr: ${{ true }}
+        run_pkgdown: ${{ true }}
+        has_runit: ${{ false }}
+        has_latex: ${{ false }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run_docker: ${{ true }}
+        DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+        runner_os: ${{ runner.os }}
+        cache_version: cache-v1
+        docker_registry: ghcr.io
