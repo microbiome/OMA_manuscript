@@ -369,11 +369,13 @@ microbiome research.
 This data analytical paradigm of Bioconductor is similar to scikit-bio's
 [@aton2025]. While scikit-bio as a Python-based ecosystem benefits from rapidly
 evolving machine learning and artificial intelligence tools, Bioconductor’s
-strengths lie in robust statistical modeling and strong interoperability with
-other computational environments. Another key distinction is community
-structure: scikit-bio is relatively centralized, whereas Bioconductor packages
-are developed and maintained by a distributed community, resulting in a broad
-toolset (see the online book for a comprehensive overview of packages in the ecosystem).
+strengths lie in its vast statistical ecosystem dedicated to omics research and
+strong interoperability with other computational environments. 
+Another key distinction is community structure: scikit-bio is relatively
+centralized, whereas Bioconductor packages are developed and maintained by an
+open community, resulting in a broad toolset (see the online book for a
+comprehensive overview of packages supporting the microbiome data science
+ecosystem).
 Although this can introduce challenges, such as dependency management,
 package compatibility, and differences in package maturity, these are actively
 addressed through several coordinated mechanisms. First, submitted packages undergo
@@ -382,9 +384,11 @@ and working examples. Secondly, Bioconductor follows synchronized, semiannual
 release cycle, during which packages are frozen and mutually compatible. Thirdly,
 all packages are continuously tested within Bioconductor's automated build system,
 which ensures that breaking changes are rapidly detected. Each package has an active
-maintainer who is notified of failures and resolves them in a timely manner. Finally,
-community guidelines and continuous integration practices, together with shared
-data structures, further improve interoperability between packages.
+maintainer who is notified of failures and resolves them in a timely manner.
+Finally, community guidelines and continuous integration practices, together
+with shared data structures such as (Tree)SummarizedExperiment, further improve
+interoperability between packages.
+
 
 # Data infrastructure {#sec-infra}
 
@@ -396,11 +400,12 @@ ability to integrate heterogeneous data elements is essential in biological
 research, where the individual components of a system can seldom be studied in
 isolation. However, this growing complexity introduces additional overhead, as
 researchers must track samples and features across multiple tables and manage an
-increasing number of data elements. Moreover, input data formats vary across
-different methods, leading to technical complications and time lost on data
-wrangling. Bioconductor addresses these challenges through standardized data
-structures supported by an ecosystem of interoperable methods, allowing the
-analyst to invest more time in core analytical tasks.
+increasing number of data elements and non-trivial links between them. Moreover,
+input data formats vary across different methods, leading to technical
+complications and time lost on data wrangling. Bioconductor is addressing these
+challenges through standardized data structures that are supported by an
+ecosystem of quality-controlled, interoperable methods. This allows the analyst
+to invest more time in core analytical tasks.
 
 Bioconductor data structures support statistical analysis of complex
 data combinations [@huber2015] and are widely adopted by various
@@ -569,11 +574,11 @@ other profiles and alternative feature representations. It also offers
 substantial gains in memory efficiency and computing speed over phyloseq
 (@fig-benchmarking). While speedyseq is faster in certain operations, TreeSE
 tends to scale more efficiently in terms of execution time (t) and allocated
-memory (m) as sample size (n) increases, especially as SE-based data containers
-also offer built-in support for sparse and delayed matrices, which can improve
-performance [@huber2015]. Despite these advantages, optimizing
-time and memory consumption presents an obvious area for further development
-in the TreeSE-based framework. Conversion functions and detailed cheat sheets
+memory (m) as sample size (n) increases. This benefits from the built-in support
+for sparse and delayed matrices in SE-based data containers, which can improve
+performance [@huber2015]. Despite these advantages, further optimizing time and
+memory consumption presents an obvious area for developing  the TreeSE-based
+framework. Conversion functions and detailed cheat sheets
 between the two formats are available in the online book to support interoperability
 between the respective user communities.
 
@@ -1189,10 +1194,13 @@ analysis (DAA)
 and differential prevalence analysis (DPA) methods are used to
 identify indicator microbial features whose abundances vary across study groups
 or continuous gradients, for example, spatial or temporal distance between
-samples (@fig-downstream_analyses). Many dedicated DAA
-methods in microbiome research support the (Tree)SE framework, including methods
-such as ANCOM-BC2 [@lin2024], LimROTS [@anwar2025], MaAsLin3
-[@nickols2024], and radEmu [@clausen2024]. Many of these methods have also found 
+samples (@fig-downstream_analyses). Many DAA methods used in microbiome research
+support the (Tree)SE framework, including methods such as ANCOM-BC2 [@lin2024],
+LimROTS [@anwar2025], MaAsLin3 [@nickols2024], and radEmu [@clausen2024].
+Recently, differential prevalence analysis (DPA), which focuses on
+presence/absence comparisons, has received increasing attention as a tool for
+microbiome research [@pelto2026, @nickols2024]. Many of these methods have
+also found 
 applications with other omics modalities, such as transcriptomics
 (*e.g.* DESeq2), metabolomics [@nickols2024], or proteomics [@anwar2025] and the
 shared SE-based Bioconductor data containers have greatly facilitated this.
@@ -1530,15 +1538,17 @@ principle, with technical, legal, sociological and epistemic consequences
 access to well-documented and user-friendly methods [@barker2022],
 and are facilitated by the extensive quality control and
 documentation standards enforced by Bioconductor [@huber2015].
-In addition to these technical
-demands, the development and quality control of academic software
+The development and quality control of academic software
 critically relies on active and critical communities that can
 provide continuous benchmarking and support the identification and
-dissemination of evidence-based best practices [@berg2020;
-@barker2022; @hocquet2024]. For example, starting with simple methods, early
-computation of key measurements, and initial visual exploration improves
-transparency, interpretability, and understanding of the data, while explicit
-code and clear commenting further support traceability and verification.
+dissemination of evidence-based best practices
+[@berg2020; @barker2022; @hocquet2024]. We recommend starting with simple
+methods (see e.g. [@pelto2025]), calculating the derivative data elements such
+as diversity, prevalence, and other such measures already at the beginning of
+the workflow, and supporting the analyses with visual exploration. These
+practices can improve transparency, interpretability, and understanding of the
+data. Reproducible code and clear comments support traceability and
+verification.
 
 Harmonized data structures and access to validated
 methods help shape such best practices by enabling transparent benchmarking and
@@ -1651,10 +1661,9 @@ data representation standards often hinders the development, sharing,
 and application of modular, interoperable statistical workflows. Here we present
 a R/Bioconductor ecosystem for multimodal microbiome data science. While
 (Tree)SE and MAE are prior contributions [@huang2021; @ramos2017], we have built
-an ecosystem around them through further
-method and community development. We also provide a comprehensive online book
-supporting learning and reproducible analysis, resulting in an ecosystem ready
-for microbiome research.
+a novel community-driven ecosystem of microbiome data science methods extending
+them. We also provide a comprehensive online book supporting learning and
+reproducible analysis in microbiome research and beyond.
 
 **The Bioconductor community** is widely recognized for
 developing open research software for life sciences. Its
