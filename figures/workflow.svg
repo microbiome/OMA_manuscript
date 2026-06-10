@@ -6,7 +6,7 @@
    version="1.1"
    id="svg2737"
    sodipodi:docname="workflow.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    inkscape:export-filename="/home/rpth/Documents/manuscripts/OMA_manuscript/figures/workflow.png"
    inkscape:export-xdpi="300"
    inkscape:export-ydpi="300"
@@ -32,23 +32,28 @@
      inkscape:snap-text-baseline="true"
      inkscape:snap-others="true"
      inkscape:zoom="1.2233621"
-     inkscape:cx="783.90526"
-     inkscape:cy="1715.3547"
-     inkscape:window-width="3824"
-     inkscape:window-height="2075"
-     inkscape:window-x="26"
-     inkscape:window-y="23"
+     inkscape:cx="783.49656"
+     inkscape:cy="341.27263"
+     inkscape:window-width="2552"
+     inkscape:window-height="1360"
+     inkscape:window-x="24"
+     inkscape:window-y="21"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2737"
      inkscape:object-nodes="false"
      inkscape:snap-nodes="true"
-     inkscape:snap-midpoints="true">
+     inkscape:snap-midpoints="true"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1">
     <inkscape:grid
        type="xygrid"
        id="grid56159"
        originx="-36.94436"
        originy="-45.153371"
-       visible="true" />
+       visible="true"
+       spacingy="1"
+       spacingx="1"
+       units="px" />
   </sodipodi:namedview>
   <defs
      id="defs1587">
@@ -1337,27 +1342,27 @@
          x="110.91585"
          y="459.98865"
          id="tspan24382"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono'">ATTCTTATT</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono'">ATTCTTATT</tspan><tspan
          sodipodi:role="line"
          x="110.91585"
          y="483.32202"
          id="tspan29120"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono'">AGGCATGAC</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono'">AGGCATGAC</tspan><tspan
          sodipodi:role="line"
          x="110.91585"
          y="506.6554"
          id="tspan29122"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono'">TCATATAAG</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono'">TCATATAAG</tspan><tspan
          sodipodi:role="line"
          x="110.91585"
          y="529.98877"
          id="tspan29124"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono'">TCTTATTAG</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono'">TCTTATTAG</tspan><tspan
          sodipodi:role="line"
          x="110.91585"
          y="553.32214"
          id="tspan29126"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono'">GCATGATCA</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono'">GCATGATCA</tspan></text>
   </g>
   <g
      id="g56027"
@@ -1401,52 +1406,50 @@
      fill-rule="evenodd"
      id="path1623-2"
      style="opacity:0.666" />
-  <g
-     id="g55399-0"
-     transform="matrix(1.2958435,0.31823733,-0.30739147,1.2516798,972.80341,-541.79026)"
-     style="opacity:0.666">
-    <rect
-       x="104.31232"
-       y="441.30182"
-       width="115"
-       height="119"
-       stroke="#172c51"
-       stroke-width="3.00044"
-       stroke-miterlimit="8"
-       fill="#ffffff"
-       id="rect1667-3-7" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.6667px;line-height:1.25;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono Bold'"
-       x="110.91585"
-       y="459.98865"
-       id="text24372-6"><tspan
-         sodipodi:role="line"
-         x="110.91585"
-         y="459.98865"
-         id="tspan24382-3"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono'">ATTCTTATT</tspan><tspan
-         sodipodi:role="line"
-         x="110.91585"
-         y="483.32202"
-         id="tspan29120-7"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono'">AGGCATGAC</tspan><tspan
-         sodipodi:role="line"
-         x="110.91585"
-         y="506.6554"
-         id="tspan29122-6"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono'">TCATATAAG</tspan><tspan
-         sodipodi:role="line"
-         x="110.91585"
-         y="529.98877"
-         id="tspan29124-1"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono'">TCTTATTAG</tspan><tspan
-         sodipodi:role="line"
-         x="110.91585"
-         y="553.32214"
-         id="tspan29126-5"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono'">GCATGATCA</tspan></text>
-  </g>
+  <rect
+     x="953.14587"
+     y="-195.73514"
+     width="153.45006"
+     height="153.37581"
+     stroke="#172c51"
+     stroke-width="3.93482"
+     stroke-miterlimit="8"
+     fill="#ffffff"
+     id="rect1667-3-7"
+     transform="rotate(13.797817)"
+     style="opacity:0.666" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.4798px;line-height:1.25;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono Bold';opacity:0.666;stroke-width:1.31141"
+     x="945.42291"
+     y="-174.65216"
+     id="text24372-6"
+     transform="matrix(0.98812754,0.24266748,-0.23439712,0.95445112,0,0)"><tspan
+       sodipodi:role="line"
+       x="945.42291"
+       y="-174.65216"
+       id="tspan24382-3"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.4798px;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono';stroke-width:1.31141">ATTCTTATT</tspan><tspan
+       sodipodi:role="line"
+       x="945.42291"
+       y="-144.05241"
+       id="tspan29120-7"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.4798px;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono';stroke-width:1.31141">AGGCATGAC</tspan><tspan
+       sodipodi:role="line"
+       x="945.42291"
+       y="-113.45266"
+       id="tspan29122-6"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.4798px;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono';stroke-width:1.31141">TCATATAAG</tspan><tspan
+       sodipodi:role="line"
+       x="945.42291"
+       y="-82.852913"
+       id="tspan29124-1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.4798px;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono';stroke-width:1.31141">TCTTATTAG</tspan><tspan
+       sodipodi:role="line"
+       x="945.42291"
+       y="-52.253166"
+       id="tspan29126-5"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.4798px;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono';stroke-width:1.31141">GCATGATCA</tspan></text>
   <g
      transform="matrix(1.05002e-4,0,0,1.05002e-4,560.05598,57.346852)"
      id="g1633-5"
@@ -1838,7 +1841,8 @@
            sodipodi:role="line"
            id="tspan132840"
            x="948.8219"
-           y="463.16263">CCCAATTA</tspan></text>
+           y="463.16263"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono'">CCCAATTA</tspan></text>
     </g>
     <g
        id="g148826"
@@ -1861,7 +1865,8 @@
              sodipodi:role="line"
              id="tspan140429"
              x="1041.9845"
-             y="509.12296">ATTACGT</tspan></text>
+             y="509.12296"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono'">ATTACGT</tspan></text>
       </g>
     </g>
     <g
@@ -1883,7 +1888,8 @@
            sodipodi:role="line"
            id="tspan147083"
            x="957.46466"
-           y="558.36108">CCGAATTC</tspan></text>
+           y="558.36108"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono'">CCGAATTC</tspan></text>
     </g>
   </g>
   <g
@@ -1991,38 +1997,38 @@
   <text
      xml:space="preserve"
      style="font-size:24px;line-height:1;font-family:sans-serif;-inkscape-font-specification:sans-serif;opacity:0.666"
-     x="133.05563"
-     y="544.84662"
+     x="119.1595"
+     y="545.66406"
      id="text156215"><tspan
        sodipodi:role="line"
-       x="133.05563"
-       y="544.84662"
-       id="tspan157801"
-       style="font-size:24px">Fastq/Fasta</tspan><tspan
+       x="119.1595"
+       y="545.66406"
+       style="font-size:24px"
+       id="tspan1">FASTQ/FASTA</tspan><tspan
        sodipodi:role="line"
-       x="133.05563"
-       y="568.84662"
+       x="119.1595"
+       y="569.66406"
        id="tspan157805"
        style="font-size:24px">-files</tspan><tspan
        sodipodi:role="line"
-       x="133.05563"
-       y="592.84662"
+       x="119.1595"
+       y="593.66406"
        id="tspan160603"
        style="font-size:24px" /></text>
   <text
      xml:space="preserve"
      style="font-size:24px;line-height:1;font-family:sans-serif;-inkscape-font-specification:sans-serif;opacity:0.666"
-     x="293.05563"
-     y="544.84662"
+     x="301.22983"
+     y="544.02917"
      id="text164999"><tspan
        sodipodi:role="line"
        id="tspan164997"
-       x="293.05563"
-       y="544.84662"
+       x="301.22983"
+       y="544.02917"
        style="font-size:24px">Read alignment</tspan><tspan
        sodipodi:role="line"
-       x="293.05563"
-       y="568.84662"
+       x="301.22983"
+       y="568.02917"
        id="tspan165001"
        style="font-size:24px" /></text>
   <text
@@ -2288,7 +2294,7 @@
   </g>
   <g
      id="g277984"
-     transform="matrix(0.86864541,0,0,0.8382461,141.69658,193.14777)">
+     transform="matrix(0.86864541,0,0,0.8382461,-243.308,190.69551)">
     <g
        id="g277740"
        transform="translate(67.433223,19.626303)">
@@ -2634,7 +2640,7 @@
        y="368.72321" /></text>
   <g
      id="g353117"
-     transform="matrix(0.95185961,0,0,0.90943464,-1059.3727,673.73961)">
+     transform="matrix(0.95185961,0,0,0.90943464,-669.46362,672.10477)">
     <rect
        x="1513.4047"
        y="528.422"
@@ -3945,24 +3951,24 @@
   <text
      xml:space="preserve"
      style="font-weight:bold;font-size:26.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'"
-     x="449.69308"
-     y="1325.0176"
+     x="839.60217"
+     y="1323.3828"
      id="text503975"><tspan
        sodipodi:role="line"
        id="tspan503973"
-       x="449.69308"
-       y="1325.0176"
+       x="839.60217"
+       y="1323.3828"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;font-family:sans-serif;-inkscape-font-specification:sans-serif">Transformations</tspan></text>
   <text
      xml:space="preserve"
      style="font-weight:bold;font-size:26.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'"
-     x="829.69312"
-     y="1325.0176"
+     x="444.6886"
+     y="1322.5653"
      id="text505893"><tspan
        sodipodi:role="line"
        id="tspan505891"
-       x="829.69312"
-       y="1325.0176"
+       x="444.6886"
+       y="1322.5653"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;font-family:sans-serif;-inkscape-font-specification:sans-serif">Agglomeration</tspan></text>
   <text
      xml:space="preserve"
