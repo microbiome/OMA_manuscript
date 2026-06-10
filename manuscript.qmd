@@ -389,7 +389,6 @@ Finally, community guidelines and continuous integration practices, together
 with shared data structures such as (Tree)SummarizedExperiment, further improve
 interoperability between packages.
 
-
 # Data infrastructure {#sec-infra}
 
 Data scientists routinely deal with interlinked assays, hierarchical data
@@ -578,9 +577,12 @@ memory (m) as sample size (n) increases. This benefits from the built-in support
 for sparse and delayed matrices in SE-based data containers, which can improve
 performance [@huber2015]. Despite these advantages, further optimizing time and
 memory consumption presents an obvious area for developing  the TreeSE-based
-framework. Conversion functions and detailed cheat sheets
-between the two formats are available in the online book to support interoperability
-between the respective user communities.
+framework. To facilitate migration from phyloseq, the OMA online book provides
+conversion functions between the two data container formats together with a
+mapping table of commonly used functions. These resources enable users to
+incrementally migrate existing phyloseq workflows to the TreeSE framework while
+preserving familiar coding patterns and minimizing changes to established
+analysis pipelines.
 
 ```{r}
 #| label: benchmark_analysis
@@ -851,7 +853,9 @@ p
 incorporates data across multiple measurement modalities for enhanced functional 
 and mechanistic insights. This brings the need to find an appropriate
 representation for each data type and map the links between these. Whereas the
-(Tree)SE data container is broadly applicable to different modalities such as
+(Tree)SE (including TreeSummarizedExperiment and the broader
+SummarizedExperiment family) data container is broadly applicable to different 
+modalities such as
 taxonomic, resistome, transcriptome, proteome, and metabolome profiling data,
 dedicated data containers have been developed for certain modalities by the
 Bioconductor community to address their specific characteristics; examples
@@ -1202,7 +1206,7 @@ presence/absence comparisons, has received increasing attention as a tool for
 microbiome research [@pelto2026, @nickols2024]. Many of these methods have
 also found 
 applications with other omics modalities, such as transcriptomics
-(*e.g.* DESeq2), metabolomics [@nickols2024], or proteomics [@anwar2025] and the
+(*e.g.* DESeq2 [@love2014]), metabolomics [@nickols2024], or proteomics [@anwar2025] and the
 shared SE-based Bioconductor data containers have greatly facilitated this.
 Recent studies by us and others indicated that elementary methods, such as log
 transformed total sum scaled (TSS) counts coupled with a linear model, or
@@ -1717,7 +1721,10 @@ documented the open data science ecosystem for multi-modal microbiome research
 built on widely adopted Bioconductor data containers, software libraries,  
 data resources, tutorials, and a growing community of developers. 
 Further extensions could include methods for temporal, spatial, and multi-omic
-analyses along with an end-to-end case study demonstrating how an example
+analyses, improved support for community metadata standards and FAIR data
+practices
+(*e.g.*, Minimum Information about any (x) Sequence, MIxS [@field2008]),
+along with an end-to-end case study demonstrating how an example
 analysis can be conducted in practice from raw data to results.
 Finally, supporting interoperability between R and other
 programming languages could facilitate the application of other machine learning
