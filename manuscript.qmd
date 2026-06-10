@@ -1229,10 +1229,11 @@ constantly developing methodology.
 **Function- and sequence-level analyses.** Taxonomic analysis is
 frequently complemented by functional analyses, either based on
 functional predictions derived from amplicon or metagenomic
-sequences, or from parallel metabolomic or other functional
+sequences, or from parallel metabolomic, metatranscriptomic or other functional
 assays. Our framework not only supports the incorporation of functional
-abundance tables within the same data objects but specialized methods
-for functional data are available as well; for instance, regarding metabolome
+abundance tables within the same data objects, but many statistical methods implemented in the ecosystem are generic and can therefore be applied across
+different omics data types. Where appropriate, specialized methods are also
+available; for instance, regarding metabolome
 analyses, the notame package [@klavus2020] has recently added SE support,
 and the R4MS project provides many interoperable tools [@gatto2025].
 The framework has found recent applications in extended analyses of metagenomic
@@ -1543,25 +1544,29 @@ access to well-documented and user-friendly methods [@barker2022],
 and are facilitated by the extensive quality control and
 documentation standards enforced by Bioconductor [@huber2015].
 The development and quality control of academic software
-critically relies on active and critical communities that can
+critically rely on active and critical communities that can
 provide continuous benchmarking and support the identification and
 dissemination of evidence-based best practices
 [@berg2020; @barker2022; @hocquet2024]. We recommend starting with simple
-methods (see e.g. [@pelto2025]), calculating the derivative data elements such
+methods (see e.g. [@pelto2025]), calculating derived quantities such
 as diversity, prevalence, and other such measures already at the beginning of
 the workflow, and supporting the analyses with visual exploration. These
 practices can improve transparency, interpretability, and understanding of the
 data. Reproducible code and clear comments support traceability and
 verification.
 
-Harmonized data structures and access to validated
-methods help shape such best practices by enabling transparent benchmarking and
-fostering community-driven consensus, while allowing users to flexibly select
-and evaluate methods appropriate for their specific data and research questions.
-Community formation is actively supported through
-online training resources and communication channels. Together with the
-interactive applications, these resources provide accessible entry points for
-all developers and users.
+Harmonized data structures and access to validated methods support standardized
+and transparent data wrangling across studies while facilitating method sharing,
+benchmarking, and reproducible comparisons. These capabilities help establish
+community best practices and build consensus while allowing users to flexibly
+select and evaluate methods appropriate for their specific data and research
+questions. The Bioconductor framework naturally aligns with these goals through
+its open ecosystem of data resources, interoperable software, and educational
+materials. Community building is actively supported through online training
+resources and communication channels, making it easier for both developers and
+users to contribute to the continued development and standardization of the
+ecosystem. Together with the interactive applications, these resources provide
+accessible entry points for all developers and users.
 
 **The OMA book.** _Orchestrating Microbiome Analysis with Bioconductor
 (OMA)_
@@ -1663,7 +1668,7 @@ maintaining flexibility, data scientists routinely remix open-source
 software components into custom workflows. However, the lack of commonly adopted
 data representation standards often hinders the development, sharing,
 and application of modular, interoperable statistical workflows. Here we present
-a R/Bioconductor ecosystem for multimodal microbiome data science. While
+a R/Bioconductor ecosystem for multi-modal microbiome data science. While
 (Tree)SE and MAE are prior contributions [@huang2021; @ramos2017], we have built
 a novel community-driven ecosystem of microbiome data science methods extending
 them. We also provide a comprehensive online book supporting learning and
