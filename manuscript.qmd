@@ -488,6 +488,7 @@ available <- lapply(dates, function(date) {
     as.numeric(temp)
 })
 available <- do.call(cbind, available) |> as.data.frame()
+colnames(available) <- dates
 rownames(available) <- unique(df[["Package"]])
 
 # Create a table showing the number of packages by field through time
@@ -534,6 +535,7 @@ temp <- sapply(pkgs, function(pkg) {
 
 # Import data
 pkgs_date <- read.csv(file.path("data", "bioc_packages_stats.csv"))
+pkgs_date[["Date"]] <- pkgs_date[["Date"]] |> as.Date()
 
 # Create the plot
 p <- ggplot(pkgs_date, aes(x = Date, y = N, fill = Field)) +
@@ -541,7 +543,8 @@ p <- ggplot(pkgs_date, aes(x = Date, y = N, fill = Field)) +
     theme_classic() +
     scale_fill_okabeito() +
     labs(x = "Year", y = "Number of packages") +
-    scale_y_continuous(expand = c(0, 0), limits = c(0, NA))
+    scale_y_continuous(expand = c(0, 0), limits = c(0, NA)) +
+    scale_x_date(expand = c(0, 0), limits = c(as.Date("2015-01-01"), max(pkgs_date[["Date"]])))
 
 p
 ```
