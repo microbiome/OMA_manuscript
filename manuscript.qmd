@@ -435,6 +435,7 @@ SpatialExperiment [@righelli2022] classes.
 #| eval: false
 #| echo: false
 #| message: false
+#| warning: false
 
 if (!require("BiocManager")) {
     install("BiocManager")
