@@ -1178,7 +1178,7 @@ methods that project the data onto a lower-dimensional display
 include Principal Component Analysis (PCA), Principal Coordinates Analysis
 (PCoA; also known as Multi-Dimensional Scaling, MDS), and Non-metric MDS (NMDS)
 (@fig-downstream_analyses). Statistical tests
-(*e.g.*, Permutational Multivariate Analysis of Variance) and supervised
+(*e.g.*, Permutational Multivariate Analysis of Variance, PERMANOVA) and supervised
 visualization methods, such as the
 distance-based redundancy analysis (dbRDA) can complement the
 unsupervised analyses, and help to uncover and quantify co-variation
