@@ -279,7 +279,7 @@ abstract: |
   community. These resources support standardized and reproducible data
   wrangling, joint analysis, and reporting. We have detailed the functionality
   and usage in the online book
-  [https://microbiome.github.io/OMA](https://microbiome.github.io/OMA/docs/devel),
+  [https://bioconductor.org/books/release/OMA/](https://bioconductor.org/books/release/OMA/),
   which offers guidance for prospective users and contributors.
 
 keywords: [microbiome, Bioconductor, data science, data integration]
@@ -348,7 +348,7 @@ packages
 ([https://bioconductor.org/packages](https://bioconductor.org/packages)),
 supporting the community-driven development of the framework. To promote
 evidence-based best practices, we present the online book
-[https://microbiome.github.io/OMA](https://microbiome.github.io/OMA/docs/devel)
+[https://bioconductor.org/books/release/OMA/](https://bioconductor.org/books/release/OMA/)
 that introduces many dedicated topics in microbiome analysis.
 
 # Data analytical frameworks {#sec-data_frameworks}
@@ -962,15 +962,15 @@ encompass taxonomic and functional profiles from thousands of
 published microbiome studies and tens of thousands samples that can
 be accessed with the available tools for research and educational purposes.
 
-| Data resource                               | Package                                   | # studies or datasets | # samples |
-|---------------------------------------------|-------------------------------------------|-----------------------|-----------|
-| Curated metagenomic data [@pasolli2017]     | curatedMetagenomicData [@pasolli2017]     | 93                    | 22,588    |
-| HoloFood [@rogers2024]                      | HoloFoodR [@holofoodr]                    | -                     | 9,990     |
-| MGnify [@gurbich2023]                       | MGnifyR [@mgnifyr]                        | 5,129                 | 629,821   |
-| microbiomeDataSets [@microbiomedatasets]    | microbiomeDataSets [@microbiomedatasets]  | 6                     | 19,100    |
-| Microbiome Benchmark Data [@gamboa-tuz2025] | MicrobiomeBenchmarkData [@gamboa-tuz2025] | 6                     | 1,125     |
-| Human Microbiome Project 2 [@hmp2data]      | HMP2data [@hmp2data]                      | 3                     | 11,493    |
-| A compilation of open microbiome data sets  | https://github.com/microbiome/data        | 8                     | 18,777    |
+| Data resource                               | Package                                                                 | # studies or datasets | # samples |
+|---------------------------------------------|-------------------------------------------------------------------------|-----------------------|-----------|
+| Curated metagenomic data [@pasolli2017]     | curatedMetagenomicData [@pasolli2017]                                   | 93                    | 22,588    |
+| HoloFood [@rogers2024]                      | HoloFoodR [@holofoodr]                                                  | -                     | 9,990     |
+| MGnify [@gurbich2023]                       | MGnifyR [@mgnifyr]                                                      | 5,129                 | 629,821   |
+| microbiomeDataSets [@microbiomedatasets]    | microbiomeDataSets [@microbiomedatasets]                                | 6                     | 19,100    |
+| Microbiome Benchmark Data [@gamboa-tuz2025] | MicrobiomeBenchmarkData [@gamboa-tuz2025]                               | 6                     | 1,125     |
+| Human Microbiome Project 2 [@hmp2data]      | HMP2data [@hmp2data]                                                    | 3                     | 11,493    |
+| A compilation of open microbiome data sets | [https://github.com/microbiome/data](https://github.com/microbiome/data) | 8                     | 18,777    |
 
 : Supporting open microbiome data resources (accessed 29/09/2025).
 {#tbl-dataresources tbl-colwidths="[30,40,15,15]"}
@@ -1573,7 +1573,7 @@ accessible entry points for all developers and users.
 
 **The OMA book.** _Orchestrating Microbiome Analysis with Bioconductor
 (OMA)_
-[https://microbiome.github.io/OMA](https://microbiome.github.io/OMA/docs/devel/)
+[https://bioconductor.org/books/release/OMA/](https://bioconductor.org/books/release/OMA/)
 is an online book that provides a comprehensive introduction to the microbiome
 data science framework in Bioconductor. It offers practical guidance,
 reproducible workflows, and training material for integrative microbiome
