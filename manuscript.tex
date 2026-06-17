@@ -315,7 +315,7 @@ need to integrate data across diverse modalities, such as metagenomics,
 metabolomics, and host genomics. The Bioconductor project embeds the
 methods of microbiome data science into a wider statistical programming
 framework alongside the concurrent development of interoperable methods
-and workflows for transcriptomics \citep{righelli2022}, single-cell
+and workflows for transcriptomics \citep{crowell2025}, single-cell
 \citep{amezquita2020}, metabolomics \citep{gatto2025}, proteomics
 \citep{gatto2025, anwar2025}, and other fields.
 
@@ -412,12 +412,7 @@ modular and scalable data science methods \citep{drnevich2025}.
 Consequently, the SE-based framework has been extended to similar data
 integration tasks, notably in single-cell and spatial omics through the
 SingleCellExperiment (SCE) \citep{amezquita2020} and SpatialExperiment
-\citep{righelli2022} classes.
-
-\begin{verbatim}
-Warning: Removed 648 rows containing non-finite outside the scale range
-(`stat_align()`).
-\end{verbatim}
+\citep{crowell2025} classes.
 
 \begin{figure}
 
@@ -941,7 +936,7 @@ frequently applied include Principal Component Analysis (PCA), Principal
 Coordinates Analysis (PCoA; also known as Multi-Dimensional Scaling,
 MDS), and Non-metric MDS (NMDS) (Figure~\ref{fig-downstream_analyses}).
 Statistical tests (\emph{e.g.}, Permutational Multivariate Analysis of
-Variance) and supervised visualization methods, such as the
+Variance, PERMANOVA) and supervised visualization methods, such as the
 distance-based redundancy analysis (dbRDA) can complement the
 unsupervised analyses, and help to uncover and quantify co-variation
 between community composition and sample-specific covariates. This can
@@ -1024,7 +1019,7 @@ analyses require specialized methods, the miaTime R package offers a set
 of data wrangling methods to support longitudinal, multi-modal
 microbiome analysis. In addition, Bioconductor contains applicable
 methods from other research domains, namely single-cell sequencing
-\citep{amezquita2020} and spatial transcriptomics \citep{righelli2022},
+\citep{amezquita2020} and spatial transcriptomics \citep{crowell2025},
 which use closely related data containers. Spatial and temporal
 information can be incorporated as a covariate (\emph{e.g.}, location or
 time) or by estimating temporally or spatially resolved metrics, such as
@@ -1181,9 +1176,10 @@ for multi-table data integration tasks in various domains such as
 single-cell sequencing
 (\href{https://bioconductor.org/books/release/OSCA/}{OSCA book})
 \citep{amezquita2020} and transciptomics
-(\href{https://bioconductor.org/books/release/OSTA/}{OSTA book}). These
-resources demonstrate how standard data containers can support
-statistical programming on interlinked multi-table data sets.
+(\href{https://bioconductor.org/books/release/OSTA/}{OSTA book})
+\citep{crowell2025}. These resources demonstrate how standard data
+containers can support statistical programming on interlinked
+multi-table data sets.
 
 \textbf{Interactive applications.} Graphical user interfaces provide
 accessible entry points to the framework. The iSEEtree and miaDash
@@ -1325,7 +1321,7 @@ research and innovation programme under grant agreement No 952914. TB
 was additionally supported by the University of Turku Graduate School.
 We would like to thank the following individuals for their support for
 the project: Richa Ashma; Nitin Bayal; Chouaib Benchraka; Yang Cao; Axel
-Dagnaud; Teo Dallier; Noah de Gunst; Karoline Faust; Rob Finn; Samuel
+Dagnaud; Teo Dallier; Noah de Gunst; Karoline Faust; Rob D. Finn; Samuel
 Hillman; Ruizhu Huang; Hervé Pagés; Lorna Richardson; Daniel Rios Garza;
 Mark Robinson; Matti Ruuskanen; Mahkameh Salehi. We would like to thank
 Christopher Quince and Kihyun Lee for providing the resistome profiling

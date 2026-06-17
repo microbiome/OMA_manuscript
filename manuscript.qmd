@@ -335,7 +335,7 @@ metagenomics, metabolomics, and host genomics.
 The Bioconductor project embeds the methods of microbiome data science
 into a wider statistical programming framework
 alongside the concurrent development of interoperable methods and
-workflows for transcriptomics [@righelli2022], single-cell [@amezquita2020],
+workflows for transcriptomics [@crowell2025], single-cell [@amezquita2020],
 metabolomics [@gatto2025], proteomics [@gatto2025; @anwar2025], and other
 fields.
 
@@ -428,7 +428,7 @@ modular and scalable data science methods [@drnevich2025].
 Consequently, the SE-based framework has been extended to
 similar data integration tasks, notably in single-cell
 and spatial omics through the SingleCellExperiment (SCE) [@amezquita2020] and
-SpatialExperiment [@righelli2022] classes.
+SpatialExperiment [@crowell2025] classes.
 
 ```{r}
 #| label: bioc_packages
@@ -1256,7 +1256,7 @@ While spatio-temporal analyses require specialized methods, the miaTime R
 package offers a set of data wrangling methods to support longitudinal,
 multi-modal microbiome analysis. In addition, Bioconductor contains applicable
 methods from other research domains, namely single-cell sequencing
-[@amezquita2020] and spatial transcriptomics [@righelli2022], which use closely
+[@amezquita2020] and spatial transcriptomics [@crowell2025], which use closely
 related data containers. Spatial and temporal information can be
 incorporated as a covariate (*e.g.*, location or time) or by estimating
 temporally or spatially resolved metrics, such as divergence (dissimilarity
@@ -1585,7 +1585,8 @@ Bioconductor data structures [@huber2015; @ramos2017; @huang2021] have been
 adopted as a solution for multi-table data integration tasks in various
 domains such as single-cell sequencing
 ([OSCA book](https://bioconductor.org/books/release/OSCA/)) [@amezquita2020]
-and transciptomics ([OSTA book](https://bioconductor.org/books/release/OSTA/)).
+and transciptomics ([OSTA book](https://bioconductor.org/books/release/OSTA/))
+[@crowell2025].
 These resources
 demonstrate how standard data containers can support statistical
 programming on interlinked multi-table data sets.
