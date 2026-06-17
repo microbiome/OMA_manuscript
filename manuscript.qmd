@@ -1773,7 +1773,7 @@ research and innovation programme under grant agreement No 952914. TB
 was additionally supported by the University of Turku Graduate School. We would
 like to thank the following individuals for their support for the project:
 Richa Ashma; Nitin Bayal; Chouaib Benchraka; Yang Cao; Axel Dagnaud;
-Teo Dallier; Noah de Gunst; Karoline Faust; Rob Finn; Samuel Hillman; Ruizhu
+Teo Dallier; Noah de Gunst; Karoline Faust; Rob D. Finn; Samuel Hillman; Ruizhu
 Huang; Hervé Pagés; Lorna Richardson; Daniel Rios Garza; Mark Robinson; Matti
 Ruuskanen; Mahkameh Salehi. We would like to thank Christopher Quince and
 Kihyun Lee for providing the resistome profiling data,
