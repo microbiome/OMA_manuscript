@@ -513,6 +513,7 @@ pkgs_date |>
 #| eval: true
 #| echo: false
 #| message: false
+#| warning: false
 #| fig-height: 3
 #| fig-width: 6
 #| fig-cap: "**Adoption of the SummarizedExperiment (SE) data container among
