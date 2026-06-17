@@ -327,7 +327,7 @@ highlighted [@moreno-indias2021].
 Open microbiome data science _frameworks_ have emerged to provide sets of
 interoperable methodologies in specific computational environments
 [@eren2021; @schloss2009; @bolyen2019; @mcmurdie2012], and a broader ecosystem
-of digital resources, vibrant user communities and collaboration culture that
+of digital resources, active user communities and collaboration culture that
 extend the capacities far beyond the underlying technical framework [@katz2019].
 However, frameworks focused solely on microbiome data science fall short on
 addressing the need to integrate data across diverse modalities, such as
