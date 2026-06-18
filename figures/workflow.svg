@@ -31,20 +31,21 @@
      inkscape:snap-grids="true"
      inkscape:snap-text-baseline="true"
      inkscape:snap-others="true"
-     inkscape:zoom="1.2233621"
-     inkscape:cx="783.49656"
-     inkscape:cy="341.27263"
-     inkscape:window-width="2552"
-     inkscape:window-height="1360"
-     inkscape:window-x="24"
-     inkscape:window-y="21"
-     inkscape:window-maximized="0"
+     inkscape:zoom="0.86504764"
+     inkscape:cx="376.27986"
+     inkscape:cy="1914.9234"
+     inkscape:window-width="2560"
+     inkscape:window-height="1440"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg2737"
      inkscape:object-nodes="false"
      inkscape:snap-nodes="true"
      inkscape:snap-midpoints="true"
      inkscape:showpageshadow="2"
-     inkscape:deskcolor="#d1d1d1">
+     inkscape:deskcolor="#d1d1d1"
+     showguides="true">
     <inkscape:grid
        type="xygrid"
        id="grid56159"
@@ -54,6 +55,11 @@
        spacingy="1"
        spacingx="1"
        units="px" />
+    <sodipodi:guide
+       position="1217.955,313.55873"
+       orientation="1,0"
+       id="guide6"
+       inkscape:locked="false" />
   </sodipodi:namedview>
   <defs
      id="defs1587">
@@ -1295,7 +1301,7 @@
   <text
      xml:space="preserve"
      id="text14156"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono Bold';white-space:pre;shape-inside:url(#rect14158)"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'FiraCode Nerd Font Mono';-inkscape-font-specification:'FiraCode Nerd Font Mono Bold';white-space:pre;shape-inside:url(#rect14158);display:inline"
      transform="translate(-36.94436,-45.153371)" />
   <text
      xml:space="preserve"
@@ -4251,11 +4257,14 @@
        font-weight="400"
        font-size="16px"
        id="text2583-6"
-       x="887.12427"
-       y="1487.9199"
+       x="870.35413"
+       y="1490.3975"
        style="font-size:16.1641px;stroke-width:1.00024;stroke-miterlimit:8;stroke-dasharray:none"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.1641px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080;stroke:none;stroke-opacity:1"
-         id="tspan610734">ASV1</tspan></text>
+         sodipodi:role="line"
+         id="tspan3"
+         x="870.35413"
+         y="1490.3975"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.1641px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080;stroke:none;stroke-opacity:1">Taxon1</tspan></text>
     <text
        fill="#a6a6a6"
        font-family="Calibri, Calibri_MSFontService, sans-serif"
@@ -4263,11 +4272,14 @@
        font-weight="400"
        font-size="16px"
        id="text2585-4"
-       x="887.09106"
-       y="1512.9199"
+       x="869.74921"
+       y="1515.2068"
        style="font-size:16.1641px"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.1641px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080"
-         id="tspan615314">ASV2</tspan></text>
+         sodipodi:role="line"
+         id="tspan5"
+         x="869.74921"
+         y="1515.2068"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.1641px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080">Taxon2</tspan></text>
     <text
        fill="#a6a6a6"
        font-family="Calibri, Calibri_MSFontService, sans-serif"
@@ -4275,11 +4287,11 @@
        font-weight="400"
        font-size="16px"
        id="text2587-8"
-       x="887.12427"
-       y="1537.9199"
+       x="869.59186"
+       y="1539.0634"
        style="font-size:16.1641px"><tspan
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.1641px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080"
-         id="tspan617596">ASV3</tspan></text>
+         id="tspan617596">Taxon3</tspan></text>
     <text
        fill="#a6a6a6"
        font-family="Calibri, Calibri_MSFontService, sans-serif"
@@ -4287,11 +4299,11 @@
        font-weight="400"
        font-size="16px"
        id="text2589-5"
-       x="887.09106"
-       y="1561.9199"
+       x="869.93982"
+       y="1563.8257"
        style="font-size:16.1641px"><tspan
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.1641px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080"
-         id="tspan619854">ASV4</tspan></text>
+         id="tspan619854">Taxon4</tspan></text>
     <text
        fill="#a6a6a6"
        font-family="Calibri, Calibri_MSFontService, sans-serif"
@@ -4299,11 +4311,11 @@
        font-weight="400"
        font-size="16px"
        id="text2591-6"
-       x="887.07617"
-       y="1586.9199"
+       x="869.73431"
+       y="1585.967"
        style="font-size:16.1641px"><tspan
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.1641px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080"
-         id="tspan622364">ASV5</tspan></text>
+         id="tspan622364">Taxon5</tspan></text>
     <rect
        x="940.32617"
        y="1474.9199"
@@ -4585,7 +4597,7 @@
   <text
      xml:space="preserve"
      id="text651740"
-     style="font-weight:bold;font-size:29.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';white-space:pre;shape-inside:url(#rect651742)"
+     style="font-weight:bold;font-size:29.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';white-space:pre;shape-inside:url(#rect651742);display:inline"
      transform="translate(-36.94436,-45.153371)" />
   <text
      fill="#a6a6a6"
@@ -4594,11 +4606,11 @@
      font-weight="400"
      font-size="18.0097px"
      id="text2439-9"
-     x="853.1626"
-     y="1892.1553"
+     x="837.41205"
+     y="1888.8318"
      style="stroke-width:1.1256"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080;stroke-width:1.1256"
-       id="tspan93171">ASV1</tspan></text>
+       id="tspan93171">Taxon1</tspan></text>
   <text
      fill="#a6a6a6"
      font-family="Calibri, Calibri_MSFontService, sans-serif"
@@ -4606,11 +4618,11 @@
      font-weight="400"
      font-size="18.0097px"
      id="text2441-1"
-     x="853.1626"
-     y="1914.6674"
+     x="837.41205"
+     y="1914.3784"
      style="stroke-width:1.1256"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080;stroke-width:1.1256"
-       id="tspan96353">ASV2</tspan></text>
+       id="tspan96353">Taxon2</tspan></text>
   <text
      fill="#a6a6a6"
      font-family="Calibri, Calibri_MSFontService, sans-serif"
@@ -4618,11 +4630,11 @@
      font-weight="400"
      font-size="18.0097px"
      id="text2443-0"
-     x="853.1626"
-     y="1937.1793"
+     x="837.70105"
+     y="1940.2139"
      style="stroke-width:1.1256"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080;stroke-width:1.1256"
-       id="tspan99163">ASV3</tspan></text>
+       id="tspan99163">Taxon3</tspan></text>
   <text
      fill="#a6a6a6"
      font-family="Calibri, Calibri_MSFontService, sans-serif"
@@ -4630,11 +4642,11 @@
      font-weight="400"
      font-size="18.0097px"
      id="text2445-9"
-     x="853.1626"
-     y="1965.3195"
+     x="837.41205"
+     y="1964.0189"
      style="stroke-width:1.1256"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080;stroke-width:1.1256"
-       id="tspan101373">ASV4</tspan></text>
+       id="tspan101373">Taxon4</tspan></text>
   <text
      fill="#a6a6a6"
      font-family="Calibri, Calibri_MSFontService, sans-serif"
@@ -4642,11 +4654,11 @@
      font-weight="400"
      font-size="18.0097px"
      id="text2447-4"
-     x="853.1626"
-     y="1987.8315"
+     x="837.26752"
+     y="1991.2996"
      style="stroke-width:1.1256"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080;stroke-width:1.1256"
-       id="tspan103379">ASV5</tspan></text>
+       id="tspan103379">Taxon5</tspan></text>
   <text
      font-family="'Calibri Light', 'Calibri Light_MSFontService', sans-serif"
      font-weight="300"
@@ -4668,11 +4680,11 @@
      font-size="18.0097px"
      transform="rotate(-90)"
      id="text2485-5"
-     x="-2049.7397"
-     y="1033.2593"
+     x="-2065.3457"
+     y="1032.5367"
      style="stroke-width:1.1256"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080;stroke-width:1.1256"
-       id="tspan117963">ASV5</tspan></text>
+       id="tspan117963">Metab5</tspan></text>
   <path
      d="m 904.64839,1869.1325 h 26.68124 v 25.5814 h -26.68124 z"
      fill="#c00000"
@@ -4860,15 +4872,6 @@
      fill-rule="evenodd"
      id="path2543-8" />
   <path
-     d="m 903.922,1895.2376 h 134.8525"
-     stroke="#ffffff"
-     stroke-width="4.35676"
-     stroke-linejoin="round"
-     stroke-miterlimit="10"
-     fill="none"
-     fill-rule="evenodd"
-     id="path2545-2" />
-  <path
      d="m 903.922,1920.2952 h 134.8525"
      stroke="#ffffff"
      stroke-width="1.45225"
@@ -4939,11 +4942,11 @@
      font-size="18.0097px"
      transform="rotate(-90)"
      id="text2561-6"
-     x="-2049.7397"
-     y="1005.1191"
+     x="-2065.3457"
+     y="1004.5411"
      style="stroke-width:1.1256"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080;stroke-width:1.1256"
-       id="tspan114931">ASV4</tspan></text>
+       id="tspan114931">Metab4</tspan></text>
   <text
      fill="#a6a6a6"
      font-family="Calibri, Calibri_MSFontService, sans-serif"
@@ -4952,11 +4955,11 @@
      font-size="18.0097px"
      transform="rotate(-90)"
      id="text2563-8"
-     x="-2049.7397"
-     y="976.979"
+     x="-2065.3457"
+     y="977.70154"
      style="stroke-width:1.1256"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080;stroke-width:1.1256"
-       id="tspan111353">ASV3</tspan></text>
+       id="tspan111353">Metab3</tspan></text>
   <text
      fill="#a6a6a6"
      font-family="Calibri, Calibri_MSFontService, sans-serif"
@@ -4965,11 +4968,11 @@
      font-size="18.0097px"
      transform="rotate(-90)"
      id="text2565-5"
-     x="-2049.7397"
-     y="948.83893"
+     x="-2065.6348"
+     y="952.59589"
      style="stroke-width:1.1256"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080;stroke-width:1.1256"
-       id="tspan109155">ASV2</tspan></text>
+       id="tspan109155">Metab2</tspan></text>
   <text
      fill="#a6a6a6"
      font-family="Calibri, Calibri_MSFontService, sans-serif"
@@ -4978,11 +4981,11 @@
      font-size="18.0097px"
      transform="rotate(-90)"
      id="text2567-2"
-     x="-2049.7397"
-     y="920.69885"
+     x="-2065.0569"
+     y="925.46729"
      style="stroke-width:1.1256"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#808080;stroke-width:1.1256"
-       id="tspan106399">ASV1</tspan></text>
+       id="tspan106399">Metab1</tspan></text>
   <rect
      x="214.0556"
      y="1873.8467"
@@ -5395,14 +5398,6 @@
      x="429.0036"
      y="1968.8467">+</text>
   <text
-     fill="#7f7f7f"
-     font-family="Calibri, Calibri_MSFontService, sans-serif"
-     font-weight="400"
-     font-size="72px"
-     id="text2733-5"
-     x="749.61963"
-     y="1968.8467">+</text>
-  <text
      font-family="'Calibri Light', 'Calibri Light_MSFontService', sans-serif"
      font-weight="700"
      font-size="21px"
@@ -5504,4 +5499,35 @@
        fill="#7f7f7f"
        id="path1661-7-7" />
   </g>
+  <path
+     d="M 904.26475,1894.7696 H 1039.1172"
+     stroke="#ffffff"
+     stroke-width="1.45225"
+     stroke-linejoin="round"
+     stroke-miterlimit="10"
+     fill="none"
+     fill-rule="evenodd"
+     id="path2547-3-6" />
+  <text
+     fill="#7f7f7f"
+     font-family="Calibri, Calibri_MSFontService, sans-serif"
+     font-weight="400"
+     font-size="72px"
+     id="text6"
+     x="429.0036"
+     y="1968.8467">+</text>
+  <rect
+     style="fill:#7f7f7f;fill-opacity:1;stroke-width:1.25203"
+     id="rect6"
+     width="33.524166"
+     height="4.04602"
+     x="754.2937"
+     y="1940.6447" />
+  <rect
+     style="fill:#7f7f7f;fill-opacity:1;stroke-width:1.25203"
+     id="rect6-5"
+     width="33.524166"
+     height="4.04602"
+     x="754.23657"
+     y="1949.7419" />
 </svg>
