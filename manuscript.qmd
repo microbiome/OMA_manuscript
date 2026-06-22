@@ -820,7 +820,7 @@ p1 <- ggplot(benchmark_df, aes(x = N, y = Time, colour = object)) +
         axis.text.x = element_blank(),
         axis.text.y = element_text(size = 12),
         axis.ticks.x = element_blank(),
-        strip.text = element_text(size = 15),
+        strip.text = element_text(size = 12),
         strip.background = element_blank()
     )
 # Visualise benchmarking results: memory
@@ -1458,8 +1458,9 @@ phylum_colors <- setNames(
     phylum_names
 )
 
-# Define a base font size
-s <- 16
+# Define a font size
+title_size <- 16
+text_size <- 12
 
 # Visualize phylogeny
 p_tree <- plotRowTree(
@@ -1467,8 +1468,7 @@ p_tree <- plotRowTree(
     edge.colour.by = "Phylum", layout = "ape"
 ) +
     scale_color_manual(values = phylum_colors) + # Manually set colors
-    guides(color = "none") +
-    theme(text = element_text(size = s))
+    guides(color = "none")
 
 # Visualize abundances with barplot
 p_bar <- plotAbundance(
@@ -1479,7 +1479,10 @@ p_bar <- plotAbundance(
 ) +
     guides(fill = guide_legend(title = "Phylum")) +
     scale_color_manual(values = phylum_colors) +
-    theme(text = element_text(size = s))
+    theme(
+        axis.title.y = element_text(size = title_size),
+        axis.text.y = element_text(size = text_size)
+    )
 
 # Visualize alpha diversity
 p_alpha <- plotColData(
@@ -1488,26 +1491,49 @@ p_alpha <- plotColData(
     show_boxplot = TRUE, show_violin = FALSE, point_alpha = 0.2
 ) +
     labs(y = "Faith", x = "Country") +
-    theme(legend.position = "none", text = element_text(size = s))
+    theme(
+        legend.position = "none",
+        axis.title.x = element_text(size = title_size),
+        axis.title.y = element_text(size = title_size),
+        axis.text.x = element_text(size = text_size, angle = 20, hjust = 0.6, vjust = 0.8),
+        axis.text.y = element_text(size = text_size)
+    )
+
 p_alpha2 <- plotColData(
     tse,
     y = "faith", x = "Age_Months"
 ) +
     geom_smooth(method = "lm") +
     labs(y = "Faith", x = "Age in months") +
-    theme(text = element_text(size = s))
+    theme(
+        axis.title.x = element_text(size = title_size),
+        axis.title.y = element_text(size = title_size),
+        axis.text.x = element_text(size = text_size),
+        axis.text.y = element_text(size = text_size)
+    )
 
 # Visualize PCoA
 p_mds <- plotMDS(tse, colour_by = "Country") +
     theme(
         legend.position = "inside",
         legend.justification = c("right", "top"),
-        text = element_text(size = s)
-    )
+        axis.title.x = element_text(size = title_size),
+        axis.title.y = element_text(size = title_size),
+        axis.text.x = element_text(size = text_size),
+        axis.text.y = element_text(size = text_size),
+        legend.title = element_text(size = title_size),
+        legend.text = element_text(size = text_size)
+      )
 
 # Visualize dbRDA
 p_rda <- plotRDA(tse, "RDA", colour.by = "Country", add.significance = FALSE) +
-    theme(legend.position = "none", text = element_text(size = s)) # Already present from p_mds
+    theme(
+        legend.position = "none",
+        axis.title.x = element_text(size = title_size),
+        axis.title.y = element_text(size = title_size),
+        axis.text.x = element_text(size = text_size),
+        axis.text.y = element_text(size = text_size)
+    )
 
 # Visualize abundances vs age
 p_daa <- plotExpression(
@@ -1518,14 +1544,25 @@ p_daa <- plotExpression(
     scale_y_log10() +
     geom_smooth() +
     labs(x = "Age in months", y = "Relative abundance") +
-    theme(text = element_text(size = s))
+    theme(
+        axis.title.x = element_text(size = title_size),
+        axis.title.y = element_text(size = title_size),
+        axis.text.x = element_text(size = text_size),
+        axis.text.y = element_text(size = text_size)
+    )
 
 # Visualize divergence
 tse_sub <- tse[, !is.na(tse[["time_diff"]]) & tse[["time_diff"]] >= 0.8 & tse[["time_diff"]] <= 1.2]
 p_divergence <- plotColData(tse_sub, y = "divergence", x = "Age_Months") +
     geom_smooth(method = "lm") +
     labs(x = "Age in months", y = expression(Delta ~ "UniFrac" ~ "(N, N-1)")) +
-    theme(legend.position = "none", text = element_text(size = s))
+    theme(
+        legend.position = "none",
+        axis.title.x = element_text(size = title_size),
+        axis.title.y = element_text(size = title_size),
+        axis.text.x = element_text(size = text_size),
+        axis.text.y = element_text(size = text_size)
+    )
 
 # Combine plots
 p1 <- (p_tree / p_bar) +
@@ -1670,7 +1707,14 @@ pkgs[["Field"]] <- fields
 
 pkg_stats <- pkgDownloadRank("mia")
 pkg_stats <- paste0(pkg_stats[[1]], "%")
+saveRDS(pkg_stats, file.path("data", "pkg_stats.Rds"))
 ```
+
+```{r}
+#| label: bioc_views2
+pkg_stats <- readRDS(file.path("data", "pkg_stats.Rds"))
+```
+
 
 In order to enjoy the benefits of automation while
 maintaining flexibility, data scientists routinely remix open-source
