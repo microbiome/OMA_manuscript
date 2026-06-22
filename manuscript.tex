@@ -307,7 +307,7 @@ been highlighted \citep{moreno-indias2021}. Open microbiome data science
 \emph{frameworks} have emerged to provide sets of interoperable
 methodologies in specific computational environments
 \citep{eren2021, schloss2009, bolyen2019, mcmurdie2012}, and a broader
-ecosystem of digital resources, vibrant user communities and
+ecosystem of digital resources, active user communities and
 collaboration culture that extend the capacities far beyond the
 underlying technical framework \citep{katz2019}. However, frameworks
 focused solely on microbiome data science fall short on addressing the
@@ -1053,24 +1053,23 @@ the need for manual data wrangling, reduces the risk of errors
 efficient, and reproducible workflows. Such integrative approaches in
 microbiome research can be broadly categorized into three groups:
 Machine Learning (ML) prediction \citep{mallick2024}, association-based
-approaches, and latent variable modeling {[}\citet{jeganathan2021};
-\citet{sherwani2025}; \citet{moreno-indias2021}; \citet{mallick2024};
-\citet{bastiaanssen2023}; \citet{argelaguet2020}; \citet{singh2019};
-mangnier2025{]}. Machine learning approaches aim to integrate multiple
-omics modalities into a single predictive model. However, naive
-concatenation of feature tables can obscure modality-specific signals
-and reduce predictive performance. Methods such as IntegratedLearner
-\citep{mallick2024} address this limitation by modeling each modality
-separately while leveraging their complementary predictive information
-within a unified framework. Association-based methods aim to quantify
-relationships between datasets. Whereas the cross-correlation analysis
-can be used to capture direct associations of samples or features
-between two data sets, anansi can supervise such analyses by
-incorporating known functional relations. While these association-based
-approaches are often easier to interpret, they do not explicitly account
-for the fact that microbes operate within complex communities. In
-contrast, latent variable methods such as multi-omics factor analysis
-(MOFA) \citep{argelaguet2020}, joint robust PCA (joint-RPCA)
+approaches, and latent variable modeling
+\citep{jeganathan2021, sherwani2025, moreno-indias2021, mallick2024, bastiaanssen2023, argelaguet2020, singh2019, mangnier2025}.
+Machine learning approaches aim to integrate multiple omics modalities
+into a single predictive model. However, naive concatenation of feature
+tables can obscure modality-specific signals and reduce predictive
+performance. Methods such as IntegratedLearner \citep{mallick2024}
+address this limitation by modeling each modality separately while
+leveraging their complementary predictive information within a unified
+framework. Association-based methods aim to quantify relationships
+between datasets. Whereas the cross-correlation analysis can be used to
+capture direct associations of samples or features between two data
+sets, anansi can supervise such analyses by incorporating known
+functional relations. While these association-based approaches are often
+easier to interpret, they do not explicitly account for the fact that
+microbes operate within complex communities. In contrast, latent
+variable methods such as multi-omics factor analysis (MOFA)
+\citep{argelaguet2020}, joint robust PCA (joint-RPCA)
 \citep{martino2025} and multiblock partial least squares discriminant
 analysis (PLS-DA) \citep{singh2019} model shared latent structure across
 modalities, enabling the discovery and visualization of coordinated
@@ -1232,10 +1231,9 @@ versioning. Over the past two decades Bioconductor has grown into a
 repository of more than 2,300 actively maintained software packages, of
 which 62 are now classified under the \emph{Microbiome} Task View. At
 the core of the Bioconductor's data science strategy has been the idea
-of shared data representations
-\citep[(Gentleman et al. 2004, @lawrence2013)]{gentleman2004}. This has
-enhanced interoperability, mitigated redundant efforts and facilitated
-the translation of methods between research domains
+of shared data representations \citep{gentleman2004, lawrence2013}. This
+has enhanced interoperability, mitigated redundant efforts and
+facilitated the translation of methods between research domains
 \citep{delia2023, barker2022}. In addition to these technical advances,
 the shared standards have played an important role in the formation of
 broad developer and user communities \citep{drnevich2025}.

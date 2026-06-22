@@ -1289,7 +1289,7 @@ research can be broadly categorized into three groups: Machine Learning (ML)
 prediction [@mallick2024], association-based approaches, and
 latent variable modeling [@jeganathan2021; @sherwani2025;
 @moreno-indias2021; @mallick2024; @bastiaanssen2023;
-@argelaguet2020; @singh2019; mangnier2025].
+@argelaguet2020; @singh2019; @mangnier2025].
 Machine learning approaches aim to integrate multiple omics modalities into a
 single predictive model. However, naive concatenation of feature tables can
 obscure modality-specific signals and reduce predictive performance. Methods
@@ -1690,7 +1690,7 @@ Bioconductor has grown into a repository of more than 2,300 actively maintained
 software packages, of which `r sum(pkgs$Field == "Microbiome")` are now
 classified under the _Microbiome_ Task View. At the core of the Bioconductor's
 data science strategy has been the idea of shared data representations
-[@gentleman2004, @lawrence2013]. This has enhanced interoperability, mitigated
+[@gentleman2004; @lawrence2013]. This has enhanced interoperability, mitigated
 redundant efforts and facilitated the translation of methods between research
 domains [@delia2023; @barker2022]. In addition to these technical advances, the
 shared standards have played an important role in the formation of broad
