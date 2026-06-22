@@ -346,9 +346,10 @@ robust methods for transforming abundance tables into biological insights. These
 methods have been extensively tested and distributed through R/Bioconductor
 packages
 ([https://bioconductor.org/packages](https://bioconductor.org/packages)),
-supporting the community-driven development of the framework. To promote
-evidence-based best practices, we introduce the online book "Orchestrating
-Microbiome Analysis with Bioconductor" (OMA), which represents a comprehensive
+supporting the community-driven development of the framework and integration
+within the broader Bioconductor ecosystem. To promote
+evidence-based best practices, we introduce the online book _Orchestrating
+Microbiome Analysis with Bioconductor_ (OMA), which represents a comprehensive
 compilation of current practices and challenges in microbiome analysis using the
 R/Bioconductor ecosystem.
 
@@ -361,7 +362,7 @@ For example, tools such as QIIME 2 [@bolyen2019], Anvi'o
 approaches tailored to microbiome analysis. These frameworks provide
 validated and user-friendly solutions, enabling development of efficient
 end-to-end workflows for microbiome research. However, they are typically
-designed around specific data types, which can limit flexibility
+designed around specific data types, which limits flexibility
 when integrating heterogeneous data modalities within a unified analytical
 framework. In contrast, Bioconductor supports a more exploratory, statistically
 oriented paradigm spanning multiple areas of bioinformatics beyond
@@ -372,17 +373,17 @@ This data analytical paradigm of Bioconductor is similar to scikit-bio's
 evolving machine learning and artificial intelligence tools, Bioconductor’s
 strengths lie in its vast statistical ecosystem dedicated to omics research and
 strong interoperability with other computational environments.
-Another key distinction is community structure: scikit-bio is relatively
+Another key distinction is community structure: scikit-bio is more
 centralized, whereas Bioconductor packages are developed and maintained by an
 open community, resulting in a broad toolkit.
-Although this can introduce challenges, such as dependency management,
+Although this approach can introduce some challenges, such as dependency management,
 package compatibility, and differences in package stability, these are actively
 addressed through several coordinated mechanisms. First, submitted packages undergo
 peer review, ensuring relevance and adherence to standards such as documentation
 and working examples. Secondly, Bioconductor follows synchronized, semiannual
 release cycle, during which packages are frozen and mutually compatible. Thirdly,
 all packages are continuously tested within Bioconductor's automated build system,
-which ensures that breaking changes are rapidly detected. Each package has an active
+which ensures that breaking changes are rapidly detected before release. Each package has an active
 maintainer who is notified of failures and resolves them in a timely manner.
 Finally, community guidelines and continuous integration practices, together
 with shared data structures such as (Tree)SummarizedExperiment, further improve
@@ -550,7 +551,7 @@ p
 
 **Hierarchical data structures.** Microbiome data scientists frequently need to
 integrate information on feature phylogenies and sample hierarchies
-in order to accurately reflect fine-scale variability in microbiome data.
+to accurately reflect fine-scale variability in microbiome data.
 While maintaining interoperability with
 the broader Bioconductor ecosystem, the TreeSummarizedExperiment
 (TreeSE) class [@huang2021] extends the SE and SCE data structures to
@@ -584,7 +585,9 @@ conversion functions between the two data container formats together with a
 mapping table of commonly used functions. These resources enable users to
 incrementally migrate existing phyloseq workflows to the TreeSE framework while
 preserving familiar coding patterns and minimizing changes to established
-analysis pipelines.
+analysis pipelines. Despite the advantages of the TreeSE-based framework,
+further optimization of time and memory consumption remains an area for future
+development.
 
 ```{r}
 #| label: benchmark_analysis
@@ -814,7 +817,7 @@ p1 <- ggplot(benchmark_df, aes(x = N, y = Time, colour = object)) +
         axis.text.x = element_blank(),
         axis.text.y = element_text(size = 12),
         axis.ticks.x = element_blank(),
-        strip.text = element_text(size = 15),
+        strip.text = element_text(size = 12),
         strip.background = element_blank()
     )
 # Visualise benchmarking results: memory
@@ -1300,10 +1303,10 @@ joint robust PCA [@martino2025] and multiblock partial least
 squares discriminant analysis [@singh2019] model shared latent
 structure across modalities, enabling the discovery and visualization of
 coordinated variation at the community level.
-The available methodologies are rapidly increasing, and we hope that systematic
-integrative frameworks, such as the one proposed here,
-will further accelerate the development, benchmarking, and standardization of
-multi-modal extensions for microbiome analysis.
+The available methodologies are rapidly increasing, and we aim to
+accelerate the development, benchmarking, and standardization of
+multi-modal extensions for microbiome analysis through a systematic integrative
+framework proposed here.
 
 **Other methods and programming environments.** Several other methods have
 been employed in microbiome data science. Examples include network analysis
@@ -1446,8 +1449,9 @@ phylum_colors <- setNames(
     phylum_names
 )
 
-# Define a base font size
-s <- 16
+# Define a font size
+title_size <- 16
+text_size <- 12
 
 # Visualize phylogeny
 p_tree <- plotRowTree(
@@ -1455,8 +1459,7 @@ p_tree <- plotRowTree(
     edge.colour.by = "Phylum", layout = "ape"
 ) +
     scale_color_manual(values = phylum_colors) + # Manually set colors
-    guides(color = "none") +
-    theme(text = element_text(size = s))
+    guides(color = "none")
 
 # Visualize abundances with barplot
 p_bar <- plotAbundance(
@@ -1467,7 +1470,10 @@ p_bar <- plotAbundance(
 ) +
     guides(fill = guide_legend(title = "Phylum")) +
     scale_color_manual(values = phylum_colors) +
-    theme(text = element_text(size = s))
+    theme(
+        axis.title.y = element_text(size = title_size),
+        axis.text.y = element_text(size = text_size)
+    )
 
 # Visualize alpha diversity
 p_alpha <- plotColData(
@@ -1476,26 +1482,49 @@ p_alpha <- plotColData(
     show_boxplot = TRUE, show_violin = FALSE, point_alpha = 0.2
 ) +
     labs(y = "Faith", x = "Country") +
-    theme(legend.position = "none", text = element_text(size = s))
+    theme(
+        legend.position = "none",
+        axis.title.x = element_text(size = title_size),
+        axis.title.y = element_text(size = title_size),
+        axis.text.x = element_text(size = text_size, angle = 20, hjust = 0.6, vjust = 0.8),
+        axis.text.y = element_text(size = text_size)
+    )
+
 p_alpha2 <- plotColData(
     tse,
     y = "faith", x = "Age_Months"
 ) +
     geom_smooth(method = "lm") +
     labs(y = "Faith", x = "Age in months") +
-    theme(text = element_text(size = s))
+    theme(
+        axis.title.x = element_text(size = title_size),
+        axis.title.y = element_text(size = title_size),
+        axis.text.x = element_text(size = text_size),
+        axis.text.y = element_text(size = text_size)
+    )
 
 # Visualize PCoA
 p_mds <- plotMDS(tse, colour_by = "Country") +
     theme(
         legend.position = "inside",
         legend.justification = c("right", "top"),
-        text = element_text(size = s)
-    )
+        axis.title.x = element_text(size = title_size),
+        axis.title.y = element_text(size = title_size),
+        axis.text.x = element_text(size = text_size),
+        axis.text.y = element_text(size = text_size),
+        legend.title = element_text(size = title_size),
+        legend.text = element_text(size = text_size)
+      )
 
 # Visualize dbRDA
 p_rda <- plotRDA(tse, "RDA", colour.by = "Country", add.significance = FALSE) +
-    theme(legend.position = "none", text = element_text(size = s)) # Already present from p_mds
+    theme(
+        legend.position = "none",
+        axis.title.x = element_text(size = title_size),
+        axis.title.y = element_text(size = title_size),
+        axis.text.x = element_text(size = text_size),
+        axis.text.y = element_text(size = text_size)
+    )
 
 # Visualize abundances vs age
 p_daa <- plotExpression(
@@ -1506,14 +1535,25 @@ p_daa <- plotExpression(
     scale_y_log10() +
     geom_smooth() +
     labs(x = "Age in months", y = "Relative abundance") +
-    theme(text = element_text(size = s))
+    theme(
+        axis.title.x = element_text(size = title_size),
+        axis.title.y = element_text(size = title_size),
+        axis.text.x = element_text(size = text_size),
+        axis.text.y = element_text(size = text_size)
+    )
 
 # Visualize divergence
 tse_sub <- tse[, !is.na(tse[["time_diff"]]) & tse[["time_diff"]] >= 0.8 & tse[["time_diff"]] <= 1.2]
 p_divergence <- plotColData(tse_sub, y = "divergence", x = "Age_Months") +
     geom_smooth(method = "lm") +
     labs(x = "Age in months", y = expression(Delta ~ "UniFrac" ~ "(N, N-1)")) +
-    theme(legend.position = "none", text = element_text(size = s))
+    theme(
+        legend.position = "none",
+        axis.title.x = element_text(size = title_size),
+        axis.title.y = element_text(size = title_size),
+        axis.text.x = element_text(size = text_size),
+        axis.text.y = element_text(size = text_size)
+    )
 
 # Combine plots
 p1 <- (p_tree / p_bar) +
@@ -1657,6 +1697,7 @@ pkgs[["Field"]] <- fields
 
 pkg_stats <- pkgDownloadRank("mia")
 pkg_stats <- paste0(pkg_stats[[1]], "%")
+saveRDS(pkg_stats, file.path("data", "pkg_stats.Rds"))
 ```
 
 To achieve a trade-off between automation and flexibility, data scientists
