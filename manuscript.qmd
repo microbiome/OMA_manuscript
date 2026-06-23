@@ -350,7 +350,7 @@ supporting the community-driven development of the framework and integration
 within the broader Bioconductor ecosystem. To promote
 evidence-based best practices, we introduce the online book _Orchestrating
 Microbiome Analysis with Bioconductor_ (OMA), which represents a comprehensive
-compilation of current practices and trends in microbiome data science using the
+compilation of best practices and current trends in microbiome data science using the
 R/Bioconductor ecosystem.
 
 # Data analytical frameworks {#sec-data_frameworks}
