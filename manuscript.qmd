@@ -335,7 +335,7 @@ metagenomics, metabolomics, and host genomics.
 The Bioconductor project integrates the methods of microbiome data science
 into a wider statistical programming framework, where
 interoperable methods and
-workflows for transcriptomics [@amezquita2020], single-cell [@amezquita2020],
+workflows for single-cell omics [@amezquita2020], transcriptomics [@crowell2025],
 metabolomics [@gatto2025], proteomics [@gatto2025; @anwar2025], and other
 fields are concurrently developed.
 
