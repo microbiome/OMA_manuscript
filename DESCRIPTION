@@ -78,7 +78,8 @@ Imports:
     scater,
     see,
     speedyseq,
-    tidyverse
+    tidyverse,
+    tinytex
 Suggests:
     knitr
 Remotes:
