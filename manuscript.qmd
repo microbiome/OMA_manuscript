@@ -1705,16 +1705,14 @@ fields <- sapply(pkgs[["biocViews"]], function(x) {
 })
 pkgs[["Field"]] <- fields
 
-pkg_stats <- pkgDownloadRank("mia")
-pkg_stats <- paste0(pkg_stats[[1]], "%")
-saveRDS(pkg_stats, file.path("data", "pkg_stats.Rds"))
+pkgs[, c("Package", "Field")] |>
+    write.csv(file = file.path("data", "packages.csv"), row.names = FALSE)
 ```
 
 ```{r}
 #| label: bioc_views2
-pkg_stats <- readRDS(file.path("data", "pkg_stats.Rds"))
+pkgs <- read.csv(file.path("data", "packages.csv"))
 ```
-
 
 In order to enjoy the benefits of automation while
 maintaining flexibility, data scientists routinely remix open-source
