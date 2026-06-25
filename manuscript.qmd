@@ -1695,26 +1695,25 @@ fields <- sapply(pkgs[["biocViews"]], function(x) {
 })
 pkgs[["Field"]] <- fields
 
-pkg_stats <- pkgDownloadRank("mia")
-pkg_stats <- paste0(pkg_stats[[1]], "%")
-saveRDS(pkg_stats, file.path("data", "pkg_stats.Rds"))
+pkgs[, c("Package", "Field")] |>
+    write.csv(file = file.path("data", "packages.csv"), row.names = FALSE)
 ```
 
 ```{r}
 #| label: bioc_views2
-pkg_stats <- readRDS(file.path("data", "pkg_stats.Rds"))
+pkgs <- read.csv(file.path("data", "packages.csv"))
 ```
 
-To achieve a balance between automation and flexibility, data scientists
-often recombine open-source software components
-into custom workflows. However, the lack of commonly adopted
+To enjoy the benefits of automation while also
+maintaining flexibility, data scientists often recombine open-source
+software components into custom workflows. However, the lack of commonly adopted
 data representation standards can hinder the development, sharing,
 and application of modular, interoperable statistical workflows. Here, we present
 an R/Bioconductor ecosystem for multi-modal microbiome data science. Building upon
 previously established data structures [@huang2021; @ramos2017],
-we introduce a comprehensive, interoperable ecosystem
+we have introduced a comprehensive, interoperable ecosystem
 developed as an extensive community effort. We also provide exhaustive guidance in the
-the OMA book, thereby supporting efficient learning and reproducible analysis in
+the OMA book, thereby supporting independent learning and reproducible analysis in
 microbiome research and beyond.
 
 **The Bioconductor community** is widely recognized for
@@ -1813,7 +1812,7 @@ research and innovation programme under grant agreement No 952914. TB
 was additionally supported by the University of Turku Graduate School. We would
 like to thank the following individuals for their support for the project:
 Richa Ashma; Nitin Bayal; Chouaib Benchraka; Yang Cao; Axel Dagnaud;
-Teo Dallier; Noah de Gunst; Karoline Faust; Rob D. Finn; Samuel Hillman; Ruizhu
+Teo Dallier; Noah de Gunst; Karoline Faust; Robert D. Finn; Samuel Hillman; Ruizhu
 Huang; Hervé Pagés; Lorna Richardson; Daniel Rios Garza; Mark Robinson; Matti
 Ruuskanen; Mahkameh Salehi. We would like to thank Christopher Quince and
 Kihyun Lee for providing the resistome profiling data,
