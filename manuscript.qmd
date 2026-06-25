@@ -279,7 +279,7 @@ abstract: |
   community, thereby supporting standardized and reproducible data
   wrangling, joint analysis, and reporting. We have detailed the functionality
   and usage in the OMA book
-  [https://bioconductor.org/books/release/OMA](https://bioconductor.org/books/release/OMA),
+  ([https://bioconductor.org/books/release/OMA](https://bioconductor.org/books/release/OMA)),
   which offers guidance for prospective users and contributors.
 
 keywords: [microbiome, Bioconductor, data science, data integration]
