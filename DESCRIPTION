@@ -1,6 +1,12 @@
 Package: OMAManuscript
 Type: Package
 Version: 0.0.1
+Title: Orchestrating Microbiome Analysis with Bioconductor
+Description:
+    Repository containing the source files, figures, and supplementary
+    materials for the manuscript "Orchestrating Microbiome Analysis with
+    Bioconductor", which presents a framework for microbiome data analysis
+    within the Bioconductor ecosystem.
 Authors@R:
     c(person(given = "Tuomas", family = "Borman", role = c("aut", "cre"),
              email = "tuomas.v.borman@utu.fi",
@@ -72,7 +78,8 @@ Imports:
     scater,
     see,
     speedyseq,
-    tidyverse
+    tidyverse,
+    tinytex
 Suggests:
     knitr
 Remotes:
