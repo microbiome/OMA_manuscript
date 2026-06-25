@@ -335,7 +335,7 @@ metagenomics, metabolomics, and host genomics.
 The Bioconductor project integrates the methods of microbiome data science
 into a wider statistical programming framework, where
 interoperable methods and
-workflows for single-cell omics [@amezquita2020], transcriptomics [@crowell2025],
+workflows for single-cell omics [@amezquita2020], spatial transcriptomics [@crowell2025],
 metabolomics [@gatto2025], proteomics [@gatto2025; @anwar2025], and other
 fields are concurrently developed.
 
@@ -557,7 +557,7 @@ While maintaining interoperability with
 the broader Bioconductor ecosystem, the TreeSummarizedExperiment
 (TreeSE) class [@huang2021] extends the SE and SCE data structures to
 hierarchical datasets by incorporating both feature and sample organizations
-as tree structures (@fig-datacontainers a). Moreover, TreeSE supports the
+as tree structures (Figure~\ref{fig-datacontainers} a). Moreover, TreeSE supports the
 storage of other common elements of microbiome data, for example, reference
 sequences, and incorporates results from common analytical procedures such as
 dimensionality reduction, statistical transformations, and agglomeration by
@@ -874,7 +874,7 @@ data modalities into a single object and create flexible sample mappings across 
 The MultiAssayExperiment (MAE) data container [@ramos2017] addresses these
 challenges by introducing a formal mapping layer (sampleMap) that links
 biological samples to their corresponding measurements in each modality
-(@fig-datacontainers b). This design supports one-to-one, one-to-many, and
+(Figure~\ref{fig-datacontainers} b). This design supports one-to-one, one-to-many, and
 partially overlapping sample relationships across experiments. Importantly, this
 mapping is also accessible for downstream operations. For instance when
 subsetting a MAE object
@@ -1096,7 +1096,7 @@ provenance of the integrated data object.
 \captionof{figure}{\textbf{Multi-modal data integration workflow.} Following
 data generation and preprocessing (top two panels), the integrative framework
 covers five steps of microbiome data integration and analysis: 1) Data is
-wrapped into a TreeSE data object (@fig-datacontainers),
+wrapped into a TreeSE data object (Figure~\ref{fig-datacontainers}),
 containing information on the samples (tube icons) and their features
 (\textit{e.g.} taxonomic, functional, or resistome profiles; colored circles).
 TreeSE objects can accommodate multiple assay tables as well as additional
@@ -1208,8 +1208,8 @@ ANCOM-BC2 [@lin2024], LimROTS [@anwar2025], MaAsLin3
 this framework, several of these methods have also found
 applications with other omics modalities, including transcriptomics
 [@love2014], metabolomics [@nickols2024], and proteomics [@anwar2025].
-Importantly, recent studies have indicated that elementary methods, such as log
-transformed Total Sum Scaled (TSS) counts coupled with a linear model, or
+Importantly, recent studies have indicated that elementary methods, such as log-transformed
+Total Sum Scaled (TSS) counts coupled with a linear model, or
 presence/absence data with logistic regression, often yield the most consistent
 results [@pelto2025; @gamboa-tuz2025]. Standard DAA typically focuses on
 individual features, ignoring interactions or other covariation among feature
@@ -1251,7 +1251,7 @@ studies incorporate spatial dimension in microbiome analysis [@ruuskanen2021].
 While spatio-temporal analyses require specialized methods, the miaTime R
 package offers a set of data wrangling methods to support longitudinal,
 multi-modal microbiome analysis. In addition, Bioconductor contains applicable
-methods from other research domains, namely single-cell sequencing
+methods from other research domains, namely single-cell omics
 [@amezquita2020] and spatial transcriptomics [@crowell2025], which use closely
 related data containers. Spatial and temporal information can be
 incorporated as a covariate (*e.g.*, location or time) or by estimating
@@ -1286,7 +1286,7 @@ prediction, association-based approaches, and
 latent variable modeling [@jeganathan2021; @sherwani2025;
 @moreno-indias2021; @mallick2024; @bastiaanssen2023;
 @argelaguet2020; @singh2019; @mangnier2025].
-Machine learning approaches aim to integrate multiple omics modalities into a
+ML approaches aim to integrate multiple omics modalities into a
 single predictive model. However, naive concatenation of feature tables can
 obscure modality-specific signals and reduce predictive performance. Methods
 such as IntegratedLearner [@mallick2024] address this limitation by modeling
@@ -1603,7 +1603,7 @@ materials. Community building is actively supported through online training
 resources and communication channels, making it easier for both developers and
 users to contribute to the continued development and standardization of the
 ecosystem. Together with interactive applications, these resources offer
-accessible entry points for developers and users, regardless of their background.
+accessible entry points for developers and users, regardless of their programming experience
 
 **The OMA book.** _Orchestrating Microbiome Analysis with Bioconductor_ (OMA)
 is an online book published at [https://bioconductor.org/books/release/OMA](https://bioconductor.org/books/release/OMA)
@@ -1616,8 +1616,8 @@ release cycles. The work incorporates rich feedback from the user community and
 microbiome training courses. The OMA book aligns to a broader Bioconductor convention, where
 prominent data structures [@huber2015; @ramos2017; @huang2021]
 designed for multi-table data integration have been described across several
-domains, such as single-cell sequencing
-(OSCA book [@amezquita2020]) and transciptomics (OSTA book [@crowell2025]).
+domains, such as single-cell omics
+(OSCA book [@amezquita2020]) and spatial transciptomics (OSTA book [@crowell2025]).
 These resources
 demonstrate how standard data containers can support statistical
 programming on interlinked multi-table datasets.
@@ -1749,7 +1749,7 @@ framework supports the basic data wrangling and microbiome data science
 operations, it also provides the structured input necessary for probabilistic
 inference and scalable computation. This is essential as the recent
 developments in microbiome and multi-omics
-workflows increasingly rely on advanced statistical and machine learning
+workflows increasingly rely on advanced statistical and ML
 techniques such as Bayesian modeling and Gaussian processes to accommodate
 uncertainty and temporal or spatial structures [@cheng2019]. Building upon these
 statistical foundations, the rapid emergence of foundation models and deep
@@ -1776,7 +1776,7 @@ practices
 along with an end-to-end case study demonstrating how an example
 analysis can be conducted in practice from raw data to results.
 Finally, supporting interoperability between R and other
-programming languages could facilitate the application of other machine learning
+programming languages could facilitate the application of other ML
 frameworks. As the field evolves, the developer communities will continue
 to integrate new tools and approaches to improve integrative analyses of
 microbiome data.
