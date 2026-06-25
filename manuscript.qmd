@@ -270,13 +270,13 @@ abstract: |
   of modular data science workflows through interoperable methods. Building upon
   the optimized statistical programming framework for multi-assay data
   integration recently developed by the Bioconductor project,
-  we introduce a community-developed open source ecosystem
+  we introduce a community-developed open source framework
   for microbiome data science. In contrast to the previous alternatives,
   the methodology is specifically designed to support joint analysis
   of hierarchical, interlinked, and heterogeneous multi-table datasets that
-  are increasingly common in modern microbiome research. This data science
-  ecosystem encompasses open data, methods, tutorials, and an active online
-  community, and supports standardized and reproducible data
+  are increasingly common in modern microbiome research. This
+  framework encompasses open data, methods, tutorials, and an active online
+  community, thereby supporting standardized and reproducible data
   wrangling, joint analysis, and reporting. We have detailed the functionality
   and usage in the OMA book
   [https://bioconductor.org/books/release/OMA](https://bioconductor.org/books/release/OMA),
@@ -375,7 +375,8 @@ strengths lie in its vast statistical ecosystem dedicated to omics research and
 strong interoperability with other computational environments.
 Another key distinction is community structure: scikit-bio is more
 centralized, whereas Bioconductor packages are developed and maintained by an
-open community, resulting in a broad toolkit.
+open community, resulting in a broad toolkit and collaboration enabling easy
+reuse of common solutions.
 Although this approach can introduce some challenges, such as dependency management,
 package compatibility, and differences in package stability, these are actively
 addressed through several coordinated mechanisms. First, submitted packages undergo
@@ -579,13 +580,13 @@ tends to scale more efficiently in terms of execution time (t) and allocated
 memory (m) as sample size (n) increases. This benefits from the built-in support
 for sparse and delayed matrices in SE-based data containers, which can improve
 performance [@huber2015]. Despite these advantages, further optimizing time and
-memory consumption represents a key area for further development in the TreeSE
+memory consumption represents a key area for further development in the (Tree)SE
 framework. To facilitate migration from phyloseq, the OMA book provides
 conversion functions between the two data container formats together with a
 mapping table of commonly used functions. These resources enable users to
-incrementally migrate existing phyloseq workflows to the TreeSE framework while
+incrementally migrate existing phyloseq workflows to the (Tree)SE framework while
 preserving familiar coding patterns and minimizing changes to established
-analysis pipelines. Despite the advantages of the TreeSE framework,
+analysis pipelines. Despite the advantages of the (Tree)SE framework,
 further optimization of time and memory consumption remains an area for future
 development.
 
@@ -1193,7 +1194,7 @@ community signatures [@frioux2023]. These and other multivariate
 methods are provided by mia, miaViz, and additional single-cell packages
 (scater, scuttle [@amezquita2020]). Quantification of sample dissimilarities is
 a common task, and many omics modalities can benefit from shared,
-standardized methods supporting the integrative SE-based data containers.
+standardized methods provided by the integrative (Tree)SE framework.
 
 **Differential abundance and mediation analysis.** Differential Abundance
 Analysis (DAA)
@@ -1201,7 +1202,7 @@ and Differential Prevalence Analysis (DPA) methods are used to
 identify indicator microbial features whose abundances vary across study groups
 or continuous gradients, for example in terms of spatial or temporal distance between
 samples (@fig-downstream_analyses). Most DAA methods used in microbiome research
-support the TreeSE framework, such as
+support the (Tree)SE framework, such as
 ANCOM-BC2 [@lin2024], LimROTS [@anwar2025], MaAsLin3
 [@nickols2024], and radEmu [@clausen2024]. Leveraging the interoperability of
 this framework, several of these methods have also found
@@ -1313,15 +1314,14 @@ been employed in microbiome data science. Examples include network analysis
 [@peschel2021], ML-based prediction and classification [@topcuoglu2021], and
 microbe-set enrichment
 analysis [@kou2020; @pham2025]. The recent adoption of interoperable
-data containers and the methodological similarities in related fields
-can greatly expand the selection of available toolkits in emerging
-areas. In addition to the internal coherence within the Bioconductor ecosystem,
-this framework supports integration with external platforms through interfaces,
-namely `reticulate` for Python, `Rcpp` for C++, and compatibility with
-bioBakery pipelines [@navarro2024; @mciver2017] as well as Julia
-(MicrobiomeAnalysis.jl package). These connections empower users to combine the
-best tools available across environments and languages while maintaining
-structured data interoperability via standard containers such as TreeSE and MAE.
+data containers and shared methodological approaches in related research fields
+can significantly expand the transfer of existing toolkits to adjacent or emerging
+disciplines. Importantly, this framework enables integration not only within the Bioconductor ecosystem
+but also with external pipelines, including bioBakery [@navarro2024; @mciver2017], and foreign platforms through language-specific interfaces,
+namely `Rcpp` for C+, `reticulate` for Python, and `JuliaCall` for Julia.
+These connections allow users to combine the
+most suitable tools across multiple frameworks, while ensuring
+cross-language interoperability of structured data through standard containers such as TreeSE and MAE.
 
 ```{r}
 #| label: downstream_analyses
