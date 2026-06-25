@@ -1651,7 +1651,7 @@ meetings, and training workshops.
 
 ```{r}
 #| label: bioc_views
-#| eval: true
+#| eval: false
 #| echo: false
 #| message: false
 
@@ -1701,6 +1701,8 @@ pkgs[, c("Package", "Field")] |>
 
 ```{r}
 #| label: bioc_views2
+#| eval: true
+#| echo: false
 pkgs <- read.csv(file.path("data", "packages.csv"))
 ```
 
