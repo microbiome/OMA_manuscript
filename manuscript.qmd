@@ -868,8 +868,8 @@ include single cell sequencing [@amezquita2020] and host genomics
 challenge, as multi-omics datasets are often sparse and only a subset of the
 samples may be shared across multiple modalities [@sherwani2025]. In other
 cases, a single sample in one modality may link to several samples in
-another modality (*e.g.*, due to technical or spatial replication)
-[see @husso2023]. These scenarios require the ability to integrate multiple
+another modality [@husso2023] (*e.g.*, due to technical or spatial replication).
+These scenarios require the ability to integrate multiple
 data modalities into a single object and create flexible sample mappings across them.
 The MultiAssayExperiment (MAE) data container [@ramos2017] addresses these
 challenges by introducing a formal mapping layer (sampleMap) that links
