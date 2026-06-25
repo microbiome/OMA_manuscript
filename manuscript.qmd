@@ -1607,9 +1607,8 @@ accessible entry points for developers and users, regardless of their programmin
 
 **The OMA book.** _Orchestrating Microbiome Analysis with Bioconductor_ (OMA)
 is an online book published at [https://bioconductor.org/books/release/OMA](https://bioconductor.org/books/release/OMA)
-that provides a comprehensive guide to the microbiome
-data science framework in Bioconductor, including practical guidelines,
-
+that provides a comprehensive guide to the (Tree)SE framework for microbiome
+data science in Bioconductor, including practical guidelines,
 reproducible workflows, and training material for integrative microbiome
 analyses. The book is versioned according to Bioconductor's biannual software
 release cycles. The work incorporates rich feedback from the user community and
