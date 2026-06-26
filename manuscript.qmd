@@ -557,7 +557,7 @@ While maintaining interoperability with
 the broader Bioconductor ecosystem, the TreeSummarizedExperiment
 (TreeSE) class [@huang2021] extends the SE and SCE data structures to
 hierarchical datasets by incorporating both feature and sample organizations
-as tree structures (Figure~\ref{fig-datacontainers} a). Moreover, TreeSE supports the
+as tree structures (@fig-datacontainers a). Moreover, TreeSE supports the
 storage of other common elements of microbiome data, for example, reference
 sequences, and incorporates results from common analytical procedures such as
 dimensionality reduction, statistical transformations, and agglomeration by
