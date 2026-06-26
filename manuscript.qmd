@@ -357,7 +357,7 @@ R/Bioconductor ecosystem.
 
 Several data analytical frameworks are available for microbiome data science,
 each distinguished by its underlying paradigms, user communities, and scope.
-For example, tools such as QIIME 2 [@bolyen2019], Anvi'o
+For example, tools such as QIIME2 [@bolyen2019], Anvi'o
 [@eren2021], and Mothur [@schloss2009] emphasize standardized, modular
 approaches tailored to microbiome analysis. These frameworks provide
 validated and user-friendly solutions, enabling development of efficient
