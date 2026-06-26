@@ -874,7 +874,7 @@ data modalities into a single object and create flexible sample mappings across 
 The MultiAssayExperiment (MAE) data container [@ramos2017] addresses these
 challenges by introducing a formal mapping layer (sampleMap) that links
 biological samples to their corresponding measurements in each modality
-(Figure~\ref{fig-datacontainers} b). This design supports one-to-one, one-to-many, and
+(@fig-datacontainers b). This design supports one-to-one, one-to-many, and
 partially overlapping sample relationships across experiments. Importantly, this
 mapping is also accessible for downstream operations. For instance when
 subsetting a MAE object
@@ -948,7 +948,7 @@ reference sequences and experiment metadata are available. (Figure adapted from
 [@huang2021]) **(b) MultiAssayExperiment (MAE)** facilitates the integration of
 interlinked datasets that may represent different omics modalities
 linked by potentially non-trivial sample mappings. (Figure adapted from
-[@ramos2017])
+[@ramos2017])](figures/data_containers.png){#fig-datacontainers}
 
 **Data resources.** Several open microbiome data resources are supported,
 enabling direct data import into the aforementioned data containers for further
