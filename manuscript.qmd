@@ -1714,7 +1714,7 @@ and application of modular, interoperable statistical workflows. Here, we presen
 an R/Bioconductor ecosystem for multi-modal microbiome data science. Building upon
 previously established data structures [@huang2021; @ramos2017],
 we have introduced a comprehensive, interoperable ecosystem
-developed as an extensive community effort. We also provide exhaustive guidance in the
+developed as an extensive community effort. We also provide exhaustive guidance in
 the OMA book, thereby supporting independent learning and reproducible analysis in
 microbiome research and beyond.
 
