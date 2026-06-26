@@ -896,10 +896,10 @@ and overall interoperability.
 analysis, whereas @tbl-elements introduces the available data elements in each
 container.
 
-| Data container              | Target use                                                       |
-|-----------------------------|------------------------------------------------------------------|
-| SummarizedExperiment (SE)[@huber2015]         | generic container linking multiple data tables (assays) |
-| TreeSummarizedExperiment (TreeSE)[@huang2021] | extension incorporating hierarchical data structures |
+| Data container                                | Target use                                                  |
+|-----------------------------------------------|-------------------------------------------------------------|
+| SummarizedExperiment (SE)[@huber2015]         | generic container linking multiple data tables (assays)     |
+| TreeSummarizedExperiment (TreeSE)[@huang2021] | extension incorporating hierarchical data structures        |
 | MultiAssayExperiment (MAE)[@ramos2017]        | binding omic-specific containers in multi-omics experiments |
 
 : Integrative data containers for microbiome analysis.
